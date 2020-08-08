@@ -1,0 +1,268 @@
+tribal = {
+	houseirae_seldarine_shrine = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}			
+				OR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+					religion = eilistraee_religion
+				}
+			}
+		}
+		desc = houseirae_seldarine_shrine_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 } # No special technology needs for a basic shrine
+		gold_cost = 50
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		convert_to_castle = houseirae_castle_seldarine_shrine
+		#modifiers provided by the building:
+		liege_piety = 0.25 # 0.25 monthly increase
+	}
+	houseirae_handcrossbow_yard = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}			
+				culture = drow
+			}
+		}
+		desc = houseirae_handcrossbow_yard_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 } # No special technology needs for a basic shrine
+		gold_cost = 50
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		convert_to_castle = houseirae_castle_handcrossbow_yard
+		#modifiers provided by the building:
+		light_infantry = 25
+		archers = 50
+		archers_offensive = 0.10
+		light_infantry_offensive = 0.05
+	}
+	houseirae_spider_pit_1 = {
+		potential = {
+			FROM = {
+				OR = {
+					ai = no
+					independent = yes
+					higher_tier_than = BARON
+				}
+				capital_scope = {
+					NOT = { has_province_modifier = houseirae_spiders_used }
+				}
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_1_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		piety_cost = 300
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		convert_to_castle = houseirae_castle_spider_pit_1
+		#modifiers provided by the building:
+	}
+	houseirae_spider_pit_2 = {
+		potential = {
+			FROM = {
+				OR = {
+					ai = no
+					independent = yes
+					higher_tier_than = BARON
+				}
+				capital_scope = {
+					NOT = { has_province_modifier = houseirae_spiders_used }
+				}
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					trait = houseirae_secret_lolth
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_2_desc
+		add_number_to_name = no 
+		prerequisites = { houseirae_spider_pit_1 }
+		trigger = { always = no }
+		upgrades_from = houseirae_castle_spider_pit_1
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		convert_to_castle = houseirae_castle_spider_pit_2
+		#modifiers provided by the building:
+	}
+	houseirae_spider_pit_3 = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					trait = houseirae_secret_lolth
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_3_desc
+		add_number_to_name = no 
+		prerequisites = { houseirae_spider_pit_2 }
+		trigger = { always = no }
+		upgrades_from = houseirae_spider_pit_2
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		convert_to_castle = houseirae_castle_spider_pit_3
+		#modifiers provided by the building:
+	}
+}	
+
+castle = {
+	houseirae_castle_seldarine_shrine = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+					religion = eilistraee_religion
+				}
+			}
+		}
+		desc = houseirae_castle_seldarine_shrine_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 } # No special technology needs for a basic shrine
+		gold_cost = 150
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		#modifiers provided by the building:
+		liege_piety = 0.25 # 0.25 monthly increase
+	}
+	houseirae_castle_handcrossbow_yard = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}			
+				culture = drow
+			}
+		}
+		desc = houseirae_castle_handcrossbow_yard_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 } # No special technology needs for a basic shrine
+		gold_cost = 150
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		#modifiers provided by the building:
+		light_infantry = 25
+		archers = 50
+		archers_offensive = 0.10
+		light_infantry_offensive = 0.05
+	}
+	houseirae_castle_spider_pit_1 = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_2_desc
+		add_number_to_name = no # Not necessary with only one version
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		gold_cost = 300
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		#modifiers provided by the building:
+	}
+	houseirae_castle_spider_pit_2 = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					trait = houseirae_secret_lolth
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_2_desc
+		add_number_to_name = no 
+		prerequisites = { houseirae_castle_spider_pit_1 }
+		trigger = { always = no }
+		upgrades_from = houseirae_castle_spider_pit_1
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		#modifiers provided by the building:
+	}
+	houseirae_castle_spider_pit_3 = {
+		potential = {
+			FROM = {
+				capital_holding = {
+					title = FROMFROM
+				}
+				OR = {
+					religion = lolth_religion
+					trait = houseirae_secret_lolth
+				}
+			}
+		}
+		desc = houseirae_castle_spider_pit_3_desc
+		add_number_to_name = no 
+		prerequisites = { houseirae_castle_spider_pit_2 }
+		trigger = { always = no }
+		upgrades_from = houseirae_castle_spider_pit_2
+		build_time = 365
+		ai_creation_factor = 50
+		ai_feudal_modifier = 10
+		ai_republic_modifier = 10
+		extra_tech_building_start = 10 # Should prevent any from being pre-built at game start
+		#modifiers provided by the building:
+	}
+}
+
+	

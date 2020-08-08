@@ -1,0 +1,51 @@
+houseirae_vhaeraun_sacrifice_ritual;Ritual of Sacrifice - Vhaeraun;;;;;;;;;;;;;x
+houseirae_vhaeraun_sacrifice_ritual_desc;Vhaeraun's most sacred ritual involves the sacrificing of wealth in a grand ceremony. Such a grand event can only be held once every 15 years by a single character.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeTitle;Ritual of Sacrifice - Vhaeraun;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeTitle_tribute_payment; Sacrifice Tribute;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeTitle_tribute_no_payment; No Sacrifice Tribute;;;;;;;;;;;;;x
+irae_holding_wealthsacrifice;Performing Vhaeraun Sacrifice;;;;;;;;;;;;;x
+irae_held_wealthsacrifice;Held Vhaeraun Sacrifice;;;;;;;;;;;;;x
+irae_holding_wealthsacrifice_desc;This character is currently performing a sacrifice ritual for Vhaeraun.;;;;;;;;;;;;;x
+irae_held_wealthsacrifice_desc;This character has recently held a sacrifice ritual for Vhaeraun. Another one cannot be performed for another 15 years after the previous.;;;;;;;;;;;;;x
+vhaeraun_sacrifice;Sacrifice Ritual;;;;;;;;;;;;;x
+
+
+
+HouseIraeVhaeraunSacrifice1;\n \n  I can feel that the time is right to honor the Masked Lord. I notify my court and vassals of the ritual, and of their expected participation.\n  While I do encourage attendance, I do recognize that some may have conflicts that prevent their attendance. These individuals though are expected to then pay tribute. Those that do not attend and do not pay tribute risk my wrath and that of Vhaeraun.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice1TT;May Vhaeraun bless us as we honor her.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice2;I have been summoned to take part in the sacred Ritual of Sacrifice to Vhaeraun.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice2TT;I shall attend the ritual!;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice3;I have been summoned to take part in the sacred Ritual of Sacrifice to Vhaeraun. I will not go for variety of reasons. As is custom, I am expected to pay a small tribute for not attending.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice3TTPay;Please accept my tribute and excuse my absence.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice3TTNoPay;Fuck [From.GetFirstName], I'm not paying!;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice4;\n \n  [From.GetBestName] has declined to attend, yet has provided suitable tribute to atone for their absence. It's a shame that they're not attending, yet the celebration shall continue on without them.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice4TT;[From.GetFirstName]'s tribute is acceptable.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice5;\n \n  [From.GetBestName] has declined to attend, and has insulted me by refusing to pay tribute for their absence. Those who will be in attendance are aware of the slight, and they have expressed their displeasure of the individual's actions as well. \n  I shall not forget this slight, and nor shall Vhaeraun.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice5TT;[From.GetFirstName] will regret this decision.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice7;\n \n  The time of sacrifice is upon us. A sacrifice will be tied down and stabbed through the heart with a dagger. The blood will flow like wine at a party.\n  Vhaeraun favors both prisoners and slaves. Though I can always gather some goats or cows, Vhaeraun tends to look down upon such sacrifices. \n  After considering my available options, I make a decision.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeGold;I will sacrifice some gold, as is custom.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeArtifact;I will sacrifice my treasured artifact, [irae_artifact_sacrifice.GetBestName].;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeFoolsGold;I'll sacrifice some fool's gold.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice9;\n \n  I set down a large pouch of gold coins and gemstones upon the altar. My priests chant the sacred words, and the pouch disappears before my very eyes. I can feel, in the back of my mind, that Vhaeraun is pleased with my offering.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice9TTA;Vhaeraun tlu malla!;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice91;\n \n  I set down the [irae_artifact_sacrifice.GetName] upon the altar. My priests chant the sacred words, and the artifact disappears before my very eyes. I can feel, in the back of my mind, that Vhaeraun is pleased with my offering.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice91TTA;Vhaeraun tlu malla!;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice9TTMortalEnemy;Vhaeraun is extremely pleased at the sacrifice of an artifact originally belonging to a mortal enemy.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice10;\n \n  I set down a large pouch of coins minted from fool's gold upon the altar. My priests chant the sacred words, and the pouch disappears before my very eyes. The Masked Lord has accepted my sacrifice, though it remains to be seen if this will damage my standing.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrifice10TT;Vhaeraun is not going to be too pleased.;;;;;;;;;;;;;x
+
+HouseIraeVhaeraunSacrifice11;\n \n  The ritual complete, I look down at the altar, the smell of ceremonial incense fills my nostrils. The priests and I kneel down before the masked statue of Vhaeraun and begin praying. I feel a tingling in the back of my mind, and know that the Masked Lord was watching with great intent. I open my eyes and gaze upon the statue, awaiting confirmation of Vhaeraun's pleasure...;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeExcited;Vhaeraun is excited for all the delicious offerings!;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeRemoveDrider;The Masked has forgiven me, and has once again changed me back to my normal form.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificePleased;Vhaeraun is pleased at the quality of sacrifices.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeDispleased;Vhaeraun is displeased at the quality of sacrifices.;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeAngered;Vhaeraun is angered at the quality of sacrifices!;;;;;;;;;;;;;x
+HouseIraeVhaeraunSacrificeCursed;I groan in pain as my lower body transforms into that of a giant spider...;;;;;;;;;;;;;x

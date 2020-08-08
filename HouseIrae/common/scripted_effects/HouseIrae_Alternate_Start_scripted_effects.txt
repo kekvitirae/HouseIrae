@@ -1,0 +1,275 @@
+houseirae_alternate_seed_races = {
+	while = { # First pass for Luxuria Fantasia players
+		limit = {
+			any_independent_ruler = {
+				has_character_flag = reserved_for_houseirae
+				ai = yes
+			}
+		}
+		random_independent_ruler = {
+			limit = {
+				has_character_flag = reserved_for_houseirae
+				ai = yes
+			}		
+			random_list = {
+				50 = { # Drow
+					trigger = {
+						has_alternate_start_setting = { setting = houseirae_seed_drow option = checked }
+					}
+					clr_character_flag = reserved_for_houseirae
+					houseirae_alternate_seed_drow = yes
+					any_realm_character = {
+						houseirae_alternate_seed_drow = yes
+					}
+				}
+				50 = { # Half Elves
+					trigger = {
+						has_alternate_start_setting = { setting = houseirae_seed_halfelf option = checked }
+					}
+					clr_character_flag = reserved_for_houseirae
+					houseirae_alternate_seed_halfelf = yes
+					any_realm_character = {
+						houseirae_alternate_seed_halfelf = yes
+					}
+				}
+			}
+		}
+	}	
+	while = { # Second pass for those not using Luxuria Fantasia
+		limit = {
+			any_independent_ruler = {
+				NOR = { # Removes redundancy.
+					ai = no
+					is_any_demon = yes
+					is_angel = yes
+					is_orc = yes
+					is_elf = yes
+					is_fairy = yes
+					is_kitsune = yes
+					is_neko = yes
+					trait = dwse_lizard
+					trait = houseirae_drow
+					trait = houseirae_halfelf
+					trait = dwse_dragon_adult
+					trait = dwse_dragon_child
+					trait = tentacle_monster
+					has_character_flag = lf_seeded
+					has_character_flag = reserved_for_houseirae
+					has_character_flag = lf_human_seeded
+					is_offmap_governor = yes # Prevents seeding Elder Forest or House Irae
+					is_offmap_ruler = yes # Prevents seeding Elder Forest or House Irae
+				}
+			}
+		}
+		random_independent_ruler = {
+			limit = {
+				NOR = { # Removes redundancy.
+					ai = no
+					is_any_demon = yes
+					is_angel = yes
+					is_orc = yes
+					is_elf = yes
+					is_fairy = yes
+					is_kitsune = yes
+					is_neko = yes
+					trait = dwse_lizard
+					trait = houseirae_drow
+					trait = houseirae_halfelf
+					trait = dwse_dragon_adult
+					trait = dwse_dragon_child
+					trait = tentacle_monster
+					has_character_flag = lf_seeded
+					has_character_flag = reserved_for_houseirae
+					has_character_flag = lf_human_seeded
+					is_offmap_governor = yes # Prevents seeding Elder Forest or House Irae
+					is_offmap_ruler = yes # Prevents seeding Elder Forest or House Irae
+				}
+			}		
+			random_list = {
+				94 = { # Nothing
+					trigger = {
+						NOR = {
+							has_alternate_start_setting = { setting = houseirae_racial_seeding option = full }
+							has_character_flag = reserved_for_houseirae
+						}
+					}
+					set_character_flag = lf_seeded
+					set_character_flag = lf_human_seeded
+				}
+				3 = { # Drow
+					trigger = {
+						has_alternate_start_setting = { setting = houseirae_seed_drow option = checked }
+					}
+					clr_character_flag = reserved_for_houseirae
+					houseirae_alternate_seed_drow = yes
+					any_realm_character = {
+						clr_character_flag = reserved_for_houseirae
+						houseirae_alternate_seed_drow = yes
+					}
+				}
+				3 = { # Half Elves
+					trigger = {
+						has_alternate_start_setting = { setting = houseirae_seed_halfelf option = checked }
+					}
+					clr_character_flag = reserved_for_houseirae
+					houseirae_alternate_seed_halfelf = yes
+					any_realm_character = {
+						clr_character_flag = reserved_for_houseirae
+						houseirae_alternate_seed_halfelf = yes
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+houseirae_alternate_seed_drow = {
+	if = {
+		limit = {
+			is_ruler = yes
+		}
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = culture_names
+					value = historical
+				}
+			}
+			culture = drow
+			any_demesne_province = {
+				culture = drow
+			}
+		}
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = religion_names
+					value = historical
+				}
+			}
+			houseirae_set_drow_religion = yes
+		}
+	}
+	if = {
+		limit = {
+			is_adult = yes
+		}
+		add_trait = houseirae_drow
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = culture_names
+					value = historical
+				}
+			}
+			culture = drow
+		}
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = religion_names
+					value = historical
+				}
+			}
+			houseirae_set_drow_religion = yes
+		}
+		add_random_drow_portrait = yes
+	}
+	else_if = {
+		limit = {
+			is_adult = no
+		}
+		add_trait = houseirae_drow
+		add_trait = houseirae_drow_child
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = culture_names
+					value = historical
+				}
+			}
+			culture = drow
+		}
+		if = {
+			limit = {
+				has_alternate_start_parameter = {
+					key = religion_names
+					value = historical
+				}
+			}
+			houseirae_set_drow_religion = yes
+		}
+	}
+	set_character_flag = lf_seeded
+}
+
+houseirae_alternate_seed_halfelf = {
+	if = {
+		limit = {
+			is_adult = yes
+		}
+		add_trait = houseirae_halfelf
+		add_random_halfelf_portrait = yes
+	}
+	else_if = {
+		limit = {
+			is_adult = no
+		}
+		add_trait = houseirae_halfelf
+		add_trait = houseirae_halfelf_child
+	}
+	set_character_flag = lf_seeded
+}
+
+
+
+houseirae_set_drow_religion = {
+	random_list = {
+		40 = {
+			modifier = {
+				value = 0
+				independent = no
+				liege = {
+					NOT = {
+						religion = lolth_religion
+					}
+				}
+			}
+			religion = lolth_religion
+			any_demesne_province = {
+				religion = lolth_religion
+			}
+		}
+		40 = {
+			modifier = {
+				value = 0
+				independent = no
+				liege = {
+					NOT = {
+						religion = vhaeraun_religion
+					}
+				}
+			}
+			religion = vhaeraun_religion
+			any_demesne_province = {
+				religion = vhaeraun_religion
+			}
+		}
+		20 = {
+			modifier = {
+				value = 0
+				independent = no
+				liege = {
+					NOT = {
+						religion = eilistraee_religion
+					}
+				}
+			}
+			religion = eilistraee_religion
+			any_demesne_province = {
+				religion = eilistraee_religion
+			}
+		}
+	}
+}

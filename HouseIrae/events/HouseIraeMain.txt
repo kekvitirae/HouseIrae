@@ -1,0 +1,1975 @@
+namespace = HouseIrae
+
+# Get a Dark Elven Spymaster
+
+character_event = {
+    id = HouseIrae.2
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+			FROMFROM = { 
+				random_list = {
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							culture = drow
+							religion = FROMFROM
+							female = yes
+							age = 16
+							historical = yes
+							attributes = {
+								martial = 5
+								diplomacy = 3
+								stewardship = 3
+								intrigue = 8
+								learning = 3
+							}						
+							trait = elusive_shadow
+							trait = deceitful
+							trait = houseirae_drow
+						}
+					}
+					50 = {
+						create_character = {
+							random_traits = yes
+							dynasty = random
+							culture = drow
+							religion = FROMFROM
+							female = no
+							age = 16
+							historical = yes
+							attributes = {
+								martial = 5
+								diplomacy = 3
+								stewardship = 3
+								intrigue = 8
+								learning = 3
+							}							
+							trait = elusive_shadow
+							trait = deceitful
+							trait = houseirae_drow
+						}
+					}
+				}
+					new_character = {
+						save_event_target_as = irae_spymaster
+						add_random_drow_portrait = yes
+						random = {
+							chance = 10
+							add_trait = homosexual
+						}
+						opinion = {
+							who = FROMFROM
+							modifier = opinion_servant
+							months = 1200
+						}
+					}
+				letter_event = { id = HouseIrae.3 } 
+			}
+	}
+}
+
+# Spymaster comes to court
+letter_event = {
+    id = HouseIrae.3
+	
+    desc = HouseIrae_3
+    border = GFX_event_letter_frame_diplomacy
+
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_3_TT }
+    }
+}
+
+# Get a Dark Elven Priestess of Lolth
+
+character_event = {
+    id = HouseIrae.4
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { 
+        FROMFROM = { 
+			create_character = {
+				random_traits = no
+				dynasty = random
+				culture = drow
+				religion = lolth_religion
+				female = yes
+				age = 16
+				historical = yes
+                attributes = {
+					martial = 2
+                    diplomacy = 3
+                    stewardship = 3
+                    intrigue = 5
+                    learning = 8
+                }				
+				trait = mastermind_theologian
+				trait = zealous
+				trait = houseirae_drow
+				flag = ai_flag_refuse_conversion
+				flag = lf_never_change_race
+				flag = houseirae_special_convert
+			}
+			new_character = {
+				save_event_target_as = irae_lolthpriestess
+                set_character_flag = no_court_invites
+				add_random_drow_portrait = yes
+                random = {
+                    chance = 10
+                    add_trait = homosexual
+                }
+                opinion = {
+                    who = FROMFROM
+                    modifier = opinion_servant
+                    months = 1200
+                }
+				character_event = { id = HouseIrae.401 }
+			}
+            letter_event = { id = HouseIrae.5 } 
+        }
+	}
+}
+
+# 5% chance the character is actually a child of the Matron
+character_event = {
+	id = HouseIrae.401
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random = {
+			chance = 5
+			set_mother = event_target:houseirae_kekvit_irae
+			dynasty = event_target:houseirae_kekvit_irae
+			set_character_flag = kekvits_child
+			add_trait = houseirae_curse_generic
+		}
+	}
+}
+
+# Lolth Priestess comes to court
+letter_event = {
+    id = HouseIrae.5
+	
+    desc = HouseIrae_5
+    border = GFX_event_letter_frame_diplomacy
+
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_5_TT }
+    }
+}
+
+# Get a Dark Elven Priestess of Eilistaee
+
+character_event = {
+    id = HouseIrae.6
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { 
+        FROMFROM = { 
+			create_character = {
+				age = 16
+				dynasty = random
+				religion = eilistraee_religion
+				culture = drow
+				female = yes
+				health = 6
+				random_traits = no
+				historical = yes
+				attributes = {
+					martial = 2
+					diplomacy = 3
+					stewardship = 3
+					intrigue = 5
+					learning = 8
+				}
+				trait = mastermind_theologian
+				trait = zealous
+				trait = houseirae_drow
+				flag = ai_flag_refuse_conversion						
+				flag = lf_never_change_race
+				flag = houseirae_special_convert
+			}
+            new_character = {
+                #Education & other basic stuff
+                save_event_target_as = irae_eilistraeepriestess
+                set_character_flag = no_court_invites
+				add_trait = houseirae_drow
+				add_random_drow_portrait = yes
+                random = {
+                    chance = 10
+                    add_trait = homosexual
+                }
+                opinion = {
+                    who = FROMFROM
+                    modifier = opinion_servant
+                    months = 1200
+                }
+ 				character_event = { id = HouseIrae.401 }
+           }
+            letter_event = { id = HouseIrae.7 } 
+        }
+	}
+}
+
+# Eilistaee Priestess comes to court
+letter_event = {
+    id = HouseIrae.7
+	
+    desc = HouseIrae_7
+    border = GFX_event_letter_frame_diplomacy
+
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_7_TT }
+    }
+}
+
+# Get a Dark Elven Priest of Vhaeraun
+
+character_event = {
+    id = HouseIrae.8
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { 
+        FROMFROM = { 
+			create_character = {
+				age = 16
+				dynasty = random
+				religion = vhaeraun_religion
+				culture = drow
+				female = no
+				health = 6
+				random_traits = no
+				historical = yes
+				attributes = {
+					martial = 2
+					diplomacy = 3
+					stewardship = 3
+					intrigue = 5
+					learning = 8
+				}
+				trait = mastermind_theologian
+				trait = zealous
+				trait = houseirae_drow	
+				flag = ai_flag_refuse_conversion
+				flag = lf_never_change_race
+				flag = houseirae_special_convert
+			}
+            new_character = {
+                #Education & other basic stuff
+                save_event_target_as = irae_vhaeraunpriest
+                set_character_flag = no_court_invites
+				add_random_drow_portrait = yes
+                random = {
+                    chance = 10
+                    add_trait = homosexual
+                }
+                opinion = {
+                    who = FROMFROM
+                    modifier = opinion_servant
+                    months = 1200
+                }
+				character_event = { id = HouseIrae.401 }
+            }
+            letter_event = { id = HouseIrae.9 } 
+        }
+	}
+}
+
+# Vhaeraun Priest comes to court
+letter_event = {
+    id = HouseIrae.9
+	
+    desc = HouseIrae_9
+    border = GFX_event_letter_frame_diplomacy
+
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_9_TT }
+    }
+}
+
+# Kekvit Irae is made as offmap_irae Matron Mother, Random/Shattered World version
+character_event = {
+	id = HouseIrae.10
+	ai = yes 
+	hide_window = yes # Nothing to see here
+	is_triggered_only = yes # Triggered via on_action
+	trigger = {
+		NOT = { has_global_flag = houseirae_npc_kekvit_irae_created } # We only create her once
+	}
+	immediate = {
+		if = {
+			limit = {
+				is_alternate_start = yes
+			}
+			create_character = {
+				name="Tamsine"
+				random_traits = no
+				dynasty = 9051300
+				female = yes
+				age = 48
+				religion = lolth_religion
+				culture = drow
+				health = 15
+				fertility = 0 # No random kiddies
+				trait = fair
+				trait = ambitious
+				trait = brilliant_strategist
+				trait = proud
+				trait = possessed
+				trait = lunatic
+				trait = mystic
+				trait = lustful
+				trait = houseirae_drow
+				trait = houseirae_drow_special7 # Tamsine's custom portrait
+				flag = ai_flag_refuse_conversion
+				flag = special_npc
+				flag = society_join_block
+				flag = no_court_invites
+				flag = tentacle_immunity
+
+			}
+			new_character = {
+				create_bloodline = { type = house_irae_bloodline }
+				
+				create_character = {
+					name="Kekvit"
+					random_traits = no
+					dynasty = 9051300
+					female = yes
+					age = 32
+					religion = lolth_religion
+					culture = drow
+					health = 15
+					fertility = 0 # No random kiddies
+					trait = fair
+					trait = genius
+					trait = mastermind_theologian
+					trait = mystic
+					trait = lustful
+					trait = houseirae_drow
+					trait = houseirae_curse_generic
+					trait = homosexual # Technically bisexual, but leans toward women
+					trait = houseirae_drow_special1 # Kekvit's custom portrait					
+					trait = houseirae_matron_mother
+					trait = twin
+					flag = ai_flag_refuse_conversion
+					flag = special_npc
+					flag = society_join_block
+					flag = no_court_invites
+					flag = tentacle_immunity
+				}
+				new_character = {
+					set_mother = PREV
+					set_father = 99889903
+					PREV = {
+						death = {
+							death_reason = death_murder
+							killer = PREV
+						}
+					}
+					set_character_flag = houseirae_kekvit_irae
+					save_global_event_target_as = houseirae_kekvit_irae
+					set_global_flag = houseirae_npc_kekvit_irae_created
+					offmap_irae = {
+						set_offmap_holder = PREV
+					}
+					add_character_modifier = {
+						name = mother_minor_rest
+						hidden = yes
+						duration = -1
+					}
+					create_character = { # Belladonna
+						name="Belladonna"
+						random_traits = no
+						dynasty = 9051300
+						female = yes
+						age = 32
+						religion = lolth_religion
+						culture = drow
+						health = 15
+						fertility = 0 # No random kiddies
+						trait = fair
+						trait = wroth
+						trait = brilliant_strategist
+						trait = proud
+						trait = brave
+						trait = stubborn
+						trait = aggressive_leader
+						trait = chaste
+						trait = houseirae_drow_special11 # Belladonna's custom portrait					
+						trait = houseirae_matron_mother
+						flag = ai_flag_refuse_conversion
+						flag = special_npc
+						flag = society_join_block
+						flag = no_court_invites
+						flag = tentacle_immunity
+					}
+					new_character = {
+						set_character_flag = houseirae_belladonna_irae
+						save_global_event_target_as = houseirae_belladonna_irae
+						diplomatic_immunity = yes
+						set_mother = 0
+						set_father = 0
+						set_character_flag = do_not_disturb # Prevents Belladonna from doing anything of note
+						add_trait = houseirae_no_marry
+						add_trait = houseirae_no_inherit
+						add_character_modifier = {
+							name = mother_minor_rest
+							hidden = yes
+							duration = -1
+						}
+					}
+					
+					create_character = { # Freya
+						name="Freya"
+						random_traits = no
+						dynasty = 9051300
+						female = yes
+						age = 16
+						religion = lolth_religion
+						culture = drow
+						health = 15
+						fertility = 0 # No random kiddies
+						trait = fair
+						trait = wroth
+						trait = brilliant_strategist
+						trait = proud
+						trait = lustful
+						trait = houseirae_drow
+						trait = houseirae_curse_generic # Not safe from the curse, just the effects
+						trait = houseirae_drow_special2 # Freya's custom portrait					
+						trait = houseirae_matron_mother
+						trait = twin
+						flag = ai_flag_refuse_conversion
+						flag = special_npc
+						flag = society_join_block
+						flag = no_court_invites
+						flag = tentacle_immunity
+					}
+					new_character = {
+						set_character_flag = houseirae_freya_irae
+						save_global_event_target_as = houseirae_freya_irae
+						diplomatic_immunity = yes
+						set_mother = event_target:houseirae_kekvit_irae
+						set_father = event_target:houseirae_belladonna_irae
+						set_character_flag = do_not_disturb # Prevents Freya from doing anything of note
+						e_irae_west_governor = {
+							grant_title = PREV
+						}
+						add_trait = houseirae_no_marry
+						add_trait = houseirae_no_inherit
+						add_character_modifier = {
+							name = mother_minor_rest
+							hidden = yes
+							duration = -1
+						}
+						event_target:houseirae_belladonna_irae = {
+							force_host = PREV
+						}
+					}
+				}
+			}
+			break = yes
+		}
+		else = {
+			c_99889900 = {
+				add_character_modifier = {
+					name = mother_minor_rest
+					hidden = yes
+					duration = -1
+				}
+				set_character_flag = ai_flag_refuse_conversion
+				set_character_flag = special_npc
+				set_character_flag = society_join_block
+				set_character_flag = no_court_invites
+				set_character_flag = tentacle_immunity
+				set_character_flag = houseirae_kekvit_irae
+				save_global_event_target_as = houseirae_kekvit_irae
+				set_global_flag = houseirae_npc_kekvit_irae_created
+				create_character = { # Belladonna
+					name="Belladonna"
+					random_traits = no
+					dynasty = 9051300
+					female = yes
+					age = 32
+					religion = lolth_religion
+					culture = drow
+					health = 15
+					fertility = 0 # No random kiddies
+					trait = fair
+					trait = wroth
+					trait = brilliant_strategist
+					trait = proud
+					trait = brave
+					trait = stubborn
+					trait = aggressive_leader
+					trait = chaste
+					trait = houseirae_drow_special11 # Belladonna's custom portrait					
+					trait = houseirae_matron_mother
+					flag = ai_flag_refuse_conversion
+					flag = special_npc
+					flag = society_join_block
+					flag = no_court_invites
+					flag = tentacle_immunity
+				}
+				new_character = {
+					set_character_flag = houseirae_belladonna_irae
+					save_global_event_target_as = houseirae_belladonna_irae
+					diplomatic_immunity = yes
+					set_mother = 0
+					set_father = 0
+					set_character_flag = do_not_disturb # Prevents Belladonna from doing anything of note
+					add_trait = houseirae_no_marry
+					add_trait = houseirae_no_inherit
+					add_character_modifier = {
+						name = mother_minor_rest
+						hidden = yes
+						duration = -1
+					}
+				}
+				offmap_irae = {
+					set_offmap_holder = PREV
+				}
+			}	
+
+			c_99889901 = { # Freya
+				add_character_modifier = {
+					name = mother_minor_rest
+					hidden = yes
+					duration = -1
+				}
+				set_character_flag = ai_flag_refuse_conversion
+				set_character_flag = special_npc
+				set_character_flag = society_join_block
+				set_character_flag = no_court_invites
+				set_character_flag = tentacle_immunity
+				set_character_flag = houseirae_freya_irae
+				diplomatic_immunity = yes
+				set_father = event_target:houseirae_belladonna_irae
+				save_global_event_target_as = houseirae_freya_irae
+				set_character_flag = do_not_disturb # Prevents Freya from doing anything of note
+				e_irae_west_governor = {
+					grant_title = PREV
+				}
+				add_trait = houseirae_no_marry
+				add_trait = houseirae_no_inherit				
+				add_character_modifier = {
+					name = mother_minor_rest
+					hidden = yes
+					duration = -1
+				}
+				event_target:houseirae_belladonna_irae = {
+					force_host = PREV
+				}
+			}
+		}
+	}
+}
+
+
+# Adopt a child
+
+character_event = {
+    id = HouseIrae.11
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { 
+        FROMFROM = { 
+            letter_event = { id = HouseIrae.12 } 
+		}
+	}
+}
+
+# Child comes to court
+letter_event = {
+    id = HouseIrae.12
+	
+    desc = HouseIrae_12
+    border = GFX_event_letter_frame_diplomacy
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_12_TT }
+		event_target:irae_child = {
+			character_event = { id = HouseIraeTamsine.90 }
+		}
+    }
+}
+
+# Dark elf start
+narrative_event = {
+	id = HouseIrae.13
+	is_triggered_only = yes
+	title = HouseIrae13T
+	window = "houseirae_custom_narrative"	
+	picture = {
+		trigger = {
+			is_female = yes
+		}
+		picture = GFX_drow_startf
+	}
+	picture = {
+		trigger = {
+			is_female = no
+		}
+		picture = GFX_drow_startm
+	}
+	desc = {
+		trigger = {
+			is_female = yes
+			NOT = { has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae } }
+		}
+		text = HouseIrae13TF
+	}
+	desc = {
+		trigger = {
+			is_female = no
+			NOT = { has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae } }
+		}
+		text = HouseIrae13TM
+	}
+	desc = {
+		trigger = {
+			has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+		}
+		text = HouseIrae13TIrae
+	}
+	option = {
+		trigger = {
+			NOT = {
+				is_female = no
+			}
+		}
+		name = drowstart11
+		add_trait = houseirae_drow
+		religion = lolth_religion
+		culture = drow
+		primary_title = {
+			add_law = { law = status_of_women_4 cooldown = no opinion_effect = no }
+			add_law = { law = lolth_succession cooldown = no opinion_effect = no }
+			add_law = { law = drow_turkish_succession cooldown = no opinion_effect = no }
+		}
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+			}
+			set_mother = event_target:houseirae_kekvit_irae
+			set_father = event_target:houseirae_belladonna_irae
+			set_character_flag = kekvits_child
+			add_trait = bastard
+			add_trait = houseirae_curse_generic
+			add_trait = fair
+			random_list = {
+				25 = { add_trait = strong }
+				25 = { add_trait = genius }
+				25 = { add_trait = quick }
+			}
+		}
+		recalc_succession = yes
+		any_demesne_province = {
+			culture = drow
+			religion = lolth_religion
+		}
+		hidden_tooltip = {
+			add_random_drow_portrait = yes
+			any_realm_character = {
+				add_trait = houseirae_drow
+				culture = drow
+				any_demesne_province = {
+					culture = drow
+					religion = lolth_religion
+				}
+				if = {
+					limit = {
+						is_adult = no
+					}
+					add_trait = houseirae_drow_child
+				}
+				else_if = {
+					limit = {
+						is_adult = yes
+					}
+					add_random_drow_portrait = yes
+				}
+				if = {
+					limit = {
+						is_ruler = yes
+						ai = yes
+						OR = {
+							is_theocracy = yes
+							is_republic = yes
+						}
+						NOT = { is_close_relative = yes }
+					}
+					set_character_flag = lf_never_turn_spoopy
+					death = { death_reason = death_missing }
+				}
+				else = {
+					religion = lolth_religion	
+				}				
+			}
+			set_character_flag = temp_incest_choice_start
+			narrative_event = { id = HouseIrae.19 }
+		}
+	}
+	
+	option = {
+		name = drowstart12
+		add_trait = houseirae_drow
+		religion = eilistraee_religion
+		culture = drow
+		primary_title = {
+			add_law = { law = status_of_women_4 cooldown = no opinion_effect = no }
+			add_law = { law = eilistraee_succession cooldown = no opinion_effect = no }
+			add_law = { law = drow_tanistry cooldown = no opinion_effect = no }
+
+		}
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+			}
+			set_mother = event_target:houseirae_kekvit_irae
+			set_father = event_target:houseirae_belladonna_irae
+			set_character_flag = kekvits_child
+			add_trait = bastard
+			add_trait = houseirae_curse_generic
+			add_trait = fair
+			random_list = {
+				25 = { add_trait = strong }
+				25 = { add_trait = genius }
+				25 = { add_trait = quick }
+			}
+		}
+		recalc_succession = yes
+		any_demesne_province = {
+			culture = drow
+			religion = eilistraee_religion
+		}		
+		hidden_tooltip = {
+			add_random_drow_portrait = yes
+			any_realm_character = {
+				add_trait = houseirae_drow
+				culture = drow
+				any_demesne_province = {
+					culture = drow
+					religion = eilistraee_religion
+				}
+				if = {
+					limit = {
+						is_adult = no
+					}
+					add_trait = houseirae_drow_child
+				}
+				else_if = {
+					limit = {
+						is_adult = yes
+					}
+					add_random_drow_portrait = yes
+				}
+				if = {
+					limit = {
+						ai = yes
+						is_ruler = yes
+						OR = {
+							is_theocracy = yes
+							is_republic = yes
+						}
+						NOT = { is_close_relative = yes }
+					}
+					set_character_flag = lf_never_turn_spoopy
+					death = { death_reason = death_missing }
+				}
+				else = {
+					religion = eilistraee_religion	
+				}				
+			}
+			set_character_flag = temp_incest_choice_start
+			narrative_event = { id = HouseIrae.19 }
+		}		
+	}
+
+	option = {
+		trigger = {
+			NOT = {
+				is_female = yes
+			}
+		}
+		name = drowstart13
+		add_trait = houseirae_drow
+		religion = vhaeraun_religion
+		culture = drow
+		primary_title = {
+			add_law = { law = vhaeraun_succession cooldown = no opinion_effect = no }
+			add_law = { law = drow_turkish_succession cooldown = no opinion_effect = no }
+		}
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+			}
+			set_mother = event_target:houseirae_kekvit_irae
+			set_father = event_target:houseirae_belladonna_irae
+			set_character_flag = kekvits_child
+			add_trait = bastard
+			add_trait = houseirae_curse_generic
+			add_trait = fair
+			random_list = {
+				25 = { add_trait = strong }
+				25 = { add_trait = genius }
+				25 = { add_trait = quick }
+			}
+		}
+		recalc_succession = yes	
+		any_demesne_province = {
+			culture = drow
+			religion = vhaeraun_religion
+		}		
+		hidden_tooltip = {
+			add_random_drow_portrait = yes
+			any_realm_character = {
+				add_trait = houseirae_drow
+				culture = drow
+				any_demesne_province = {
+					culture = drow
+					religion = vhaeraun_religion
+				}
+				if = {
+					limit = {
+						is_adult = no
+					}
+					add_trait = houseirae_drow_child
+				}
+				else_if = {
+					limit = {
+						is_adult = yes
+					}
+					add_random_drow_portrait = yes
+				}
+				if = {
+					limit = {
+						is_ruler = yes
+						ai = yes
+						OR = {
+							is_theocracy = yes
+							is_republic = yes
+						}
+						NOT = { is_close_relative = yes }
+					}
+					set_character_flag = lf_never_turn_spoopy
+					death = { death_reason = death_missing }
+				}
+				else = {
+					religion = vhaeraun_religion	
+				}				
+			}
+			set_character_flag = temp_incest_choice_start
+			narrative_event = { id = HouseIrae.19 }
+		}		
+	}
+
+	option = {
+		name = drowstart14
+		add_trait = houseirae_drow
+		culture = drow
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+			}
+			set_mother = event_target:houseirae_kekvit_irae
+			set_father = event_target:houseirae_belladonna_irae
+			set_character_flag = kekvits_child
+			add_trait = bastard
+			add_trait = houseirae_curse_generic
+			add_trait = fair
+			random_list = {
+				25 = { add_trait = strong }
+				25 = { add_trait = genius }
+				25 = { add_trait = quick }
+			}
+		}
+		any_demesne_province = {
+			culture = drow
+		}
+		hidden_tooltip = {
+			add_random_drow_portrait = yes
+			any_realm_character = {
+				add_trait = houseirae_drow
+				culture = drow
+				if = {
+					limit = {
+						is_adult = no
+					}
+					add_trait = houseirae_drow_child
+				}
+				else_if = {
+					limit = {
+						is_adult = yes
+					}
+					add_random_drow_portrait = yes
+				}
+				any_demesne_province = {
+					culture = drow
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_character_flag = houseirae_custom_families
+			}
+			custom_tooltip = {
+				text = HouseIrae24TT
+				character_event = { id = HouseIraeFamilies.3 }
+			}
+		}
+	}
+}
+	
+character_event = {
+    id = HouseIrae.14
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		trait = houseirae_drow
+	}
+    immediate = { 
+		remove_trait = houseirae_drow_child
+		add_random_drow_portrait = yes
+    }
+}
+
+narrative_event = {
+    id = HouseIrae.19
+	is_triggered_only = yes
+	desc = HouseIrae19
+	picture = GFX_irae_court
+	title = HouseIrae19T
+	window = "houseirae_custom_narrative"	
+
+    option = { 
+		name = HouseIrae19TT1
+		location = {
+			ROOT = {
+				spawn_unit = {
+					owner = ROOT
+					province = PREV
+					home = PREV
+					troops = {
+						archers = { 250 250 }
+						light_infantry = { 250 250 }
+						heavy_infantry = { 100 100 }
+					}
+					attrition = 0
+					maintenance = no
+				}
+			}
+		}
+		narrative_event = { id = HouseIrae.24 }
+    }
+    option = { 
+		name = HouseIrae19TT2
+		narrative_event = { id = HouseIrae.24 }
+    }
+}	
+
+#
+# Fix succession
+#
+
+character_event = {
+	id = HouseIrae.20
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			religion = lolth_religion
+			religion = eilistraee_religion
+			religion = vhaeraun_religion
+		}
+		NOR = {
+			lower_real_tier_than = count
+			is_republic = yes
+			is_theocracy = yes
+			is_patrician = yes
+		}
+	}
+	immediate = {
+		character_event = { id = HouseIrae.201 }
+	}
+}
+
+character_event = {
+	id = HouseIrae.201
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				religion = lolth_religion
+			}
+			primary_title = {
+				add_law = {
+					law = lolth_succession
+					cooldown = no 
+					opinion_effect = no 
+				}
+				add_law = { law = drow_turkish_succession cooldown = no opinion_effect = no }
+				add_law = { law = status_of_women_4 cooldown = no opinion_effect = no }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				religion = eilistraee_religion
+			}
+			primary_title = {
+				add_law = {
+					law = eilistraee_succession
+					cooldown = no 
+					opinion_effect = no 
+				}
+				add_law = { law = drow_tanistry cooldown = no opinion_effect = no }
+				add_law = { law = status_of_women_4 cooldown = no opinion_effect = no }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				religion = vhaeraun_religion
+			}
+			primary_title = {
+				add_law = {
+					law = vhaeraun_succession
+					cooldown = no 
+					opinion_effect = no 
+				}
+				add_law = { law = drow_turkish_succession cooldown = no opinion_effect = no }
+			}
+			break = yes
+		}
+	}
+}
+
+character_event = { # Ensures temple/city holders are drow
+	id = HouseIrae.23
+	hide_window = yes
+	ai = yes
+	trigger = {
+		OR = {
+			is_theocracy = yes
+			AND = {
+				is_republic = yes
+				is_merchant_republic = no
+				is_patrician = no
+			}
+		}
+		OR = {
+			religion = eilistraee_religion
+			religion = lolth_religion
+			religion = vhaeraun_religion
+		}
+		liege = {
+			OR = {
+				trait = houseirae_halfelf
+				trait = houseirae_drow
+			}
+		}
+		NOR = {
+			trait = houseirae_halfelf
+			trait = houseirae_drow
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				liege = {
+					trait = houseirae_drow
+				}
+			}
+			add_trait = houseirae_drow
+			add_random_drow_portrait = yes
+		}
+		else = {
+			add_trait = houseirae_halfelf
+			add_random_halfelf_portrait = yes
+		}
+	}
+}
+
+narrative_event = { # Incest toggle
+    id = HouseIrae.24
+	is_triggered_only = yes
+	desc = HouseIrae24
+	picture = GFX_houseirae_seduction
+	title = HouseIrae24T
+	window = "houseirae_custom_narrative"
+	
+	option = { # Incest is wincest
+		name = HouseIrae24Yes
+		hidden_tooltip = {
+			lolth_religion = {
+				set_pc_marriage = yes
+				set_bs_marriage = yes
+				set_psc_marriage = yes
+				set_cousin_marriage = yes
+			}
+			vhaeraun_religion = {
+				set_pc_marriage = yes
+				set_bs_marriage = yes
+				set_psc_marriage = yes
+				set_cousin_marriage = yes
+			}
+			eilistraee_religion = {
+				set_pc_marriage = yes
+				set_bs_marriage = yes
+				set_psc_marriage = yes
+				set_cousin_marriage = yes
+			}
+			set_global_flag = houseirae_incest_yes
+		}
+		if = {
+			limit = {
+				NOT = { has_character_flag = temp_incest_choice }
+				NOT = { has_character_flag = kekvits_child }
+				has_character_flag = houseirae_custom_families
+			}
+			custom_tooltip = {
+				text = HouseIrae24TT
+				character_event = { id = HouseIraeFamilies.3 }
+			}
+			custom_tooltip = {
+				text = HouseIrae24TTIncest
+			}
+		}
+	}
+	option = {
+		name = HouseIrae24No
+		hidden_tooltip = {
+			lolth_religion = {
+				set_pc_marriage = no
+				set_bs_marriage = no
+				set_psc_marriage = no
+				set_cousin_marriage = no
+			}
+			vhaeraun_religion = {
+				set_pc_marriage = no
+				set_bs_marriage = no
+				set_psc_marriage = no
+				set_cousin_marriage = no
+			}
+			eilistraee_religion = {
+				set_pc_marriage = no
+				set_bs_marriage = no
+				set_psc_marriage = no
+				set_cousin_marriage = no
+			}
+			set_global_flag = houseirae_incest_no
+		}
+		if = {
+			limit = {
+				NOT = { has_character_flag = temp_incest_choice }
+				NOT = { has_character_flag = kekvits_child }
+				has_character_flag = houseirae_custom_families
+			}
+			custom_tooltip = {
+				text = HouseIrae24TT
+				character_event = { id = HouseIraeFamilies.3 }
+			}
+		}
+	}
+	after = {
+		clr_character_flag = temp_incest_choice
+		clr_character_flag = temp_incest_choice_start
+	}
+}	
+
+
+# Get a House Irae male
+
+character_event = {
+    id = HouseIrae.30
+	
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+		FROMFROM = { 
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				culture = drow
+				religion = FROMFROM
+				female = no
+				age = 16
+				historical = yes
+				attributes = {
+					martial = 3
+					diplomacy = 3
+					stewardship = 3
+					intrigue = 3
+					learning = 3
+				}						
+				trait = amateurish_plotter
+				trait = houseirae_drow
+			}
+			new_character = {
+				save_event_target_as = irae_male
+				add_random_drow_portrait = yes
+				remove_trait = fair
+				remove_trait = genius
+				remove_trait = strong
+				remove_trait = quick
+			}
+			letter_event = { id = HouseIrae.31 } 
+		}
+	}
+}
+
+# Spymaster comes to court
+letter_event = {
+    id = HouseIrae.31
+	
+    desc = HouseIrae_31
+    border = GFX_event_letter_frame_diplomacy
+
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = { 
+		event_target:irae_male = { }
+        name = EVTOPTA_JD_20022
+        custom_tooltip = { text = HouseIrae_31_TT }
+    }
+}
+
+
+# Resets the Irae favor to 0 on death
+
+character_event = {
+	id = HouseIrae.32
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_offmap_currency = {
+			offmap = offmap_irae
+			value = 0
+		}
+	}
+}
+
+
+#
+# Siege events
+#
+
+character_event = {
+	id = HouseIrae.36
+	is_triggered_only = yes # on_siege_over_winner
+	trigger = {
+		FROM = {
+			OR = {
+				has_building = houseirae_castle_spider_pit_1
+				has_building = houseirae_castle_spider_pit_2
+				has_building = houseirae_castle_spider_pit_3
+				has_building = houseirae_spider_pit_1
+				has_building = houseirae_spider_pit_2
+				has_building = houseirae_spider_pit_3
+			}
+		}
+	}
+	desc = {
+		trigger = {
+			religion = eilistraee_religion
+		}
+		text = HouseIrae36Eilistraee
+	}
+	desc = {
+		trigger = {
+			religion = vhaeraun_religion
+		}
+		text = HouseIrae36Vhaeraun
+	}
+	desc = {
+		trigger = {
+			religion = lolth_religion
+		}
+		text = HouseIrae36Lolth
+	}
+	desc = {
+		trigger = {
+			NOR = {
+				religion = vhaeraun_religion
+				religion = eilistraee_religion
+				religion = lolth_religion
+			}
+		}
+		text = HouseIrae36Other
+	}
+	picture = houseirae_spider_pits
+	
+	option = { # Eilistraee demands fire!
+		trigger = {
+			religion = eilistraee_religion
+		}
+		name = HouseIrae36TTEilistraee
+		piety = 250
+		prestige = 100
+		FROM = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_1 = { remove_building = houseirae_castle_spider_pit_1 }
+				houseirae_castle_spider_pit_2 = { remove_building = houseirae_castle_spider_pit_2 }
+				houseirae_castle_spider_pit_3 = { remove_building = houseirae_castle_spider_pit_3 }
+				houseirae_spider_pit_1 = { remove_building = houseirae_spider_pit_1 }
+				houseirae_spider_pit_2 = { remove_building = houseirae_spider_pit_2 }
+				houseirae_spider_pit_3 = { remove_building = houseirae_spider_pit_3 }
+			}
+		}
+	}
+	option = { # Kidnap the broodmother
+		trigger = {
+			religion = vhaeraun_religion
+			NOT = {
+				capital_holding = {
+					OR = {
+						has_building = houseirae_castle_spider_pit_1
+						has_building = houseirae_castle_spider_pit_2
+						has_building = houseirae_castle_spider_pit_3
+						has_building = houseirae_spider_pit_1
+						has_building = houseirae_spider_pit_2
+						has_building = houseirae_spider_pit_3
+					}
+				}
+			}
+			NOR = {
+				is_republic = yes
+				is_theocracy = yes
+				is_nomadic = yes
+			}
+		}
+		name = HouseIrae36TTVhaeraunKeep
+		prestige = 50
+		FROM = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_1 = { 
+					remove_building = houseirae_castle_spider_pit_1 
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_1
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_1
+							}
+						}	
+					}
+				}
+				houseirae_castle_spider_pit_2 = { 
+					remove_building = houseirae_castle_spider_pit_2
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_2
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_2
+							}
+						}	
+					}
+				}
+				houseirae_castle_spider_pit_3 = { 
+					remove_building = houseirae_castle_spider_pit_3
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_3
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_3
+							}
+						}	
+					}
+				}
+				houseirae_spider_pit_1 = { 
+					remove_building = houseirae_spider_pit_1 
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_1
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_1
+							}
+						}	
+					}
+				}
+				houseirae_spider_pit_2 = { 
+					remove_building = houseirae_spider_pit_2
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_2
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_2
+							}
+						}	
+					}
+				}
+				houseirae_spider_pit_3 = { 
+					remove_building = houseirae_spider_pit_3
+					ROOT = {
+						if = {
+							limit = {
+								is_tribal = yes
+							}
+							capital_holding = {
+								add_building = houseirae_spider_pit_3
+							}
+						}
+						else = {
+							capital_holding = {
+								add_building = houseirae_castle_spider_pit_3
+							}
+						}	
+					}
+				}
+			}
+		}
+	}
+	option = { # No room left
+		trigger = {
+			religion = vhaeraun_religion
+			OR = {
+				capital_holding = {
+					OR = {
+						has_building = houseirae_castle_spider_pit_1
+						has_building = houseirae_castle_spider_pit_2
+						has_building = houseirae_castle_spider_pit_3
+						has_building = houseirae_spider_pit_1
+						has_building = houseirae_spider_pit_2
+						has_building = houseirae_spider_pit_3
+					}
+				}
+				is_nomadic = yes
+				is_republic = yes
+				is_theocracy = yes
+			}
+		}
+		name = HouseIrae36TTVhaeraunBurn
+		prestige = 100
+		FROM = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_1 = { remove_building = houseirae_castle_spider_pit_1 }
+				houseirae_castle_spider_pit_2 = { remove_building = houseirae_castle_spider_pit_2 }
+				houseirae_castle_spider_pit_3 = { remove_building = houseirae_castle_spider_pit_3 }
+				houseirae_spider_pit_1 = { remove_building = houseirae_spider_pit_1 }
+				houseirae_spider_pit_2 = { remove_building = houseirae_spider_pit_2 }
+				houseirae_spider_pit_3 = { remove_building = houseirae_spider_pit_3 }
+			}
+		}
+	}
+	option = { # Leave our daughers alone
+		trigger = {
+			religion = lolth_religion
+		}
+		name = HouseIrae36TTLolth
+	}
+	option = { # Burn the vile nest
+		trigger = {
+			NOR = {
+				religion = eilistraee_religion
+				religion = lolth_religion
+				religion = vhaeraun_religion
+			}
+		}
+		name = HouseIrae36TTOther
+		prestige = 100
+		FROM = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_1 = { remove_building = houseirae_castle_spider_pit_1 }
+				houseirae_castle_spider_pit_2 = { remove_building = houseirae_castle_spider_pit_2 }
+				houseirae_castle_spider_pit_3 = { remove_building = houseirae_castle_spider_pit_3 }
+				houseirae_spider_pit_1 = { remove_building = houseirae_spider_pit_1 }
+				houseirae_spider_pit_2 = { remove_building = houseirae_spider_pit_2 }
+				houseirae_spider_pit_3 = { remove_building = houseirae_spider_pit_3 }
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HouseIrae.37
+	title = HouseIrae37T
+	desc = HouseIrae37
+	picture = houseirae_spider_pits
+	hide_from = yes
+	is_triggered_only = yes
+
+	option = {
+		name = HouseIrae37TT
+		hidden_tooltip = {
+			character_event = { id = HouseIrae.371 }
+		}
+		capital_holding = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_1 = { 
+					remove_building = houseirae_castle_spider_pit_1 
+					add_building = houseirae_castle_spider_pit_2
+				}
+				houseirae_spider_pit_1 = { 
+					remove_building = houseirae_spider_pit_1 
+					add_building = houseirae_spider_pit_2
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HouseIrae.371
+	hide_window = yes
+	is_triggered_only = yes
+	hide_from = yes
+	immediate = {
+		set_variable = { which = spider_sacrifice value = 5 }
+		while = {
+			limit = {
+				check_variable = { which = spider_sacrifice value = 1 }
+			}
+			random_courtier = {
+				limit = {
+					prisoner = yes
+					host = {
+						character = ROOT
+					}
+					NOT = {
+						has_character_flag = spider_sacrifice_victim
+					}
+				}
+				set_character_flag = spider_sacrifice_victim
+			}
+			subtract_variable = { which = spider_sacrifice value = 1 }
+		}
+		any_courtier = {
+			limit = {
+				has_character_flag = spider_sacrifice_victim
+			}
+			imprison = no
+			death = { death_reason = death_fed_to_spiders killer = ROOT }
+		}
+	}
+}	
+
+character_event = {
+	id = HouseIrae.38
+	title = HouseIrae38T
+	desc = HouseIrae38
+	picture = houseirae_spider_pits
+	hide_from = yes
+	is_triggered_only = yes
+	option = {
+		name = HouseIrae38TT
+		hidden_tooltip = {
+			character_event = { id = HouseIrae.381 }
+		}
+		capital_holding = {
+			trigger_switch = {
+				on_trigger = has_building
+				houseirae_castle_spider_pit_2 = { 
+					remove_building = houseirae_castle_spider_pit_2
+					add_building = houseirae_castle_spider_pit_3
+				}
+				houseirae_spider_pit_2 = { 
+					remove_building = houseirae_spider_pit_2
+					add_building = houseirae_spider_pit_3
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HouseIrae.381
+	hide_window = yes
+	is_triggered_only = yes
+	hide_from = yes
+	immediate = {
+		set_variable = { which = spider_sacrifice value = 10 }
+		while = {
+			limit = {
+				check_variable = { which = spider_sacrifice value = 1 }
+			}
+			random_courtier = {
+				limit = {
+					prisoner = yes
+					host = {
+						character = ROOT
+					}
+					NOT = {
+						has_character_flag = spider_sacrifice_victim
+					}
+				}
+				set_character_flag = spider_sacrifice_victim
+			}
+			subtract_variable = { which = spider_sacrifice value = 1 }
+		}
+		any_courtier = {
+			limit = {
+				has_character_flag = spider_sacrifice_victim
+			}
+			imprison = no
+			death = { death_reason = death_fed_to_spiders killer = ROOT }
+		}
+	}
+}
+
+#
+# On_chronicle_start campaign
+#
+
+character_event = {
+	id = HouseIrae.39
+	is_triggered_only = yes # On chronicle start
+	ai = no
+	hide_window = yes
+	trigger = {
+		is_save_game = no
+	}
+	immediate = {
+		character_event = { id = HouseIrae.40 days = 1 }
+	}
+}
+character_event = {
+	id = HouseIrae.40
+	ai = no
+	is_triggered_only = yes # On chronicle start
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				has_drow_start = yes
+				has_houseirae_drow_started = no
+				NOR = {
+					trait = houseirae_halfelf
+					trait = houseirae_drow
+				}
+			}
+			set_global_flag = drow_start
+			set_global_flag = lf_singleplayer_setup_done
+			set_character_flag = lf_multiplayer_race_chosen
+			narrative_event = { id = HouseIrae.13 }
+		}
+		else_if = {
+			limit = {
+				has_halfelf_start = yes
+				has_houseirae_drow_started = no
+				NOR = {
+					trait = houseirae_halfelf
+					trait = houseirae_drow
+				}
+			}
+			set_global_flag = drow_start
+			set_global_flag = lf_singleplayer_setup_done
+			set_character_flag = lf_multiplayer_race_chosen
+			narrative_event = { id = HouseIraeHalfElf.3 }
+		}
+	}
+	after = {
+		any_player = {
+			character_event = { id = HouseIrae.44 days = 1 }
+		}
+	}
+}
+
+#
+# On_startup flags set
+#
+
+character_event = {
+	id = HouseIrae.41
+	hide_window = yes
+	is_triggered_only = yes # on_startup
+	trigger = {
+		NOR = {
+			has_global_flag = house_irae_started_no_campaign
+			has_global_flag = house_irae_started_drow_campaign
+			has_global_flag = house_irae_started_halfelf_campaign
+			has_global_flag = house_irae_religion_seed
+			has_global_flag = house_irae_culture_seed
+			has_global_flag = house_irae_both_seed
+		}
+	}
+	immediate = {
+		set_global_flag = houseirae_started
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_yes_irae }
+			}
+			set_global_flag = house_irae_started_no_campaign
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startasdrow }
+					has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+				}
+			}
+			set_global_flag = house_irae_started_drow_campaign
+		}
+		else_if = {
+			limit = {
+				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startashalfelf }
+			}
+			set_global_flag = house_irae_started_halfelf_campaign
+		}
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+				is_alternate_start = no
+			}
+			set_global_flag = house_irae_religion_seed
+		}
+		else_if = {
+			limit = {
+				has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+				is_alternate_start = no
+			}
+			set_global_flag = house_irae_culture_seed
+		}
+		else_if = {
+			limit = {
+				has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+				is_alternate_start = no
+			}
+			set_global_flag = house_irae_both_seed
+		}
+	}
+}
+			
+character_event = {
+	id = HouseIrae.42
+	hide_window = yes
+	is_triggered_only = yes # on_death
+	immediate = {
+		current_heir = {
+			character_event = { id = HouseIrae.201 days = 1 }
+		}
+	}
+}
+
+character_event = {
+	id = HouseIrae.43
+	hide_window = yes
+	ai = yes
+	trigger = {
+		real_tier = baron
+		is_married = no
+		is_adult = yes
+		is_feudal = yes
+		OR = {
+			religion = eilistraee_religion
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+		NOT = {
+			liege = {
+				ROOT = {
+					dynasty = PREV
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		years = 2
+	}
+	immediate = {
+		if = {
+			limit = {
+				is_female = yes
+			}
+			create_character = {
+				dynasty = random
+				culture = ROOT
+				religion = ROOT
+				female = no
+				age = 16
+				random_traits = yes
+				flag = lf_never_change_race
+			}
+			new_character = {
+				if = {
+					limit = {
+						OR = {
+							religion = eilistraee_religion
+							religion = lolth_religion
+						}
+					}
+					add_spouse_matrilineal = ROOT
+				}
+				else = {
+					add_spouse = ROOT
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = houseirae_drow
+						}
+					}
+					add_trait = houseirae_drow
+					add_random_drow_portrait = yes
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							trait = houseirae_halfelf
+						}
+					}
+					add_trait = houseirae_halfelf
+					add_random_halfelf_portrait = yes
+				}
+			}
+		}
+		else = {
+			create_character = {
+				dynasty = random
+				culture = ROOT
+				religion = ROOT
+				female = yes
+				age = 16
+				random_traits = yes
+				flag = lf_never_change_race
+			}
+			new_character = {
+				if = {
+					limit = {
+						OR = {
+							religion = eilistraee_religion
+							religion = lolth_religion
+						}
+					}
+					add_spouse_matrilineal = ROOT
+				}
+				else = {
+					add_spouse = ROOT
+				}
+				if = {
+					limit = {
+						ROOT = {
+							trait = houseirae_drow
+						}
+					}
+					add_trait = houseirae_drow
+					add_random_drow_portrait = yes
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							trait = houseirae_halfelf
+						}
+					}
+					add_trait = houseirae_halfelf
+					add_random_halfelf_portrait = yes
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = HouseIrae.44
+	picture = GFX_seldarine_republic
+	desc = HouseIrae44
+	ai = no
+	is_triggered_only = yes
+	option = {
+		name = "OK"
+	}
+}
+
+#
+# Yearly fix for the Iraes joining DWR societies
+#
+
+character_event = {
+	id = HouseIrae.45
+	hide_window = yes
+	offmap = allow
+	ai = yes
+	is_in_society = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			trait = houseirae_drow_special1
+			trait = houseirae_drow_special11
+			trait = houseirae_drow_special2
+		}
+		is_in_society = yes
+	}
+	immediate = {
+		leave_society = yes
+	}
+}
+	

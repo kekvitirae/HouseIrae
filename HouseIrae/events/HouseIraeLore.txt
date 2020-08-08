@@ -1,0 +1,270 @@
+namespace = HouseIraeLore
+
+narrative_event = { # Book of Lore Intro
+	id = HouseIraeLore.1
+	desc = HouseIraeLore1
+	title = HouseIraeLore1T
+	picture = GFX_drow_startf
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # The Dark Seldarine
+		name = HouseIraeLore1TTA
+		narrative_event = { id = HouseIraeLore.2 }
+	}
+	option = { # The Dark Elves
+		name = HouseIraeLore1TTB
+		narrative_event = { id = HouseIraeLore.3 }
+	}
+	option = { # Close the book
+		name = HouseIraeLore1TTCloseBook
+	}
+	option = { # Close the book forever
+		name = HouseIraeLore1TTCloseBookForever
+		set_global_flag = closed_book_of_lore
+	}
+}
+
+narrative_event = { # Dark Seldarine Hub
+	id = HouseIraeLore.2
+	desc = HouseIraeLore2
+	title = HouseIraeLore2T
+	picture = irae_vhaeraun_sacrifice
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Lolth
+		name = HouseIraeLore2TTA
+		narrative_event = { id = HouseIraeLore.21 }
+	}
+	option = { # Vhaeraun
+		name = HouseIraeLore2TTB
+		narrative_event = { id = HouseIraeLore.22 }
+	}
+	option = { # Eilistraee
+		name = HouseIraeLore2TTC
+		narrative_event = { id = HouseIraeLore.23 }
+	}
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.1 }
+	}
+}
+
+narrative_event = { # Lolth
+	id = HouseIraeLore.21
+	desc = HouseIraeLore21
+	title = HouseIraeLore21T
+	picture = irae_lolth_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.2 }
+	}
+}
+
+narrative_event = { # Vhaeraun
+	id = HouseIraeLore.22
+	desc = HouseIraeLore22
+	title = HouseIraeLore22T
+	picture = irae_vhaeraun_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.2 }
+	}
+}
+
+narrative_event = { # Eilistrae
+	id = HouseIraeLore.23
+	desc = HouseIraeLore23
+	title = HouseIraeLore23T
+	picture = irae_eilistraee_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.2 }
+	}
+}
+
+narrative_event = { # Dark Elves Hub
+	id = HouseIraeLore.3
+	desc = HouseIraeLore3
+	title = HouseIraeLore3T
+	picture = GFX_seldarine_republic
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Social structure
+		name = HouseIraeLore3TTA
+		narrative_event = { id = HouseIraeLore.31 }
+	}
+	option = { # Rivalries
+		name = HouseIraeLore3TTB
+		narrative_event = { id = HouseIraeLore.32 }
+	}
+	option = { # House Irae
+		name = HouseIraeLore3TTC
+		narrative_event = { id = HouseIraeLore.4 }
+	}
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.1 }
+	}
+}
+
+narrative_event = { # Social structure
+	id = HouseIraeLore.31
+	desc = HouseIraeLore31
+	title = HouseIraeLore31T
+	picture = GFX_seldarine_republic
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.3 }
+	}
+}
+
+narrative_event = { # Rivalries
+	id = HouseIraeLore.32
+	desc = HouseIraeLore32
+	title = HouseIraeLore32T
+	picture = GFX_seldarine_republic
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.3 }
+	}
+}
+
+narrative_event = { # House Irae Hub
+	id = HouseIraeLore.4
+	desc = HouseIraeLore4
+	title = HouseIraeLore4T
+	picture = GFX_seldarine_republic
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # The Three Iraes
+		name = HouseIraeLore4TTA
+		narrative_event = { id = HouseIraeLore.41 }
+	}
+	option = { # The Irae Children
+		name = HouseIraeLore4TTB
+		narrative_event = { id = HouseIraeLore.42 }
+	}
+	option = { # The Irae Consort(s)
+		name = HouseIraeLore4TTC
+		narrative_event = { id = HouseIraeLore.43 }
+	}
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.3 }
+	}
+}
+
+narrative_event = { # The Three Iraes
+	id = HouseIraeLore.41
+	desc = HouseIraeLore41
+	title = HouseIraeLore41T
+	picture = irae_three_iraes
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Kaenia
+		name = HouseIraeLore41TTA
+		narrative_event = { id = HouseIraeLore.51 }
+	}
+	option = { # Kekvit
+		name = HouseIraeLore41TTB
+		narrative_event = { id = HouseIraeLore.52 }
+	}
+	option = { # Laela
+		name = HouseIraeLore41TTC
+		narrative_event = { id = HouseIraeLore.53 }
+	}
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.4 }
+	}
+}
+
+narrative_event = { # The Irae Children
+	id = HouseIraeLore.42
+	desc = HouseIraeLore42
+	title = HouseIraeLore42T
+	picture = irae_freya_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.4 }
+	}
+}
+
+narrative_event = { # The Irae Consort(s)
+	id = HouseIraeLore.43
+	desc = HouseIraeLore43
+	title = HouseIraeLore43T
+	picture = irae_belladonna_kekvit
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.4 }
+	}
+}
+
+narrative_event = { # Kaenia
+	id = HouseIraeLore.51
+	desc = HouseIraeLore51
+	title = HouseIraeLore51T
+	picture = irae_kaenia_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.41 }
+	}
+}
+
+narrative_event = { # Kekvit
+	id = HouseIraeLore.52
+	desc = HouseIraeLore52
+	title = HouseIraeLore52T
+	picture = irae_kekvit_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.41 }
+	}
+}
+
+narrative_event = { # Laela
+	id = HouseIraeLore.53
+	desc = HouseIraeLore53
+	title = HouseIraeLore53T
+	picture = irae_laela_lore
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Go Back
+		name = HouseIraeLoreGoBack
+		narrative_event = { id = HouseIraeLore.41 }
+	}
+}

@@ -1,0 +1,88 @@
+e_irae_west_governor = { 
+	color={ 245 240 10 }
+	color2={ 220 220 0 }
+	
+	capital = 1460 # Baygal, most characters wont be in diplomatic range
+	
+	title_female = "e_irae_west_governor_female"
+	title = "e_irae_west_governor_male"
+	short_name = yes	
+	# Always exists
+	landless = yes
+	
+	# Cannot be vassalized
+	independent = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	dynasty_title_names = no 	
+	purple_born_heirs = yes
+	religion = lolth_religion
+	can_be_claimed = no
+	can_be_usurped = no
+	name_tier = king
+	culture = drow
+	mercenary = no
+
+}
+
+k_house_laela = { # Laela's House Irae
+	color={ 153 50 204 }
+	
+	short_name = yes
+	
+	capital = 23 # Standing Stones of Wiltshire
+	religion = lolth_religion
+	culture = drow
+	primary = yes
+	
+	allow = {
+		always = no
+	}
+}
+
+e_true_house_irae = { # Mother's House
+	color={ 74 6 107 }
+	
+	short_name = yes
+	
+	capital = 290
+	religion = lolth_religion
+	culture = drow
+	primary = yes
+	
+	allow = {
+		always = no
+	}
+}
+
+b_ferns = {
+	holy_site = lolth_religion
+	holy_site = vhaeraun_religion
+	holy_site = eilistraee_religion
+}
+
+b_abercorn = {
+	holy_site = lolth_religion
+	holy_site = vhaeraun_religion
+	holy_site = eilistraee_religion
+}
+
+b_ramsbury = {
+	holy_site = lolth_religion
+	holy_site = vhaeraun_religion
+	holy_site = eilistraee_religion
+}
+
+b_redon = {
+	holy_site = lolth_religion
+	holy_site = vhaeraun_religion
+	holy_site = eilistraee_religion
+}
+
+b_middelburg = {
+	holy_site = lolth_religion
+	holy_site = vhaeraun_religion
+	holy_site = eilistraee_religion
+}

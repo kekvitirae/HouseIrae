@@ -1,0 +1,124 @@
+pagan_group = {
+
+	lolth_religion = {
+		has_coa_on_barony_only = yes
+		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } }
+		graphical_culture = westerngfx
+		
+		icon = 59
+		heresy_icon = 59
+		
+		color = { 0.7 0 0.59 }
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = DROWLOLTHBIBLE
+		priest_title = DROWPRIEST
+		
+		high_god_name = GOD_LOLTH
+		
+		god_names = {
+			GOD_LOLTH
+		}
+		evil_god_names = {
+			GOD_EILISTRAEE GOD_VHAERAUN
+		}
+		max_consorts = 3 # Can take concubines
+		women_can_take_consorts = yes
+		men_can_take_consorts = no		
+		priests_can_marry = no
+		priests_can_inherit = no
+		allow_looting = yes
+		feminist = yes
+		female_temple_holders = yes
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		intermarry = eilistraee_religion
+		intermarry = vhaeraun_religion
+		allow_in_ruler_designer = no
+		aggression = 1.5
+		matrilineal_marriages = yes
+		dynamic_cult = yes
+		pre_reformed = yes
+	}
+	
+	eilistraee_religion = {
+		has_coa_on_barony_only = yes
+		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } }
+		graphical_culture = westerngfx
+		
+		icon = 52
+		heresy_icon = 52
+		
+		color = { 0.69 0.3 1 }
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = DROWEILISTRAEEBIBLE
+		priest_title = DROWPRIEST
+		
+		high_god_name = GOD_EILISTRAEE
+		
+		god_names = {
+			GOD_EILISTRAEE
+		}
+		evil_god_names = {
+			GOD_LOLTH GOD_VHAERAUN
+		}
+		max_consorts = 0 # Cant take concubines
+		women_can_take_consorts = no
+		men_can_take_consorts = no
+		priests_can_marry = no
+		priests_can_inherit = no
+		allow_looting = no
+		feminist = yes
+		female_temple_holders = yes		
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		intermarry = lolth_religion
+		intermarry = vhaeraun_religion
+		allow_in_ruler_designer = no
+		hard_to_convert = yes
+		aggression = 0.5
+		matrilineal_marriages = yes
+		dynamic_cult = yes
+		pre_reformed = yes
+	}
+
+	vhaeraun_religion = {
+		has_coa_on_barony_only = yes
+		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } }
+		graphical_culture = westerngfx
+		
+		icon = 16
+		heresy_icon = 16
+		
+		color = { 0 0.9 0.3 }
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = DROWVHAERAUNBIBLE
+		priest_title = DROWPRIEST
+		
+		high_god_name = GOD_VHAERAUN
+		
+		god_names = {
+			GOD_VHAERAUN
+		}
+		evil_god_names = {
+			GOD_LOLTH GOD_EILISTRAEE
+		}
+		
+		max_wives = 3
+		max_consorts = 0 # Cant take concubines
+		women_can_take_consorts = no
+		men_can_take_consorts = no
+		priests_can_marry = no
+		priests_can_inherit = no
+		allow_looting = yes
+		female_temple_holders = no
+		religious_clothing_head = 5
+		religious_clothing_priest = 5
+		intermarry = lolth_religion
+		intermarry = eilistraee_religion
+		allow_in_ruler_designer = no
+		aggression = 1.5
+		matrilineal_marriages = no
+		dynamic_cult = yes
+		pre_reformed = yes
+	}
+}

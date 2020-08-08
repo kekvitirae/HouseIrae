@@ -1,0 +1,461 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_houseirae_drow_child_override"
+		textureFile = "gfx/static_portraits/houseirae_drow_child.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	
+	portraitType = {
+		name = "PORTRAIT_houseirae_drow_child_overlay"
+		effectFile = "gfx/FX/portrait.lua"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_has_trait = houseirae_drow_child
+			}
+		}
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            0 = {
+				0 = { 
+					portrait_has_trait = houseirae_drow_child
+					portrait_is_female = yes
+				}
+				1 = { 
+					portrait_has_trait = houseirae_drow_child
+					portrait_is_female = no
+				}
+			}
+		}
+		layer = { 
+			"GFX_houseirae_drow_child_override:p0"
+		}
+	}
+
+# Kekvit
+	spriteType = {
+		name = "GFX_portrait_houseirae_irae_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_irae_portraitswapping.dds"
+		noOfFrames = 11
+		norefcount = yes
+		can_be_lowres = yes
+	}
+# Female Drow
+	spriteType = {
+		name = "GFX_portrait_houseirae_female_drow_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_drow_women.dds"
+		noOfFrames = 27
+		norefcount = yes
+		can_be_lowres = yes
+	}
+# Male Drow
+	spriteType = {
+		name = "GFX_portrait_houseirae_male_drow_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_drow_men.dds"
+		noOfFrames = 27
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	
+# Misc characters
+	spriteType = {
+		name = "GFX_portrait_houseirae_others"
+		texturefile = "gfx/static_portraits/houseirae_others.dds"
+		noOfFrames = 5
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+    portraitType = {
+        name = "PORTRAIT_houseirae_others_static"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+					OR = {
+						portrait_has_trait = houseirae_others4 # Broken Waterlily
+						portrait_has_trait = houseirae_others5 # Thicc Waterlily
+						portrait_has_trait = houseirae_others6 # Vala Saen
+						portrait_has_trait = houseirae_others7 # Rose Hemlock
+						portrait_has_trait = houseirae_others8 # Custom mother
+					}
+	 		}
+        }
+
+        layer = {
+			"GFX_empty:p0"
+			"GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_others:c5"
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { portrait_has_trait = houseirae_others4 }
+				1 = { portrait_has_trait = houseirae_others5 }
+				2 = { portrait_has_trait = houseirae_others6 }
+				3 = { portrait_has_trait = houseirae_others7 }
+				4 = { portrait_has_trait = houseirae_others8 }
+			}
+		}
+	}
+	
+    portraitType = {
+        name = "PORTRAIT_houseirae_irae_static"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+				OR = {
+					portrait_has_trait = houseirae_drow_special1 # Kekvit Irae
+					portrait_has_trait = houseirae_drow_special2 # Freya Irae
+					portrait_has_trait = houseirae_drow_special3 # Khaldune Irae
+					portrait_has_trait = houseirae_drow_special4 # Deionarra Irae
+					portrait_has_trait = houseirae_drow_special5 # Generic child
+					portrait_has_trait = houseirae_drow_special6 # Laela Irae
+					portrait_has_trait = houseirae_drow_special7 # Tamsine Irae
+					portrait_has_trait = houseirae_drow_special8 # New Tamsine Irae
+					portrait_has_trait = houseirae_drow_special9 # Kaenia Irae
+					portrait_has_trait = houseirae_drow_special10 # Demon father
+					portrait_has_trait = houseirae_drow_special11 # Belladonna Irae
+				}
+	 		}
+        }
+
+        layer = {
+			"GFX_empty:p0"
+			"GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_irae_portraitswapping:c5"
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { portrait_has_trait = houseirae_drow_special1 } # Kekvit Irae
+				1 = { portrait_has_trait = houseirae_drow_special2 } # Freya Irae
+				2 = { portrait_has_trait = houseirae_drow_special3 } # Khaldune Irae
+				3 = { portrait_has_trait = houseirae_drow_special4 } # Deionarra Irae
+				4 = { portrait_has_trait = houseirae_drow_special5 } # Generic child
+				5 = { portrait_has_trait = houseirae_drow_special6 } # Laela Irae
+				6 = { portrait_has_trait = houseirae_drow_special7 } # Tamsine Irae
+				7 = { portrait_has_trait = houseirae_drow_special8 } # New Tamsine Irae
+				8 = { portrait_has_trait = houseirae_drow_special9 } # Kaenia Irae
+				9 = { portrait_has_trait = houseirae_drow_special10 } # Demon father
+				10 = { portrait_has_trait = houseirae_drow_special11 } # Belladonna Irae
+			}
+		}
+	}
+	
+    portraitType = {
+        name = "DWTW_PORTRAIT_static_1"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+				OR = {
+					portrait_has_trait = houseirae_drow_portrait1 # Female drow
+					portrait_has_trait = houseirae_drow_portrait2
+					portrait_has_trait = houseirae_drow_portrait3
+					portrait_has_trait = houseirae_drow_portrait4
+					portrait_has_trait = houseirae_drow_portrait5
+					portrait_has_trait = houseirae_drow_portrait6
+					portrait_has_trait = houseirae_drow_portrait7
+					portrait_has_trait = houseirae_drow_portrait8
+					portrait_has_trait = houseirae_drow_portrait9
+					portrait_has_trait = houseirae_drow_portrait10
+					portrait_has_trait = houseirae_drow_portrait11
+					portrait_has_trait = houseirae_drow_portrait12
+					portrait_has_trait = houseirae_drow_portrait13
+					portrait_has_trait = houseirae_drow_portrait27a
+					portrait_has_trait = houseirae_drow_portrait28a
+					portrait_has_trait = houseirae_drow_portrait29a
+					portrait_has_trait = houseirae_drow_portrait30a
+					portrait_has_trait = houseirae_drow_portrait31a
+					portrait_has_trait = houseirae_drow_portrait32a
+					portrait_has_trait = houseirae_drow_portrait33a
+					portrait_has_trait = houseirae_drow_portrait34
+					portrait_has_trait = houseirae_drow_portrait35
+					portrait_has_trait = houseirae_drow_portrait36
+					portrait_has_trait = houseirae_drow_portrait37
+					portrait_has_trait = houseirae_drow_portrait38
+					portrait_has_trait = houseirae_drow_portrait39
+				}
+	 		}
+       }
+
+        layer = {
+			"GFX_empty:p0"
+			"GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_female_drow_portraitswapping:c5"
+
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { always = no }
+				1 = { portrait_has_trait = houseirae_drow_portrait1 }
+				2 = { portrait_has_trait = houseirae_drow_portrait2 }
+				3 = { portrait_has_trait = houseirae_drow_portrait3 }
+				4 = { portrait_has_trait = houseirae_drow_portrait4 }
+				5 = { portrait_has_trait = houseirae_drow_portrait5 }
+				6 = { portrait_has_trait = houseirae_drow_portrait6 }
+				7 = { portrait_has_trait = houseirae_drow_portrait7 }
+				8 = { portrait_has_trait = houseirae_drow_portrait8 }
+				9 = { portrait_has_trait = houseirae_drow_portrait9 }
+				10 = { portrait_has_trait = houseirae_drow_portrait10 }
+				11 = { portrait_has_trait = houseirae_drow_portrait11 }
+				12 = { portrait_has_trait = houseirae_drow_portrait12 }
+				13 = { portrait_has_trait = houseirae_drow_portrait13 }
+				14 = { portrait_has_trait = houseirae_drow_portrait27a }
+				15 = { portrait_has_trait = houseirae_drow_portrait28a }
+				16 = { portrait_has_trait = houseirae_drow_portrait29a }
+				17 = { portrait_has_trait = houseirae_drow_portrait30a }
+				18 = { portrait_has_trait = houseirae_drow_portrait31a }
+				19 = { portrait_has_trait = houseirae_drow_portrait32a }
+				20 = { portrait_has_trait = houseirae_drow_portrait33a }
+				21 = { portrait_has_trait = houseirae_drow_portrait34 }
+				22 = { portrait_has_trait = houseirae_drow_portrait35 }
+				23 = { portrait_has_trait = houseirae_drow_portrait36 }
+				24 = { portrait_has_trait = houseirae_drow_portrait37 }
+				25 = { portrait_has_trait = houseirae_drow_portrait38 }
+				26 = { portrait_has_trait = houseirae_drow_portrait39 }				
+			}
+		}
+	}
+
+    portraitType = {
+        name = "DWTW_PORTRAIT_static_3"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+				OR = {
+					portrait_has_trait = houseirae_drow_portrait14 # Male drow
+					portrait_has_trait = houseirae_drow_portrait15
+					portrait_has_trait = houseirae_drow_portrait16
+					portrait_has_trait = houseirae_drow_portrait17
+					portrait_has_trait = houseirae_drow_portrait18
+					portrait_has_trait = houseirae_drow_portrait19
+					portrait_has_trait = houseirae_drow_portrait20
+					portrait_has_trait = houseirae_drow_portrait21
+					portrait_has_trait = houseirae_drow_portrait22
+					portrait_has_trait = houseirae_drow_portrait23
+					portrait_has_trait = houseirae_drow_portrait24
+					portrait_has_trait = houseirae_drow_portrait25
+					portrait_has_trait = houseirae_drow_portrait26
+					portrait_has_trait = houseirae_drow_portrait40 
+					portrait_has_trait = houseirae_drow_portrait41
+					portrait_has_trait = houseirae_drow_portrait42
+					portrait_has_trait = houseirae_drow_portrait43
+					portrait_has_trait = houseirae_drow_portrait44
+					portrait_has_trait = houseirae_drow_portrait45
+					portrait_has_trait = houseirae_drow_portrait46
+					portrait_has_trait = houseirae_drow_portrait47
+					portrait_has_trait = houseirae_drow_portrait48
+					portrait_has_trait = houseirae_drow_portrait49
+					portrait_has_trait = houseirae_drow_portrait50
+					portrait_has_trait = houseirae_drow_portrait51
+					portrait_has_trait = houseirae_drow_portrait52
+				}
+	 		}
+       }
+
+        layer = {
+			"GFX_empty:p0"
+            "GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_male_drow_portraitswapping:c5"
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { always = no }
+				1 = { portrait_has_trait = houseirae_drow_portrait14 }
+				2 = { portrait_has_trait = houseirae_drow_portrait15 }
+				3 = { portrait_has_trait = houseirae_drow_portrait16 }
+				4 = { portrait_has_trait = houseirae_drow_portrait17 }
+				5 = { portrait_has_trait = houseirae_drow_portrait18 }
+				6 = { portrait_has_trait = houseirae_drow_portrait19 }
+				7 = { portrait_has_trait = houseirae_drow_portrait20 }
+				8 = { portrait_has_trait = houseirae_drow_portrait21 }
+				9 = { portrait_has_trait = houseirae_drow_portrait22 }
+				10 = { portrait_has_trait = houseirae_drow_portrait23 }
+				11 = { portrait_has_trait = houseirae_drow_portrait24 }
+				12 = { portrait_has_trait = houseirae_drow_portrait25 }
+				13 = { portrait_has_trait = houseirae_drow_portrait26 }
+				14 = { portrait_has_trait = houseirae_drow_portrait40 }
+				15 = { portrait_has_trait = houseirae_drow_portrait41 }
+				16 = { portrait_has_trait = houseirae_drow_portrait42 }
+				17 = { portrait_has_trait = houseirae_drow_portrait43 }
+				18 = { portrait_has_trait = houseirae_drow_portrait44 }
+				19 = { portrait_has_trait = houseirae_drow_portrait45 }
+				20 = { portrait_has_trait = houseirae_drow_portrait46 }
+				21 = { portrait_has_trait = houseirae_drow_portrait47 }
+				22 = { portrait_has_trait = houseirae_drow_portrait48 }
+				23 = { portrait_has_trait = houseirae_drow_portrait49 }
+				24 = { portrait_has_trait = houseirae_drow_portrait50 }
+				25 = { portrait_has_trait = houseirae_drow_portrait51 }
+				26 = { portrait_has_trait = houseirae_drow_portrait52 }				
+			}
+		}
+	}	
+}

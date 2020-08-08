@@ -1,0 +1,514 @@
+namespace = HouseIraeSeeding
+
+character_event = {
+	id = HouseIraeSeeding.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+			has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+			has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+		}
+	}
+	immediate = {
+		character_event = { id = HouseIraeSeeding.2 days = 3 }
+	}
+}
+
+character_event = {
+	id = HouseIraeSeeding.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_global_flag = houseirae_global_seeded
+			has_global_flag = lf_racial_seeding
+		}
+	}
+	immediate = {
+		set_global_flag = houseirae_global_seeded
+		any_independent_ruler = {
+			limit = {
+				ai = yes
+				is_ruler = yes
+				NOR = { # Removes redundancy.
+					has_character_flag = houseirae_seeded
+					AND = {
+						NOT = { has_character_flag = lf_human_seeded }
+						has_character_flag = lf_seeded
+					}
+					culture = drow
+					religion = lolth_religion
+					religion = eilistraee_religion
+					religion = vhaeraun_religion
+					is_offmap_governor = yes # Prevents seeding House Irae
+					is_offmap_ruler = yes # Prevents seeding House Irae
+				}
+			}
+			random_list = {
+				70 = { # Nothing
+					set_character_flag = houseirae_seeded
+				}
+				10 = { # Lolth
+					character_event = { id = HouseIraeSeeding.3 }
+					set_character_flag = houseirae_seeded
+					any_realm_character = {
+						character_event = { id = HouseIraeSeeding.3 }
+						set_character_flag = houseirae_seeded
+					}
+				}
+				10 = { # Eilistraee
+					character_event = { id = HouseIraeSeeding.4 }
+					set_character_flag = houseirae_seeded
+					any_realm_character = {
+						character_event = { id = HouseIraeSeeding.4 }
+						set_character_flag = houseirae_seeded
+					}
+				}
+				10 = { # Vhaeraun
+					character_event = { id = HouseIraeSeeding.5 }
+					set_character_flag = houseirae_seeded
+					any_realm_character = {
+						character_event = { id = HouseIraeSeeding.5 }
+						set_character_flag = houseirae_seeded
+					}
+				}					
+			}
+		}
+	}
+}
+
+character_event = { # Lolth
+	id = HouseIraeSeeding.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		ai = yes
+		NOR = { # Removes redundancy. 
+			has_character_flag = houseirae_seeded
+			AND = {
+				NOT = { has_character_flag = lf_human_seeded }
+				has_character_flag = lf_seeded
+			}
+			culture = drow
+			religion = lolth_religion
+			religion = eilistraee_religion
+			religion = vhaeraun_religion
+			is_offmap_governor = yes # Prevents seeding House Irae
+			is_offmap_ruler = yes # Prevents seeding House Irae
+		}
+	}
+	immediate = {
+		set_character_flag = houseirae_seeded
+		if = {
+			limit = {
+				is_adult = yes
+				is_ruler = yes
+			}
+			any_demesne_province = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = culture_names
+									value = historical
+								}
+							}
+						}
+					}
+					culture = drow
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = religion_names
+									value = historical
+								}
+							}
+						}
+					}
+					religion = lolth_religion
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					is_theocracy = yes
+					NOT = { religion = lolth_religion }
+				}
+				death = { death_reason = death_missing }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					NOT = { is_theocracy = yes }
+				}
+				religion = lolth_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+		else_if = {
+			limit = {
+				is_ruler = no
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+				}
+				religion = lolth_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+	}
+}
+
+character_event = { # Eilistraee
+	id = HouseIraeSeeding.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		ai = yes
+		NOR = { # Removes redundancy. 
+			has_character_flag = houseirae_seeded
+			AND = {
+				NOT = { has_character_flag = lf_human_seeded }
+				has_character_flag = lf_seeded
+			}
+			culture = drow
+			religion = lolth_religion
+			religion = eilistraee_religion
+			religion = vhaeraun_religion
+			is_offmap_governor = yes # Prevents seeding House Irae
+			is_offmap_ruler = yes # Prevents seeding House Irae
+		}
+	}
+	immediate = {
+		set_character_flag = houseirae_seeded
+		if = {
+			limit = {
+				is_adult = yes
+				is_ruler = yes
+			}
+			any_demesne_province = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = culture_names
+									value = historical
+								}
+							}
+						}
+					}
+					culture = drow
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = religion_names
+									value = historical
+								}
+							}
+						}
+					}
+					religion = eilistraee_religion
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					is_theocracy = yes
+					NOT = { religion = eilistraee_religion }
+				}
+				death = { death_reason = death_missing }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					NOT = { is_theocracy = yes }
+				}
+				religion = eilistraee_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+		else_if = {
+			limit = {
+				is_ruler = no
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+				}
+				religion = eilistraee_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+	}
+}
+
+character_event = { # Vhaeraun
+	id = HouseIraeSeeding.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		ai = yes
+		NOR = { # Removes redundancy. 
+			has_character_flag = houseirae_seeded
+			AND = {
+				NOT = { has_character_flag = lf_human_seeded }
+				has_character_flag = lf_seeded
+			}
+			culture = drow
+			religion = lolth_religion
+			religion = eilistraee_religion
+			religion = vhaeraun_religion
+			is_offmap_governor = yes # Prevents seeding House Irae
+			is_offmap_ruler = yes # Prevents seeding House Irae
+		}
+	}
+	immediate = {
+		set_character_flag = houseirae_seeded
+		if = {
+			limit = {
+				is_adult = yes
+				is_ruler = yes
+			}
+			any_demesne_province = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = culture_names
+									value = historical
+								}
+							}
+						}
+					}
+					culture = drow
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+							has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+						}
+						OR = {
+							NOT = { is_alternate_start = yes }
+							AND = {
+								is_alternate_start = yes
+								has_alternate_start_parameter = {
+									key = religion_names
+									value = historical
+								}
+							}
+						}
+					}
+					religion = vhaeraun_religion
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					is_theocracy = yes
+					NOT = { religion = vhaeraun_religion }
+				}
+				death = { death_reason = death_missing }
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					NOT = { is_theocracy = yes }
+				}
+				religion = vhaeraun_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+		else_if = {
+			limit = {
+				is_ruler = no
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_religion }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+				}
+				religion = vhaeraun_religion
+			}
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
+						has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
+					}
+					OR = {
+						NOT = { is_alternate_start = yes }
+						AND = {
+							is_alternate_start = yes
+							has_alternate_start_parameter = {
+								key = culture_names
+								value = historical
+							}
+						}
+					}
+				}
+				culture = drow
+			}
+		}
+	}
+}
+
+

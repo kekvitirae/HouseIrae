@@ -1,0 +1,2394 @@
+##################################
+# The Irae Pretender
+##################################
+
+namespace = Laela
+
+	
+# Laela arrives at court
+character_event = {
+	id = Laela.1
+	only_playable = yes
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		NOT = {
+			has_global_flag = laela_spawned
+		}
+	}		
+	immediate = {
+		create_character = {
+			random_traits = no
+			dynasty = 9051355
+			name = Laela
+			female = yes
+			culture = drow
+			religion = lolth_religion
+			age = 18
+			attributes = {
+				martial = 12
+				diplomacy = 4
+				stewardship = 5
+				intrigue = 12
+				learning = 3
+			}
+			health = 10
+			fertility = 1
+			trait = brilliant_strategist
+			trait = aggressive_leader
+			trait = holy_warrior
+			trait = wroth
+			trait = cruel
+			trait = proud
+			trait = paranoid
+			trait = zealous
+			trait = ambitious
+			trait = adventurer
+			trait = houseirae_drow
+			trait = houseirae_curse_generic
+			trait = houseirae_drow_special6 # Laela's portrait
+			trait = houseirae_no_marry # Prevents her from marrying
+			flag = ai_flag_refuse_conversion
+			flag = special_npc
+			flag = society_join_block
+			flag = no_court_invites
+			flag = tentacle_immunity
+		}
+		new_character = {
+			set_character_flag = npc_laela_irae
+			set_character_flag = do_not_disturb
+			save_global_event_target_as = laela_irae
+			set_mother = 99889902
+			set_father = 99889903
+
+			add_character_modifier = {
+				name = dismissed_proposal
+				duration = -1
+				hidden = yes
+			}
+			add_trait = houseirae_matron_mother # HARD MODE ACTIVATED
+			diplomatic_immunity = yes # WELCOME TO DARK SOULS
+			
+			set_global_flag = laela_spawned
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = scenario_initialized # After The End compatibility. 
+						has_global_flag = scenario_initialised # AGoT compatibility. 
+					}
+					# BEWARE: She will gank everyone without a region set
+				}
+				character_event = {
+					id = LaelaOverhaul.1
+					days = 1
+				}
+			}
+			else = {
+				character_event = {
+					id = Laela.2
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# Laela Irae rises
+character_event = {
+	id = Laela.2
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+
+	option = { # Wiltshire
+		ai_chance = {
+			factor = 50
+		}
+		
+		23 = {
+			province_event = {
+				id = Laela.3
+				days = 2
+			}
+		}
+		
+		clr_character_flag = do_not_disturb
+	}
+
+	option = { # Dublin
+		ai_chance = {
+			factor = 50
+		}
+		
+		11 = {
+			province_event = {
+				id = Laela.3
+				days = 2
+			}
+		}
+		
+		clr_character_flag = do_not_disturb
+	}
+
+	option = { # Sjaelland
+		ai_chance = {
+			factor = 50
+		}
+		
+		266 = {
+			province_event = {
+				id = Laela.3
+				days = 2
+			}
+		}
+		
+		clr_character_flag = do_not_disturb
+	}
+
+	option = { # Novogord
+		ai_chance = {
+			factor = 50
+		}
+		
+		414 = {
+			province_event = {
+				id = Laela.3
+				days = 2
+			}
+		}
+		
+		clr_character_flag = do_not_disturb
+	}	
+}
+
+# Ping the target province
+province_event = {
+	id = Laela.3
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			character_event = {
+				id = Laela.4
+			}
+		}
+	}
+}
+
+# Laela goes on the warpath to claim her empire
+character_event = {
+	id = Laela.4
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+	
+	immediate = {
+		wealth = 500
+		liege = {
+			capital_scope = {
+				FROM = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								set_defacto_liege = ROOT
+								create_title = {
+									tier = DUKE
+									landless = yes
+									temporary = yes
+									culture = ROOT
+									name = "CLAIMANT_ADVENTURE"
+									holder = ROOT
+								}
+					
+								set_character_flag = duchy_adventurer
+							
+								spawn_unit = {
+									province = PREVPREVPREVPREV
+									home = PREVPREVPREVPREV
+									owner = THIS
+									match_character = PREV
+									match_mult = 2.4
+									match_min = 9000
+									match_max = 60000
+									attrition = 0
+									maintenance = no
+								}
+								if = {
+									limit = {
+										has_game_rule = { 
+											name = irae_invasion
+											value = laela_high
+										}
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+								}
+								if = {
+									limit = {
+										has_game_rule = { 
+											name = irae_invasion
+											value = laela_oh_lawd
+										}
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+									spawn_unit = {
+										province = PREVPREVPREVPREV
+										home = PREVPREVPREVPREV
+										owner = THIS
+										match_character = PREV
+										match_mult = 2.4
+										match_min = 9000
+										match_max = 60000
+										attrition = 0
+										maintenance = no
+									}
+								}					
+						
+						
+						
+								spawn_fleet = {
+									province = closest # closest sea zone
+									owner = THIS
+									disband_on_peace = no
+									troops = {
+									galleys = { 600 600 }
+									}
+								}
+								if = {
+									limit = {
+										has_game_rule = { 
+											name = irae_invasion
+											value = laela_high
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+								}
+								if = {
+									limit = {
+										has_game_rule = { 
+											name = irae_invasion
+											value = laela_oh_lawd
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+									spawn_fleet = {
+										province = closest # closest sea zone
+										owner = THIS
+										disband_on_peace = yes
+										troops = {
+										galleys = { 600 600 }
+										}
+									}
+								}
+						
+								war = {
+									target = PREV
+									casus_belli = laela_conquest_start
+									thirdparty_title = PREVPREVPREV
+									tier = DUKE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# Create some characters
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait3
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait4
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = yes
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait8
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait15
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = none
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 16
+			trait = houseirae_drow
+			trait = houseirae_drow_portrait17
+		}
+		any_playable_ruler = {
+			if = {
+				limit = {
+					OR = {
+						has_character_flag = warned_house_irae
+						has_character_flag = questioned_house_irae
+						has_character_flag = ignored_crisis
+					}
+				}
+				narrative_event = {
+					id = Laela.15
+				}
+				break = yes
+			}
+		}
+	}
+}
+
+
+# Laela is successful!
+# Fired from the duchy_adventure CB
+narrative_event = {
+	id = Laela.7
+	title = Laela7T
+	desc = Laela7
+	picture = GFX_laela_house_laela
+	border = GFX_event_narrative_frame_war
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					independent = yes
+					liege = {
+						ai = yes
+					}
+				}
+			}
+			set_defacto_liege = ROOT
+			activate_title = { title = k_house_laela status = yes }
+			k_house_laela = {
+				grant_title = ROOT
+			}
+		}
+		
+	
+		prestige = 1000
+		set_character_flag = laela_successful
+		character_event = {
+			id = Laela.21
+			days = 1
+		}
+	}
+	
+	option = {
+		name = Laela7TT1
+		trigger = {
+			has_character_flag = npc_laela_irae
+		}
+	}
+	option = { # This does not bode well...
+		name = Laela7TT2
+		trigger = {
+			NOT = { has_character_flag = npc_laela_irae }
+		}
+	}
+}
+
+character_event = { # All Laela's children will be drow
+	id = Laela.9
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			mother_even_if_dead = {
+				has_character_flag = npc_laela_irae
+			}
+			true_father_even_if_dead = {
+				has_character_flag = npc_laela_irae
+			}
+		}
+		NOT = {
+			trait = houseirae_drow
+		}
+	}
+	immediate = {
+		set_mother = event_target:laela_irae
+		dynasty = event_target:laela_irae
+		add_trait = houseirae_drow
+		add_trait = houseirae_drow_child
+		event_target:laela_irae = {
+			recalc_succession = yes
+		}
+	}
+}
+
+# INVASION START: RANDOM - An exiled drow starts to gather forces - Northern fae gets forewarning, everyone else gets taken by surprise 
+character_event = {
+	id = Laela.101
+	hide_window = yes
+	only_playable = yes
+	
+	trigger = {
+		is_proper_alternate_start = yes	
+		is_landed = yes
+		ai = no # Will not happen with observed games
+		NOT = {
+			has_global_flag = laela_rising
+		}
+		year = 900
+		NOT = { year = 1400 }
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+	}
+	immediate = {
+		set_global_flag = laela_rising # Ensures this event chain only happens once
+		if = {
+			limit = { # Mystical players will get the full quest chain
+				ai = no
+				is_adult = yes
+				is_landed = yes
+				OR = {
+					trait = erudite
+					trait = mystic
+					trait = genius
+					trait = houseirae_drow
+					trait = houseirae_halfelf
+				}
+				OR = {
+					has_global_flag = scenario_initialized # After The End compatibility. 
+					has_global_flag = scenario_initialised # AGoT compatibility. 
+					# BEWARE: She will gank everyone without a region set
+					any_demesne_title = {
+						OR = {
+							region = world_europe_north
+							region = world_europe_west_brittania
+							region = custom_russia
+						}
+					}
+				}
+			}
+			narrative_event = { 
+				id = Laela.11
+			}
+		}
+		any_playable_ruler = {
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = scenario_initialized # After The End compatibility. 
+						has_global_flag = scenario_initialised # AGoT compatibility. 
+						# BEWARE: She will gank everyone without a region set
+						owns = 11
+						owns = 23
+						owns = 414
+						owns = 266
+					}
+				}
+				character_event = {
+					id = Laela.1
+					years = 2
+				}
+			}
+		}
+	}
+}	
+	
+	
+narrative_event = { # Fae rulers in the north get a two year forewarning
+	id = Laela.11
+	title = Laela11T
+	picture = GFX_laela_she_is_coming
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	only_playable = yes
+	window = "houseirae_custom_narrative"	
+	
+	desc = {
+		trigger = { # You know only half the truth
+			has_house_irae_yes = yes
+			NOT = { 
+				has_artifact = irae_genealogy
+			}
+		}
+		text = Laela11HouseIrae
+	}
+	desc = {
+		trigger = { # You know the truth
+			has_house_irae_yes = yes
+			has_artifact = irae_genealogy
+		}
+		text = Laela11LaelaKnown
+	}	
+	desc = {
+		trigger = { # You go back to bed
+			has_house_irae_yes = no
+		}
+		text = Laela11NoHouseIrae
+	}
+	immediate = {
+		hidden_effect = {
+		create_character = { # The raped girl. Keep her around and something may happen.
+			random_traits = no
+			name = "Waterlily"
+			dynasty = none
+			culture = irish
+			religion = eilistraee_religion
+			female = yes
+			age = 16
+			health = 10
+			attributes = {
+				martial = 2
+				diplomacy = 6
+				stewardship = 3
+				intrigue = 2
+				learning = 6
+			}
+			trait = houseirae_halfelf
+			trait = fair
+			trait = kind
+			trait = celibate # She's not going to touch anyone after what she went through
+			trait = chaste
+			trait = nun # To prevent her from hooking up with someone
+			trait = houseirae_laelas_consort # The hourglass tattoo
+			trait = houseirae_no_marry # Prevents her from marrying
+			flag = ai_flag_refuse_conversion
+			flag = special_npc
+			flag = society_join_block
+			flag = no_court_invites
+			flag = tentacle_immunity
+		}
+		new_character = {
+			save_global_event_target_as = waterlily
+			add_trait = houseirae_others4 # Broken Waterlily's portrait
+			set_variable = { which = breast_size value = 2 }
+			set_character_flag = npc_waterlily
+			diplomatic_immunity = yes # We don't want her to get imprisoned/killed
+		}
+		}
+	}
+	trigger = {
+		ai = no
+		is_landed = yes
+		OR = {
+			has_global_flag = scenario_initialized # After The End compatibility. 
+			has_global_flag = scenario_initialised # AGoT compatibility. 
+			# BEWARE: She will gank everyone without a region set
+			any_demesne_title = {
+				OR = {
+					region = world_europe_north
+					region = world_europe_west_brittania
+					region = custom_russia
+				}
+			}
+		}
+	}
+
+	option = { # I must warn Matron Irae about this
+		trigger = {
+			has_house_irae_yes = yes
+			has_artifact = irae_genealogy
+		}
+		name = Laela11Warn
+		custom_tooltip = { text = Laela11CT1 }
+		event_target:waterlily = { }
+		hidden_tooltip = { 
+			offmap_irae = { 
+				governor = { 
+					character_event = { 
+						id = Laela.131 
+						days = 14
+					} 
+				} 
+			}
+			set_character_flag = warned_house_irae
+		}
+	}
+	option = { # I must question Matron Irae about this
+		trigger = {
+			has_house_irae_yes = yes
+			NOT = {
+				has_artifact = irae_genealogy
+			}
+		}
+		name = Laela11Question
+		custom_tooltip = { text = Laela11CT2 }
+		event_target:waterlily = { }
+		hidden_tooltip = { 
+			offmap_irae = { 
+				governor = { 
+					character_event = { 
+						id = Laela.141
+						days = 14
+					} 
+				} 
+			}
+			set_character_flag = questioned_house_irae
+		}		
+	}
+	
+	option = { # Whatever.
+		name = Laela11Ignore
+		custom_tooltip = { text = Laela11CT3 }
+		hidden_tooltip = {
+			set_character_flag = ignored_crisis
+
+		}
+	}
+	after = { # Removes the girl if you choose to ignore everything.
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_character_flag = ignored_crisis
+				}
+				event_target:waterlily = { 
+					banish = yes
+					death = { death_reason = death_suicide }
+				}
+			}
+		}
+	}
+}
+
+character_event = { # House Irae replies to the warning
+	id = Laela.131
+    hide_window = yes
+	
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+		FROM = {
+			letter_event = { id = Laela.13 } 
+		}
+    }
+}	
+
+
+letter_event = { # House Irae warned
+	id = Laela.13
+    border = GFX_event_letter_frame_diplomacy	
+	desc = {
+		trigger = {
+			ROOT = { # Kekvit graces those she likes with free stuff
+				has_offmap_currency = { offmap = offmap_irae value = 2000 }
+			}
+		}
+		text = Laela13Support
+	}
+	desc = {
+		trigger = {
+			ROOT = { # House Irae ignores your warnings. 
+				NOT = {
+					has_offmap_currency = { offmap = offmap_irae value < 2000 }
+				}
+			}
+		}
+		text = Laela13Nothing
+	}
+	
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = {
+		trigger = {
+			ROOT = { 
+				has_offmap_currency = { offmap = offmap_irae value = 2000 }
+			}
+		}
+        name = Laela13TSupport # Free stuff!
+		wealth = 500
+    }
+    option = {
+		trigger = {
+			ROOT = { 
+				has_offmap_currency = { offmap = offmap_irae value < 2000 }
+			}
+		}
+        name = Laela13TNothing # willywonkayougetnothing.jpg
+    }	
+}	
+
+character_event = { # House Irae replies to being questioned
+	id = Laela.141
+    hide_window = yes
+	
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+		FROM = {
+			letter_event = { id = Laela.14 } 
+		}
+    }
+}	
+
+
+letter_event = { # House Irae questioned
+	id = Laela.14
+    border = GFX_event_letter_frame_diplomacy	
+	desc = Laela14
+	
+    hide_new = yes
+
+    is_triggered_only = yes
+
+    option = {
+		ROOT = { # Kekvit Irae insulted
+			add_offmap_currency = {
+				offmap = offmap_irae
+				value = -500
+			}
+		}
+		name = Laela14T
+    }
+}	
+	
+narrative_event = { # Rise of the House of Laela
+	id = Laela.15
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = { # Is Lily still at court?
+			event_target:waterlily = {
+				liege = { character = ROOT }
+			}
+		}
+		text = Laela15Lily
+	}
+	desc = {
+		trigger = { # Lily's not at court, dead, or was ignored
+			OR = {
+				event_target:waterlily = {
+					NOR = {
+						is_alive = yes
+						AND = {
+							is_alive = no
+							liege = { NOT = { character = ROOT } }
+						}
+					}
+				}
+				has_character_flag = ignored_crisis
+			}
+		}
+	text = Laela15NoLily
+	}
+	title = Laela15T
+	
+	picture = GFX_laela_she_comes
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	only_playable = yes
+	
+	option = { # House Irae ignored me!
+		trigger = {
+			has_character_flag = warned_house_irae
+		}
+		name = Laela15TWarned
+	}
+	option = {
+		trigger = { # So the Matron was right after all...
+			has_character_flag = questioned_house_irae
+		}
+		name = Laela15TQuestion
+	}
+	option = { # Whoops.
+		trigger = {
+			has_character_flag = ignored_crisis
+		}
+		name = Laela15TIgnored
+	}
+}
+	
+narrative_event = { # Waterlily, Eilistraee's Chosen
+	id = Laela.16
+	desc = Laela16
+	title = Laela16T
+	window = "houseirae_custom_narrative"	
+	
+	picture = GFX_laela_avenging_angel
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	only_playable = yes	
+	trigger = {
+		event_target:waterlily = {
+			NOT = {
+				has_character_flag = eilistraee_chosen
+			}
+			liege = { character = ROOT } # Liege has to be the one in battle
+		}
+		any_war = {
+			OR = {	
+				AND = {
+					attacker = { character = FROMFROM } # Attacker has to be House Laela
+					FROMFROM = { has_landed_title = k_house_laela }
+				}
+				AND = {
+					defender = { character = FROMFROM } # Defender has to be House Irae
+					FROMFROM = { has_landed_title = k_house_laela }
+				}
+			}
+		}
+		FROMFROM = {
+			OR = {
+				top_liege = {
+					has_landed_title = k_house_laela # Commander of House Laela
+				}
+				has_landed_title = k_house_laela # Is Laela herself
+			}
+		}
+	}
+	
+	option = { # Waterlily gets thicc
+		name = { # That bitch goddess has some use after all
+			text = Laela16TLolth
+			trigger = {
+				OR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+				}
+			}
+		}
+		name = { # Praise Eilistraee!
+			text = Laela16TEilistraee
+			trigger = {
+				religion = eilistraee_religion
+			}
+		}
+		name = { # By the heavens!
+			text = Laela16TNotSeldarine
+			trigger = {
+				NOR = {
+					religion = lolth_religion
+					religion = vhaeraun_religion
+					religion = eilistraee_religion
+				}
+			}
+		}
+		
+		hidden_effect = {
+			event_target:waterlily = {
+					add_character_modifier = {
+						name = eilistraee_chosen
+						duration = -1
+					}
+					set_character_flag = eilistraee_chosen
+					add_trait = brilliant_strategist
+					add_trait = wroth
+					add_trait = zealous
+					add_trait = inspiring_leader
+					add_trait = immortal
+					remove_trait = houseirae_others4 
+					add_trait = houseirae_others5 # Thicc Waterlily's portrait
+					give_minor_title = title_commander
+				location = {
+					ROOT = {
+						spawn_unit = {
+							owner = ROOT
+							province = PREV
+							leader = PREVPREV
+							home = ROOT
+							troops = {
+								archers = { 500 500 }
+								light_infantry = { 500 500 }
+								heavy_infantry = { 500 500 }
+							}
+							attrition = 0
+							disband_on_peace = yes
+							maintenance = no
+						}
+						spawn_unit = {
+							owner = ROOT
+							province = PREV
+							home = ROOT
+							troops = {
+								archers = { 500 500 }
+								light_infantry = { 500 500 }
+								heavy_infantry = { 500 500 }
+							}
+							attrition = 0
+							disband_on_peace = yes
+							maintenance = no
+						}
+						spawn_unit = {
+							owner = ROOT
+							province = PREV
+							home = ROOT
+							troops = {
+								archers = { 500 500 }
+								light_infantry = { 500 500 }
+								heavy_infantry = { 500 500 }
+							}
+							attrition = 0
+							disband_on_peace = yes
+							maintenance = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = { # Fall of the House of Laela
+	id = Laela.17
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_character_flag = npc_laela_irae
+		primary_title = { title = k_house_laela }
+	}
+	
+	immediate = {
+		k_house_laela = {
+			activate_title = { title = THIS status = no }
+			unsafe_destroy_landed_title = THIS
+		}
+		any_playable_ruler = {
+			if = {
+				limit = {
+					ai = no
+					OR = {
+						trait = erudite
+						trait = mystic
+						trait = genius
+						trait = houseirae_drow
+						trait = houseirae_halfelf
+					}
+					OR = {
+						has_character_flag = warned_house_irae
+						has_character_flag = questioned_house_irae
+						has_character_flag = ignored_crisis
+					}
+				}
+				narrative_event = { id = Laela.18 }
+				break = yes
+			}
+		}
+	}
+}
+
+narrative_event = { # Fall of the House of Laela
+	id = Laela.18
+	desc = Laela18
+	title = Laela18T
+	picture = GFX_laela_she_dies
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	only_playable = yes
+	window = "houseirae_custom_narrative"	
+
+	option = { # Oh noes!
+		trigger = {
+			ai = no # To prevent Waterlily from picking this
+			trait = houseirae_laelas_consort
+		}
+		name = Laela18TTConsort
+		remove_trait = houseirae_laelas_consort
+		remove_trait = immortal
+	}
+	option = { # Good riddance
+		trigger = {
+			NOT = { trait = houseirae_laelas_consort }
+		}	
+		name = Laela18TT
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:waterlily = {
+						liege = { character = ROOT }
+						has_character_flag = eilistraee_chosen
+					}
+				}
+				narrative_event = {
+					id = Laela.19
+					days = 14
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { # Waterlily's purpose is fulfilled
+	id = Laela.19
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			religion = eilistraee_religion
+		}
+		text = Laela19Eilistraee
+	}
+	desc = {
+		trigger = {
+			religion = eilistraee_religion
+		}
+		text = Laela19Other
+	}
+	title = Laela19T
+	picture = GFX_laela_fallen_angel
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	only_playable = yes
+
+	immediate = {
+		event_target:waterlily = {
+			death = { death_reason = death_suicide }
+		}
+	}
+				
+	
+	option = { # Dance with Eilistraee
+		trigger = {	
+			religion = eilistraee_religion
+		}
+		name = Laela19T1
+	}
+	option = { # Good riddance
+		trigger = {	
+			OR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+			}
+		}
+		name = Laela19T2
+	}
+	option = { # Rest well
+		trigger = {	
+			NOR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+				religion = eilistraee_religion
+			}
+		}
+		name = Laela19T3
+	}	
+}
+
+character_event = { # Killswitch event. After 200 years, Kekvit gets tired of her sister's bullshit.
+	id = Laela.20
+	hide_window = yes
+	trigger = {
+		event_target:laela_irae = {
+			had_character_flag = {
+				flag = laela_successful
+				days = 73000
+			}
+			is_alive = yes
+		}
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	immediate = {
+		death = { death_reason = death_murder_unknown_poison }
+	}
+}
+
+character_event = { # Laela converts her realm and bends her knee to Mother
+	id = Laela.21
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		any_realm_province = {
+			if = {
+				limit = {
+					NOT = {
+						culture = drow
+					}
+				}
+				culture = drow
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = lolth_religion
+					}
+				}
+				religion = lolth_religion
+			}
+		}
+		if = {
+			limit = {
+				any_independent_ruler = {
+					has_character_flag = npc_tamsine_irae
+				}
+			}
+			any_independent_ruler = {
+				limit = {
+					has_character_flag = npc_tamsine_irae
+				}
+				if = {
+					limit = {
+						has_game_rule = { name = houseirae_dark_whispers value = on }
+					}
+					set_defacto_vassal = ROOT
+					opinion = {
+						modifier = houseirae_unholy_daughter
+						who = ROOT
+						years = 999
+					}
+					reverse_opinion = {
+						modifier = houseirae_unholy_mother
+						who = ROOT
+						years = 999
+					}
+				}
+				else = {
+					opinion = {
+						modifier = houseirae_ungrateful_daughter
+						who = ROOT
+						years = 999
+					}
+					reverse_opinion = {
+						modifier = houseirae_usurper_mother
+						who = ROOT
+						years = 999
+					}
+				}
+			}
+		}
+		set_government_type = feudal_government
+		laela_converts_tribals = yes
+	}
+}
+
+character_event = { # Laela bolsters her army after victory with an influx of slaves
+	id = Laela.22
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FROM = {
+			has_landed_title = k_house_laela
+			has_character_flag = npc_laela_irae
+		}
+	}
+	
+	
+	immediate = {
+		if = { # Laela gives a portion of the slaves collected to her favorite consort
+			limit = {
+				event_target:laelas_consort = { 
+					top_liege = {
+						has_character_flag = npc_laela_irae
+					}
+					ai = no
+					trait = houseirae_laelas_consort
+				}
+			}
+			FROM = {
+				location = {
+					FROM = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = THIS
+							troops = {
+								light_infantry = { 500 500 }
+							}						
+							attrition = 0.1
+							maintenance = no
+						}
+					}
+				}
+			}			
+				event_target:laelas_consort = { # Laela gives a portion of the slaves collected to her favorite consort
+					location = {
+						PREV = {
+							spawn_unit = {
+								province = PREV
+								home = PREV
+								owner = THIS
+								troops = {
+									light_infantry = { 100 100 }
+								}						
+								attrition = 0.1
+								maintenance = no
+							}				
+						}
+					}
+				}
+		}
+		else = {
+			FROM = {
+				location = {
+					FROM = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = THIS
+							troops = {
+								light_infantry = { 600 600 }
+							}						
+							attrition = 0.1
+							maintenance = no
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { # Consort takes slaves, Laela takes her fair share
+	id = Laela.221
+	title = Laela221T
+	picture = GFX_laela_house_laela
+	border = GFX_event_narrative_frame_war
+	desc = Laela221
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+
+	option = {
+		name = Laela221TT
+		FROM = {
+			location = {
+				FROM = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = PREVPREV
+						troops = {
+							light_infantry = { 200 200 }
+						}						
+						attrition = 0.1
+						maintenance = no
+					}
+				}
+			}
+			event_target:laela_irae = {
+				location = {
+					event_target:laela_irae = {
+						spawn_unit = {
+							province = PREV
+							home = PREV
+							owner = event_target:laela_irae
+							troops = {
+								light_infantry = { 400 400 }
+							}						
+							attrition = 0.1
+							maintenance = no
+						}				
+					}
+				}
+			}
+		}			
+	}
+}
+
+narrative_event = { # Laela invites you to visit her
+	id = Laela.23
+	title = Laela23T
+	picture = GFX_laela_invitation
+	border = GFX_event_narrative_frame_war	
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			event_target:waterlily = {
+				is_alive = yes
+				liege = { character = ROOT }
+			}
+		}
+		text = Laela23Lily
+	}
+	desc = {
+		trigger = {
+			event_target:waterlily = {
+				is_alive = no
+			}
+		}
+		text = Laela23NoLily
+	}	
+	trigger = {
+		NOT = {
+			has_global_flag = laela_took_a_consort
+		}
+		NOT = {
+			tier = KING
+		}
+		ROOT = {
+			is_pregnant = no
+			event_target:laela_irae = {
+				is_pregnant = no
+			}
+			ai = no
+			OR = {
+				trait = immortal
+				NOT = { age = 45 }
+			}
+			is_incapable = no
+			prisoner = no
+			OR = {
+				trait = houseirae_halfelf
+				trait = houseirae_drow
+				trait = strong
+				trait = genius
+				trait = quick
+				trait = fair
+				trait = immortal
+			}
+			NOR = {
+				trait = ugly # Laela only cares for those who look good and can pass down good traits
+				trait = weak
+				trait = inbred
+				trait = clubfooted
+				trait = leper
+				trait = infirm
+				trait = harelip
+				trait = hunchback
+				trait = dwarf
+				trait = slow
+				trait = imbecile
+				trait = houseirae_laelas_consort # Redundancy check
+				has_character_flag = going_to_laelas_court # To prevent the rare event of this event from firing a second time
+				has_character_flag = rejected_laelas_offer
+			}
+			is_adult = yes
+			NOT = {
+				any_liege = { character = event_target:laela_irae }
+			}
+		}
+		event_target:laela_irae = {
+			has_character_flag = npc_laela_irae
+			has_landed_title = k_house_laela
+			any_neighbor_independent_ruler = {
+				character = ROOT
+			}
+		}
+	}
+
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = { # I will go
+		name = Laela23TT1
+
+		set_character_flag = going_to_laelas_court
+		if = {
+			limit = {
+				event_target:waterlily = {
+					is_alive = yes
+					liege = { character = ROOT }
+				}
+			}
+			custom_tooltip = {
+				text = Laela23TT1LilyConcerned
+			}
+			narrative_event = { id = Laela.25 days = 7 }
+		}
+		else = {
+			narrative_event = { id = Laela.24 days = 7 }
+		}
+	}
+	
+	option = { # Ignore her
+		name = Laela23TT2
+		set_character_flag = rejected_laelas_offer
+		if = {
+			limit = {
+				event_target:waterlily = {
+					is_alive = yes
+					liege = { character = ROOT }
+				}
+			}
+			custom_tooltip = {
+				text = Laela23TT2LilyThankful
+			}
+		}
+	}
+}
+
+narrative_event = { # You visit Laela, Lily is dead or missing
+		id = Laela.24
+		title = Laela24T
+		picture = GFX_laela_the_visit
+		is_triggered_only = yes
+		border = GFX_event_narrative_frame_war
+	window = "houseirae_custom_narrative"	
+		desc = { # Straight Female
+			trigger = {
+				is_female = yes
+				NOT = { 
+					trait = homosexual 
+				}
+			}
+			text = Laela24Female
+		}
+		desc = { # Straight Male
+			trigger = {
+				is_female = no
+				NOT = { 
+					trait = homosexual 
+				}
+			}
+			text = Laela24Male
+		}		
+		desc = { # Gay Male
+			trigger = {
+				is_female = no
+				trait = homosexual
+			}
+			text = Laela24GMale
+		}		
+		desc = { # Gay Woman
+			trigger = {
+				is_female = no
+				trait = homosexual
+			}
+			text = Laela24GFemale
+		}	
+
+	immediate = {
+		clr_character_flag = going_to_laelas_court
+	}
+
+	option = {
+		name = Laela24TT
+		if = {
+			limit = {
+				ROOT = {
+					is_female = yes
+					NOT = { trait = homosexual }
+				}
+			}
+			add_trait = homosexual
+			narrative_event = { id = Laela.29 }
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					is_female = no
+					trait = homosexual 
+				}
+			}
+			remove_trait = homosexual
+			narrative_event = { id = Laela.29 }
+		}
+		else = {
+			narrative_event = { id = Laela.29 }
+		}
+	}
+}
+
+narrative_event = { # You visit Laela, Lily is with you
+		id = Laela.25
+		title = Laela25T
+		picture = GFX_laela_the_visit
+		border = GFX_event_narrative_frame_war
+		is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+		desc = { # Straight Female
+			trigger = {
+				is_female = yes
+				NOT = { 
+					trait = homosexual 
+				}
+			}
+			text = Laela25Female
+		}
+		desc = { # Straight Male
+			trigger = {
+				is_female = no
+				NOT = {
+					trait = homosexual
+				}
+			}
+			text = Laela25Male
+		}		
+		desc = { # Gay Male
+			trigger = {
+				is_female = no
+				trait = homosexual
+			}
+			text = Laela25GMale
+		}		
+		desc = { # Gay Woman
+			trigger = {
+				is_female = yes
+				trait = homosexual
+			}
+			text = Laela25GFemale
+		}	
+
+	immediate = {
+		clr_character_flag = going_to_laelas_court
+	}
+
+	option = {
+		name = Laela25TT
+		if = {
+			limit = {
+				ROOT = {
+					is_female = yes
+					NOT = { trait = homosexual }
+				}
+			}
+			add_trait = homosexual
+			narrative_event = { id = Laela.30 }
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					is_female = no
+					trait = homosexual 
+				}
+			}
+			remove_trait = homosexual
+			narrative_event = { id = Laela.30 }
+		}
+		else = {
+			narrative_event = { id = Laela.30 }
+		}
+	}
+}
+
+narrative_event = { # Thicc Waterlily attacks Laela
+	id = Laela.26
+	title = Laela26T
+	picture = GFX_laela_avenging_angel
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = Laela26
+	border = GFX_event_narrative_frame_war
+	option = { # Let's get out of here, Scooby!
+		name = Laela26TT
+		random_list = {
+			60 = { 
+				event_target:waterlily = { # Lily gets wounded in the attempt
+					add_trait = wounded
+				}				
+			} 
+			30 = {
+				event_target:waterlily = { # Lily gets wounded in the attempt
+					add_trait = wounded
+				}				
+				event_target:laela_irae = { # Laela expends most of her magic resurrecting herself
+					add_character_modifier = {
+						name = houseirae_lifeforce_expended
+						duration = -1
+					}
+				}
+			}
+			10 = {
+				event_target:waterlily = { # Lily gets wounded in the attempt
+					add_trait = wounded
+				}				
+				event_target:laela_irae = { # Laela falls, permanently
+					death = { death_reason = death_duel killer = event_target:waterlily }
+				}
+			}
+		}
+	}
+}
+
+narrative_event = { # Broken Lily raped to death
+	id = Laela.27
+	title = Laela27T
+	desc = Laela27
+	picture = GFX_laela_she_is_coming
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	option = { # Good riddance
+		trigger = {
+			OR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+			}
+		}
+		name = Laela27TTLolth
+		event_target:waterlily = {
+			death = { death_reason = death_execution_impaling killer = event_target:laela_irae }
+		}
+		piety = 100
+	}
+	option = { # Look away, pray for forgiveness
+		trigger = {
+			religion = eilistraee_religion
+		}
+		name = Laela27TTEilistraee
+		event_target:waterlily = {
+			death = { death_reason = death_execution_impaling killer = event_target:laela_irae }
+		}
+		piety = -200
+	}
+	option = { # Look away
+		trigger = {
+			NOR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+				religion = eilistraee_religion
+			}
+		}
+		name = Laela27TTOther
+		event_target:waterlily = {
+			death = { death_reason = death_execution_impaling killer = event_target:laela_irae }
+		}
+	}
+}
+
+narrative_event = { # Thicc Lily attacks you for your betrayal
+	id = Laela.28
+	title = Laela28T
+	picture = GFX_laela_avenging_angel
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = { # You are dead
+		trigger = {
+			has_character_flag = houseirae_you_die
+		}
+		text = Laela28LilyKillsYou
+	}
+	desc = { # Lily is dead
+		trigger = {
+			has_character_flag = houseirae_lily_dies
+		}
+		text = Laela28LilyDies
+	}
+	
+	option = {
+		trigger = {
+			has_character_flag = houseirae_you_die
+		}
+		name = Laela28TTLilyKillsYou
+		death = { death_reason = death_duel killer = event_target:waterlily }
+		event_target:waterlily = {
+			death = { death_reason = death_duel killer = event_target:laela_irae }
+		}
+		hidden_effect = {
+			event_target:laela_irae = {
+				add_trait = houseirae_no_marry
+			}
+		}
+			
+	}
+	option = {
+		trigger = {
+			has_character_flag = houseirae_lily_dies
+		}
+		name = Laela28TTLilyDies
+		event_target:waterlily = {
+			death = { death_reason = death_duel killer = event_target:laela_irae }
+		}
+		if = {
+			limit = {
+				NOT = {
+					religion = lolth_religion
+				}
+			}
+			religion = lolth_religion
+		}
+	}
+}
+	
+narrative_event = { # Sexytimes with Laela, and an offer - No Lily
+	id = Laela.29
+	title = Laela29T
+	picture = a_placeholder
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = { # Female
+		trigger = {
+			is_female = yes
+		}
+		text = Laela29Female
+		picture = GFX_laela_with_woman
+	}
+	desc = { # Male
+		trigger = {
+			is_female = no
+		}
+		text = Laela29Male
+		picture = GFX_laela_with_man
+	}		
+
+	option = { # Agree and live another day
+		name = Laela29TTAccept
+		set_global_flag = laela_took_a_consort
+		if = {
+			limit = {
+				ROOT = {
+					is_female = yes
+				}
+			}
+			hidden_effect = {
+				event_target:laela_irae = {
+					remove_trait = houseirae_no_marry
+					set_gender = male
+				}
+			}
+			ROOT = {
+				any_spouse = {
+					limit = {
+						is_married = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}
+				any_consort = {
+					limit = {
+						is_consort = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}					
+				impregnate = event_target:laela_irae
+				add_spouse = event_target:laela_irae
+				add_lover = event_target:laela_irae
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					is_female = no
+				}
+			}
+			hidden_effect = {
+				event_target:laela_irae = {
+					remove_trait = houseirae_no_marry
+					impregnate = ROOT
+				}
+			}			
+			ROOT = {
+				any_spouse = {
+					limit = {
+						is_married = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}
+				any_consort = {
+					limit = {
+						is_consort = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}					
+				add_spouse_matrilineal = event_target:laela_irae
+				add_lover = event_target:laela_irae
+			}
+		}
+		
+		add_trait = immortal
+		add_trait = houseirae_laelas_consort
+		set_defacto_liege = event_target:laela_irae
+		save_global_event_target_as = laelas_consort
+	}
+					
+	option = { # Decline
+		name = Laela29TTRefuse
+		add_trait = weak
+		set_character_flag = refused_laelas_offer
+	}
+}
+
+narrative_event = { # Sexytimes with Laela, and an offer - Lily is with you
+	id = Laela.30
+	title = Laela30T
+	picture = a_placeholder
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = { # Female
+		trigger = {
+			is_female = yes
+		}
+		text = Laela30Female
+		picture = GFX_laela_with_woman
+	}
+	desc = { # Male
+		trigger = {
+			is_female = no
+		}
+		text = Laela30Male
+		picture = GFX_laela_with_man
+	}		
+
+	option = { # Agree and live another day
+		name = Laela30TTAccept
+		set_global_flag = laela_took_a_consort
+		if = {
+			limit = {
+				ROOT = {
+					is_female = yes
+				}
+			}
+			hidden_effect = {
+				event_target:laela_irae = {
+					remove_trait = houseirae_no_marry
+					set_gender = male
+				}
+			}
+			ROOT = {
+				any_spouse = {
+					limit = {
+						is_married = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}
+				any_consort = {
+					limit = {
+						is_consort = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}					
+				impregnate = event_target:laela_irae
+				add_spouse = event_target:laela_irae
+				add_lover = event_target:laela_irae
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
+					is_female = no
+				}
+			}
+			hidden_effect = {
+				event_target:laela_irae = {
+					remove_trait = houseirae_no_marry
+					impregnate = ROOT
+				}
+			}			
+			ROOT = {
+				any_spouse = {
+					limit = {
+						is_married = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}
+				any_consort = {
+					limit = {
+						is_consort = ROOT
+						NOR = { 
+							has_character_flag = npc_laela_irae
+							has_character_flag = npc_waterlily
+						}
+					}
+					death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+				}					
+				add_spouse_matrilineal = event_target:laela_irae
+				add_lover = event_target:laela_irae
+			}
+		}
+	
+		if = { # Broken Waterlily is raped to death by Laela's guards
+			limit = {
+				event_target:waterlily = {
+					is_alive = yes
+					liege = { character = ROOT }
+					NOT = {
+						has_character_flag = eilistraee_chosen
+					}
+				}
+			}
+			narrative_event = { id = Laela.27 }
+		}
+		if = { # Thicc Waterlily refuses to bow and attacks
+			limit = {
+				event_target:waterlily = {
+					is_alive = yes
+					liege = { character = ROOT }
+					has_character_flag = eilistraee_chosen
+				}
+			}
+			hidden_tooltip = {
+				random_list = {
+					50 = { # Both you and Lily die in the attack
+						set_character_flag = houseirae_you_died
+					}
+					50 = { # Lily dies in the attack
+						set_character_flag = houseirae_lily_dies
+					}
+				}
+			}
+			narrative_event = { id = Laela.28 }
+		}		
+		add_trait = immortal
+		add_trait = houseirae_laelas_consort
+		set_defacto_liege = event_target:laela_irae
+		save_global_event_target_as = laelas_consort
+	}
+					
+	option = { # Decline
+		name = Laela30TTRefuse
+		add_trait = weak
+		set_character_flag = refused_laelas_offer
+	}
+	
+	option = { # Motion to Thicc Waterlily to attack
+		name = Laela30TTWaterlily
+		trigger = {
+			event_target:waterlily = {
+				event_target:waterlily = {
+					is_alive = yes
+					liege = { character = ROOT }
+					has_character_flag = eilistraee_chosen
+				}
+			}
+		}
+		set_character_flag = refused_laelas_offer
+		narrative_event = { id = Laela.26 }
+	}
+}
+
+narrative_event = { # Laela doesn't like it when you choose to divorce her.
+	id = Laela.31
+	hide_window = yes
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	trigger = {
+		FROM = {
+			trait = houseirae_laelas_consort
+		}
+		ROOT = {
+			character = event_target:laela_irae
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			narrative_event = { id = Laela.32 days = 7 }
+		}
+	}
+}
+
+narrative_event = { # Laela doesn't like it when you choose to divorce her.
+	id = Laela.32
+	desc = {
+		trigger = {
+			NOT = {
+				culture = drow
+			}
+		}
+		text = Laela32
+	}
+	desc = {
+		trigger = {
+			culture = drow
+		}
+		text = Laela32Drow
+	}
+	picture = GFX_laela_dark_divorce
+	title = Laela32T
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	
+	option = {
+		name = Laela32TT
+			death = { death_reason = death_murder_unknown_combustion killer = event_target:laela_irae }
+	}
+}
+
+
+#
+# Laela rewards her consort yearly with slaves and gold
+#
+
+character_event = {
+	id = Laela.33
+	hide_window = yes
+	is_triggered_only = yes
+	ai = no
+	trigger = {
+		trait = houseirae_laelas_consort
+		any_liege = {
+			has_character_flag = npc_laela_irae
+			is_married = ROOT
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = houseirae_laela_notifications_off }
+			}
+			narrative_event = { id = Laela.34 }
+		}
+		else = {
+			if = {
+				limit = {
+					tier == COUNT
+				}
+				spawn_unit = {
+					owner = ROOT
+					province = ROOT
+					home = ROOT
+					leader = none
+					earmark = laela_consort_units
+					troops = {
+						archers = { 50 50 }
+						pikemen = { 30 30 }
+						light_infantry = { 20 20 }
+					}
+					maintenance = no
+					is_looter = yes
+					can_toggle_looting = yes
+					reinforces = yes
+					cannot_inherit = yes
+				}
+				wealth = 20
+			}
+			else = {
+				spawn_unit = {
+					owner = ROOT
+					province = ROOT
+					home = ROOT
+					leader = none
+					earmark = laela_consort_units
+					troops = {
+						archers = { 50 50 }
+						pikemen = { 30 30 }
+						light_infantry = { 20 20 }
+						heavy_infantry = { 25 25 }
+						light_cavalry = { 25 25 }
+					}
+					maintenance = no
+					is_looter = yes
+					can_toggle_looting = yes
+					reinforces = yes
+					cannot_inherit = yes
+				}
+				wealth = 50
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = Laela.34
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			NOT = { has_global_flag = lf_silly_mode }
+		}
+		text = Laela34
+	}
+	desc = {
+		trigger = {
+			has_global_flag = lf_silly_mode
+		}
+		text = Laela34Silly
+	}
+	title = Laela34T
+	picture = GFX_laela_the_visit
+	border = GFX_event_narrative_frame_war
+	is_triggered_only = yes
+	option = { # Thank you, Mistress
+		name = Laela34TTA
+		if = {
+			limit = {
+				tier == COUNT
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				leader = none
+				earmark = laela_consort_units
+				troops = {
+					archers = { 50 50 }
+					pikemen = { 30 30 }
+					light_infantry = { 20 20 }
+				}
+				maintenance = no
+				is_looter = yes
+				can_toggle_looting = yes
+				reinforces = yes
+				cannot_inherit = yes
+			}
+			wealth = 20
+		}
+		else = {
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				leader = none
+				earmark = laela_consort_units
+				troops = {
+					archers = { 50 50 }
+					pikemen = { 30 30 }
+					light_infantry = { 20 20 }
+					heavy_infantry = { 25 25 }
+					light_cavalry = { 25 25 }
+				}
+				maintenance = no
+				is_looter = yes
+				can_toggle_looting = yes
+				reinforces = yes
+				cannot_inherit = yes
+			}
+			wealth = 50
+		}
+	}
+	option = { # Turn off notifications
+		name = Laela34TTB
+		custom_tooltip = {
+			text = Laela34TTBTooltip
+		}
+		if = {
+			limit = {
+				tier == COUNT
+			}
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				leader = none
+				earmark = laela_consort_units
+				troops = {
+					archers = { 50 50 }
+					pikemen = { 30 30 }
+					light_infantry = { 20 20 }
+				}
+				maintenance_multiplier = 0
+				is_looter = yes
+				cannot_inherit = yes
+			}
+			wealth = 20
+		}
+		else = {
+			spawn_unit = {
+				owner = ROOT
+				province = ROOT
+				home = ROOT
+				leader = none
+				earmark = laela_consort_units
+				troops = {
+					archers = { 50 50 }
+					pikemen = { 30 30 }
+					light_infantry = { 20 20 }
+					heavy_infantry = { 50 50 }
+					light_cavalry = { 50 50 }
+				}
+				maintenance = no
+				is_looter = yes
+				cannot_inherit = yes
+			}
+			wealth = 50
+		}		
+		set_global_flag = houseirae_laela_notifications_off
+	}
+}
+
+#
+# Overhaul compatibility
+#
+
+namespace = LaelaOverhaul
+
+# Laela Irae rises (random province)
+character_event = {
+	id = LaelaOverhaul.1
+	hide_window = yes	
+	is_triggered_only = yes
+	
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		is_alive = yes
+		NOT = { trait = blinded }
+		NOT = { trait = eunuch }
+		NOT = { trait = infirm }
+		lower_tier_than = king
+	}
+
+	option = {
+		random_province = {
+			limit = {
+				owner = {
+					ai = yes
+				}
+				is_land = yes
+				NOT = { is_island = yes }
+			}
+			province_event = {
+				id = Laela.3
+				days = 2
+			}
+		}
+		
+		clr_character_flag = do_not_disturb
+	}	
+}
+
+

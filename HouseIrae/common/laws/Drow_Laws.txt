@@ -1,0 +1,234 @@
+# Crown level (de jure) laws
+# Laws ending with 0 will be default laws at game start
+law_groups = {
+	houseirae_raiding = {
+		law_type = realm
+	}
+}
+
+de_jure_laws = {
+
+	# Not Active
+	houseirae_raiding_0 = {
+		show_as_title = yes
+		group = houseirae_raiding
+		default = yes
+		potential = {
+			holder_scope = {
+				culture = drow
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		allow = {
+			always = yes
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = houseirae_raiding_0
+				revoke_law = houseirae_raiding_1
+			}
+		}
+	}
+	
+	# Active
+	houseirae_raiding_1 = {
+		show_as_title = yes
+		global_revolt_risk = 0.01 # A 1% increase in the odds of a global revolt from such an unpopular law
+		city_opinion = 5 # Very popular among the citizenry
+		feudal_opinion = 5 # Very popular among the citizenry
+		temple_opinion = 5 # Very popular among the citizenry
+		castle_vassal_min_levy = 0.2
+		castle_vassal_max_levy = 0.1
+		city_vassal_min_levy = 0.1
+		city_vassal_max_levy = 0.1
+		temple_vassal_min_levy = 0.1
+		temple_vassal_max_levy = 0.1		
+		group = houseirae_raiding
+		potential = {
+			holder_scope = {
+				culture = drow
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		allow = {
+			holder_scope = { 
+				NOT = {
+					religion = eilistraee_religion # Eilistraee does not follow the teachings of her mother or brother
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0.05
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = houseirae_raiding_0
+				revoke_law = houseirae_raiding_1
+			}
+		}
+	}	
+}
+
+succession_laws = {
+
+	drow_tanistry = {
+		dynasty_opinion = 5
+		vassal_opinion = 5
+		potential = {
+			holder_scope = {
+				religion = eilistraee_religion
+			}
+		}
+		allow = {
+			holder_scope = {
+				religion = eilistraee_religion
+			}
+		}
+		effect = {
+			succession = {
+				base_type = tanistry
+				voting_rules = houseirae_drow_eilistraee
+			}
+		}
+	}
+
+	drow_turkish_succession = {
+		potential = {
+			holder_scope = {
+				OR = {
+					religion = vhaeraun_religion
+					religion = lolth_religion
+				}
+			}
+		}
+		allow = {
+			holder_scope = {
+				OR = {
+					religion = vhaeraun_religion
+					religion = lolth_religion
+				}
+			}
+		}		
+		effect = {
+			succession = turkish_succession
+		}
+	}	
+	
+}
+
+gender_laws = {
+	eilistraee_succession = {
+	
+		potential = {
+			holder_scope = {
+				religion = eilistraee_religion
+			}
+		}
+		allow = {
+			holder_scope = {
+				religion = eilistraee_religion
+			}
+		}
+		effect = {
+			gender_succ = true_cognatic
+		}
+		default = yes
+		default_selection = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				holder_scope = {
+					religion = eilistraee_religion
+				}
+			}
+			
+			modifier = {
+				factor = 0
+				NOT = {
+					holder_scope = {
+						religion = eilistraee_religion
+					}
+				}
+			}
+		}		
+	}
+
+	lolth_succession = {
+		male_dynasty_opinion = -15
+		female_dynasty_opinion = 10
+		
+		potential = {
+			holder_scope = {
+				religion = lolth_religion
+			}
+		}
+		allow = {
+			holder_scope = {
+				religion = lolth_religion
+			}
+		}
+		effect = {
+			gender_succ = enatic
+		}
+		default = yes
+		default_selection = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				holder_scope = {
+					religion = lolth_religion
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					holder_scope = {
+						religion = lolth_religion
+					}
+				}
+			}
+		}		
+	}
+	
+	vhaeraun_succession = {
+		male_dynasty_opinion = 10
+		female_dynasty_opinion = -15
+		
+		potential = {
+			holder_scope = {
+				religion = vhaeraun_religion
+			}
+		}
+		allow = {
+			holder_scope = {
+				religion = vhaeraun_religion
+			}
+		}
+		effect = {
+			gender_succ = agnatic
+		}
+		default = yes
+		default_selection = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				holder_scope = {
+					religion = vhaeraun_religion
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					holder_scope = {
+						religion = vhaeraun_religion
+					}
+				}
+			}
+		}		
+	}
+}

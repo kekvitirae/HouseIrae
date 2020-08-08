@@ -1,0 +1,521 @@
+#
+# Offmap Misc
+#
+
+house_irae_name;House Irae;;;;;;;;;;;;;x
+irae_offmap_likes_me;Likes §YExceptional Women§!;;;;;;;;;;;;;x
+irae_favor;Favor;;;;;;;;;;;;;x
+monthly_irae_favor;Monthly Favor;;;;;;;;;;;;;x
+likes_mediocre_men;Unattractiveness and Celibacy;;;;;;;;;;;;;x
+likes_exceptional_women;Women, Sex, and Intelligence;;;;;;;;;;;;;x
+irae_likes_exceptional_women;"An §Gexceptional woman§!! Join me in my bedchambers?" ;;;;;;;;;;;;;x
+irae_likes_mediocre_men;Kekvit scoffs at the presence of such a §Rmediocre man§!. ;;;;;;;;;;;;;x
+irae_likes_elves;Kekvit fondly strokes your §Gelven§! ears and licks her lips. ;;;;;;;;;;;;;x
+irae_dislikes_disgusting;Kekvit sneers at your §Rdisgusting§! features. ;;;;;;;;;;;;;x
+irae_likes_giant_female;"I bet you could crush my head between those §Ggiant§! thighs of yours!" ;;;;;;;;;;;;;x
+irae_likes_giant_male;"I wonder what else is §Ggiant§! about you..." ;;;;;;;;;;;;;x
+irae_likes_women;"I do enjoy the company of other §Gwomen§!." ;;;;;;;;;;;;;x
+irae_likes_pillagers;"A §Gpillager§!? I have something you can ravage." ;;;;;;;;;;;;;x
+irae_dislikes_kinslayer;Kekvit narrows her eyes when she hears of your §Rkinslaying§!. ;;;;;;;;;;;;;x
+irae_likes_seldarine;"It's good to see another §GDark Seldarine§! faithful." ;;;;;;;;;;;;;x
+irae_likes_smart;"I very much like conversing with those who are §Gsmart§!." ;;;;;;;;;;;;;x
+irae_likes_mystics;"A §Gmystic§! like me? Fascinating!" ;;;;;;;;;;;;;x
+irae_dislikes_disease;"Ew. Get away from me! I'm not touching anyone who is §Rdiseased§!!" ;;;;;;;;;;;;;x
+irae_likes_pokemon;"FUCK YEAH §GSEAKING§!!" ;;;;;;;;;;;;;x
+title_irae_matron;Matron Mother;;;;;;;;;;;;;x
+irae_voice_title_female;Yathtallar;;;;;;;;;;;;;x
+irae_voice_title_male;Court Wizard;;;;;;;;;;;;;x
+sold_to_house_irae_tt;;§Y[This.GetTitledName]§! will be sold to the Dark Elven empire of House Irae.;;;;;;;;;;;;;x
+child_of_kekvit;Adopted from House Irae;;;;;;;;;;;;;x
+child_of_kekvit_desc;This character was adopted into a new dynasty from House Irae. Other dynasty members will see the newcomer as an usurper, but potential lovers will swoon over them for their exoticness.;;;;;;;;;;;;;x
+exile_of_house_irae;House Irae Exile;;;;;;;;;;;;;x
+exile_of_house_irae_desc;This character was exiled from House Irae. They are seen as a pariah to all except their spouse.;;;;;;;;;;;;;x
+sold_prisoner;Sold a Prisoner;;;;;;;;;;;;;x
+sold_prisoner_desc;You have sold a prisoner as a slave to House Irae. You will need to wait a month before selling another again.;;;;;;;;;;;;;x
+daughter_sold;Sold Your Daughter;;;;;;;;;;;;;x
+daughter_sold_desc;You have sold your own daughter to House Irae to be used as a sex slave. You monster. You will need to wait 10 years before you can sell off another.;;;;;;;;;;;;;x
+houseirae_sent_gift;Sent Gift;;;;;;;;;;;;;x
+houseirae_sent_gift_desc;You have sent a gift to House Irae. You must wait a month before you can send another.;;;;;;;;;;;;;x
+peace_deal_with_irae;Peace Deal with the Iraes;;;;;;;;;;;;;x
+IRAE_LIKES_LABEL;The Matron Mother Likes;;;;;;;;;;;;;x
+IRAE_DISLIKES_LABEL;The Matron Mother Dislikes;;;;;;;;;;;;;x
+irae_likes_THIS_tt;(§GThe Matron Mother Likes [This.GetLike]§!);(§GL'Empereur aime [This.GetLike]§!);(§GDer Kaiser mag [This.GetLike]§!);;(§GAl emperador le gustan [This.GetLike]§!);;;;;;;;;x
+irae_dislikes_THIS_tt;(§RThe Matron Mother Dislikes [This.GetDislike]§!);(§RL'Empereur déteste [This.GetDislike]§!);(§GDer Kaiser mag keine [This.GetDislike]§!);;(§RAl emperador le disgustan [This.GetDislike]§!);;;;;;;;;x
+irae_has_ambiguous_feelings_of_THIS_tt;(§GThe Matron Mother Likes [This.GetLike]§! but §RDislikes [This.GetDislike]§!);(L'Empereur aime §G[This.GetLike]§! mais déteste §R[This.GetDislike]§!);(§GDer Kaiser mag [This.GetLike]§!, aber §Rkeine [This.GetDislike]§!);;(§GAl emperador le gustan [This.GetLike]§! pero le §Rdisgustan [This.GetDislike]§!);;;;;;;;;x
+irae_hates_you_for_banishing_meeshka;§R"YOU THREW MY DAUGHTER OUT!"§!;;;;;;;;;;;;;x
+
+#
+# Offmap Decisions
+#
+houseirae_irae_lockdown_gift;Lockdown;;;;;;;;;;;;;x
+houseirae_irae_lockdown_gift_desc;House Irae is in a state of panic and currently under lockdown. You will be unable to interact with them until the crisis is over.;;;;;;;;;;;;;x
+houseirae_irae_lockdown_boon;Lockdown;;;;;;;;;;;;;x
+houseirae_irae_lockdown_boon_desc;House Irae is in a state of panic and currently under lockdown. You will be unable to interact with them until the crisis is over.;;;;;;;;;;;;;x
+HouseIraeCrisisTooltip;House Irae will reopen once the crisis has passed.;;;;;;;;;;;;;x
+houseirae_invite_male;Invite Male Exile;;;;;;;;;;;;;x
+houseirae_invite_male_desc;Considering the rate at which the Matron breeds, it is inevitable that the population is culled to ensure only the best remain in House Irae. Rather than kill her 'unworthy' sons, the Matron Mother would rather exile them to the surface. You can ask the Matron to send you one such male for your own purposes.;;;;;;;;;;;;;x
+irae_gifts_desc;If [offmap_irae.GetName] is amenable to foreign relations, and you have not yet intruded upon the busy Dark Elven court with your gifts in the past year, you can send an envoy to provide the Matron Mother with a token of your subservience.;;;;;;;;;;;;;x
+irae_boons_desc;If §Y[offmap_irae.GetName]§! is amenable to foreign relations, and you have not yet had your appeals heard in the past year, you can send an envoy to request any one of a variety of blessings the Matron Mother might deem you worthy of.;;;;;;;;;;;;;x
+houseirae_sell_prisoner;Sell Prisoner;;;;;;;;;;;;;x
+houseirae_sell_prisoner_desc;House Irae is always looking for more slaves. Sell them a prisoner to gain favor with the Dark Elves.;;;;;;;;;;;;;x
+houseirae_sell_daughter;Sell Daughter;;;;;;;;;;;;;x
+houseirae_sell_daughter_desc;Occasionally, House Irae grants great favor to those willing to part with their own daughters for use as concubines for the Matron Mother.;;;;;;;;;;;;;x
+houseirae_irae_spymaster;Invite Spymaster;;;;;;;;;;;;;x
+houseirae_irae_spymaster_desc;Occasionally, House Irae sends off honored daughters and sons to foreign lands to spread chaos in the name of their Matron Mother. Invite one such dark elf into your court.;;;;;;;;;;;;;x
+houseirae_irae_lolthpriestess;Invite Priestess of Lolth;;;;;;;;;;;;;x
+houseirae_irae_lolthpriestess_desc;Lolth is the supreme goddess in the Dark Elven pantheon, owing to the matriarchal society of House Irae. Invite a Priestess of the Spider Queen to your court.;;;;;;;;;;;;;x
+houseirae_irae_eilistraeepriestess;Invite Priestess of Eilistraee;;;;;;;;;;;;;x
+houseirae_irae_eilistraeepriestess_desc;Though the good and kind Eilistraee is a mortal enemy of Lolth, House Irae strangely tolerates the presence of her Priestesses. Invite one such Priestess of the Moonlight Maiden to your court.;;;;;;;;;;;;;x
+houseirae_irae_vhaeraunpriest;Invite Priest of Vhaeraun;;;;;;;;;;;;;x
+houseirae_irae_vhaeraunpriest_desc;By the very virtue of being male, Vhaeraun is a mortal enemy of Lolth, though strangely House Irae tolerates his Priests. Invite one such Priest of the Masked Lord into your court.;;;;;;;;;;;;;x
+raise_irae_honor_guard;Hire Slavers;;;;;;;;;;;;;x
+raise_irae_honor_guard_desc;House Irae is famous for its slave raids, bringing in fresh new toys for the Matron Mother to play with. With enough favor, you can convince one such raiding party to join you. You will still need to pay for their upkeep, however.;;;;;;;;;;;;;x
+houseirae_send_gift;Send Gift;;;;;;;;;;;;;x
+houseirae_send_gift_desc;In lieu of potential sex slaves, House Irae always welcomes gold. Send them a modest gift to increase their favor with you.;;;;;;;;;;;;;x
+houseirae_irae_adoptchild;Adopt a Child;;;;;;;;;;;;;x
+houseirae_irae_adoptchild_desc;The Matron Mother of House Irae is extremely... prolific. Unfortunately, only the strongest children will ever make a good life for themselves in House Irae. For whatever reason, the Matron goes against dark elven norms and would rather the 'rejects' live than be culled. Send an emissary to adopt one such child into your own dynasty.;;;;;;;;;;;;;x
+houseirae_irae_lockdown_military_aid;Request Military Aid;;;;;;;;;;;;;x
+houseirae_irae_lockdown_military_aid_desc;You are taking the fight directly to Tamsine. Perhaps the Matron Mother of (the original) House Irae can provide some assistance in dealing with this crisis?;;;;;;;;;;;;;x
+HouseIraeMilitaryAidTooltipA;Ownership of one of the Matron Mother's favorite statuettes;;;;;;;;;;;;;x
+HouseIraeMilitaryAidTooltipB;The Matron Mother is impressed with the care you have given to the statuette of her one of her favorites, and has agreed to dispatch a message to someone she knows that can help.;;;;;;;;;;;;;x
+
+#
+# Misc
+#
+house_irae_bloodline;Blood of Tamsine Irae;;;;;;;;;;;;;x
+house_irae_bloodline_desc;Tamsine Irae was the first of the House of Irae to climb to power and depose the reigning Matron Mother, forging the way for her children.;;;;;;;;;;;;;x
+house_irae_true_bloodline;Blood of Tamsine Irae;;;;;;;;;;;;;x
+house_irae_true_bloodline_desc;Tamsine Irae rose from death using her foul magic, forging the way for bloodshed and conquest by her descendants.;;;;;;;;;;;;;x
+houseirae_halfelf;Half Elf;;;;;;;;;;;;;x
+houseirae_halfelf_desc;Half elves are neither here nor there. Originally born of a dark elven parent and a parent of another race (often through rape, as is the nature of dark elves), half elves keep their light hair but their skin is a more softer brown color. They are neither fully accepted nor outright shunned in dark elven or surface elven communities. Because of this, they tend to form their own communities.;;;;;;;;;;;;;x
+form_fitting_corset_big;Form Fitting Dress;;;;;;;;;;;;;x
+form_fitting_corset_huge;Form Fitting Dress;;;;;;;;;;;;;x
+form_fitting_corset_enormous;Form Fitting Dress;;;;;;;;;;;;;x
+form_fitting_corset_gigantic;Form Fitting Dress;;;;;;;;;;;;;x
+form_fitting_thong_big;Form Fitting Thong;;;;;;;;;;;;;x
+form_fitting_thong_huge;Form Fitting Thong;;;;;;;;;;;;;x
+form_fitting_thong_enormous;Form Fitting Thong;;;;;;;;;;;;;x
+form_fitting_thong_gigantic;Form Fitting Thong;;;;;;;;;;;;;x
+houseirae_drow_group;Dark Elves;;;;;;;;;;;;;x
+drow;Dark Elf;;;;;;;;;;;;;x
+drow_adj;Dark Elven;;;;;;;;;;;;;x
+houseirae_drow;Dark Elf;;;;;;;;;;;;;x
+houseirae_drow_desc;Dark Elves come from caverns deep underground, far away from their surface-dwelling cousins. They are known as masters of seduction and intrigue.;;;;;;;;;;;;;x
+DEATH_SOLD_TO_HOUSE_IRAE_NO_KILLER;sold to the Dark Elven empire of House Irae;;;;;;;;;;;;;x
+DEATH_SOLD_TO_HOUSE_IRAE;sold to the Dark Elven empire of House Irae, on the order of $KILLER$;;;;;;;;;;;;;x
+houseirae_drider;Drider;;;;;;;;;;;;;x
+houseirae_drider_desc;This character has been cursed by the Dark Seldarine. While their upper body is normal, everything below the waist is a giant black widow spider.;;;;;;;;;;;;;x
+lolth_religion_opinion;[lolth_religion.GetName] Opinion;;;;;;;;;;;;;x
+eilistraee_religion_opinion;[eilistraee_religion.GetName] Opinion;;;;;;;;;;;;;x
+vhaeraun_religion_opinion;[vhaeraun_religion.GetName] Opinion;;;;;;;;;;;;;x
+opinion_of_lolth_religion;Opinion of [lolth_religion.GetName];;;;;;;;;;;;;x
+opinion_of_eilistraee_religion;Opinion of [eilistraee_religion.GetName];;;;;;;;;;;;;x
+opinion_of_vhaeraun_religion;Opinion of [vhaeraun_religion.GetName];;;;;;;;;;;;;x
+houseirae_spiders_used;Caverns Depleted;;;;;;;;;;;;;x
+houseirae_spiders_used_desc;As is tradition, when a broodmother dies and the dark elves inherit the spider family, the caverns she called home is collapsed and sealed off. It will take some time to find a new location for a nest.;;;;;;;;;;;;;x
+custom_region_frozen_north;The Frozen North;;;;;;;;;;;;;x
+DEATH_FED_TO_SPIDERS;was fed to giant spiders, on the order of $KILLER$;;;;;;;;;;;;;x
+DEATH_CUSTOM_PARENTS;is living elsewhere;;;;;;;;;;;;;x
+DEATH_CUSTOM_PARENTS_NO_KILLER;is living elsewhere;;;;;;;;;;;;;x
+houseirae_spider_pit_cd;Spider Pit Cooldown;;;;;;;;;;;;;x
+houseirae_spider_pit_cd_desc;You should never see this.;;;;;;;;;;;;;x
+
+#
+# Religions
+#
+YATHTALLAR;Zhennu Yathtallar;;;;;;;;;;;;;x
+GOD_DARK_SELDARINE;The Dark Seldarine;;;;;;;;;;;;;x
+GOD_LOLTH;Lolth;;;;;;;;;;;;;x
+GOD_EILISTRAEE;Eilistraee;;;;;;;;;;;;;x
+GOD_VHAERAUN;Vhaeraun;;;;;;;;;;;;;x
+DROWPRIEST;Yathrin;;;;;;;;;;;;;x
+DROWSELDARINEBIBLE;The Dark Seldarine Chronicles;;;;;;;;;;;;;x
+DROWLOLTHBIBLE;The Spider Chronicles;;;;;;;;;;;;;x
+DROWEILISTRAEEBIBLE;The Dark Chronicles;;;;;;;;;;;;;x
+DROWVHAERAUNBIBLE;The Shadow Chronicles;;;;;;;;;;;;;x
+temple_baron_lolth_religion;Yathrin;;;;;;;;;;;;;x
+temple_baron_eilistraee_religion;Yathrin;;;;;;;;;;;;;x
+temple_baron_vhaeraun_religion;Yathrin;;;;;;;;;;;;;x
+lolth_religion;Lolth;;;;;;;;;;;;;x
+lolth_religion_DESC;Lolth, the Spider Queen, is the de jure ruler of all Dark Elves. Lolth hates kindness and weakness of any variety, and very few children under the Spider Queen's rule make it to adulthood. This ensures that the surviving adults are well suited to performing her dark deeds. She particularly hates those who follow her children, Eilistraee and Vhaeraun.;;;;;;;;;;;;;x
+eilistraee_religion;Eilistraee;;;;;;;;;;;;;x
+eilistraee_religion_DESC;Eilistraee, the Dark Maiden, is the goddess of moonlight and dancing. Her followers include the Dark Elves who shun the evil society of her mother, Lolth. Of the whole Dark Elven pantheon, Eilistraee is the only one with a good and kind heart, protecting those who need help, regardless of race.;;;;;;;;;;;;;x
+vhaeraun_religion;Vhaeraun;;;;;;;;;;;;;x
+vhaeraun_religion_DESC;The Masked Lord, Vhaeraun is the god of darkness, assassins, and- most importantly- male Dark Elves. His worshippers are exclusively male, and shun the matriarchal society of his mother, Lolth. Unlike his sister, Eilistraee, Vhaeraun is every bit as evil as his mother.;;;;;;;;;;;;;x
+#
+# Dynamic Cults
+#
+secret_religious_society_eilistraee_religion;Moondancers;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_desc;The Moondancers secretly worship the goddess Eilistraee, and hope to bring peace and prosperity to back to a broken Dark Seldarine.;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_leader_desc;[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];;[GetSocietyLeaderDesc];;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_1_female;Daughter;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_2_female;Sister;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_3_female;Mother;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_4_female;Dancer;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_1_male;Daughter;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_2_male;Son;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_3_male;Brother;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_rank_4_male;Warden;;;;;;;;;;;;;x
+secret_religious_society_eilistraee_religion_currency;Moonlight;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion;Arachnids;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_desc;The Arachnids secretly worship the goddess Lolth, waiting for their chance to strike out against the world at large.;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_leader_desc;[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];;[GetSocietyLeaderDesc];;;;;;;;;x
+secret_religious_society_lolth_religion_rank_1_female;Daughter;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_2_female;Sister;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_3_female;Mother;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_4_female;Black Widow;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_1_male;Son;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_2_male;Brother;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_3_male;Father;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_rank_4_male;Brown Recluse;;;;;;;;;;;;;x
+secret_religious_society_lolth_religion_currency;Ichor;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion;Life Takers;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_desc;The Life Takers secretly worship the god Vhaeraun, waiting for their chance to strike out against the world at large.;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_leader_desc;[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];[GetSocietyLeaderDesc];;[GetSocietyLeaderDesc];;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_1_female;Daughter;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_2_female;Sister;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_3_female;Mother;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_4_female;Concubine;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_1_male;Son;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_2_male;Brother;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_3_male;Father;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_rank_4_male;Lord;;;;;;;;;;;;;x
+secret_religious_society_vhaeraun_religion_currency;Deceit;;;;;;;;;;;;;x
+secret_religions_openly_adopt_faith_dark_seldarine;Openly Adopt Faith;Adopter ouvertement sa foi;Glauben öffentlich annehmen;;Adoptar fe abiertamente;;;;;;;;;x
+secret_religions_openly_adopt_faith_dark_seldarine_desc;The followers of [Root.Society.GetNameCap] has for too long lurked in the shadows. The time has finally come to reveal our true beliefs now that we are so many that we can no longer be ignored.;Les adeptes [Root.Get_du_Society] se sont terrés pendant trop longtemps. Le temps est enfin venu de révéler nos vraies croyances maintenant que nous sommes tellement nombreux que nous ne pouvons plus être ignorés.;Die Anhänger von [Root.Society.GetNameCap] verheimlichen ihre Gesinnung schon viel zu lange. Nun ist es an der Zeit, unsere wahren Überzeugungen zu offenbaren, denn nun ist unsere Zahl so groß, dass man uns nicht mehr ignorieren kann.;;Los seguidores de [Root.Society.GetNameCap] llevan demasiado tiempo escondiéndose. Por fin ha llegado la hora de proclamar nuestras creencias, pues somos tantos que ya no pueden ignorarnos.;;;;;;;;;x
+secret_religions_openly_adopt_faith_dark_seldarine_power_desc;Enables you to openly adopt your true faith. The other secretly religious characters and counties of your true faith in the realm will convert with you. This power is available in the Intrigue Screen.;Vous permet d'adopter ouvertement votre vraie foi. Les autres personnages et les comtés secrètement de votre vraie foi dans le pays se convertiront aussi. Ce pouvoir est disponible dans l'écran Intrigue.;Ermöglicht Euch, offen Euren wahren Glauben anzunehmen. Die anderen im Geheimen religiösen Charaktere und Grafschaften Eures wahren Glaubens im Reich werden sich Eurer Bekehrung anschließen. Diese Macht ist auf der Intrigenseite verfügbar.;;Te permite abrazar abiertamente tu verdadera fe. Los demás personajes y condados que comparten tu verdadera fe en secreto en el reino se convertirán también. Este poder está en el menú Intriga.;;;;;;;;;x
+secret_religions_prepare_grounds_dark_seldarine;Prepare Ground;Préparer le terrain;Dem Glauben den Boden bereiten;;Preparar el terreno;;;;;;;;;x
+secret_religions_prepare_grounds_dark_seldarine_desc;Order a loyal agent to secretly spread our teachings in a target province.;Ordonner à un agent fidèle de répandre secrètement nos enseignements dans une province cible.;Befehlt einem getreuen Agenten, die Lehren Eures Glaubens im Geheimen in einer bestimmten Provinz zu verbreiten.;;Ordena a un agente leal que corra la voz sobre nuestras enseñanzas en secreto en una provincia objetivo.;;;;;;;;;x
+secret_religions_prepare_grounds_dark_seldarine_power_desc;Enables you to spread your true religion secretly among the inhabitants of a county in your realm by right-clicking its county shield in the county view. If you openly adopt your true faith, these counties will convert as well. This power is available in the Intrigue Screen.;Vous permet de répandre votre vraie religion secrètement parmi les habitants d'un comté de votre pays en cliquant avec le bouton droit sur son blason de comté dans la vue de comté. Si vous adoptez ouvertement votre vraie foi, ces comtés se convertiront aussi. Ce pouvoir est disponible dans l'écran Intrigue.;Ermöglicht Euch, Eure wahre Religion heimlich unter den Einwohnern einer Grafschaft in Eurem Reich zu verbreiten, indem Ihr in der Grafschaftsansicht auf das Schild der Grafschaft rechtsklickt. Wenn Ihr offen Euren wahren Glauben annehmt, werden diese Grafschaften ebenfalls bekehrt. Diese Macht ist auf der Intrigenseite verfügbar.;;Te permite difundir tu verdadera religión en secreto entre los habitantes de un condado de tu reino haciendo clic sobre su escudo en la vista del condado. Si abrazas en público tu verdadera fe, estos condados también se convertirán. Este poder está disponible en el menú Intriga.;;;;;;;;;x
+secret_lolth_community;Secret [lolth_religion.GetName] Community;Communauté [lolth_religion.GetName] secrète;Geheime Gemeinschaft: [lolth_religion.GetName];;Comunidad Secreta: [lolth_religion.GetName];;;;;;;;;x
+secret_eilistraee_community;Secret [eilistraee_religion.GetName] Community;Communauté [eilistraee_religion.GetName] secrète;Geheime Gemeinschaft: [eilistraee_religion.GetName];;Comunidad Secreta: [eilistraee_religion.GetName];;;;;;;;;x
+secret_vhaeraun_community;Secret [vhaeraun_religion.GetName] Community;Communauté [vhaeraun_religion.GetName] secrète;Geheime Gemeinschaft: [vhaeraun_religion.GetName];;Comunidad Secreta: [vhaeraun_religion.GetName];;;;;;;;;x
+secret_lolth_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;Des fidèles ont secrètement formé une communauté dans cette province. Ils y convertissent les autres personnes et protègent les leurs.;In dieser Provinz haben sich Gläubige heimlich zu einer kleinen Kirchengemeinde organisiert. Von dort aus bekehrt diese Gemeinde andere, wird immer größer und beschützt ihre Mitglieder.;;Los fieles han organizado en secreto una pequeña comunidad de culto en esta provincia. Desde ahí convierte a otros, crece y protege a los suyos.;;;;;;;;;x
+secret_vhaeraun_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;Des fidèles ont secrètement formé une communauté dans cette province. Ils y convertissent les autres personnes et protègent les leurs.;In dieser Provinz haben sich Gläubige heimlich zu einer kleinen Kirchengemeinde organisiert. Von dort aus bekehrt diese Gemeinde andere, wird immer größer und beschützt ihre Mitglieder.;;Los fieles han organizado en secreto una pequeña comunidad de culto en esta provincia. Desde ahí convierte a otros, crece y protege a los suyos.;;;;;;;;;x
+secret_eilistraee_community_desc;In secret, the faithful have organized around a small church community in this province. From there it converts others, grows, and protects their own.;Des fidèles ont secrètement formé une communauté dans cette province. Ils y convertissent les autres personnes et protègent les leurs.;In dieser Provinz haben sich Gläubige heimlich zu einer kleinen Kirchengemeinde organisiert. Von dort aus bekehrt diese Gemeinde andere, wird immer größer und beschützt ihre Mitglieder.;;Los fieles han organizado en secreto una pequeña comunidad de culto en esta provincia. Desde ahí convierte a otros, crece y protege a los suyos.;;;;;;;;;x
+secret_religions_personally_adopt_secret_religion_dark_seldarine;Personally Adopt Faith;;;;;;;;;;;;;x
+secret_religions_personally_adopt_secret_religion_dark_seldarine_desc;Give up the charade of your false religion you've acted upon and openly declare your true faith.;;;;;;;;;;;;;x
+
+#
+# Game Rules
+#
+
+DROW_RULE_YES_DROW;Dark Elven Start;;;;;;;;;;;;;x
+DROW_RULE_YES_DROW_DESC;All content enabled, and your character will have a decision to start as a dark elf.;;;;;;;;;;;;;x
+HOUSEIRAE_RULE_HOUSE_IRAE;§KHouse Irae§!: Dark Elves;;;;;;;;;;;;;x
+HOUSEIRAE_RULE_NO_IRAE;Disabled;;;;;;;;;;;;;x
+HOUSEIRAE_RULE_NO_IRAE_DESC;The offmap power, House Irae, is disabled.;;;;;;;;;;;;;x
+HOUSEIRAE_RULE_YES_IRAE;Rise of House Irae;;;;;;;;;;;;;x
+HOUSEIRAE_RULE_YES_IRAE_DESC;The offmap power, House Irae is enabled, bringing with it the special Dark Elven race and religions.;;;;;;;;;;;;;x
+DROW_RULE_YES_HALFELF;Half Elven Start;;;;;;;;;;;;;x
+DROW_RULE_YES_HALFELF_DESC;Your character will have a decision to start as a half elf.;;;;;;;;;;;;;x
+DROW_RULE_CHILD_OF_IRAE;Child of House Irae;;;;;;;;;;;;;x
+DROW_RULE_CHILD_OF_IRAE_DESC;You will start as an exiled dark elven child of Kekvit Irae.\nThis character will not be able to take the Request Personal Boon decision, §Rand certain other things§! may happen. §KNot for players new to House Irae.§!;;;;;;;;;;;;;x
+RULE_IRAE_CUSTOM_FAMILIES;§KHouse Irae§!: Generated Families;;;;;;;;;;;;;x
+irae_no_families;No;;;;;;;;;;;;;x
+irae_no_families_desc;Families will not be generated for Ruler Designed characters.;;;;;;;;;;;;;x
+irae_yes_families;Yes;;;;;;;;;;;;;x
+irae_yes_families_desc;Families will be generated for Ruler Designed characters. This option will not work if you have chosen children of your own.;;;;;;;;;;;;;x
+RULE_GROUP_HOUSEIRAE;House Irae;;;;;;;;;;;;;x
+RULE_GROUP_HOUSE_IRAE;House Irae;;;;;;;;;;;;;x
+RULE_IRAE_INVASIONS;§KHouse Irae§!: The Spurned Sister;;;;;;;;;;;;;x
+RULE_IRAE_INVASION_STRENGTH;§KHouse Irae§!: Invasion Strength;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_NORMAL;Normal;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_NORMAL_DESC;The Spurned Sister will rise up and attack Britannia, Scandinavia, or Russia with a sizable army.;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_HIGH;High;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_HIGH_DESC;The Spurned Sister will lead an army to rival most empires.;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_JUST_WANTS_TO_SEE_THE_WORLD_BURN;§KExtreme§!;;;;;;;;;;;;;x
+HOUSEIRAE_LAELA_JUST_WANTS_TO_SEE_THE_WORLD_BURN_DESC;The Spurned Sister will destroy anyone who gets in her way.\n§KYOU HAVE BEEN WARNED§!;;;;;;;;;;;;;x
+RULE_IRAE_SEEDING;§KHouse Irae§!: Seeding;;;;;;;;;;;;;x
+houseirae_seed_none;None;;;;;;;;;;;;;x
+houseirae_seed_none_desc;The world will remain as it was.;;;;;;;;;;;;;x
+houseirae_seed_religion;Religions;;;;;;;;;;;;;x
+houseirae_seed_religion_desc;House Irae religions will be seeded on the fifth day.;;;;;;;;;;;;;x
+houseirae_seed_culture;Culture;;;;;;;;;;;;;x
+houseirae_seed_culture_desc;House Irae culture will be seeded on the fifth day.;;;;;;;;;;;;;x
+houseirae_seed_both;Both;;;;;;;;;;;;;x
+houseirae_seed_both_desc;House Irae religions and culture will be seeded on the fifth day.;;;;;;;;;;;;;x
+RULE_IRAE_DARK_WHISPERS;§KHouse Irae§!: Dark Whispers;;;;;;;;;;;;;x
+houseirae_dark_whispers_on;On;;;;;;;;;;;;;x
+houseirae_dark_whispers_on_desc;A dark and deadly soul may whisper into the ear of a child of Irae, leading to a crisis within House Irae.;;;;;;;;;;;;;x
+houseirae_dark_whispers_easy;Easy;;;;;;;;;;;;;x
+houseirae_dark_whispers_easy_desc;A dark and deadly soul will whisper into the ear of a child of Irae, leading to a crisis within House Irae.\n§GThe Spurned Sister will not assist the Dark Whispers child.§!;;;;;;;;;;;;;x
+houseirae_dark_whispers_off;Off;;;;;;;;;;;;;x
+houseirae_dark_whispers_off_desc;The dark whispers were nothing more than a childish nightmare.;;;;;;;;;;;;;x
+
+#
+# CBs
+#
+
+drow_holy_war_desc;Conquer all who oppose us in the name of the Dark Seldarine!;;;;;;;;;;;;;x
+
+#
+# Governments
+#
+
+lolth_theocracy_government;Dark Seldarine Theocracy;Théocratie;Theokratie;;teocracia;;;;;;;;;x
+lolth_theocracy_government_desc;Theocracies, like minor republics, are unplayable. Rulers are appointed or elected from among the ecclesiarchy, and there is no dynastic persistence between generations of rulers.;Les théocraties, à l'instar des républiques mineures, ne sont pas jouables. Les seigneurs sont nommés ou élus parmi l'ecclésiarchie et il n'y a aucune persistance dynastique entre les générations.;Theokratien sind so wie die kleineren Republiken nicht spielbar. Zum Herrscher werden Geistliche bestimmt und es gibt keine dynastische Kontinuität innerhalb der Folge der Herrscher.;;Las teocracias, como las repúblicas menores, tampoco son jugables. Los gobernantes son designados o elegidos entre la jerarquía eclesial y no hay ninguna persistencia dinástica entre las generaciones de gobernantes;;;;;;;;;x
+eilistraee_theocracy_government;Dark Seldarine Theocracy;Théocratie;Theokratie;;teocracia;;;;;;;;;x
+eilistraee_theocracy_government_desc;Theocracies, like minor republics, are unplayable. Rulers are appointed or elected from among the ecclesiarchy, and there is no dynastic persistence between generations of rulers.;Les théocraties, à l'instar des républiques mineures, ne sont pas jouables. Les seigneurs sont nommés ou élus parmi l'ecclésiarchie et il n'y a aucune persistance dynastique entre les générations.;Theokratien sind so wie die kleineren Republiken nicht spielbar. Zum Herrscher werden Geistliche bestimmt und es gibt keine dynastische Kontinuität innerhalb der Folge der Herrscher.;;Las teocracias, como las repúblicas menores, tampoco son jugables. Los gobernantes son designados o elegidos entre la jerarquía eclesial y no hay ninguna persistencia dinástica entre las generaciones de gobernantes;;;;;;;;;x
+vhaeraun_theocracy_government;Dark Seldarine Theocracy;Théocratie;Theokratie;;teocracia;;;;;;;;;x
+vhaeraun_theocracy_government_desc;Theocracies, like minor republics, are unplayable. Rulers are appointed or elected from among the ecclesiarchy, and there is no dynastic persistence between generations of rulers.;Les théocraties, à l'instar des républiques mineures, ne sont pas jouables. Les seigneurs sont nommés ou élus parmi l'ecclésiarchie et il n'y a aucune persistance dynastique entre les générations.;Theokratien sind so wie die kleineren Republiken nicht spielbar. Zum Herrscher werden Geistliche bestimmt und es gibt keine dynastische Kontinuität innerhalb der Folge der Herrscher.;;Las teocracias, como las repúblicas menores, tampoco son jugables. Los gobernantes son designados o elegidos entre la jerarquía eclesial y no hay ninguna persistencia dinástica entre las generaciones de gobernantes;;;;;;;;;x
+theocracy_seldarine_government;Dark Seldarine Theocracy;;;;;;;;;;;;;x
+theocracy_seldarine_government_desc;Theocracies, like minor republics, are unplayable. Rulers are appointed or elected from among the ecclesiarchy, and there is no dynastic persistence between generations of rulers.;Les théocraties, à l'instar des républiques mineures, ne sont pas jouables. Les seigneurs sont nommés ou élus parmi l'ecclésiarchie et il n'y a aucune persistance dynastique entre les générations.;Theokratien sind so wie die kleineren Republiken nicht spielbar. Zum Herrscher werden Geistliche bestimmt und es gibt keine dynastische Kontinuität innerhalb der Folge der Herrscher.;;Las teocracias, como las repúblicas menores, tampoco son jugables. Los gobernantes son designados o elegidos entre la jerarquía eclesial y no hay ninguna persistencia dinástica entre las generaciones de gobernantes;;;;;;;;;x
+gov_seldarine_theocracy;Dark Seldarine Theocracy;;;;;;;;;;;;;x
+gov_seldarine_theocracy_desc;Theocracies, like minor republics, are unplayable. Rulers are appointed or elected from among the ecclesiarchy, and there is no dynastic persistence between generations of rulers.;Les théocraties, à l'instar des républiques mineures, ne sont pas jouables. Les seigneurs sont nommés ou élus parmi l'ecclésiarchie et il n'y a aucune persistance dynastique entre les générations.;Theokratien sind so wie die kleineren Republiken nicht spielbar. Zum Herrscher werden Geistliche bestimmt und es gibt keine dynastische Kontinuität innerhalb der Folge der Herrscher.;;Las teocracias, como las repúblicas menores, tampoco son jugables. Los gobernantes son designados o elegidos entre la jerarquía eclesial y no hay ninguna persistencia dinástica entre las generaciones de gobernantes;;;;;;;;;x
+#
+# Laws
+#
+
+drow_tanistry;Drow Tanistry;;;;;;;;;;;;;x
+drow_tanistry_desc;An elective monarchy where dark elven family comes first.;;;;;;;;;;;;;x
+drow_turkish_succession;Power Struggle;;;;;;;;;;;;;x
+drow_turkish_succession_desc;A society where only the strongest and most powerful children will rise to power.;;;;;;;;;;;;;x
+lolth_succession;Drow Matriarchy;;;;;;;;;;;;;x
+lolth_succession_desc;A society where only women rule, often picked from the best and brightest of the daughters.;;;;;;;;;;;;;x
+vhaeraun_succession;Drow Patriarchy;;;;;;;;;;;;;x
+vhaeraun_succession_desc;A society where only men rule, often picked from the best and brightest of sons.;;;;;;;;;;;;;x
+eilistraee_succession;Drow Equality;;;;;;;;;;;;;x
+eilistraee_succession_desc;A society where gender does not matter when it comes to succession.;;;;;;;;;;;;;x
+houseirae_raiding;Slave Raiding;;;;;;;;;;;;;x
+houseirae_raiding_desc;We can recruit hardened slave raiders to join our armies, but the locals won't like the idea of their daughters being used for practice.;;;;;;;;;;;;;x
+houseirae_raiding_0_desc;We will not train any slavers.;;;;;;;;;;;;;x
+houseirae_raiding_0;Disabled;;;;;;;;;;;;;x
+houseirae_raiding_1_desc;We will recruit and train slavers into our army.;;;;;;;;;;;;;x
+houseirae_raiding_1;Slaving;;;;;;;;;;;;;x
+houseirae_drow_eilistraee;Drow Tanistry;;;;;;;;;;;;;x
+
+
+#
+# Artifacts
+#
+
+irae_genealogy;Book of Irae Genealogy;;;;;;;;;;;;;x
+irae_genealogy_desc;A book containing the anscestry of House Irae, dating back many generations. \n \n\n Most entries are only blurbs, but the good stuff starts with Tamsine Irae, the woman who grew House Irae from a pitiful, forgotten family into a dominating power.\n Tamsine had triplets: Kaenia, Kekvit, and Laela. Kaenia was the promising successor, but she went into self-exile to the surface due to frequent bouts of insanity. Laela was the next favorite, but was extremely violent (moreso than the typical dark elf), so Kekvit quietly dispatched her. She still lives, but her condition and location are unknown. With nobody else in the way, Kekvit could ascend to the throne upon her mother's death.\n §GThere are ancient runes scribbled in the margins.§!;;;;;;;;;;;;;x
+irae_sexy_dress;Stunning Dress;;;;;;;;;;;;;x
+irae_sexy_dress_desc;A beautiful black dress that leaves VERY little to the imagination. \n \n\n This dress barely covers your nipples. The dress narrows dramatically into a barely-there loincloth in the front below the waist, leaving little actual coverage of your nether region, and completely exposing your ass.\n §GThere are ancient runes sewn into the hem.§!;;;;;;;;;;;;;x
+irae_sexy_thong;Stunning Thong;;;;;;;;;;;;;x
+irae_sexy_thong_desc;A black leather thong, looking extremely flexable and feeling wonderful. \n \n\n Held on by barely-there straps, the tip of the thong is the only thing that covers the shaft. As if that wasn't enough, your ass is completely exposed.\n §GThere are ancient runes sewn into the straps.§!;;;;;;;;;;;;;x
+irae_cloak;Spider Silk Cloak;;;;;;;;;;;;;x
+irae_cloak_desc;A simple, yet elegant, cloak woven from spider silk and dyed deep purple.;;;;;;;;;;;;;x
+irae_leather_armor;Black Leather Armor;;;;;;;;;;;;;x
+irae_leather_armor_desc;A deceptively-basic suit of leather armor, dyed jet black. The leather is as strong as normal boiled leather, yet flexable enough to be worn underneath normal armor.;;;;;;;;;;;;;x
+irae_hand_crossbow;Hand Crossbow;;;;;;;;;;;;;x
+irae_hand_crossbow_desc;Most crossbows the Dark Elves use are miniature versions of normal crossbows, often no longer than a foot and can be carried and fired in one hand. \n \n This crossbow, however, is a miniature version of the hand crossbow. Likely a prototype, the weapon is small enough to rest on the back of your hand, attached to the wrist. While it uses darts instead of crossbow bolts, it has the same stop stopping power as a regular hand crossbow.;;;;;;;;;;;;;x
+irae_statue_of_kekvit;Statuette of Kekvit;;;;;;;;;;;;;x
+irae_statue_of_kekvit_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the House Irae Matron Mother herself, Kekvit Irae. \n \n Commissioned by the Matron herself, the statue boasts exquisite detail. The Matron Mother is wearing nothing but a pair of high-heeled boots, though the statue's pose hides her... features.\n An inscription at the base of the statue reads, "The Second Irae, Proud Mother and Wife, Ruler of House Irae.";;;;;;;;;;;;;x
+irae_statue_of_deionarra;Statuette of Deionarra;;;;;;;;;;;;;x
+irae_statue_of_deionarra_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the shy daughter of House Irae, Deionarra Irae. \n \n Commissioned by the Matron herself, the statue boasts exquisite detail. The figure is very child-like, fully clothed in flowing robes and holding a staff. The girl is clutching her staff with a feaful look on her face.\n An inscription at the base of the statue reads, "House Irae Yathtallar, Devoted Wife." Hidden underneath the base is an additional inscription: "Beloved Daughter.";;;;;;;;;;;;;x
+irae_statue_of_khaldune;Statuette of Khaldune;;;;;;;;;;;;;x
+irae_statue_of_khaldune_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the lustful son of House Irae, Khaldune Irae. \n \n Commissioned by the Matron herself, the statue boasts exquisite detail. The figure is completely nude, with an exaggerated cock standing at attention. The pose makes it clear that he wants everyone to see.\n An inscription at the base of the statue reads, "The less said about his exploits, the better.";;;;;;;;;;;;;x
+irae_statue_of_freya;Statuette of Freya;;;;;;;;;;;;;x
+irae_statue_of_freya_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the wrathful daughter of House Irae, Freya Irae. \n \n Commissioned by the Matron herself, the statue boasts exquisite detail. The figure is completely nude, with the only other items present are a pair of daggers in her hands. The figure makes a combative pose.\n An inscription at the base of the statue reads, "The Firstborn, Heir to House Irae, Commander of the Armies.";;;;;;;;;;;;;x
+irae_statue_of_tamsine;Statuette of Tamsine;;;;;;;;;;;;;x
+irae_statue_of_tamsine_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the original Matron Mother of House Irae, Tamsine Irae. \n \n Despite being commissioned by the Matron herself, the statue's quality is lackluster. The figure is completely nude, with a crazy, wild expression on her face. She is striking a pose as if choking an unseen opponent.\n An inscription at the base of the statue reads, "The only good she did was birthing me. May she rot in the Abyss for all time.";;;;;;;;;;;;;x
+irae_statue_of_belladonna;Statuette of Belladonna;;;;;;;;;;;;;x
+irae_statue_of_belladonna_desc;A fully sculped and painted statuette, standing no more than a foot tall, of the consort to the Matron Mother of House Irae, Belladonna Irae. \n \n Commissioned by the Matron herself, the statue boasts exquisite detail. Unlike most within House Irae, the figure is shorter than an average dark elf, and sports a black tail and black horns. It is clear that this figure represents a half-dragon. Fully nude except for a large battleaxe held in both hands, the figure is striking down an unseen opponent. Unlike normal women, this figure has something... extra between her legs.\n An inscription at the base of the statue reads, "Beloved Wife, Devoted Protector, My Heart.";;;;;;;;;;;;;x
+irae_statue_of_meeshka;Statuette of Meeshka;;;;;;;;;;;;;x
+irae_statue_of_meeshka_desc;A fully sculped and painted statuette, standing no more than a foot tall, of Meeshka, the teenaged daughter of House Irae. \n \n With the same dark skin and white hair of other dark elves, the only things that gives the girl away as not being a dark elf are the white feline ears and tail. The figure is fully clothed, though 'fully' might be an overstatement. She is barely wearing rags over her private areas, but the figure is striking such a happy pose that it feels like she doesn't care.\n There is no inscription at the base, save for one that was crudely made post-production: "Meeshka luvs mommy! Luvluvluvluv! Meeshka hungry!" You begin to realize why the Matron doesn't talk about her.;;;;;;;;;;;;;x
+irae_loincloth;Usankogan, "Murderedboat";;;;;;;;;;;;;x
+irae_loincloth_desc;This is a pig tail fiber loincloth. All craftdwarfship is of the highest quality. \n            \n\n It is encircled with bands of pig tail fiber and kea leather. This object menaces with spikes of mountain goat leather. \nOn the item is an image of a mandrill and a dog in pig tail fiber. The dog is striking down the mandrill.\nOn the item is an image of a elephant and a dwarf in Rope reed. The elephant is making a plaintive gesture. The dwarf is laughing.\nOn the item is an image of a cheese in clear glass.;;;;;;;;;;;;;x
+irae_sterility_charm;Sterility Charm;;;;;;;;;;;;;x
+irae_sterility_charm_desc;A minor charm, when placed near the genitals, will assist in preventing pregnancy. A favorite of House Irae's Matron Mother, even if it does sometimes fail.;;;;;;;;;;;;;x
+pants;Pants;;;;;;;;;;;;;x
+cloak;Cloak;;;;;;;;;;;;;x
+underarmor;Underarmor;;;;;;;;;;;;;x
+dress;Dress;;;;;;;;;;;;;x
+
+#
+# Decisions
+#
+
+
+start_as_halfelf;Neither Here Nor There;;;;;;;;;;;;;x
+start_as_halfelf_desc;It is time to claim your birthright and show the world that you can be just as good or as evil as your parentage.;;;;;;;;;;;;;x
+hold_grand_hunt_femalesorseldarine;Go on a Grand Hunt;;;;;;;;;;;;;x
+hold_grand_hunt_femalesorseldarine_desc;Go on a Grand Hunt with the best hunters in our domains!;;;;;;;;;;;;;x
+start_as_drow;Legacy of the Dark Elves;;;;;;;;;;;;;x
+start_as_drow_desc;It is time to step away from the cavernous depths of the Underdark and out into the mortal realm.;;;;;;;;;;;;;x
+houseirae_change_drow_portrait;Change Portrait;;;;;;;;;;;;;x
+houseirae_change_drow_portrait_desc;Use this decision to remove your portrait and add a new one, if the old one doesn't suit you.;;;;;;;;;;;;;x
+feast_eilistraee;Hold a Feast;;;;;;;;;;;;;x
+feast_eilistraee_desc;Hold the biggest feast ever seen in the Kingdom!;;;;;;;;;;;;;x
+summer_fair_eilistraee;Hold a Summer Fair;;;;;;;;;;;;;x
+summer_fair_eilistraee_desc;The Summer Fair brings merchants, peddlers and all sorts of entertainment to your county.;;;;;;;;;;;;;x
+convert_to_seldarine_religion;Convert to [Root.GetPossPronoun] [Root.Religion.GetName] Faith;Se convertir à la foi [Root.Religion.GetName];Zu Glauben konvertieren;;Convertirse a [Root.GetPossPronoun] fe [Root.Religion.GetName];;;;;;;;;x
+convert_to_seldarine_religion_desc;The pillow talk of a spouse or concubine can be very persuasive. I can convert to §Y[Root.GetFirstName]§!'s faith and become a §Y[Root.Religion.GetName] [Root.Religion.GetGroupName]§!...;Les confidences sur l'oreiller d'un époux, d'une épouse ou d'une concubine peuvent être très persuasives. Je peux me convertir à la foi de §Y[Root.GetFirstName]§!, à savoir adopter la religion §Y[Root.Religion.GetName]§!.;Das Bettgeflüster von Ehefrauen oder Konkubinen kann sehr wirksam sein. Ich kann zum Glauben von §Y[Root.GetFirstName]§! konvertieren und §Y[Root.Religion.GetGroupName] [Root.Religion.GetName]§! werden ...;;Las conversaciones entre sábanas de una esposa o concubina pueden ser muy persuasivas. Puedo converitrme a la fe de §Y[Root.GetFirstName]§! y ser un §Y[Root.Religion.GetName] [Root.Religion.GetGroupName]§!...;;;;;;;;;x
+form_lolth_republic;Form Dark Seldarine Republic;;;;;;;;;;;;;x
+form_lolth_republic_desc;The only thing better than a servile slave is a servile slave bringing you lots of gold. Form a merchant republic in the name of Lolth so that you can reap the rewards.;;;;;;;;;;;;;x
+form_vhaeraun_republic;Form Dark Seldarine Republic;;;;;;;;;;;;;x
+form_vhaeraun_republic_desc;The only thing better than a servile slave is a servile slave bringing you lots of gold. Form a merchant republic in the name of Vhaeraun so that you can reap the rewards.;;;;;;;;;;;;;x
+form_eilistraee_republic;Form Dark Seldarine Republic;;;;;;;;;;;;;x
+form_eilistraee_republic_desc;Without gold, trade suffers. Without trade, the peasants suffer. And if the peasants are suffering, who will build your glorious temples to Eilistraee? Form a merchant republic to rectify this issue.;;;;;;;;;;;;;x
+houseirae_irae_seduction;Magical Seduction;;;;;;;;;;;;;x
+houseirae_irae_seduction_desc;The magic of your new clothes is making you feel very sexy and confident. Use this new confidence to get [Root.GetFirstName] into your bed!;;;;;;;;;;;;;x
+irae_send_artifact;Send Artifact;;;;;;;;;;;;;x
+irae_send_artifact_desc;Sometimes artifacts and other various baubles clog up your treasury. Why not send one to House Irae as a sign of respect?\n§GHigher quality artifacts garner more favor.§!\n§RYou will not be able to gift them any artifacts they have previously given you. No refunds.§!;;;;;;;;;;;;;x
+sent_irae_artifact;Sent Artifact;;;;;;;;;;;;;x
+sent_irae_artifact_desc;You have sent an artifact to House Irae in exchange for favor. You will be unable to send another for five years.;;;;;;;;;;;;;x
+irae_get_artifact;Request Artifact;;;;;;;;;;;;;x
+irae_get_artifact_desc;House Irae is known for, among other things, the collection and storage of magical knowledge and trinkets. Request one such artifact from the Matron.;;;;;;;;;;;;;x
+irae_artifact_has_all_tt;Does not have all House Irae artifacts.;;;;;;;;;;;;;x
+houseirae_unleash_spiders;Unleash Spider Riders;;;;;;;;;;;;;x
+houseirae_unleash_spiders_desc;Our children have grown and have been properly trained as both mounts and weapons of war. Now is the time to move them from their homes and onto the battlefield!\n§RA new broodmother will need to be found and the caverns properly cleansed before the brood starts again in this province. It is unlikely this will happen within a lifetime.§!;;;;;;;;;;;;;x
+houseirae_expand_spider_pit;Expand Spider Pit;;;;;;;;;;;;;x
+houseirae_expand_spider_pit_desc;We have an opportunity to expand the pits currently housing our broodmother. We will need gold to buy the slaves needed for the excavation, and prisoners to feed to the new brood.;;;;;;;;;;;;;x
+houseirae_expand_spider_pit_prisoner_tt;At least five prisoners in your dungeon;;;;;;;;;;;;;x
+houseirae_expand_spider_pit2;Expand Spider Pit;;;;;;;;;;;;;x
+houseirae_expand_spider_pit2_desc;We have an opportunity to expand the pits currently housing our broodmother. We will need gold to buy the slaves needed for the excavation, and prisoners to feed to the new brood.;;;;;;;;;;;;;x
+houseirae_expand_spider_pit2_prisoner_tt;At least ten prisoners in your dungeon;;;;;;;;;;;;;x
+irae_incest_choice;Dark Seldarine Incest Toggle;;;;;;;;;;;;;x
+irae_incest_choice_desc;This decision will allow you to choose whether you want the Dark Seldarine religions to allow incest or not.\n§RThis is not reversable.§!;;;;;;;;;;;;;x
+#
+# Buildings
+#
+
+houseirae_seldarine_shrine;Dark Seldarine Shrine;;;;;;;;;;;;;x
+houseirae_seldarine_shrine_desc;A small shrine dedicated to the three main gods of the dark elves, including small alcoves for the minor Dark Seldarine gods.;;;;;;;;;;;;;x
+houseirae_handcrossbow_yard;Hand Crossbow Yard;;;;;;;;;;;;;x
+houseirae_handcrossbow_yard_desc;A training yard dedicated to practicing close combat with dark elven hand crossbows in combination with with melee weapons.;;;;;;;;;;;;;x
+houseirae_castle_seldarine_shrine;Dark Seldarine Shrine;;;;;;;;;;;;;x
+houseirae_castle_seldarine_shrine_desc;A small shrine dedicated to the three main gods of the dark elves, including small alcoves for the minor Dark Seldarine gods.;;;;;;;;;;;;;x
+houseirae_castle_handcrossbow_yard;Hand Crossbow Yard;;;;;;;;;;;;;x
+houseirae_castle_handcrossbow_yard_desc;A training yard dedicated to practicing close combat with dark elven hand crossbows in combination with with melee weapons.;;;;;;;;;;;;;x
+houseirae_spider_pit_1;Spider Hovel;;;;;;;;;;;;;x
+houseirae_spider_pit_2;Spider Pits;;;;;;;;;;;;;x
+houseirae_spider_pit_3;Spider Caverns;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_1;Spider Hovel;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_2;Spider Pits;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_3;Spider Caverns;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_1_desc;A small underground hovel away from prying eyes, where dedicated yathrin tend to the resident spider broodmother.;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_2_desc;The hovel has been expanded deep enough that the broodmother may spend her days spinning webs and laying eggs in safety, tended to by only the most trusted yathrin.;;;;;;;;;;;;;x
+houseirae_castle_spider_pit_3_desc;The pits have expanded to the point where one could fit a small village inside, yet it remains the domain of the spiders churned out by the broodmother. The lucky few yathrin now spend their days in bliss as living incubators for the broodmother's eggs.;;;;;;;;;;;;;x
+RETTYPE_DROW;Hand Crossbowmen;;;;;;;;;;;;;x
+
+#
+# Titles
+#
+
+title_houseirae_honored_daughter;Honored Daughter;;;;;;;;;;;;;x
+title_houseirae_honored_daughter_desc;In most dark elven societies, women are treated far better than men. Moreso the daughters of a Matron. These daughters have proven their worth.;;;;;;;;;;;;;x
+title_houseirae_honored_son;Honored Son;;;;;;;;;;;;;x
+title_houseirae_honored_son_desc;In most dark elven societies, men are treated only slightly better than slaves. Some, particularly sons of the Matron, rise to great respect. These sons have proven their worth.;;;;;;;;;;;;;x
+title_houseirae_yathtallar;Yathtallar;;;;;;;;;;;;;x
+title_houseirae_yathtallar_desc;The Yathtallar, or Temple High Priestess, is the spiritual leader of dark elven society. All, save for the Matron herself, bow to her.;;;;;;;;;;;;;x
+houseirae_portrait_is_fine_drow;Portrait Is Fine;;;;;;;;;;;;;x
+houseirae_portrait_is_fine_drow_desc;Use this decision to lock in your custom portrait and remove both this and the Change Portrait decisions from the decision list.\n§RThis decision is permanent to this character.§!\nIf you accidentally choose this decision, or are not happy with your portrait later on, open up the console (tilde key) and type\n§Gclr_char_flag portrait_is_fine§!;;;;;;;;;;;;;x
+modifier_houseirae_honored_daughter;Honored Daughter;;;;;;;;;;;;;x
+modifier_houseirae_honored_daughter_desc;In most dark elven societies, women are treated far better than men. Moreso the daughters of a Matron. These daughters have proven their worth.;;;;;;;;;;;;;x
+modifier_houseirae_honored_son;Honored Son;;;;;;;;;;;;;x
+modifier_houseirae_honored_son_desc;In most dark elven societies, men are treated only slightly better than slaves. Some, particularly sons of the Matron, rise to great respect. These sons have proven their worth.;;;;;;;;;;;;;x
+modifier_houseirae_yathtallar;Yathtallar;;;;;;;;;;;;;x
+modifier_houseirae_yathtallar_desc;The Yathtallar, or Temple High Priestess, is the spiritual leader of dark elven society. All, save for the Matron herself, bow to her.;;;;;;;;;;;;;x
+
+#
+# Wonders
+#
+
+wonder_houseirae_underdark;Underdark Entrance;;;;;;;;;;;;;x
+wonder_houseirae_underdark_desc;The Underdark is a vast network of underground caverns that span the entire world.;;;;;;;;;;;;;x
+wonder_houseirae_underdark_construction_desc;Building an underground city can increase your intrigue capabilities and you can even find a precious metal deposit.;;;;;;;;;;;;;x
+upgrade_dark_spikes;Dark Seldarine Spikes;;;;;;;;;;;;;x
+upgrade_dark_spikes_desc;The armaments surrounding the grand entrance display a collection of heads on spikes.;;;;;;;;;;;;;x
+upgrade_dark_torture_chamber;Dark Seldarine Torture Chamber;;;;;;;;;;;;;x
+upgrade_dark_torture_chamber_desc;Captives are sent here for torture or breeding. Sometimes both.;;;;;;;;;;;;;x
+upgrade_spider_throne;Spider Throne;;;;;;;;;;;;;x
+upgrade_spider_throne_desc;A throne made of obsidian, in the shape of a large black widow spider.;;;;;;;;;;;;;x
+upgrade_dark_dungeon;Dark Seldarine Dungeon;;;;;;;;;;;;;x
+upgrade_dark_dungeon_desc;It's a dungeon, but bigger.;;;;;;;;;;;;;x
+
+#
+# Events
+#
+
+HouseIrae_12;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. Please take care of [irae_child.GetDynName] as you would your own flesh and blood.;;;;;;;;;;;;;x
+HouseIrae_12_TT;§Y[irae_child.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIrae_3;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. The spymaster [irae_spymaster.GetDynName] will seek out your enemies.;;;;;;;;;;;;;x
+HouseIrae_3_TT;§Y[irae_spymaster.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIrae_5;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. The Priestess [irae_lolthpriestess.GetDynName] will seek out enemies of the Spider Queen. Lolth tlu malla!;;;;;;;;;;;;;x
+HouseIrae_5_TT;§Y[irae_lolthpriestess.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIrae_7;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. We have dumped [irae_eilistraeepriestess.GetDynName] into your lap. She is yours to deal with.;;;;;;;;;;;;;x
+HouseIrae_7_TT;§Y[irae_eilistraeepriestess.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIrae_9;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. We have dumped [irae_vhaeraunpriest.GetDynName] into your lap. He is yours to deal with.;;;;;;;;;;;;;x
+HouseIrae_9_TT;§Y[irae_vhaeraunpriest.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIrae13T;Legacy of the Dark Elves;;;;;;;;;;;;;x
+HouseIrae13TM;\n \n While you were born as a lowly male in a matriarchal society, your station in life improved vastly when your House's Matriarch first gazed lustfully on your body. In time, you grew to be her favorite toy, and eventually became her consort. But as with most males your favor eventually fell, and you had to escape to the surface. Your survival instinct will prove useful as you will now need to carve out your own dynasty, with you as the ruler. \n \n    Lolth is the overgod of the Dark Seldarine, the Dark Elven pantheon. Often depicted as a Drider (half-dark elf, half spider), she takes pleasure in women exerting their dominance over men.\n    Eilistraee is the daughter of Lolth. Good and kind to others, she is everything the Dark Seldarine reviles. She preaches equality among her worshipers.\n    Vhaeraun is the son of Lolth, and like his mother delights in pain and suffering. He is the god of assassins, and reviles the matriarchy the Dark Elves live under.;;;;;;;;;;;;;x
+HouseIrae13TF;\n \n Daughter to your House's Matriarch, you have always lived a life of luxury. While you were not your mother's favorite, you always enjoyed the rights that come with such a high station, and all the males knew it. They either feared you, or lusted after you in attempt to raise their own standing. All this attention grew the ire of your mother, who had you publicly banished to the surface. Privately, however, the Matriarch ordered you to start a new House so that her bloodline will grow strong, away from the prying eyes of rival Houses. It's time to carve out your destiny, with you as the new Matriarch. \n \n    Lolth is the overgod of the Dark Seldarine, the Dark Elven pantheon. Often depicted as a Drider (half-dark elf, half spider), she takes pleasure in women exerting their dominance over men.\n    Eilistraee is the daughter of Lolth. Good and kind to others, she is everything the Dark Seldarine reviles. She preaches equality among her worshipers.\n    Vhaeraun is the son of Lolth, and like his mother delights in pain and suffering. He is the god of assassins, and reviles the matriarchy the Dark Elves live under.;;;;;;;;;;;;;x
+HouseIrae13TIrae;\n \n Your mother, the Matron of House Irae, is extremely prolific. If she wasn't pregnant, she was trying to get pregnant. You were one of the many children born into a life of luxury and intrigue. But, as with nearly every dark elven House, only the most favored by the Matron survives.\n  You never did have a good relationship with your siblings, and your mother always looked down upon you. As is tradition, the leftovers are culled from the herd to make room for those the Matron deems worthy. Thankfully, Kekvit was a rarity in dark elven society... she prefered to exile her forgotten children and let them live their lives on the surface rather than just outright killing them. This alone saved you from the blade.\n  Your journey out of the Underdark was rough, but at last you have arrived on the surface and have staked your own claim. Will you bring glory back to your name, or will you always be the forgotten child of Kekvit Irae? Only time will tell, and time is something you have plenty of. Still, you cannot shake the feeling of being watched. Kekvit's spies are everywhere, but you feel this unknown watcher is more insidious, more... malicious.\n Regardless of who is watching, it is time to settle down and forge a new kingdom, possibly with one of the Dark Seldarine gods as your patron.\n \n    Lolth is the overgod of the Dark Seldarine, the Dark Elven pantheon. Often depicted as a Drider (half-dark elf, half spider), she takes pleasure in women exerting their dominance over men.\n    Eilistraee is the daughter of Lolth. Good and kind to others, she is everything the Dark Seldarine reviles. She preaches equality among her worshipers.\n    Vhaeraun is the son of Lolth, and like his mother delights in pain and suffering. He is the god of assassins, and reviles the matriarchy the Dark Elves live under.;;;;;;;;;;;;;x
+drowstart11;Lolth tlu malla! (females only);;;;;;;;;;;;;x
+drowstart12;May Eilistraee protect us all. (all genders);;;;;;;;;;;;;x
+drowstart13;Vhaeraun tlu malla! (males only);;;;;;;;;;;;;x
+drowstart14;To the Abyss with the Dark Seldarine!;;;;;;;;;;;;;x
+HouseIraeArtifacts2;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing]. \n \nThe heavenly [From.Offmap.Ruler.GetLongChineseEmperorName], has graciously fulfilled your wish. A wondrous artifact of expert [From.Offmap.Ruler.Culture.GetName] craftsmanship will be bestowed upon you for safekeeping.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing]. \n \n[From.Offmap.Ruler.GetLeLaCap] Céleste [From.Offmap.Ruler.GetLongChineseEmperorName] a gracieusement accédé à votre demande. Un merveilleux artefact d'origine [From.Offmap.Ruler.Culture.GetName] vous sera confié pour être conservé en sécurité.;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing]. \n \n[From.Offmap.Ruler.GetDerDie] himmlische [From.Offmap.Ruler.GetLongChineseEmperorName] hat Euren Wunsch gnädigerweise erfüllt. Ein wundervolles Artefakt eines Experten der [From.Offmap.Ruler.Culture.GetName]en Handwerkskunst wird Euch zur Aufbewahrung überstellt werden.;;"[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing]. \n \nEl celeste [From.Offmap.Ruler.GetLongChineseEmperorName] ha accedido gentilmente tu deseo. Se te concede un maravilloso artefacto de experto arte [From.Offmap.Ruler.Culture.GetName] para que lo pongas a buen cuidado.;;;;;;;;;x
+HouseIraeArtifacts2T;Truly a magnificent item!;Vraiment un magnifique objet !;Ein wahrlich bezaubernder Gegenstand!;;¡Una pieza magnífica!;;;;;;;;;x
+HouseIrae19;\n \n  You are starting as a religion unheard of in the realm of Man. Would you like to start with a modest contengent of troops to help defend against any would-be assailants while you build up your powerbase?;;;;;;;;;;;;;x
+HouseIrae19T;Troop Choice;;;;;;;;;;;;;x
+HouseIrae19TT1;Yes;;;;;;;;;;;;;x
+HouseIrae19TT2;No;;;;;;;;;;;;;x
+HouseIrae24T;Incest;;;;;;;;;;;;;x
+HouseIrae24;\n \n  While the dark elves have no taboos about bedding their siblings or children, the player might. Do you want to enable or disable close kin marriage mechanics?;;;;;;;;;;;;;x
+HouseIrae24Yes;Enable;;;;;;;;;;;;;x
+HouseIrae24No;Disable;;;;;;;;;;;;;x
+HouseIrae24TT;As you are a Ruler Designed character, choosing this option will add a mother, father, a sister, and a brother to your family tree. If you are 20 years old or older, you will begin with a child.\nThe mother and father will disappear after spawning, as their only purpose is for flavor.;;;;;;;;;;;;;x
+HouseIrae24TTIncest;Both siblings will be lovers, and one of them will be your own lover.\nIf you are 20 years old or over, the appropriate sibling will be the parent to your child.;;;;;;;;;;;;;x
+HouseIraeHalfElf3T;Neither Here Nor There;;;;;;;;;;;;;x
+HouseIraeHalfElf3;\n \n Your mother was unfortunate. The poor lass was taken at a young age by a dark elven slaving band and robbed of her virginity. She endured this for many months, and all the while her belly grew, a child forced upon her by her captors. When her captives tired of their nightly games, she knew that it was only a matter of time before she would be killed. Using the blinding light of day, she made her escape, and fled to a nearby village. You were born shortly afterwards.\n  Your mother had no love for you, with your dark skin and white hair... a grim reminder of the months she endured the sexual assaults of her captors. The moment she recovered from her birth, you were abandoned upon the doorstep of the village elder. From that village you were raised to be proper [Root.Culture.GetName], but you never did fit in. You were neither human, nor were you dark elf. Neither friend, nor foe. \n \n  Neither here, nor there.;;;;;;;;;;;;;x
+HouseIraeHalfElf3TTa;It is time to forge my own path...;;;;;;;;;;;;;x
+HouseIraeHalfElf3TTb;It is time to forge our own paths...;;;;;;;;;;;;;x
+HouseIraeHalfElf3TTbCustom;All characters in this realm (or subrealm, if playing a vassal) will be a half elf.;;;;;;;;;;;;;x
+HouseIraeHalfElf3TTc;I will accept the heritage of both my parents.;;;;;;;;;;;;;x
+HouseIraeHalfElf3TTcCustom;All characters in this realm (or subrealm, if playing a vassal) will randomly be a half elf, human, or dark elf.;;;;;;;;;;;;;x
+HouseIrae_31;[Root.GetGovernorLetterGreeting]. [Root.GetChineseLetterBlessing].  \n \nThe Matron Mother has generously granted your request. [irae_male.GetDynName] will be dumped into your lap. Good riddance to him.;;;;;;;;;;;;;x
+HouseIrae_31_TT;§Y[irae_male.GetDynName]§! appears at your court.;;;;;;;;;;;;;x
+HouseIraeHalfElf4T;Eilistraee, The Dark Maiden;;;;;;;;;;;;;x
+HouseIraeHalfElf4;\n \n Eilistraee is the goddess of dance, moonlight, and the good dark elves.  Though you certainly are not a dark elf, Eilistraee is a kind, gentle goddess, allowing any to worship her, regardless of race.\n  Growing up in your village, you were taught many things by the village elder, particularly of religion... of [Root.Religion.GetHighGodName], and of Eilistraee and the Dark Seldarine.\n  As you grew up, you knew you had to make a choice...\n\n(more information about Eilistraee can be found in the Book of Lore intrigue decision);;;;;;;;;;;;;x
+HouseIraeHalfElf4TTa;I accepted the warm embrace of Eilistraee.;;;;;;;;;;;;;x
+HouseIraeHalfElf4TTb;I accepted [Root.Religion.GetHighGodName] as my divine master.;;;;;;;;;;;;;x
+HouseIrae36Eilistraee;After the siege, our soldiers have found an underground pit for breeding spiders and driders! They must be exterminated, lest they be used against Eilistraee's children!;;;;;;;;;;;;;x
+HouseIrae36Lolth;After the siege, our soldiers have found an underground pit for breeding spiders and driders. Amusing. Our enemy were breeding an army.;;;;;;;;;;;;;x
+HouseIrae36Vhaeraun;After the siege, our soldiers have found an underground pit for breeding spiders and driders! We can either burn them in honor for Vhaeraun, or capture the broodmother for our own use.;;;;;;;;;;;;;x
+HouseIrae36Other;After the siege, our soldiers have found an underground pit for breeding spiders and driders! This unholy site must be cleansed!;;;;;;;;;;;;;x
+HouseIrae36TTEilistraee;Burn it all down!;;;;;;;;;;;;;x
+HouseIrae36TTLolth;We'll let our daughters live... for now.;;;;;;;;;;;;;x
+HouseIrae36TTVhaeraunKeep;Capture the broodmother. She will be useful.;;;;;;;;;;;;;x
+HouseIrae36TTVhaeraunBurn;We have no spare room for a broodmother. Burn it all down.;;;;;;;;;;;;;x
+HouseIrae36TTOther;Burn it all down!;;;;;;;;;;;;;x
+HouseIrae37T;Spider Pit Expansion;;;;;;;;;;;;;x
+HouseIrae37;The slaves have begun excavations and our daughters are now happily cocooning the hapless sacrifices. It will take some time before the brood hovel will need to expand again.;;;;;;;;;;;;;x
+HouseIrae37TT;[Root.Religion.GetHighGodName] tlu malla!;;;;;;;;;;;;;x
+HouseIrae38T;Spider Pit Expansion;;;;;;;;;;;;;x
+HouseIrae38;The slaves have begun excavations and our daughters are now happily cocooning the hapless sacrifices. It will take some time before the brood is ready to be unleashed.;;;;;;;;;;;;;x
+HouseIrae38TT;[Root.Religion.GetHighGodName] tlu malla!;;;;;;;;;;;;;x
+HouseIrae44;Thank you for playing House Irae.\nIf the offmap empire does not appear for you and you did not disable it, you are likely playing a Random/Shattered World that has Religion and Culture Names set to anything other than Historical. Please go back and set them to Historical before continuing on.;;;;;;;;;;;;;x
+
+#
+# Nicknames
+#
+irae_matriarch;Matriarch;;;;;;;;;;;;;x
+irae_consort;Consort-Slave;;;;;;;;;;;;;x
+#
+# Succession Voting
+#
+tooltip_houseirae_halfbreed_negative;Is a filthy halfbreed;;;;;;;;;;;;;x
+tooltip_houseirae_halfbreed_positive;Racial kin;;;;;;;;;;;;;x
+tooltip_houseirae_human_negative;Not a drow or a half-elf;;;;;;;;;;;;;x
+tooltip_houseirae_culture_positive;Proper upbringing;;;;;;;;;;;;;x
+tooltip_houseirae_culture_negative;Improper upbringing;;;;;;;;;;;;;x
+tooltip_houseirae_religion_negative;HEATHEN!;;;;;;;;;;;;;x
+tooltip_houseirae_sworddancer_positive;Eilistraee's Blessed;;;;;;;;;;;;;x
+tooltip_houseirae_drider_negative;Filthy Drider;;;;;;;;;;;;;x
+tooltip_houseirae_cursed;Cursed;;;;;;;;;;;;;x
+#
+# Landed Titles
+#
+k_house_laela;House Laela;;;;;;;;;;;;;x
+k_house_laela_adj;House Laela;;;;;;;;;;;;;x
+e_irae_west_governor;House Irae;;;;;;;;;;;;;x
+e_irae_west_governor_adj;Dark Elven;;;;;;;;;;;;;x
+e_irae_west_governor_female;Honored Daughter;;;;;;;;;;;;;x
+e_irae_west_governor_male;Honored Son;;;;;;;;;;;;;x
+e_true_house_irae;House Irae;;;;;;;;;;;;;x
+e_true_house_irae_adj;House Irae;;;;;;;;;;;;;x

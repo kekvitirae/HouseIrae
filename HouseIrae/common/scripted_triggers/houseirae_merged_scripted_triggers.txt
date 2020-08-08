@@ -1,0 +1,16 @@
+#
+# Universal triggers for everyone to use.
+# scripted_triggers will append themselves into duplicate triggers, allowing for cross-mod compatibility
+# To use in a decision/event condition, do not use a NOT or a NOR when calling on these scripted_triggers.
+#
+
+not_valid_targets = { # DWR trigger
+	NOR = {
+		trait = houseirae_matron_mother # Generic special NPC
+		trait = houseirae_curse_dark_whispers # Dark Whispers
+		trait = houseirae_others4 # Waterlily
+		trait = houseirae_others5 # Thicc Waterlily
+		trait = houseirae_others6 # Vala
+		trait = houseirae_others7 # Rose
+	}
+}

@@ -1,0 +1,492 @@
+2.6
+06AUG20
+
+New Additions:
+
+The Spurned Sister will now grant her consort a yearly stipend of gold and slaves.
+
+Enhancements:
+
+Rise of House Irae is now default in the game rules.
+Rewrite the Child of Irae gamerule localisation.
+Kekvit, Freya, and Belladonna will now leave societies on a yearly pulse.
+Historical characters have now given appropriate flags.
+It's August again, so the mean time to happen for Kekvit's Birthday Surprise has been cut down to half.
+Kekvit's Birthday/Christmas/Hannukah Surprise has once again been tied to real life months instead of in-game months.
+The narrative event window now uses the Luxuria Fantasia layout.
+The Spurned Sister will no longer invite Kings or Emperors to her court. You're on your own for this one.
+Troops from the Hire Slavers boon increased by 250 pikemen and 250 light cavalry, and can now reinforce. In return, they are now more expensive in maintenance and can only be hired once per lifetime, and disband upon succession.
+
+Bug Fixes:
+
+Although it is kinda amusing imagining The Spurned Sister as a drider, anyone with the houseirae_matron_mother hidden trait will no longer be able to perform rituals.
+The Dark Whispers will no longer target landless or head of religion titles.
+
+2.5.2
+22JUL20
+
+Bug Fixes:
+
+Fixed a minor typo in the Culture/Religion seeding event.
+
+2.5.1
+20JUL20
+
+Bug Fixes:
+
+Fixed a typo preventing racial seeding.
+
+2.5
+19JUL20
+
+New Additions:
+
+Added racial seeding options to Random/Shattered World starts. This will take effect when you start the game. Compatibility with Luxuria Fantasia's racial seeding. Seeding will not occur if Religion/Culture Names are set to anything other than Historical.
+Kekvit will now react appropriately to banishing a certain Luxuria Fantasia NPC.
+
+Enhancements:
+
+Gamerule-based culture/religion seeding will now only occur if you're starting a normal, non-Random/Shattered World start.
+
+Bug Fixes:
+
+Added mother_minor_rest to Belladonna and Freya.
+
+2.4.7
+03JUL20
+
+Bug Fixes:
+
+Added "has_coa_on_barony_only = yes" to the religions to allow for proper overwriting when using certain CoA mods.
+
+
+
+2.4.6
+23FEB20
+
+Enhancements:
+
+Kekvit's Christmas/Hannukah/Birthday gift is now available all year round, instead of having to wait until August (real time) to get it.
+(Tentacle Dreams) Kekvit's Christmas/Hannukah/Birthday gift is now no longer immune to tentacles. Enjoy.
+The Irae Genealogy artifact's effects now trigger 20% of the time (down from 50%).
+Female rulers who choose the stat increase boon with Kekvit will now receive a child as well.
+Added pronounciation help in the Book of Lore.
+The Spurned Sister invasion just got a lot harder to deal with.
+
+Bug Fixes:
+
+Fixed some religion localisation errors.
+
+2.4.5
+19FEB20
+
+New Additions:
+
+Added debug events. These are not selectable in game except through the console. Please see the HouseIraeDebug.txt file for more details.
+
+Enhancements:
+
+(Modding) Added the global flag houseirae_started.
+
+
+2.4.4
+28JAN20
+
+Bug Fixes:
+
+Fixed various issues with the Dark Whispers event chain.
+
+2.4.3
+25DEC19
+
+Bug Fixes:
+
+Fixed a major issue preventing the assignment of Tamsine's Curse.
+
+Bug Fixes:
+
+Fixed a major issue preventing the assignment of Tamsine's Curse.
+
+2.4.2
+24DEC19
+
+Bug Fixes:
+
+Fixed a trigger error in the Openly Adopt Faith decision.
+
+2.4.1
+24DEC19
+
+New Additions:
+
+Added Dynamic Secret Societies for all three Dark Seldarine religions.
+
+Enhancements:
+
+You can now secretly worship the Dark Seldarine religions.
+
+2.4
+24DEC19
+
+New Additions:
+
+Added a new option to the game rule "House Irae: Dark Elves": Child of House Irae. You will start as the exiled son or daughter of Kekvit Irae, obtaining Tamsine's bloodline immediately but also the... complications, the least of which being that your character can no longer go back home.
+Added Belladonna Irae, as "father" to Freya and to the Child of Irae.
+
+Enhancements:
+
+Added the flag lf_never_turn_spoopy to all temple holders during the starting event so that they play nice with Luxuria Fantasia's ghosts.
+Changed Eilistraee and Vhaeraun religion icons.
+
+2.3.1
+18DEC19
+
+New Additions:
+
+The Matron Mother will give you an extra special gift if your favor with House Irae is 5000 or more. Only happens in December for Christian and Jewish religious group members, or August for anyone else. Merry Christmas, Happy Hanukkah, Go Fuck Yourself.
+
+2.3
+17DEC19
+
+Bug Fixes:
+
+Fixed a tooltip error with the Great Work.
+Baron-level theocracies, republics, and feudals will no longer get the Dark Seldarine succession laws.
+
+New Additions:
+
+Barons who follow one of the dark elven religions will now automatically get a spouse, with a MTTH of two years.
+Added a decision for the players of the Dark Seldarine religions to enable/disable incest. Available only if you didn't start as the religion.
+
+Enhancements:
+
+Priests of the dark elven religions will no longer marry or inherit.
+You can now use the Convert To Dark Seldarine decision if the target is your lover or a priest/priestess from House Irae.
+Removed the Eilistraee County Conquest due to redundancy with the normal pagan CB.
+The Drow Holy War will be usuable by all three Dark Seldarine religions, but only against other Dark Seldarine religions that aren't yours.
+Dark elves will recieve a 50% discount on House Irae boons. Half-elves get a 25% discount.
+
+2.2.1
+12DEC19
+
+Bux Fixes:
+The Dark Whispers will no longer double up on education traits.
+
+Enhancements:
+The Dark Whispers event chain will now immediately spawn the Spurned Sister event chain after a certain point if it hasn't happened yet.
+
+2.2
+46OCT19
+
+All special characters now have various flags set on them. This means that, despite being hilarious, the Spurned Sister will no longer join the Warrior Lodge.
+Fixed up some prefixes in racial seeding.
+Remember Rose from 2.0? Yeah... if she spawns, you may as well just restart the game. You're fucked. Good luck!
+Added a new disease, Motherly Love. It's not as loving as you might think.
+House Laela is bumped down to a Kingdom from an Empire.
+New landed title added: True House Irae.
+The Spurned Sister will not attack fellow dark elves... unless she hates them. And she will.
+The Spurned Sister will pledge allegiance to the only person she respects: the Matron Mother of House Irae. If this happens, just go ahead and restart the game, ok? I'm saving you a lot of headaches here.
+Removed the geographical_regions.txt file for better compatibility.
+Removed the AI modifiers from the dark elf racial trait.
+Added AI modifiers to the drider trait.
+Driders will now hate those who worship Eilistraee, and vice versa. Smaller malus toward/from Lolth. Vhaeraun doesn't care (as much).
+(DW Tentacles) Added the tentacle_immunity flag to all special characters.
+Changed the portrait trait names for the Irae family.
+Added a male portrait for drow and half-elf children.
+Jeffrey Epstein was murdered to protect pedophiles in high places.
+Upon certain events happening, the Irae bloodline will be destroyed and replaced with another. All current members of the old bloodline will move over to the new one.
+Upon certain events happening, House Irae will go under lockdown and the gift/boon decisions will no longer be available until the crisis is over.
+House Irae will remain open for all gifts and one boon during the crisis, provided the player fulfills a certain condition.
+Added a gamerule to turn off the Dark Whispers event chain or make it easier.
+Modified the gamerule for the Spurned Sister. You will now no longer be able to choose her target or turn the invasion off. She will always happen, it's now just a matter of when and where.
+Replaced Tamsine's portrait.
+Depending on certain conditions, The First Irae will join the fight against the crisis on the player's side.
+Successfully defeating the crisis will automatically kill the Spurned Sister if she is currently alive, unless the crisis game rule is set to Easy. Sometimes easy isn't so easy.
+Khaldune's Dagger now uses the merged scripted_trigger not_valid_targets from DWR.
+Added basic compatibility with After The End and A Game of Thrones for The Spurned Sister invasion. Guardians of Azeroth and Elder Kings compatibility is NOT planned, as these mods don't even have a simple on_startup global flag to check for.
+Added in-code clarification about Freya's curse trait so it doesn't conflict with the Book of Lore.
+Kekvit's father now has a portrait.
+The Spurned Sister's Dark Divorce reply is now translated if your character understands the language.
+Modified the event window GUI so that the options will better suit event pictures up to 450x450, and fixed the portrait placement inside the options.
+
+2.1.3
+41OCT19
+
+Removed an errant, unfinished disease file that was never meant for public release.
+
+2.1.2
+34OCT19
+
+Updated some prefixes to account for the change in Luxuria Fantasia.
+
+2.1.1
+05SEP19
+
+Fixed the child's age if your Ruler Designed character is 36 or older when using the Custom Families option.
+Added a second child if your Ruler Designed character is 36 or older.
+
+2.1
+26JUL19
+
+Fixed some parsing errors in the custom families code.
+Kekvit is now more picky about who she likes and dislikes.
+Added a trigger to the half-elf birth event, in case DWF is installed.
+Removed the dark elf on_birth event. This is now handled by the half-elf event.
+
+2.0.2
+24JUL19
+
+Fixed an errant duplicate event ID preventing seeding flags to be set.
+Moved two on_startup events to on_chronicle_start and added better triggers.
+
+2.0.1
+24JUL19
+
+Succession laws will fix themselves one day after character death.
+Added an additional check for the campaign start to prevent it from running on a saved game.
+Custom families will now be the character's appropriate age.
+Half-elves will now get custom families.
+The religions are now pre-reformed, meaning Tribals can now adopt Mercantilism or Feudalism.
+
+2.0
+23JUL19
+
+The religions are no longer reformable.
+Removed the vanilla CK2 overwrite files.
+Removed the duplicate vanilla CK2 is_inaccessable_trigger scripted trigger.
+Removed the reformation gui file for better compatibility with mods that edit this.
+House Irae favor now resets to 0 when your character dies.
+Fixed an issue in assigning racial trait on birth.
+Dark elves will never get the Inbred trait on birth. Half elves will have a 50/50 chance of removing it.
+The religious rituals now require 500 prestige and 500 piety. These are not spent.
+Removed Khaldune and Deionarra as characters.
+Tamsine's Curse will now affect both the grandchildren and grant-grandchildren of Tamsine.
+Kekvit and Freya will no longer join any societies.
+You can now choose which spell you learn from Deionarra.
+Converted the event pictures to DDS format for smaller file size with no quality change.
+Added a gamerule to generate a family for ruler designed characters.
+Followers of Lolth can now build a special building. You can build the first tier normally, but further upgrades require special effort. When fully upgraded, it will allow the ruler to sacrifice this building in exchange for an army. It's probably not a good idea to leave this undefended.
+The various religious rituals will never remove the Drider trait if the character has that particular Tamsine curse.
+Eilistraee's Tanistry law is now an Elective Tanistry, with special successor rules.
+Added the start of the Dark Whispers event chain. It is still a work in progress, so enjoy the free NPC you get from it. You wont be enjoying her company for very long.
+House Irae features are now available on Random/Shattered Worlds, provided the Culture and Religion Names setting is set to Historical. Don't blame me if shit gets weird all of a sudden.
+Added a new game rule to seed in the three religions and the culture on a new game. This seeding will happen on the fourth day.
+Removed the Dark Elf and Half Elf Campaign Start decisions. These will now automatically happen on the second day if you have the appropriate game rule selected.
+
+1.14.2
+
+The Dark Seldarine sacrifices/festivals will no longer add to religious authority unless it is the player who performs it.
+Completing Eilistraee's Moonlight Dance will now remove the Drider trait if present.
+
+1.14.1
+
+Khaldune got rid of the fake Irae clones.
+Added a proper user-dir in the .mod file.
+
+1.14
+Eilistraee's County Conquest CB will no longer crash the game.
+The half elf start now has two new options. One will make all characters in your realm/subrealm half elves, and the other will have the realm/subrealm be split equally between humans, half elves, and dark elves.
+Added decision icons to the intrigue menu.
+The half elf start now allows you to choose either Eilistraee or keep your current religion.
+Edited the narrative event UI a little bit.
+Added a new Great Work: Underdark Entrance. You can build it if you are a follower of Lolth and Vhaeraun or have the Dark Elven culture. The AI will not be able to build this.
+Children of the Iraes should now properly get your own active bloodlines too.
+The Spurned Sister will no longer have a set invasion date. All settings will now have an invasion timeline from 900 to 1400, with a 100 year mean time to happen.
+Added is_proper_alternate_start scriped trigger. Reminder: House Irae will only work on Random/Shattered Worlds if Religion, Culture, Religion Names, and Culture Names are set to Historical.
+Children of the Iraes will now be inflicted with Tamsine's family curse. The chance this will happen will be lessened if the child came from Freya or Khaldune, or if you own a certain artifact.
+
+1.13
+Updated DWF 2.0 traits.
+Females (except DWF futas) will no longer get Kekvit pregnant.
+The Lolth Sacrifice modifier will now properly be added and checked for.
+
+1.12.4
+The Spurned Sister will now properly found her empire again.
+The Spurned Sister will now no longer be so jealous that she kills you too if you have a concubine of your own when you become her consort.
+Consorts of the Spurned Sister now have access to the Consort Slave Raid CB, allowing them to attack any province for slaves. Conquest of land and title not included.
+
+1.12.3
+
+Added a gamerule to adjust the difficulty of the Spurned Sister's initial invasion force.
+(Optional) Added an UNSUPPORTED version of the mod for those who wish to use mods that add more than three reformation doctrines.
+
+ 
+
+1.12.2
+
+Dark elf children from mixed race parents will now properly get the portrait.
+Daughters sold to House Irae must be unmarried and childless.
+Daughters sold to House Irae will now have their parentage removed to prevent clutter on the character screen.
+
+ 
+
+1.12.1
+
+Fixed the offmap decisions.
+
+ 
+
+1.12
+
+Removed the Dark Seldarine religion and added reformed/unreformed versions of the original non-HF religions.
+Removed the specialized religion features.
+Edited the vanilla religion features to account for the updated religions.
+Natively integrated the Three Doctrines Reform mod.
+Removed the Seldarine Republics. They were buggy and mostly untested.
+Added Bigger Interface, Dark World Fantasy, Dark World Extras as dependencies. These are not hard requirements, and you do not need these mods. Weirdness may happen if you don't have them, though.
+
+ 
+
+1.11.4
+
+The Spurned Sister will now become the Spurned Brother if she takes a female consort. This is to prevent any weirdness with children dynasties and succession.
+Added basic offmap empire support for Random/Shattered Worlds, as long as culture, religion, and culture/religion names are set to Historical. The Spurned Sister event will not trigger on Random/Shattered Worlds due to annoyances with scripting.
+
+ 
+
+1.11.3
+
+Fixed(?) some dark elven kids not getting their adult portraits on adulthood.
+Prison bars no longer cause so much anxiety in dark elves and half elves that those races completely forget they are a dark elf or half elf.
+Added the Dark World Fantasy narrative event window frame.
+
+ 
+
+1.11.2
+
+Changed the holy sites to the respective counties' temple holdings.
+Removed the triggered modifiers as a result of crashing when viewing holdings.
+Starting as a dark elf will now make all provinces and characters in your realm the proper race/culture/religion. Due to a bug I cant figure out yet, theocracies and republics are except from getting the race.
+
+ 
+
+1.11.1
+
+As hilariously canon as it is for Khaldune to be spamming children everywhere, it's obviously a bug. Fixed.
+Fixed the crashing bug when using House Irae with DWTweaks.
+
+ 
+
+1.11
+
+Added Khaldune Irae and Deionarra Irae as characters. Poor Deio doesn't do anything yet.
+Modified the result of Khaldune's personal boon to finally give the bloodline as it was supposed to.
+Modified the result of Freya's and Kekvit's personal boons to give men a way to breed into the bloodline.
+Modified the conditions for the Magical Seduction's potentials to better reflect 3.0's religion changes.
+The Spurned Sister will no longer give two shits about your seduction attempts on her, now has the proper bloodline, and cannot be married.
+Freya Irae can no longer be married.
+
+ 
+
+1.10
+
+Fixed the static portraits so that 3.0's new crowns will never overwrite them.
+Disabled the offmap empire when playing a Shattered/Random world. It just creates more headaches than I'd like.
+Fixed an issue with the Random gamerule for the Spurned Sister's invasion.
+Added an offmap decision to purchase a male exile, at 1/3rd the cost of a spymaster or priestess.
+
+ 
+
+1.9
+
+The new succession types will work even on the new religion now.
+Creating or usurping a title with one of the three reformed foci will now properly set that title to its proper succession.
+The Spurned Sister event when she claims her duchy is fixed again.
+Dark elves can produce half elves depending on the other parent. Higher chance if one parent is a DWR elf. Dark elf/dark elf will always produce another dark elf.
+Fixed some localisation issues.
+Added the Change Portrait option to half elves.
+House Irae now has its own bloodline. If you find yourself choosing Khaldune during your visit to House Irae, your child will gain this bloodline.
+Added a gamerule to start as a half elf.
+
+ 
+
+1.8
+
+Fixed the geographical regions.
+Fixed the missing localisation of some things.
+Fixed the graphical culture type in the Dark Elf culture.
+The Dark Elven Spymaster from House Irae will now always be your religion.
+Lowered combat_rating of some artifacts, increased others.
+The Stunning Dress and Stunning Thong now offsets the penalties for having big breasts or a big penis. (Dark World Reborn/Dark World Tweaks only)
+
+ 
+
+1.7
+
+Added the Dark Seldarine religion for players with Holy Fury, to take advantage of the new reformation options. Players without Holy Fury will still be able to play with the original three religions. 
+Modified every decision and event to take into account the new religion. The Spurned Sister and all characters involved in this event chain will still use the old religions. The Seldarine Republics still require the old religions, and that won't change until I test them extensively.
+The death of the Spurned Sister now removes her consort's tattoo and immortality. Welcome to Dark Souls.
+Edited the traits and artifacts to better reflect 3.0's change to personal combat rating and opinion modifiers.
+Eunuchs can no longer wear the Stunning Thong.
+
+ 
+
+1.6
+
+Because Paradox just loves hardcoded bullshit, reverting back to the old style of gender succession.
+Added two dark elven specific succession laws (Tanistry and Turkish).
+
+ 
+
+1.5.1 Hotfix
+
+(hotfix) Reverting the vanilla 00_cb_types.txt and 00_plots.txt to their original forms, and added back in the restriction to the Holy War CB.
+
+ 
+
+1.5
+
+Removed the need for compatibility patches due to 3.0's religion_feature mechanics and gender succession laws.
+Added 3.0's new female concubinage mechanics to the Lolth religion. Removed concubinage from Eilistraee and Vhaeraun (Eilistraee for balance, Vhaeraun because they can already have multiple wives).
+Celibates and eunuchs may no longer seduce using the stunning dress/thong.
+Becoming the Spurned Sister's consort now only happens once a game.
+Increased the MTTH for the Spurned Sister's invite and removed her peacetime modifier.
+Cleanup of the main localisation file.
+Added an option during the Legacy of the Dark Elves decision to turn off the divine blood mechanic.
+Removed the banish effect from Lolth/Vhaeraun/Eilistraee priests and priestesses to prevent log and notification spamming. They will still die, though.
+
+ 
+
+1.4.1
+
+(hotfix) Fixed the Spurned Sister CBs
+
+ 
+
+1.4
+
+Added new game options so you can choose where the Spurned Sister will spawn. Choosing Random will not only randomize the timeframe but also the target. This is NOT save game compatible; if she hasn't spawned in your 1.3 game yet, she never will.
+The Spurned Sister and her consort will no longer be able (hopefully) to hostile to each other when they use their unique CBs.
+Fixed a bug that allowed you to do an Eilistraee ritual more than once in the same ritual.
+Cleaned up some lore entries in the Book of Lore.
+
+ 
+
+1.3
+
+Changed the narrative event window gui so it doesn't show the hardcoded decorative letter anymore.
+Added three religious decisions, one for each religion. Based roughly off of the Lilith Blood Moon Sacrifice of Dark World Reborn.
+Changed the name Seldarine to Dark Seldarine. Because reasons.
+Added a decision to read about the lore behind the House Irae mod. This can be disabled by choosing the "Close the book forever" option in the event.
+
+ 
+
+1.2
+
+Removed the new icons and used the default Pagan/Pagan Heresy icons for the Seldarine, to make the mod ever so slightly more compatible with other mods that use custom religion icons (e.g. HIP).
+Removed the /portrait_properties/ folder to make it more compatible with other mods that use that folder.
+
+ 
+
+1.1
+
+Magical Seduction now routes to its own event line instead of relying on Dark World Reborn's seduction event line.
+Added Dark World's Serpent Expansion's Reptilian trait to the list of potentials in the Spurned Sister's invasion and invite events. 
+Added Dark World's Serpent Expansion's Reptilian trait to the list of opposites of the Dark Elf racial trait to prevent weird crossbreeds and portrait mishaps.
+Added Bigger Events mod natively, so the narrative events will function even if you don't have Dark World Reborn or Bigger Events mod installed.
+
+ 
+
+1.0
+
+Release

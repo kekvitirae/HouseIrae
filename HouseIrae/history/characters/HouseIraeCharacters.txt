@@ -1,0 +1,146 @@
+99889900 = {
+	name="Kekvit"
+	disallow_random_traits = yes
+	dynasty = 9051300
+	female = yes
+	religion = lolth_religion
+	culture = drow
+	health = 15
+	fertility = 0 # No random kiddies
+	trait = fair
+	trait = genius
+	trait = mastermind_theologian
+	trait = mystic
+	trait = lustful
+	trait = houseirae_drow
+	trait = houseirae_curse_generic
+	trait = homosexual # Technically bisexual, but leans toward women
+	trait = houseirae_drow_special1 # Kekvit's custom portrait					
+	trait = houseirae_matron_mother # Makes Kekvit Immortal to bypass DW's immortal suicide mechanic
+	flag = ai_flag_refuse_conversion
+	flag = special_npc
+	flag = society_join_block
+	flag = no_court_invites
+	flag = tentacle_immunity
+	mother = 99889902
+	father = 99889903
+	700.1.1={
+		birth=yes
+	}
+	2000.1.1={
+		death=yes
+	}
+}
+
+99889901 = {
+	name="Freya"
+	disallow_random_traits = yes
+	dynasty = 9051300
+	female = yes
+	religion = lolth_religion
+	culture = drow
+	health = 15
+	fertility = 0 # No random kiddies
+	trait = fair
+	trait = wroth
+	trait = brilliant_strategist
+	trait = proud
+	trait = lustful
+	trait = houseirae_drow
+	trait = houseirae_curse_generic # Not safe from the curse, just the effects
+	trait = houseirae_drow_special2 # Freya's custom portrait					
+	trait = houseirae_matron_mother
+	flag = ai_flag_refuse_conversion
+	flag = special_npc
+	flag = society_join_block
+	flag = no_court_invites
+	flag = tentacle_immunity
+	mother = 99889900
+	716.8.27={
+		birth=yes
+	}
+	732.1.1 = {
+		add_lover = 99889900
+	}
+	2000.1.1={
+		death=yes
+	}
+}
+
+99889902 = {
+	name="Tamsine"
+	disallow_random_traits = yes
+	dynasty = 9051300
+	female = yes
+	religion = lolth_religion
+	culture = drow
+	health = 15
+	fertility = 0 # No random kiddies
+	trait = fair
+	trait = ambitious
+	trait = brilliant_strategist
+	trait = proud
+	trait = possessed
+	trait = lunatic
+	trait = mystic
+	trait = lustful
+	trait = houseirae_drow
+	trait = houseirae_drow_special7 # Tamsine's custom portrait					
+	flag = ai_flag_refuse_conversion
+	flag = special_npc
+	flag = society_join_block
+	flag = no_court_invites
+	flag = tentacle_immunity
+	670.1.1={
+		birth=yes
+	}
+	699.1.1 = {
+		create_bloodline = {
+			type = house_irae_bloodline
+		}
+		add_matrilineal_spouse = 99889903
+	}
+	716.1.1 = {
+		death = {
+			death_reason = death_murder
+			killer = 99889900
+		}
+	}
+}
+
+99889903 = {
+	name="Greater Devil"
+	disallow_random_traits = yes
+	dynasty = 9051300
+	female = no
+	religion = vhaeraun_religion
+	culture = drow
+	health = 15
+	fertility = 0 # No random kiddies
+	trait = fair
+	trait = ambitious
+	trait = mastermind_theologian
+	trait = proud
+	trait = greedy
+	trait = wroth
+	trait = lustful
+	trait = mystic
+	trait = hedonist
+	trait = houseirae_drow_special10 # Irae father custom portrait					
+	flag = ai_flag_refuse_conversion
+	flag = special_npc
+	flag = society_join_block
+	flag = no_court_invites
+	flag = tentacle_immunity
+	670.1.1={
+		birth = yes
+		effect = {
+			dynasty = none
+		}
+	}
+	716.1.1 = {
+		death = {
+			death_reason = death_missing
+		}
+	}
+}

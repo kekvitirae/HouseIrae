@@ -1,0 +1,87 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_laela_she_is_coming"
+		texturefile = "gfx/event_pictures/laela_she_is_coming.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_she_comes"
+		texturefile = "gfx/event_pictures/laela_she_comes.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_laela_avenging_angel"
+		texturefile = "gfx/event_pictures/laela_avenging_angel.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_laela_she_dies"
+		texturefile = "gfx/event_pictures/laela_she_dies.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_laela_fallen_angel"
+		texturefile = "gfx/event_pictures/laela_fallen_angel.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_laela_house_laela"
+		texturefile = "gfx/event_pictures/laela_house_laela.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_the_visit"
+		texturefile = "gfx/event_pictures/laela_the_visit.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_invitation"
+		texturefile = "gfx/event_pictures/laela_invitation.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_with_woman"
+		texturefile = "gfx/event_pictures/laela_with_woman.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_with_man"
+		texturefile = "gfx/event_pictures/laela_with_woman.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_with_futa"
+		texturefile = "gfx/event_pictures/laela_with_futa.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_laela_dark_divorce"
+		texturefile = "gfx/event_pictures/laela_dark_divorce.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+}

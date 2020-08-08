@@ -1,0 +1,66 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_irae_cloak"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_cloak.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_cloak_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_cloak_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_irae_hand_crossbow"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_hand_crossbow.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_hand_crossbow_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_hand_crossbow_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_irae_leather_armor"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_leatherarmor.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_leather_armor_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_leatherarmor_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_irae_sexy_dress"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_sexy_dress.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_sexy_dress_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_sexy_dress_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_irae_sexy_thong"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_thong.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_sexy_thong_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_thong_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_irae_statue"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_statue.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_statue_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_statue_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_irae_loincloth"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_loincloth.dds"
+	}
+	spriteType = {
+		name = "GFX_irae_loincloth_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\irae_loincloth_small.dds"
+	}
+	
+}

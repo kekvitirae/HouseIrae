@@ -1,0 +1,382 @@
+namespace = HouseIraeHalfElf
+
+character_event = { # Adulthood portrait assignment
+	id = HouseIraeHalfElf.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		trait = houseirae_halfelf
+	}
+	immediate = {
+		remove_trait = houseirae_halfelf_child
+		add_random_halfelf_portrait = yes
+	}
+}
+
+character_event = {
+	id = HouseIraeHalfElf.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = luxuria_fantasia_started } # Will default to LF's genetics if present
+		OR = {
+			mother = {
+				OR = {
+					trait = houseirae_drow
+					trait = houseirae_halfelf
+				}
+			}
+			true_father_even_if_dead = {
+				OR = {
+					trait = houseirae_drow
+					trait = houseirae_halfelf
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		if = { # Both parents are half elves
+			limit = {
+				mother = {
+					trait = houseirae_halfelf
+				}
+				true_father_even_if_dead = {
+					trait = houseirae_halfelf
+				}
+			}
+			remove_trait = houseirae_drow
+			remove_trait = houseirae_drow_child
+			add_trait = houseirae_halfelf
+			add_trait = houseirae_halfelf_child
+			random = {
+				chance = 50
+				remove_trait = inbred
+			}
+			break = yes
+		}
+		else_if = { # Both parents are dark elves
+			limit = {
+				mother = {
+					trait = houseirae_drow
+				}
+				true_father_even_if_dead = {
+					trait = houseirae_drow
+				}
+			}
+			remove_trait = houseirae_halfelf
+			remove_trait = houseirae_halfelf_child
+			add_trait = houseirae_drow
+			add_trait = houseirae_drow_child
+			remove_trait = inbred
+			break = yes
+		}
+		else_if = { # One parent is drow, one is half elf
+			limit = {
+				OR = {
+					AND = { 
+						mother = {
+							trait = houseirae_drow
+						}
+						true_father_even_if_dead = {
+							trait = houseirae_halfelf
+						}
+					}
+					AND = {
+						mother = {
+							trait = houseirae_halfelf
+						}
+						true_father_even_if_dead = {
+							trait = houseirae_drow
+						}
+					}
+				}
+			}
+			random_list = { # 50/50 chance of a half-elf or drow child
+				50 = {
+					remove_trait = houseirae_drow
+					remove_trait = houseirae_drow_child
+					add_trait = houseirae_halfelf
+					add_trait = houseirae_halfelf_child
+					random = {
+						chance = 50
+						remove_trait = inbred
+					}
+				}
+				50 = {
+					remove_trait = houseirae_halfelf
+					remove_trait = houseirae_halfelf_child
+					add_trait = houseirae_drow
+					add_trait = houseirae_drow_child
+					remove_trait = inbred
+				}
+			}
+			break = yes
+		}
+		else_if = { # One parent is drow
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = houseirae_drow
+						}
+						true_father_even_if_dead = {
+							NOR = {
+								trait = houseirae_drow
+								trait = houseirae_halfelf
+							}
+						}
+					}
+					AND = {
+						mother = {
+							NOR = {
+								trait = houseirae_drow
+								trait = houseirae_halfelf
+							}
+						}
+						true_father_even_if_dead = {
+							trait = houseirae_drow
+						}
+					}
+				}
+			}
+			random_list = { 
+				50 = { # 50% chance of a half-elf child
+					remove_trait = houseirae_drow
+					remove_trait = houseirae_drow_child
+					add_trait = houseirae_halfelf
+					add_trait = houseirae_halfelf_child
+					random = {
+						chance = 50
+						remove_trait = inbred
+					}
+				}
+				25 = { # 25% chance of a drow child
+					remove_trait = houseirae_halfelf
+					remove_trait = houseirae_halfelf_child
+					add_trait = houseirae_drow
+					add_trait = houseirae_drow_child
+					remove_trait = inbred
+				}
+				25 = { # 25% chance of a human child
+					remove_trait = houseirae_drow
+					remove_trait = houseirae_drow_child
+					remove_trait = houseirae_halfelf
+					remove_trait = houseirae_halfelf_child
+				}
+			}
+			break = yes
+		}
+		else_if = { # One parent is half elf
+			limit = {
+				OR = {
+					AND = {
+						mother = {
+							trait = houseirae_halfelf
+						}
+						true_father_even_if_dead = {
+							NOR = {
+								trait = houseirae_drow
+								trait = houseirae_halfelf
+							}
+						}
+					}
+					AND = {
+						mother = {
+							NOR = {
+								trait = houseirae_drow
+								trait = houseirae_halfelf
+							}
+						}
+						true_father_even_if_dead = {
+							trait = houseirae_halfelf
+						}
+					}
+				}
+			}
+			random_list = { 
+				50 = { # 50% chance of a half-elf child
+					remove_trait = houseirae_drow
+					remove_trait = houseirae_drow_child
+					add_trait = houseirae_halfelf
+					add_trait = houseirae_halfelf_child
+					random = {
+						chance = 50
+						remove_trait = inbred
+					}
+				}
+				50 = { # 50% chance of a human child
+					remove_trait = houseirae_drow
+					remove_trait = houseirae_drow_child
+					remove_trait = houseirae_halfelf
+					remove_trait = houseirae_halfelf_child
+				}
+			}
+			break = yes
+		}
+	}
+}
+
+# Half elf start
+narrative_event = {
+	id = HouseIraeHalfElf.3
+	is_triggered_only = yes
+	picture = GFX_halfelf_start
+	title = HouseIraeHalfElf3T
+	window = "houseirae_custom_narrative"	
+	desc = HouseIraeHalfElf3
+
+	# Solo
+	option = { 
+		name = HouseIraeHalfElf3TTa
+		add_trait = houseirae_halfelf
+		hidden_tooltip = {
+			add_random_halfelf_portrait = yes
+			narrative_event = { id = HouseIraeHalfElf.4 }
+		}
+	}
+	
+	# Realm characters: 100% half elf
+	option = { 
+		name = HouseIraeHalfElf3TTb
+		add_trait = houseirae_halfelf
+		hidden_tooltip = {
+			add_random_halfelf_portrait = yes
+		}
+		custom_tooltip = {
+			text = HouseIraeHalfElf3TTbCustom
+			hidden_tooltip = {
+				any_realm_character = {
+					limit = {
+						liege = {
+							character = ROOT
+						}
+					}
+					add_trait = houseirae_halfelf
+					if = {
+						limit = {
+							is_adult = yes
+						}
+						add_random_halfelf_portrait = yes
+					}
+					else = {
+						add_trait = houseirae_halfelf_child
+					}
+				}
+				narrative_event = { id = HouseIraeHalfElf.4 }
+			}
+		}
+	}
+	
+	# Realm characters: 33% chance to be human, half elf, or drow
+	option = { 
+		name = HouseIraeHalfElf3TTc
+		add_trait = houseirae_halfelf
+		hidden_tooltip = {
+			add_random_halfelf_portrait = yes
+		}
+		custom_tooltip = {
+			text = HouseIraeHalfElf3TTcCustom
+			hidden_tooltip = {
+				any_realm_character = {
+					limit = {
+						liege = {
+							character = ROOT
+						}
+					}
+					random_list = {
+						33 = { # Half Elf
+							add_trait = houseirae_halfelf
+							if = {
+								limit = {
+									is_adult = yes
+								}
+								add_random_halfelf_portrait = yes
+							}
+							else = {
+								add_trait = houseirae_halfelf_child
+							}
+						}
+						33 = { # Human, no changes
+						}
+						33 = { # Dark elf
+							add_trait = houseirae_drow
+							if = {
+								limit = {
+									is_adult = yes
+								}
+								add_random_drow_portrait = yes
+							}
+							else = {
+								add_trait = houseirae_drow_child
+							}
+						}
+					}
+				}
+				narrative_event = { id = HouseIraeHalfElf.4 }
+			}
+		}
+	}
+}
+
+narrative_event = { # Eilistraee religion choice
+	id = HouseIraeHalfElf.4
+	desc = HouseIraeHalfElf4
+	title = HouseIraeHalfElf4T
+	picture = irae_eilistraee_lore
+	window = "houseirae_custom_narrative"
+	is_triggered_only = yes
+
+	option = {
+		name = HouseIraeHalfElf4TTa
+		religion = eilistraee_religion
+		primary_title = {
+			add_law = { law = eilistraee_succession cooldown = no opinion_effect = no }
+			add_law = { law = drow_tanistry cooldown = no opinion_effect = no }
+		}
+		recalc_succession = yes
+		any_demesne_province = {
+			religion = eilistraee_religion
+		}		
+		hidden_tooltip = {
+			any_realm_character = {
+				limit = {
+					liege = {
+						character = ROOT
+					}
+				}
+				any_demesne_province = {
+					religion = eilistraee_religion
+				}
+				if = {
+					limit = {
+						is_ruler = yes
+						OR = {
+							is_theocracy = yes
+							is_republic = yes
+						}
+						NOT = { is_close_relative = yes }
+					}
+					death = { death_reason = death_missing }
+				}
+				else = {
+					religion = eilistraee_religion	
+				}				
+			}
+			narrative_event = { id = HouseIrae.19 }
+		}		
+	}
+
+	option = {
+		name = HouseIraeHalfElf4TTb
+		if = {
+			limit = {
+				has_character_flag = houseirae_custom_families
+			}
+			custom_tooltip = {
+				text = HouseIrae24TT
+				character_event = { id = HouseIraeFamilies.3 }
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+spriteTypes = {
+	spriteType = {
+		name = "irae_rose"
+		textureFile = "gfx/event_pictures/irae_rose.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "irae_tamsine"
+		texturefile = "gfx/event_pictures/irae_tamsine.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_kaenia"
+		texturefile = "gfx/event_pictures/irae_kaenia.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

@@ -1,0 +1,88 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_society_main_background_secret_religious_society_eilistraee_religion"
+		texturefile = "gfx\\interface\\societies\\society_bg_monastic_order_stoics.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_society_expansion_background_secret_religious_society_eilistraee_religion"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_hermetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_small_secret_religious_society_eilistraee_religion"
+		texturefile = "gfx\\interface\\societies\\symbol_small_monastic_order_stoics.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_society_main_background_secret_religious_society_lolth_religion"
+		texturefile = "gfx\\interface\\societies\\society_bg_monastic_order_stoics.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_society_expansion_background_secret_religious_society_lolth_religion"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_hermetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_small_secret_religious_society_lolth_religion"
+		texturefile = "gfx\\interface\\societies\\symbol_small_monastic_order_stoics.tga"
+		noOfFrames = 2
+	}
+	spriteType = {
+		name = "GFX_society_main_background_secret_religious_society_vhaeraun_religion"
+		texturefile = "gfx\\interface\\societies\\society_bg_monastic_order_stoics.tga"
+	}
+	
+	spriteType = {
+		name = "GFX_society_expansion_background_secret_religious_society_vhaeraun_religion"
+		texturefile = "gfx\\interface\\societies\\society_exp_bg_hermetics.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_small_secret_religious_society_vhaeraun_religion"
+		texturefile = "gfx\\interface\\societies\\symbol_small_monastic_order_stoics.tga"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_halfelf_start"
+		textureFile = "gfx/event_pictures/half_elf_start.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "houseirae_spider_pits"
+		textureFile = "gfx/event_pictures/houseirae_spider_pits.dds"
+		noOfFrames = 1
+	}
+	
+	spriteType = {
+		name = "GFX_offmap_symbol_irae"
+		texturefile = "gfx\\interface\\offmap_screen\\offmap_symbol_irae.dds"
+	}
+	spriteType = {
+		name = "GFX_offmap_bg_irae"
+		texturefile = "gfx\\interface\\offmap_screen\\irae_background.dds"
+	}
+	spriteType = {
+		name = "GFX_drow_startf"
+		texturefile = "gfx/event_pictures/drow_startf.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"		
+	}
+	spriteType = {
+		name = "GFX_drow_startm"
+		texturefile = "gfx/event_pictures/drow_startm.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"		
+	}
+	spriteType = {
+		name = "GFX_seldarine_republic"
+		texturefile = "gfx/event_pictures/seldarine_republic.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"		
+	}
+}

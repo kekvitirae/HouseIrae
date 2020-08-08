@@ -1,0 +1,52 @@
+houseirae_lolth_sacrifice_ritual;Ritual of Sacrifice - Lolth;;;;;;;;;;;;;x
+houseirae_lolth_sacrifice_ritual_desc;Lolth's most sacred ritual involves the sacrificing of slaves and prisoners in a grand ceremony, attended only by women under penalty of death. Such a grand event can only be held once every 15 years by a single character.\n§RIt is not a good idea to perform the ceremony without at least some prisoners or slaves.§!;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeTitle;Ritual of Sacrifice - Lolth;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeTitle_tribute_payment; Sacrifice Tribute;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeTitle_tribute_no_payment; No Sacrifice Tribute;;;;;;;;;;;;;x
+irae_holding_sacrifice;Performing Lolth Sacrifice;;;;;;;;;;;;;x
+irae_held_sacrifice;Held Lolth Sacrifice;;;;;;;;;;;;;x
+irae_holding_sacrifice_desc;This character is currently performing a sacrifice ritual for Lolth.;;;;;;;;;;;;;x
+irae_held_sacrifice_desc;This character has recently held a sacrifice ritual for Lolth. Another one cannot be performed for another 15 years after the previous.;;;;;;;;;;;;;x
+irae_opinion_sacrifice_heretic_liege;Heretic Liege;;;;;;;;;;;;;x
+lolth_sacrifice;Sacrifice Ritual;;;;;;;;;;;;;x
+irae_opinion_refused_sacrifice;Refused to Attend Ritual;;;;;;;;;;;;;x
+irae_opinion_refused_sacrifice_desc;This character has refused to attend a holy Dark Seldarine ritual.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice1;\n \n  I can feel that the time is right to honor the Spider Queen. I notify my court and vassals of the ritual, and of their expected participation.\n  While I do encourage attendance, I do recognize that some may have conflicts that prevent their attendance. These individuals though are expected to then pay tribute. Those that do not attend and do not pay tribute risk my wrath and that of Lolth.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice1TT;May Lolth bless us as we honor her.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice2;I have been summoned to take part in the sacred Ritual of Sacrifice to Lolth.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice2TT;I shall attend the ritual!;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice3;I have been summoned to take part in the sacred Ritual of Sacrifice to Lolth. I will not go for variety of reasons. As is custom, I am expected to pay a small tribute for not attending.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice3TTPay;Please accept my tribute and excuse my absence.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice3TTNoPay;Fuck [From.GetFirstName], I'm not paying!;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice4;\n \n  [From.GetBestName] has declined to attend, yet has provided suitable tribute to atone for their absence. It's a shame that they're not attending, yet the celebration shall continue on without them.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice4TT;[From.GetFirstName]'s tribute is acceptable.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice5;\n \n  [From.GetBestName] has declined to attend, and has insulted me by refusing to pay tribute for their absence. Those who will be in attendance are aware of the slight, and they have expressed their displeasure of the individual's actions as well. \n  I shall not forget this slight, and nor shall Lolth.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice5TT;[From.GetFirstName] will regret this decision.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice7;\n \n  The time of sacrifice is upon us. A sacrifice will be tied down and stabbed through the heart with a dagger. The blood will flow like wine at a party.\n  Lolth favors both prisoners and slaves. Though I can always gather some goats or cows, Lolth tends to look down upon such sacrifices. \n  After considering my available options, I make a decision.;;;;;;;;;;;;;x
+HouseIraeLolthSacrificePrisoner;Bring the prisoner, [irae_sacrifice.GetBestName], before me.;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeAnimal;We'll sacrifice some animals.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice8;While sitting in my jail cell, I learn that [From.GetFirstName] has decided that I shall be given in sacrifice to Lolth.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice8TT;I am doomed!;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice9;\n \n  [irae_sacrifice.GetBestName] is brought before me. They look a little ragged, their eyes sullen and searching for a glimmer of hope that they can use to escape their fate. \n  I motion towards the yathrin to have them tied down. As they're being secured, [irae_sacrifice.GetFirstName] begins to plead for their life. It's quite pitiful really and more than one person chuckles at the poor showing.\n\n  I stand and raise my hand to gather everyone's attention. "I have heard your cries, and after careful consideration, I have decided...";;;;;;;;;;;;;x
+HouseIraeLolthSacrifice9TTA;...to proceed with the sacrifice.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice9TTB;...decided to spare their life.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice9TTMortalEnemy;Lolth is extremely pleased at the killing of a mortal enemy.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice10;\n \n  I have some cloven-hoofed animals brought in to be strung up and blooded. I, and some of the yathrin, look upon the animal sacrifice with disgust. It will have to do for now.;;;;;;;;;;;;;x
+HouseIraeLolthSacrifice10TT;Lolth is not going to be too pleased.;;;;;;;;;;;;;x
+
+HouseIraeLolthSacrifice11;\n \n  The ritual complete, I look down at the altar, bloodied from the aftermath of all the sacrifices made. The yathrin and I kneel down before the half-women half-spider statue of Lolth and begin praying. I feel a tingling in the back of my mind, and know that the Spider Queen was watching with great intent. I open my eyes and gaze upon the statue, awaiting confirmation of Lolth's pleasure...;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeExcited;Lolth is excited for all the delicious sacrifices!;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeRemoveDrider;The Spider Queen has forgiven me, and has once again changed me back to my normal form.;;;;;;;;;;;;;x
+HouseIraeLolthSacrificePleased;Lolth is pleased at the quality of sacrifices.;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeDispleased;Lolth is displeased at the quality of sacrifices.;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeAngered;Lolth is angered at the quality of sacrifices!;;;;;;;;;;;;;x
+HouseIraeLolthSacrificeCursed;I groan in pain as my lower body transforms into that of a giant spider...;;;;;;;;;;;;;x

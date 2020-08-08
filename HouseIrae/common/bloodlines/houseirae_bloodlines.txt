@@ -1,0 +1,36 @@
+house_irae_bloodline = {
+	learning = 1
+	intrigue = 1
+	health = 1
+	dynasty_opinion = 10
+	lolth_religion_opinion = 10
+	vhaeraun_religion_opinion = -10
+	global_revolt_risk = -0.01
+	inheritance = all_descendants
+	matrilineal_override = yes
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_murder_rose
+	flags = { historical_bloodline irae_bloodline }
+	active = {
+		OR = {
+			trait = houseirae_drow
+			trait = houseirae_halfelf
+		}
+	}
+}
+
+house_irae_true_bloodline = {
+	combat_rating = 10
+	health = 1
+	land_morale = 0.1
+	land_organisation = 0.1
+	lolth_religion_opinion = 10
+	inheritance = all_descendants
+	matrilineal_override = yes
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_murder_rose
+	flags = { historical_bloodline irae_bloodline }
+	active = {
+		trait = houseirae_drow
+	}
+}

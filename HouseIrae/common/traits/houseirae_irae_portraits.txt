@@ -1,0 +1,89 @@
+houseirae_drow_special1 = { # Kekvit Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_special2 = { # Freya Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_special3 = { # Khaldune Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_special4 = { # Deionarra Irae \ Random child
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_special5 = { # Random chlid
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_drow_special6 = { # Laela Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+	demesne_size = 1000
+}
+houseirae_drow_special7 = { # Tamsine
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_drow_special8 = { # New Tamsine
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_drow_special9 = { # Kaenia Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_drow_special10 = { # Demon father
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_drow_special11 = { # Belladonna Irae
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}

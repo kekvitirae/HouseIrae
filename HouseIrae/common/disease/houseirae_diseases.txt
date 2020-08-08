@@ -1,0 +1,88 @@
+houseirae_motherly_love = {
+	contagiousness = 1
+	outbreak_chance = 0
+	effect = {
+		local_tax_modifier = -0.75
+		supply_limit = -4
+		max_attrition = 0.075
+	}
+	yearly_province_pulse = {
+		random_list = {		
+			10 = {
+				modifier = {
+					factor = 1.1
+					hospital_level = 1
+				}
+				modifier = {
+					factor = 1.1
+					hospital_level = 2
+				}
+				modifier = {
+					factor = 1.1
+					hospital_level = 3
+				}
+				modifier = {
+					factor = 1.1
+					hospital_level = 4
+				}
+				modifier = {
+					factor = 1.1
+					hospital_level = 5
+				}
+				modifier = {
+					factor = 1.1
+					hospital_level = 6
+				}
+			}
+			90 = {
+				increase_depopulation_effect = yes
+			}
+		}
+	}
+	icon = 4
+	trait = houseirae_motherly_love_trait
+	tooltip = MOTHERLY_LOVE_TOOLTIP
+	months = 12
+	character_infection_chances = {
+		months = 1
+	}
+	on_character_infection = {
+		if = {
+			limit = {
+				NOT = { has_global_flag = houseirae_motherly_love_happened }
+			}
+			set_global_flag = houseirae_motherly_love_happened
+		}
+	}
+	on_province_infection = {
+		province_event = { id = HouseIraeTamsine.107 }
+		province_event = { id = RIP.11703 } #prosperity ended by epidemic
+	}
+	always_get_message = yes
+	color = { 255 0 0 }
+	major = yes
+	active = no
+	timeperiod = {
+		start_date = 760.1.1
+		end_date = 1452.1.1
+		
+		months = 12
+		
+		outbreak_chance = 0
+		
+		can_outbreak = {
+			NOT = { has_global_flag = houseirae_motherly_love_happened }
+		}
+		
+		min_nb_province = 0		# ignored if 0
+		max_nb_province = 0		# ignored if 0
+
+		one_only = yes
+		spread_through_water = yes
+
+		province_infection_duration = 12
+		
+	}
+	
+	disease_gfx = disease_gfx_bubonic_plague
+}

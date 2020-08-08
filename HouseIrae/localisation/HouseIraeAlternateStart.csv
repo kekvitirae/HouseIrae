@@ -1,0 +1,13 @@
+setting_houseirae_racial_seeding;§YHouse Irae:§! Racial Seeding;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_tooltip;Determines if Dark/Half Elves will be seeded into a new world.\nRequires §YReligion/Culture Names§! set to §GHistorical§!.;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_none;None;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_none_tooltip;The world will not be seeded with House Irae races.;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_partial;Partial;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_partial_tooltip;There's a chance an independent ruler and their realm will be a Dark or Half Elf.;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_full;Underdark Above;;;;;;;;;;;;;x
+setting_houseirae_racial_seeding_full_tooltip;Humans are just a distant memory now.;;;;;;;;;;;;;x
+
+setting_houseirae_seed_drow;Seed Dark Elves;;;;;;;;;;;;;x
+setting_houseirae_seed_drow_tooltip;If checked, Dark Elves and their religions and culture will appear during seeding.;;;;;;;;;;;;;x
+setting_houseirae_seed_halfelf;Seed Half Elves;;;;;;;;;;;;;x
+setting_houseirae_seed_halfelf_tooltip;If checked, Half Elves will appear during seeding.;;;;;;;;;;;;;x

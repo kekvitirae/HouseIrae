@@ -1,0 +1,23 @@
+#########################################################################
+# RELIGIOUS AUTHORITY MODIFIERS - fully scriptable
+##########################################################################
+
+moonlight_dance = {
+	authority = 3
+	years = 10
+}
+
+moonlight_dance_sword_dancer = {
+	authority = 3
+	years = 10
+}
+
+lolth_sacrifice = {
+	authority = 3
+	years = 10
+}
+
+vhaeraun_sacrifice = {
+	authority = 3
+	years = 10
+}

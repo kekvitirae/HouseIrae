@@ -1,0 +1,37 @@
+houseirae_others4 = { # Broken Waterlily
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_others5 = { # Thicc Waterlily
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+
+houseirae_others6 = { # Vala Saen
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}	
+}
+houseirae_others7 = { # Rose Hemlock
+	hidden = yes
+	random = no
+	customizer = no
+	defensive_plot_power_modifier = 100
+}
+
+houseirae_others8 = { # Custom mother
+	hidden = yes
+	random = no
+	customizer = no
+}

@@ -1,0 +1,21 @@
+namespace = HouseIraeAltStart
+
+character_event = {
+	id = HouseIraeAltStart.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_global_flag = houseirae_seeding_done }
+	}
+	immediate = {
+		set_global_flag = houseirae_seeding_done
+		if = {
+			limit = {
+				NOT = {
+					has_alternate_start_parameter = { key = houseirae_racial_seeding value = none }
+				}
+			}
+			houseirae_alternate_seed_races = yes
+		}
+	}
+}

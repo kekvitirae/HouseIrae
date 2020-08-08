@@ -1,0 +1,1060 @@
+irae_clear_sacrifice_flags = {
+	clr_character_flag = irae_sacrifice_cooldown
+	clr_character_flag = irae_attending_sacrifice
+	clr_character_flag = irae_spared_sacrifice
+}
+
+irae_clear_moonlight_flags = {
+	clr_character_flag = irae_attending_dance
+	clr_character_flag = dancing_in_the_moonlight	
+}
+
+irae_select_artifact_for_sacrifice = {
+	random_artifact = {
+		limit = {
+			NOT = {
+				quality >= 4
+			}
+		}
+		save_event_target_as = irae_artifact_sacrifice # Sets our target for use in localization and event calls
+	}	
+}
+
+irae_select_prisoner_for_sacrifice = {
+	random_courtier = {
+		limit = {
+			prisoner = yes # Needs to be a prisoner
+			host = { character = ROOT } # Needs to be the prisoner of ROOT (the person having the event)
+			NOT = { has_character_flag = irae_spared_sacrifice } # We don't choose someone we already spared
+			is_alive = yes # In hopes of avoiding reselecting someone who was recently sacrificed - since some folks reported that happened
+		}
+		save_event_target_as = irae_sacrifice # Sets our target for use in localization and event calls
+	}	
+}
+irae_clear_prisoner_for_sacrifice = {
+	clear_event_target = irae_sacrifice
+}
+
+
+sold_to_house_irae_effect = {
+	custom_tooltip = {
+		text = sold_to_house_irae_tt
+	}
+	hidden_effect = { death = { death_reason = death_sold_to_house_irae } }
+}	
+
+
+remove_random_drow_portrait = {
+	hidden_effect = {
+	remove_trait = houseirae_drow_portrait1
+	remove_trait = houseirae_drow_portrait2
+	remove_trait = houseirae_drow_portrait3
+	remove_trait = houseirae_drow_portrait4
+	remove_trait = houseirae_drow_portrait5
+	remove_trait = houseirae_drow_portrait6
+	remove_trait = houseirae_drow_portrait7
+	remove_trait = houseirae_drow_portrait8
+	remove_trait = houseirae_drow_portrait9
+	remove_trait = houseirae_drow_portrait10
+	remove_trait = houseirae_drow_portrait11
+	remove_trait = houseirae_drow_portrait12
+	remove_trait = houseirae_drow_portrait13
+	remove_trait = houseirae_drow_portrait14
+	remove_trait = houseirae_drow_portrait15
+	remove_trait = houseirae_drow_portrait16
+	remove_trait = houseirae_drow_portrait17
+	remove_trait = houseirae_drow_portrait18
+	remove_trait = houseirae_drow_portrait19
+	remove_trait = houseirae_drow_portrait20
+	remove_trait = houseirae_drow_portrait21
+	remove_trait = houseirae_drow_portrait22
+	remove_trait = houseirae_drow_portrait23
+	remove_trait = houseirae_drow_portrait24
+	remove_trait = houseirae_drow_portrait25
+	remove_trait = houseirae_drow_portrait26
+	remove_trait = houseirae_drow_portrait27a
+	remove_trait = houseirae_drow_portrait28a
+	remove_trait = houseirae_drow_portrait29a
+	remove_trait = houseirae_drow_portrait30a
+	remove_trait = houseirae_drow_portrait31a
+	remove_trait = houseirae_drow_portrait32a
+	remove_trait = houseirae_drow_portrait33a
+	remove_trait = houseirae_drow_portrait34
+	remove_trait = houseirae_drow_portrait35
+	remove_trait = houseirae_drow_portrait36
+	remove_trait = houseirae_drow_portrait37
+	remove_trait = houseirae_drow_portrait38
+	remove_trait = houseirae_drow_portrait39
+	remove_trait = houseirae_drow_portrait40
+	remove_trait = houseirae_drow_portrait41
+	remove_trait = houseirae_drow_portrait42
+	remove_trait = houseirae_drow_portrait43
+	remove_trait = houseirae_drow_portrait44
+	remove_trait = houseirae_drow_portrait45
+	remove_trait = houseirae_drow_portrait46
+	remove_trait = houseirae_drow_portrait47
+	remove_trait = houseirae_drow_portrait48
+	remove_trait = houseirae_drow_portrait49
+	remove_trait = houseirae_drow_portrait50
+	remove_trait = houseirae_drow_portrait51
+	remove_trait = houseirae_drow_portrait52
+	}
+}
+	
+add_random_drow_portrait = {
+	hidden_effect = {
+	random_list = {
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait1 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait2 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait3 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait4 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait5 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait6 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait7 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait8 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait9 
+		}
+
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait10 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait11 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait12 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait13 
+		}
+
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait14
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait15 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait16 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait17 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait18 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait19 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait20 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait21 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait22 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait23 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait24 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait25 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait26 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait27a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait28a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait29a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait30a 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait31a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait32a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait33a
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait34
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait35
+		}
+
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait36 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait37 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait38 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = no
+			}
+			add_trait = houseirae_drow_portrait39 
+		}
+
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait40
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait41 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait42 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait43 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait44 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait45 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait46 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait47 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait48 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait49 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait50 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait51 
+		}
+		7 = {
+			modifier = {
+				factor = 0
+				is_female = yes
+			}
+			add_trait = houseirae_drow_portrait52 
+		}
+		
+	}
+	}
+}
+
+add_random_halfelf_portrait = {
+	hidden_effect = {
+		random_list = {
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait1 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait2 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait3 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait4 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait5 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait6 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait7 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait8 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait9 
+			}
+
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait10 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait11 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait12 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = no
+				}
+				add_trait = houseirae_halfelf_female_portrait13 
+			}
+
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait1 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait2 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait3 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait4 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait5 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait6 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait7 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait8 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait9 
+			}
+
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait10 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait11 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait12 
+			}
+			7 = {
+				modifier = {
+					factor = 0
+					is_female = yes
+				}
+				add_trait = houseirae_halfelf_male_portrait13 
+			}
+		}
+	}
+}
+
+remove_random_halfelf_portrait = {
+	hidden_effect = {
+		remove_trait = houseirae_halfelf_female_portrait1
+		remove_trait = houseirae_halfelf_female_portrait2
+		remove_trait = houseirae_halfelf_female_portrait3
+		remove_trait = houseirae_halfelf_female_portrait4
+		remove_trait = houseirae_halfelf_female_portrait5
+		remove_trait = houseirae_halfelf_female_portrait6
+		remove_trait = houseirae_halfelf_female_portrait7
+		remove_trait = houseirae_halfelf_female_portrait8
+		remove_trait = houseirae_halfelf_female_portrait9
+		remove_trait = houseirae_halfelf_female_portrait10
+		remove_trait = houseirae_halfelf_female_portrait11
+		remove_trait = houseirae_halfelf_female_portrait12
+		remove_trait = houseirae_halfelf_female_portrait13
+		remove_trait = houseirae_halfelf_male_portrait1
+		remove_trait = houseirae_halfelf_male_portrait2
+		remove_trait = houseirae_halfelf_male_portrait3
+		remove_trait = houseirae_halfelf_male_portrait4
+		remove_trait = houseirae_halfelf_male_portrait5
+		remove_trait = houseirae_halfelf_male_portrait6
+		remove_trait = houseirae_halfelf_male_portrait7
+		remove_trait = houseirae_halfelf_male_portrait8
+		remove_trait = houseirae_halfelf_male_portrait9
+		remove_trait = houseirae_halfelf_male_portrait10
+		remove_trait = houseirae_halfelf_male_portrait11
+		remove_trait = houseirae_halfelf_male_portrait12
+		remove_trait = houseirae_halfelf_male_portrait13
+	}
+}
+
+houseirae_tamsine_transform = {
+	remove_trait = inbred
+	remove_trait = imbecile
+	remove_trait = slow
+	remove_trait = depressed
+	remove_trait = drunkard
+	remove_trait = infirm
+	remove_trait = lunatic
+	remove_trait = stressed
+	remove_trait = maimed
+	remove_trait = is_fat
+	remove_trait = is_malnourished
+	remove_trait = disfigured
+	remove_trait = mangled
+	remove_trait = one_eyed
+	remove_trait = one_handed
+	remove_trait = one_legged
+	remove_trait = severely_injured
+	remove_trait = clubfooted
+	remove_trait = dwarf
+	remove_trait = harelip
+	remove_trait = hunchback
+	remove_trait = lisp
+	remove_trait = stutter
+	remove_trait = ugly
+	remove_trait = weak
+	remove_trait = giant
+	remove_trait = lefthanded
+	remove_trait = dull
+	remove_trait = uncouth
+	remove_trait = feeble
+	remove_trait = chaste
+	remove_trait = temperate
+	remove_trait = charitable
+	remove_trait = kind
+	remove_trait = humble
+	remove_trait = gluttonous
+	remove_trait = slothful
+	remove_trait = just
+	remove_trait = craven
+	remove_trait = honest
+	remove_trait = shy
+	remove_trait = celibate
+	
+	houseirae_remove_education = yes
+	
+	add_trait = fair
+	add_trait = ambitious
+	add_trait = elusive_shadow
+	add_trait = proud
+	add_trait = wroth
+	add_trait = envious
+	add_trait = cruel
+	add_trait = deceitful
+	add_trait = possessed
+	add_trait = mystic
+	add_trait = lustful
+	add_trait = houseirae_drow
+	add_trait = houseirae_matron_mother
+	
+	remove_random_drow_portrait = yes
+	add_trait = houseirae_drow_special8
+	
+	set_name = "Tamsine"
+	dynasty = 9051300
+	set_mother = 0
+	set_father = 0
+	religion = lolth_religion
+	culture = drow
+	set_character_flag = ai_flag_refuse_conversion
+	set_character_flag = special_npc
+	set_character_flag = society_join_block
+	set_character_flag = no_court_invites
+	set_character_flag = tentacle_immunity
+	set_character_flag = npc_tamsine_irae
+	set_global_flag = houseirae_crisis
+	save_global_event_target_as = tamsine_irae
+	
+	event_target:houseirae_kekvit_irae = {
+		set_mother = ROOT
+	}
+	create_bloodline = {
+		type = house_irae_true_bloodline
+	}
+	house_irae_true_bloodline = {
+		house_irae_bloodline = {
+			any_bloodline_member = {
+				add_to_bloodline = PREVPREV
+			}
+			destroy_bloodline = yes
+		}
+	}
+	random_independent_ruler = {
+		limit = {
+			ai = yes
+			NOR = {
+				controls_religion = yes
+				is_landless = yes
+				is_nomadic = yes
+				is_offmap_ruler = yes
+				is_offmap_governor = yes
+				mercenary = yes
+				is_republic = yes
+				has_character_flag = npc_laela_irae
+				any_realm_character = {
+					ai = no
+				}
+			}
+		}
+		preferred_limit = {
+			higher_tier_than = DUKE
+		}
+		preferred_limit = {
+			higher_tier_than = COUNT
+		}
+		preferred_limit = {
+			higher_tier_than = BARON
+		}
+		ROOT = {
+			move_character = PREV
+		}
+		abdicate_to = ROOT
+	}
+	e_true_house_irae = {
+		grant_title = ROOT
+	}
+	set_defacto_liege = ROOT
+	event_target:laela_irae = {
+		set_mother = ROOT
+		if = {
+			limit = {
+				has_game_rule = { name = houseirae_dark_whispers value = on }
+			}
+			set_defacto_liege = ROOT
+			opinion = {
+				modifier = houseirae_unholy_mother
+				who = ROOT
+				years = 999
+			}
+			reverse_opinion = {
+				modifier = houseirae_unholy_daughter
+				who = ROOT
+				years = 999
+			}
+		}
+		else = {
+			opinion = {
+				modifier = houseirae_usurper_mother
+				who = ROOT
+				years = 999
+			}
+			reverse_opinion = {
+				modifier = houseirae_ungrateful_daughter
+				who = ROOT
+				years = 999
+			}
+		}
+	}
+	any_realm_province = {
+		religion = lolth_religion
+		culture = drow
+	}
+	any_realm_character = {
+		religion = lolth_religion
+		culture = drow
+	}
+	any_realm_character = {
+		limit = {
+			NOT = { trait = houseirae_drow }
+		}
+		add_trait = houseirae_drow
+		if = {
+			limit = {
+				is_adult = yes
+			}
+			add_random_drow_portrait = yes
+		}
+		else = {
+			add_trait = houseirae_drow_child
+		}
+	}
+	location = {
+		ROOT = {
+			spawn_unit = {
+				province = PREV
+				home = PREV
+				owner = THIS
+				troops = {
+					archers = { 750 750 }
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 750 750 }
+				}
+				attrition = 0
+				maintenance = no
+				merge = yes
+			}
+			spawn_unit = {
+				province = PREV
+				home = PREV
+				owner = THIS
+				troops = {
+					archers = { 750 750 }
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 750 750 }
+				}
+				attrition = 0
+				maintenance = no
+				merge = yes
+			}
+			spawn_unit = {
+				province = PREV
+				home = PREV
+				owner = THIS
+				troops = {
+					archers = { 750 750 }
+					light_infantry = { 1500 1500 }
+					heavy_infantry = { 750 750 }
+				}
+				attrition = 0
+				maintenance = no
+				merge = yes
+			}
+		}
+	}
+}
+
+houseirae_remove_education = {
+	trigger_switch = {
+		on_trigger = trait
+		naive_appeaser = { remove_trait = naive_appeaser }
+		underhanded_rogue = { remove_trait = underhanded_rogue }
+		charismatic_negotiator = { remove_trait = charismatic_negotiator }
+		grey_eminence = { remove_trait = grey_eminence }
+		misguided_warrior = { remove_trait = misguided_warrior }
+		tough_soldier = { remove_trait = tough_soldier }
+		skilled_tactician = { remove_trait = skilled_tactician }
+		brilliant_strategist = { remove_trait = brilliant_strategist }
+		indulgent_wastrel = { remove_trait = indulgent_wastrel }
+		thrifty_clerk = { remove_trait = thrifty_clerk }
+		fortune_builder = { remove_trait = fortune_builder }
+		midas_touched = { remove_trait = midas_touched }
+		amateurish_plotter = { remove_trait = amateurish_plotter }
+		flamboyant_schemer = { remove_trait = flamboyant_schemer }
+		intricate_webweaver = { remove_trait = intricate_webweaver }
+		elusive_shadow = { remove_trait = elusive_shadow }
+		detached_priest = { remove_trait = detached_priest }
+		martial_cleric = { remove_trait = martial_cleric }
+		scholarly_theologian = { remove_trait = scholarly_theologian }
+		mastermind_theologian = { remove_trait = mastermind_theologian }
+	}
+}
+
+flip_secret_religious_community_provinces_dark_seldarine = {
+	trigger_switch = {
+		on_trigger = society_member_of
+		secret_religious_society_eilistraee_religion = {
+			ROOT = {
+				any_demesne_province = {
+					limit = {
+						has_province_modifier = secret_eilistraee_community
+					}
+					religion = eilistraee_religion
+					remove_province_modifier = secret_eilistraee_community
+				}
+			}
+		}
+		secret_religious_society_lolth_religion = {
+			ROOT = {
+				any_demesne_province = {
+					limit = {
+						has_province_modifier = secret_lolth_community
+					}
+					religion = lolth_religion
+					remove_province_modifier = secret_lolth_community
+				}
+			}
+		}
+		secret_religious_society_vhaeraun_religion = {
+			ROOT = {
+				any_demesne_province = {
+					limit = {
+						has_province_modifier = secret_vhaeraun_community
+					}
+					religion = vhaeraun_religion
+					remove_province_modifier = secret_vhaeraun_community
+				}
+			}
+		}
+	}
+}
+
+laela_converts_tribals = {
+	any_demesne_title = {
+		limit = {
+			tier = baron
+			holding_type = tribal
+		}
+		convert_to = CASTLE
+		location = { #Clear Tribal Great Pillars
+			clr_province_flag = flag_great_pillar_norse
+			clr_province_flag = flag_great_pillar_tengri
+			clr_province_flag = flag_great_pillar_slavic
+			clr_province_flag = flag_great_pillar_baltic
+			clr_province_flag = flag_great_pillar_finnish
+			clr_province_flag = flag_great_pillar_west_african
+			clr_province_flag = flag_great_pillar_aztec
+			clr_province_flag = flag_great_pillar_bon
+			clr_province_flag = flag_great_pillar_zun
+			clr_province_flag = flag_great_pillar_hellenic
+		}
+		
+		if = {
+			limit = {
+				dejure_liege_title = {
+					holder = ROOT
+					location = {
+						num_of_empty_holdings = 2
+					}
+					NOT = {
+						any_direct_de_jure_vassal_title = {
+							holding_type = city
+						}
+					}
+				}
+			}
+			location = {
+				build_holding = {
+					type = city
+				}
+			}
+		}
+		if = {
+			limit = {
+				dejure_liege_title = {
+					holder = ROOT
+					location = {
+						num_of_empty_holdings = 2
+					}
+					NOT = {
+						any_direct_de_jure_vassal_title = {
+							holding_type = temple
+						}
+					}
+				}
+			}
+			location = {
+				build_holding  ={
+					type = temple
+				}
+			}
+		}
+	}
+	add_law = {
+		law = vassal_wars_law_1
+		cooldown = no
+		opinion_effect = no
+	}	
+}

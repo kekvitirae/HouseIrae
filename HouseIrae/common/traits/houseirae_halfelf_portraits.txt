@@ -1,0 +1,211 @@
+#
+# Half Elf Portraits
+#
+houseirae_halfelf_female_portrait1 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait2 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait3 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait4 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait5 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait6 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait7 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait8 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait9 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait10 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait11 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait12 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_female_portrait13 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait1 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait2 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait3 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait4 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait5 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait6 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait7 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait8 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait9 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait10 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait11 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait12 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}
+houseirae_halfelf_male_portrait13 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}
+}

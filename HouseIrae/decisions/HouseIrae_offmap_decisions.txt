@@ -1,0 +1,2040 @@
+offmap_decisions = {
+
+# Sell a prisoner
+
+	houseirae_sell_prisoner = {
+		only_playable = yes
+		button_name = irae_gifts
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		third_party = FROM
+		ai_check_interval = 36
+		show_third_party_potential = yes
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+	
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			OR = {
+				NOT = { has_global_flag = houseirae_crisis }
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+		}
+		
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+				prisoner = yes
+				is_ill = no
+				host = { character = FROMFROM }
+				is_adult = yes # Kekvit could raise children to be excellent slaves, but ain't nobody got time for that
+				custom_tooltip = {
+					text = is_not_incapable_inbred_or_imbecile_tt
+					NOT = { trait = incapable }
+					NOT = { trait = inbred }
+					NOT = { trait = imbecile }
+				}
+				NOT = {
+					trait = eunuch # No balls, no sperm, no deal.
+				}
+				NOT = {
+					has_character_modifier = child_of_kekvit # No refunds
+				}
+				NOT = {
+					has_character_flag = special_npc
+				}
+				custom_tooltip = {
+					text = is_not_maimed_or_infirm_tt
+					NOT = { trait = maimed }
+					NOT = { trait = infirm }
+				}
+				NOT = { has_character_flag = kekvit_clone }
+			}
+		}
+
+		third_party_allow = {
+			FROMFROM = {
+				prisoner = yes
+				host = { character = FROMFROM }
+				custom_tooltip = {
+					text = is_not_wounded_severely_injured_tt
+					NOT = { trait = wounded }
+					NOT = { trait = severely_injured }
+				}
+				is_inaccessible_trigger = no
+			}
+		}
+		
+		third_party_score = {
+			factor = 50
+			
+
+			# Female. Kekvit is bisexual, but prefers women.
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+					is_female = yes
+				}
+			}
+			
+			# House Irae Dark Elf trait. Kekvit views the slavery of other Dark Elves as an insult... unless they are exceptional women.
+			modifier = {
+				factor = 0.25
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						AND = {
+							trait = houseirae_drow
+							is_female = no
+						}
+						AND = {
+							trait = houseirae_drow
+							is_female = yes
+							NOT = {
+								OR = {
+									trait = strong
+									trait = genius
+									trait = quick
+									trait = fair
+									trait = mystic
+									trait = hedonist
+									trait = seductress
+								}
+							}
+						}
+					}
+				}
+			}			
+
+
+			modifier = {
+				factor = 0.75
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = nun # Will take extra effort to fuck them into submission.
+						trait = monk
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 1.50
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = genius # Kekvit enjoys intellectually stimulating thralls
+						trait = quick
+						trait = erudite
+						trait = mystic
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.25
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = ugly # NO.
+						trait = slow
+						trait = imbecile
+						trait = dwarf
+						trait = clubfooted
+						trait = harelip
+						trait = lisp
+						trait = stutter
+						trait = weak
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.15
+				FROMFROM = { 
+					show_scope_change = no
+						trait = strong # Useful in the mines or the bedroom
+				}
+			}
+			
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = lustful # Do I really need to say it?
+						trait = hedonist
+						trait = seducer
+						trait = seductress
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = chaste # Do I really need to say it?
+						trait = celibate
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.9
+				FROMFROM = { 
+					show_scope_change = no
+						trait = proud # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = humble # A good slave knows their place
+				}
+			}				
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = craven # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { 
+					show_scope_change = no
+						trait = brave # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = content # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 2
+				FROMFROM = { 
+					show_scope_change = no
+					trait = zealous # A good candidate for priestess
+					religion = lolth_religion
+				}
+			}			
+			modifier = {
+				factor = 2.0
+				FROMFROM = { 
+					show_scope_change = no
+					liked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROMFROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+			modifier = {
+				factor = 1.5
+				FROM = { 
+					show_scope_change = no
+					liked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}			
+		}
+		effect = {
+			FROM = {
+				sound_effect = china_grace_gain
+			}
+			FROM = {
+				show_scope_change = no
+				add_offmap_currency = {
+					offmap = offmap_irae
+					value = local_third_party_score
+				}
+			}
+			
+			# Like/Dislike effect description
+			#################################
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+					NOR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+				}
+				e_irae_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_tt }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+					NOR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+				}
+				e_irae_west_governor= {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = dislikes_tt }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						FROMFROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+					}
+				}
+				e_irae_west_governor= {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_but_dislikes_tt }
+					}
+				}
+			}
+			#################################
+			
+			hidden_effect = {
+				FROMFROM = {
+					show_scope_change = no
+					sold_to_house_irae_effect = yes
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+# Sell your own daughter, you monster
+
+	houseirae_sell_daughter = {
+		only_playable = yes
+		button_name = irae_gifts
+		
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		third_party = FROM
+		ai_check_interval = 36
+		show_third_party_potential = yes
+
+		potential = {
+			is_offmap_tag = offmap_irae	
+		}
+	
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			OR = {
+				NOT = { has_global_flag = houseirae_crisis }
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				NOT = {
+					has_character_modifier = daughter_sold
+				}		
+			}
+		}
+		
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+				is_child_of = FROMFROM
+				is_adult = yes
+				prisoner = no
+				is_ill = no
+				is_female = yes
+				is_pregnant = no
+				is_landed = no
+				is_married = no
+				has_children = no
+				NOR = {
+					trait = bastard  # House Irae only cares if the sacrifice is meaningful
+					has_character_modifier = child_of_kekvit # No refunds
+					has_character_flag = khaldunes_child
+					has_character_flag = kekvits_child
+					has_character_flag = freyas_child
+				}
+				host = { character = FROMFROM }
+				custom_tooltip = {
+					text = is_not_incapable_inbred_or_imbecile_tt
+					NOT = { trait = incapable }
+					NOT = { trait = inbred }
+					NOT = { trait = imbecile }
+				}
+				custom_tooltip = {
+					text = is_not_maimed_or_infirm_tt
+					NOT = { trait = maimed }
+					NOT = { trait = infirm }
+				}
+				NOT = { has_character_flag = kekvit_clone }
+				NOT = {
+					has_character_flag = special_npc
+				}
+			}
+		}
+
+		third_party_allow = {
+		}
+		
+		third_party_score = {
+			factor = 500
+			
+			
+			# House Irae Dark Elf trait. Kekvit views the slavery of other Dark Elves as an insult... unless they are exceptional women.
+			modifier = {
+				factor = 0.25
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						AND = {
+							trait = houseirae_drow
+							is_female = no
+						}
+						AND = {
+							trait = houseirae_drow
+							is_female = yes
+							NOT = {
+								OR = {
+									trait = strong
+									trait = genius
+									trait = quick
+									trait = fair
+									trait = mystic
+									trait = hedonist
+									trait = seductress
+								}
+							}
+						}
+					}
+				}
+			}			
+			
+			modifier = {
+				factor = 0.75
+				FROMFROM = { 
+					show_scope_change = no
+						trait = nun # Will take extra effort to fuck them into submission.
+				}
+			}
+			modifier = {
+				factor = 1.50
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = genius # Kekvit enjoys intellectually stimulating thralls
+						trait = quick
+						trait = erudite
+						trait = mystic
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.25
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = ugly # NO.
+						trait = slow
+						trait = imbecile
+						trait = dwarf
+						trait = clubfooted
+						trait = harelip
+						trait = lisp
+						trait = stutter
+						trait = weak
+					}
+				}
+			}
+
+			modifier = {
+				factor = 1.25
+				FROMFROM = { 
+					show_scope_change = no
+						trait = strong # Useful in the mines or the bedroom
+				}
+			}
+			
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = lustful # Do I really need to say it?
+						trait = hedonist
+						trait = seducer
+						trait = seductress
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				FROMFROM = { 
+					show_scope_change = no
+					OR = {
+						trait = chaste # Do I really need to say it?
+						trait = celibate
+					}
+				}
+			}
+			
+			modifier = {
+				factor = 0.9
+				FROMFROM = { 
+					show_scope_change = no
+						trait = proud # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = humble # A good slave knows their place
+				}
+			}				
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = craven # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { 
+					show_scope_change = no
+						trait = brave # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 1.10
+				FROMFROM = { 
+					show_scope_change = no
+						trait = content # A good slave knows their place
+				}
+			}
+			modifier = {
+				factor = 2
+				FROMFROM = { 
+					show_scope_change = no
+					trait = zealous # A good candidate for priestess
+					religion = lolth_religion
+				}
+			}				
+			modifier = {
+				factor = 1.5
+				FROM = { 
+					show_scope_change = no
+					liked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}			
+		}
+		
+		effect = {
+			hidden_effect = {
+				FROMFROM = {
+					show_scope_change = no
+					set_mother = 0
+					set_father = 0
+					sold_to_house_irae_effect = yes
+				}
+			}
+			FROM = {
+				sound_effect = china_grace_gain
+				show_scope_change = no
+				add_offmap_currency = {
+					offmap = offmap_irae
+					value = local_third_party_score
+				}
+				add_character_modifier = {
+					name = daughter_sold
+					duration = 3600
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	houseirae_send_gift = {
+		only_playable = yes
+		button_name = irae_gifts
+		ai_check_interval = 1
+
+		potential = {
+			is_offmap_tag = offmap_irae	
+		}
+	
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			OR = {
+				NOT = { has_global_flag = houseirae_crisis }
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+		allow = {
+			FROM = {
+				scaled_wealth = { value = 1 min = 250 }
+				NOT = {
+					has_character_modifier = houseirae_sent_gift
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			
+		}
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_gain
+				scaled_wealth = { value = -1 min = -250 }
+				add_offmap_currency = {
+					offmap = offmap_irae
+					value = 500
+				}
+				hidden_effect = {
+					add_character_modifier = {
+						name = houseirae_sent_gift
+						duration = 360
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	irae_send_artifact = {
+		only_playable = yes
+		button_name = irae_gifts
+		
+		third_party_filter = artifacts
+		ai_third_party_filter = artifacts
+		third_party = FROM
+		ai_check_interval = 60
+		show_third_party_potential = yes
+	
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			OR = {
+				NOT = { has_global_flag = houseirae_crisis }
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				NOT = {
+					has_character_modifier = sent_irae_artifact
+				}
+				
+			}
+		}
+		
+		third_party_potential = {
+			show_only_failed_conditions = yes
+			FROMFROM = {
+				show_scope_change = no
+				NOR = {
+					has_artifact_flag = curse
+					has_artifact_flag = irae # No refunds
+				}
+			}
+		}
+		
+		third_party_allow = {
+			
+		}
+		
+		third_party_score = {
+			factor = 250
+			
+			additive_modifier = {
+				value = 250
+				FROMFROM = { 
+					quality == 2
+				}
+			}
+			additive_modifier = {
+				value = 500
+				FROMFROM = { 
+					quality == 3
+				}
+			}
+			additive_modifier = {
+				value = 750
+				FROMFROM = { 
+					quality == 4
+				}
+			}
+			additive_modifier = {
+				value = 1250
+				FROMFROM = { 
+					quality == 5
+				}
+			}			
+
+			modifier = {
+				factor = 1.1
+				offmap_irae = {
+					show_scope_change = no 
+					offmap_has_like = likes_wealth
+				}
+			}
+			modifier = {
+				factor = 0.9
+				offmap_irae = {
+					show_scope_change = no 
+					offmap_has_dislike = likes_wealth
+				}
+			}
+			modifier = {
+				factor = 1.1
+				FROM = { 
+					show_scope_change = no
+					liked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				FROM = {
+					show_scope_change = no 
+					disliked_by_offmap = {
+						type = offmap_irae
+					}
+				}
+			}
+		}
+	
+		effect = {
+			FROM = {
+				show_scope_change = no
+				add_offmap_currency = {
+					offmap = offmap_irae
+					value = local_third_party_score
+				}
+			}
+
+			# Like/Dislike effect description
+			#################################
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_like = likes_wealth
+						}
+					}
+					NOR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_dislike = likes_wealth
+						}
+					}
+				}
+				e_irae_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_tt }
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_dislike = likes_wealth
+						}
+					}
+					NOR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_like = likes_wealth
+						}
+					}
+				}
+				e_irae_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = dislikes_tt }
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						FROM = {
+							liked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_like = likes_wealth
+						}
+					}
+					OR = {
+						FROM = {
+							disliked_by_offmap = {
+								type = offmap_irae
+							}
+						}
+						offmap_irae = {
+							offmap_has_dislike = likes_wealth
+						}
+					}
+				}
+				e_irae_west_governor = {
+					show_scope_change = no
+					offmap_power = {
+						show_scope_change = no
+						custom_tooltip = { text = likes_but_dislikes_tt }
+					}
+				}
+			}
+			#################################
+			hidden_tooltip = {
+				if = {
+					limit = {
+						FROM = {
+							ai = no
+						}
+						FROMFROM = {
+							quality > 3
+						}
+					}
+					FROM = {
+						set_character_flag = achievement_a_curious_trinket
+					}
+				}
+			}
+			save_event_target_as = target_governor
+			FROM = {
+				sound_effect = china_grace_gain
+			}
+
+			hidden_effect = { #to reduce cluttered tooltip (effect already heavily implied...)
+				offmap_irae = {
+					offmap_ruler = {
+						ROOT_FROMFROM = {
+							show_scope_change = no
+							tooltip = {
+								transfer_artifact = {
+									to = PREV
+									from = ROOT_FROM
+								}
+							}
+							hidden_effect = { unsafe_destroy_artifact = yes }
+						}
+					}
+				}
+			}
+
+			hidden_effect = {
+				FROM = {
+					add_character_modifier = {
+						name = sent_irae_artifact
+						years = 5
+					}
+				}
+			}
+		}
+	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	houseirae_irae_lockdown_gift = {
+		only_playable = yes
+		button_name = irae_gifts
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			has_global_flag = houseirae_crisis
+			NOR = {
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			ai = no # Only the player will get this
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = HouseIraeCrisisTooltip
+				always = no
+			}
+		}
+
+		effect = {
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+# Invite a male outcast
+
+	houseirae_invite_male = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 250 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 375 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 500 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -250
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -375
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -500
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.30 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}		
+
+	
+# Invite a Dark Elf Spymaster	
+
+	houseirae_irae_spymaster = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 750 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1125 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -750
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1125
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.2 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+# Invite Priestess of Lolth
+	
+	houseirae_irae_lolthpriestess = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 750 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1125 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -750
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1125
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.4 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+# Invite Priestess of Eilistraee
+
+	houseirae_irae_eilistraeepriestess = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 750 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1125 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -750
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1125
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.6 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+# Invite Priest of Vhaeraun
+
+	houseirae_irae_vhaeraunpriest = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 750 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1125 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -750
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1125
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.8 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+# Recruit slave raiders
+
+	raise_irae_honor_guard = {
+		only_playable = yes
+		button_name = irae_boons
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 1000 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 2000 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1000
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -2000
+					}
+				}
+				location = {
+					FROM = {
+						spawn_unit = {
+							owner = FROM
+							province = PREV
+							home = FROM
+							leader = none
+							troops = {
+								archers = { 500 500 }
+								heavy_infantry = { 250 250 }
+								light_infantry = { 250 250 }
+								pikemen = { 250 250 }
+								light_cavalry = { 250 250 }
+							}
+							attrition = 1.0
+							disband_on_peace = no
+							maintenance_multiplier = 0.50
+							earmark = irae_guard
+							is_looter = yes
+							cannot_inherit = yes
+							reinforces = yes
+							can_toggle_looting = yes
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
+		}
+	}
+
+	irae_get_artifact = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 60
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+	
+		allow = {
+			FROM = {
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 1000 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 2000 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+			custom_tooltip = {
+				text = irae_artifact_has_all_tt
+				hidden_tooltip = {
+					FROM = {
+						NAND = {
+							has_artifact = irae_hand_crossbow
+							has_artifact = irae_leather_armor
+							has_artifact = irae_sexy_dress
+							has_artifact = irae_sexy_thong
+							has_artifact = irae_genealogy
+							has_artifact = irae_sterility_charm
+							has_artifact = irae_cloak
+							has_artifact = irae_statue_of_kekvit
+							has_artifact = irae_statue_of_belladonna
+							has_artifact = irae_statue_of_freya
+							has_artifact = irae_statue_of_khaldune
+							has_artifact = irae_statue_of_deionarra
+							has_artifact = irae_statue_of_tamsine
+							has_artifact = irae_statue_of_meeshka
+							has_artifact = irae_loincloth
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				
+				sound_effect = china_grace_spend
+
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1000
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -2000
+					}
+				}
+			}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIraeArtifacts.1 } } } }
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+# Adopt a child
+
+	houseirae_irae_adoptchild = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 1500 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 2250 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 3000 }
+					}
+				}
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -1500
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -2250
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -3000
+					}
+				}
+				hidden_effect = {
+					random_list = {
+						50 = {
+							create_character = {
+								random_traits = no
+								dynasty = FROM
+								culture = drow
+								religion = FROM
+								female = yes
+								age = 0
+								attributes = {
+									martial = 2
+									diplomacy = 2
+									stewardship = 2
+									intrigue = 2
+									learning = 2
+								}						
+								trait = houseirae_drow
+								trait = fair
+							}
+						}
+						50 = {
+							create_character = {
+								random_traits = no
+								dynasty = FROM
+								culture = drow
+								religion = FROM
+								female = no
+								age = 0
+								trait = fair
+								trait = houseirae_drow
+								attributes = {
+									martial = 2
+									diplomacy = 2
+									stewardship = 2
+									intrigue = 2
+									learning = 2
+								}
+							}
+						}
+					}
+					new_character = {
+						add_trait = houseirae_drow_child
+						save_event_target_as = irae_child
+						random_list = {
+							50 = { } # nothing
+							20 = {
+								add_trait = strong
+							}
+							20 = {
+								add_trait = quick
+							}
+							10 = {
+								add_trait = genius
+							}
+						}
+						add_character_modifier = {
+							name = child_of_kekvit
+							duration = -1
+						}
+						if = {
+							limit = {
+								FROM = {
+									is_female = yes
+								}
+							}
+							set_mother = PREV
+							set_father = event_target:houseirae_kekvit_irae
+						}
+						else_if = {
+							limit = {
+								FROM = {
+									is_female = no
+								}
+							}
+							set_father = PREV
+							set_mother = event_target:houseirae_kekvit_irae
+						}
+					}
+				}
+			hidden_effect = { offmap_irae = { governor = { character_event = { id = HouseIrae.11 } } } }
+			recalc_succession = yes
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	houseirae_irae_visit_court = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			NOT = { has_global_flag = houseirae_crisis }
+			mercenary = no
+			ai = no # Only the player will get this
+			holy_order = no
+			is_landed = yes
+			NOR = {
+				has_character_flag = freyas_child
+				has_character_flag = kekvits_child
+				has_character_flag = khaldunes_child
+				has_character_flag = irae_court_visited
+				has_character_flag = going_to_house_irae
+			}
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			FROM = {			
+				show_scope_change = no
+				OR = {
+					AND = {
+						trait = houseirae_drow
+						has_offmap_currency = { offmap = offmap_irae value = 2500 }
+					}
+					AND = {
+						trait = houseirae_halfelf
+						has_offmap_currency = { offmap = offmap_irae value = 3750 }
+					}
+					AND = {
+						NOR = {
+							trait = houseirae_drow
+							trait = houseirae_halfelf
+						}
+						has_offmap_currency = { offmap = offmap_irae value = 5000 }
+					}
+				}
+				prisoner = no
+				is_ill = no
+				is_incapable = no
+				war = no
+				is_pregnant = no # In case you choose Khaldune				
+				NOT = { 
+					OR = {
+						trait = eunuch	# Sexytimes will happen
+						trait = celibate	# Sexytimes will happen
+						trait = ugly	# House Irae values beauty
+					}
+				}
+				is_inaccessible_trigger = no
+			}
+
+		}
+
+		effect = {
+			FROM = {
+				show_scope_change = no
+				sound_effect = china_grace_spend
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -2500
+					}
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -3750
+					}
+				}
+				else = {
+					add_offmap_currency = {
+						offmap = offmap_irae
+						value = -5000
+					}
+				}
+				hidden_effect = { 
+					set_character_flag = going_to_house_irae
+					narrative_event = { 
+						id = HouseIraeCourt.1
+						days = 14
+					} 
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	houseirae_irae_lockdown_boon = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			has_global_flag = houseirae_crisis
+			NOR = {
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			mercenary = no
+			ai = no # Only the player will get this
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = HouseIraeCrisisTooltip
+				always = no
+			}
+		}
+
+		effect = {
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	houseirae_irae_lockdown_military_aid = {
+		only_playable = yes
+		button_name = irae_boons
+		ai_check_interval = 12
+
+		from_potential = {
+			NOT = { irae_hates_you_for_banishing_meeshka = yes }
+			has_global_flag = houseirae_crisis
+			OR = {
+				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_deionarra
+				has_artifact = irae_statue_of_meeshka
+			}
+			NOT = { has_global_flag = houseirae_military_aid }
+			mercenary = no
+			war = yes
+			war_with = event_target:tamsine_irae
+			ai = no # Only the player will get this
+			holy_order = no
+			is_landed = yes
+		}
+
+		potential = {
+			is_offmap_tag = offmap_irae
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = HouseIraeMilitaryAidTooltipA
+				FROM = {
+					OR = {
+						has_artifact = irae_statue_of_belladonna
+						has_artifact = irae_statue_of_deionarra
+						has_artifact = irae_statue_of_meeshka
+					}
+				}
+			}
+		}
+
+		effect = {
+			custom_tooltip = {
+				text = HouseIraeMilitaryAidTooltipB
+				set_global_flag = houseirae_military_aid
+			}
+			FROM = {
+				narrative_event = { id = HouseIraeTamsine.200 days = 7 random = 7 }
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}

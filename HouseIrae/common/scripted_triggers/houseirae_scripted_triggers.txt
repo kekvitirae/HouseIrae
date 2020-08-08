@@ -1,0 +1,365 @@
+is_proper_alternate_start = {
+	always = yes
+	OR= {
+		NOT = {
+			is_alternate_start = yes
+		}
+		AND = {
+			has_alternate_start_parameter = { key = culture_names value = historical }
+			has_alternate_start_parameter = { key = religion_names value = historical }
+		}
+	}
+}		
+
+irae_check_for_valid_artifact_sacrifice = {
+	num_of_artifacts = 1
+	any_artifact = {
+		NOT = {
+			quality >= 4
+		}
+	}
+}
+
+irae_check_for_valid_prisoner_sacrifice = {
+	any_courtier = {
+		prisoner = yes # Needs to be a prisoner
+		host = { character = ROOT } # Needs to be the prisoner of ROOT (the person having the event)
+		NOT = { has_character_flag = irae_spared_sacrifice } # We don't choose someone we already spared
+		is_alive = yes # In hopes of avoiding reselecting someone who was recently sacrificed - since some folks reported that happened
+	}	
+}
+
+
+is_liked_by_irae_trigger = {
+	liked_by_offmap = {
+        type = offmap_irae
+    }
+    NOT = {
+        disliked_by_offmap = {
+            type = offmap_irae
+        }
+    }
+    offmap_irae = {
+        show_scope_change = no
+		custom_tooltip = { text = irae_likes_THIS_tt }
+    }
+}
+
+irae_likes_women = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+		irae_likes_exceptional_women = yes
+	}
+	is_female = yes
+	is_adult = yes
+}
+
+irae_likes_mystics = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	trait = mystic
+}
+
+irae_likes_exceptional_women = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	is_female = yes
+	is_adult = yes
+	OR = {
+		trait = fair
+		trait = genius
+		trait = quick
+		trait = strong
+	}
+	NOR = {
+		trait = chaste
+		trait = nun
+		trait = celibate
+		trait = inbred
+	}
+}
+
+irae_likes_mediocre_men = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	is_female = no
+	is_adult = yes
+	OR = {
+		trait = ugly
+		trait = slow
+		trait = imbecile
+		trait = inbred
+		trait = weak
+		trait = celibate
+		trait = eunuch
+	}
+}
+
+irae_likes_elves = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	is_adult = yes
+	OR = {
+		trait = houseirae_drow
+		trait = houseirae_halfelf
+	}
+}
+
+irae_dislikes_disgusting = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	OR = {
+		trait = ugly
+		trait = is_fat
+		trait = uncouth
+		trait = harelip
+		trait = is_malnourished
+		trait = dwarf
+		trait = hunchback
+	}
+}
+
+irae_likes_giant_female = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	is_female = yes
+	is_adult = yes
+	trait = giant
+}
+irae_likes_giant_male = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disgusting = yes
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+	}
+	is_female = no
+	is_adult = yes
+	trait = giant
+}
+
+irae_likes_pillagers = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	is_adult = yes
+	OR = {
+		trait = viking
+		trait = pirate
+		AND = {
+			trait = seaking
+			NOT = { has_global_flag = lf_silly_mode }
+		}
+		trait = ravager
+		trait = sea_queen
+	}
+}
+
+irae_likes_seldarine = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	OR = {
+		religion = vhaeraun_religion
+		religion = lolth_religion
+		religion = eilistraee_religion
+	}
+}	
+
+irae_likes_smart = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	OR = {
+		trait = quick
+		trait = genius
+		trait = erudite
+		trait = mastermind_theologian
+		trait = scholarly_theologian
+		trait = scholar
+		trait = theologian
+		learning = 15
+	}
+}
+
+likes_exceptional_women = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR = { 
+		irae_dislikes_disease = yes
+		irae_likes_mediocre_men = yes
+		irae_dislikes_disgusting = yes
+	}
+	is_female = yes
+	is_adult = yes
+	OR = {
+		trait = fair
+		trait = genius
+		trait = quick
+		trait = strong
+	}
+	NOR = {
+		trait = chaste
+		trait = nun
+		trait = celibate
+		trait = inbred
+	}
+}
+likes_mediocre_men = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	is_female = no
+	is_adult = yes
+	OR = {
+		trait = ugly
+		trait = slow
+		trait = imbecile
+		trait = inbred
+		trait = weak
+		trait = celibate
+		trait = eunuch
+	}
+}
+
+irae_likes_pokemon = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	trait = seaking
+	has_global_flag = lf_silly_mode
+}
+
+irae_dislikes_kinslayer = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	NOR	= { 
+		religion = lolth_religion
+		religion = vhaeraun_religion
+	}
+	OR = {
+		trait = kinslayer
+		trait = familial_kinslayer
+		trait = dynastic_kinslayer
+		trait = tribal_kinslayer
+	}
+}
+
+irae_dislikes_disease = {
+	NOT = { irae_hates_you_for_banishing_meeshka = yes }
+	OR = {
+		trait = has_tuberculosis
+		trait = has_typhoid_fever
+		trait = has_typhus
+		trait = has_bubonic_plague
+		trait = has_measles
+		trait = has_small_pox
+		trait = has_aztec_disease
+		trait = syphilitic
+		trait = flu
+		trait = dysentery
+		trait = gout
+		trait = food_poisoning
+		trait = rabies
+		trait = cancer
+		trait = pneumonic
+		trait = dancing_plague
+		trait = scurvy
+		trait = ill
+		trait = leper
+		trait = lovers_pox
+	}
+}
+
+irae_hates_you_for_banishing_meeshka = {
+	has_character_flag = banished_meeshka
+}
+		
+is_disliked_by_irae_trigger = {
+	disliked_by_offmap = {
+        type = offmap_irae
+    }
+    NOT = {
+		liked_by_offmap = {
+            type = offmap_irae
+        }
+    }
+    offmap_irae = {
+        show_scope_change = no
+		custom_tooltip = { text = irae_dislikes_THIS_tt }
+    }
+}
+
+is_liked_and_disliked_by_irae = {
+    disliked_by_offmap = {
+        type = offmap_irae
+    }
+    liked_by_offmap = {
+        type = offmap_irae
+    }
+    offmap_irae = {
+        show_scope_change = no
+		custom_tooltip = { text = irae_has_ambiguous_feelings_of_THIS_tt }
+    }
+}
+
+has_house_irae_yes = {
+	OR = {
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_yes_irae }
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startasdrow }
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startashalfelf }
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+	}
+}
+
+has_drow_start = {
+	OR = {
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startasdrow }
+		has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
+	}
+}
+
+has_halfelf_start = {
+	has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_startashalfelf }
+}	
+
+
+has_houseirae_drow_started = {
+	has_global_flag = drow_start
+}
+
+ROOTs_secret_religion_is_playable_trigger = { # To fix certain decisions
+	NOR = {
+		secret_religion = lolth_religion
+		secret_religion = eilistraee_religion
+		secret_religion = vhaeraun_religion
+	}
+}
+
+ROOTs_secret_religion_is_playable_trigger_dark_seldarine = {
+	OR = {
+		secret_religion = lolth_religion
+		secret_religion = eilistraee_religion
+		secret_religion = vhaeraun_religion
+	}
+}

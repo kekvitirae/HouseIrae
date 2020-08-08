@@ -1,0 +1,249 @@
+9051300 = {
+	used_for_random = no
+	name="Irae"
+	culture="drow"
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 4
+			texture_internal = 12
+			emblem = 0
+			color = 10
+			color = 5
+		}
+		religion="lolth_religion"
+	}
+}
+9051355 = {
+	used_for_random = no
+	name="Irae Exiles"
+	culture="drow"
+	coat_of_arms = {
+		template = 0
+		layer = {
+			texture = 4
+			texture_internal = 29
+			emblem = 0
+			color = 3
+			color = 5
+		}
+		religion="lolth_religion"
+	}
+}
+
+9051301 = {
+	name="Agrach Dyrr"
+	culture="drow"
+}
+9051302 = {
+	name="Aleanrahel"
+	culture="drow"
+}
+9051303 = {
+	name="Aleval"
+	culture="drow"
+}
+9051304 = {
+	name="Arabani"
+	culture="drow"
+}
+9051305 = {
+	name="Argith"
+	culture="drow"
+}
+9051306 = {
+	name="Arkhenneld"
+	culture="drow"
+}
+9051307 = {
+	name="Auvryndar"
+	culture="drow"
+}
+9051308 = {
+	name="Barrison"
+	culture="drow"
+}
+9051309 = {
+	name="Claddath"
+	culture="drow"
+}
+9051310 = {
+	name="Despana"
+	culture="drow"
+}
+9051311 = {
+	name="DeVir"
+	culture="drow"
+}
+9051312 = {
+	name="Do'Urden"
+	culture="drow"
+}
+9051313 = {
+	name="Drezz'Lynur"
+	culture="drow"
+}
+9051314 = {
+	name="Druu'giir"
+	culture="drow"
+}
+9051315 = {
+	name="Eilservs"
+	culture="drow"
+}
+9051316 = {
+	name="Faen Tlabbar"
+	culture="drow"
+}
+9051317 = {
+	name="Fey-Branche"
+	culture="drow"
+}
+9051318 = {
+	name="Freth"
+	culture="drow"
+}
+9051319 = {
+	name="Horlbar"
+	culture="drow"
+}
+9051320 = {
+	name="Hun'ett"
+	culture="drow"
+}
+9051321 = {
+	name="Jenn'Yxir"
+	culture="drow"
+}
+9051322 = {
+	name="Jusztiirn"
+	culture="drow"
+}
+9051323 = {
+	name="Kenafin"
+	culture="drow"
+}
+9051324 = {
+	name="Khalazza"
+	culture="drow"
+}
+9051325 = {
+	name="Kilsek"
+	culture="drow"
+}
+9051326 = {
+	name="Maerret"
+	culture="drow"
+}
+9051327 = {
+	name="Melarn"
+	culture="drow"
+}
+9051328 = {
+	name="Mezrylornyl"
+	culture="drow"
+}
+9051329 = {
+	name="Millithor"
+	culture="drow"
+}
+9051330 = {
+	name="Mylyl"
+	culture="drow"
+}
+9051331 = {
+	name="Naerth"
+	culture="drow"
+}
+9051332 = {
+	name="Nanitarim"
+	culture="drow"
+}
+9051333 = {
+	name="Noquar"
+	culture="drow"
+}
+9051334 = {
+	name="Nurbonnis"
+	culture="drow"
+}
+9051335 = {
+	name="Oblodra"
+	culture="drow"
+}
+9051336 = {
+	name="Ousstyl"
+	culture="drow"
+}
+9051337 = {
+	name="Phaundal"
+	culture="drow"
+}
+9051338 = {
+	name="Q'Xorlarrin"
+	culture="drow"
+}
+9051339 = {
+	name="Rilynt'tar"
+	culture="drow"
+}
+9051340 = {
+	name="Shobalar"
+	culture="drow"
+}
+9051341 = {
+	name="Srune'lett"
+	culture="drow"
+}
+9051342 = {
+	name="Sshurlynder"
+	culture="drow"
+}
+9051343 = {
+	name="Symrivvin"
+	culture="drow"
+}
+9051344 = {
+	name="T'sarran"
+	culture="drow"
+}
+9051345 = {
+	name="Teken'duis"
+	culture="drow"
+}
+9051346 = {
+	name="Telenna"
+	culture="drow"
+}
+9051347 = {
+	name="Tlabbar"
+	culture="drow"
+}
+9051348 = {
+	name="Tlintarn"
+	culture="drow"
+}
+9051349 = {
+	name="Tuin'Tarl"
+	culture="drow"
+}
+9051350 = {
+	name="Vandree"
+	culture="drow"
+}
+9051351 = {
+	name="Xalyth"
+	culture="drow"
+}
+9051352 = {
+	name="Xorlarrin"
+	culture="drow"
+}
+9051353 = {
+	name="Yauntyrr"
+	culture="drow"
+}
+9051354 = {
+	name="Yauthlo"
+	culture="drow"
+}

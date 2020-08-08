@@ -1,0 +1,233 @@
+slots = {
+	pants = 1
+	dress = 1
+	underarmor = 1
+	cloak = 1
+}
+
+irae_amulet = {
+	health = 1
+	combat_rating = 5
+	quality = 3
+	flags = { irae necklace jewelry curse }
+	picture = "GFX_necklace_of_radiance"
+	stacking = yes
+	slot = neck
+	allowed_gift = {
+		always = no
+	}	
+}
+
+irae_genealogy = {
+	learning = 2
+	intrigue = 1
+	quality = 4
+	flags = { irae book curse }
+	picture = "GFX_book_sinister"
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_sexy_dress = {
+	active = {
+		is_female = yes
+		is_adult = yes
+		NOR = { 
+			trait = houseirae_curse_chaste
+			trait = celibate
+		}
+	}
+	sex_appeal_opinion = 5
+	general_opinion = 5
+	quality = 4
+	flags = { irae clothing curse sexymagic }
+	stacking = yes
+	slot = dress
+	picture = "GFX_irae_sexy_dress"
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_sexy_thong = {
+	active = {
+		is_female = no
+		is_adult = yes
+		NOR = {
+			trait = houseirae_curse_chaste
+			trait = eunuch
+			trait = celibate
+		}
+	}
+	sex_appeal_opinion = 5
+	general_opinion = 5
+	quality = 4
+	flags = { irae clothing curse sexymagic }
+	stacking = yes
+	slot = pants
+	picture = "GFX_irae_sexy_thong"
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_sterility_charm = {
+	active = {
+		is_adult = yes
+		NOT = {
+			trait = eunuch
+		}
+	}
+	quality = 1
+	fertility = -1
+	flags = { irae charm curse }
+	stacking = yes
+	slot = pants
+	picture = "GFX_pouch"
+}	
+	
+irae_cloak = {
+	intrigue = 2
+	quality = 2
+	flags = { irae clothing curse }
+	stacking = yes
+	slot = cloak
+	picture = "GFX_irae_cloak"
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_statue_of_kekvit = {
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_belladonna = {
+	health = 0.50		
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_deionarra = {
+	tech_growth_modifier = 0.10
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_freya = {
+	combat_rating = 5
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_khaldune = {
+	fertility = 0.1
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_tamsine = {
+	monthly_character_prestige = 0.5
+	quality = 1
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_statue_of_meeshka = {
+	dynasty_opinion = 5
+	quality = 2
+	flags = { irae statue curse }
+	stacking = yes
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_irae_statue"
+}
+
+irae_leather_armor = {
+	martial = 1
+	combat_rating = 5
+	quality = 2
+	active = {
+		is_adult = yes
+	}
+	flags = { irae armor curse }
+	stacking = yes
+	slot = underarmor
+	picture = "GFX_irae_leather_armor"
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_hand_crossbow = {
+	murder_plot_power_modifier = 0.1
+	combat_rating = 5
+	quality = 2
+	active = {
+		is_adult = yes
+	}
+	flags = { irae weapon curse }
+	stacking = yes
+	slot = wrist
+	picture = "GFX_irae_hand_crossbow"
+	allowed_gift = {
+		always = no
+	}
+}	
+	
+irae_dagger = {
+	intrigue = 1
+	combat_rating = 10
+	quality = 3
+	flags = { irae dagger curse }
+	stacking = yes
+	picture = "GFX_inscriped_dagger"
+	slot = ceremonial_weapon
+	allowed_gift = {
+		always = no
+	}
+}
+
+irae_loincloth = {
+	quality = 1
+	flags = { irae clothing curse easteregg }
+	stacking = yes
+	picture = "GFX_irae_loincloth"
+	slot = pants
+	allowed_gift = {
+		always = no
+	}
+}

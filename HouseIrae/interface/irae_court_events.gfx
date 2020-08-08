@@ -1,0 +1,77 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_irae_court"
+		texturefile = "gfx/event_pictures/irae_court.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_kekvitm"
+		texturefile = "gfx/event_pictures/irae_kekvitm.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_kekvitf"
+		texturefile = "gfx/event_pictures/irae_kekvitf.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_kekvitfuta"
+		texturefile = "gfx/event_pictures/irae_kekvitfuta.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_freya"
+		texturefile = "gfx/event_pictures/irae_freya.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_khaldunerape"
+		texturefile = "gfx/event_pictures/irae_khaldunerape.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_khaldunerough"
+		texturefile = "gfx/event_pictures/irae_khaldunerough.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_deionarra"
+		texturefile = "gfx/event_pictures/irae_deionarra.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_irae_portal"
+		texturefile = "gfx/event_pictures/irae_portal.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_irae_khaldune"
+		texturefile = "gfx/event_pictures/irae_khaldune.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_trait_irae_pregnant"
+		texturefile = "gfx/traits/irae_pregnant.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+}

@@ -1,0 +1,1575 @@
+namespace = HouseIraeTamsine
+
+character_event = {
+	id = HouseIraeTamsine.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_character_flag = houseirae_tamsine_curse1
+			has_character_flag = houseirae_tamsine_curse2
+			has_character_flag = houseirae_tamsine_curse3
+			has_character_flag = houseirae_tamsine_curse4
+			has_character_flag = houseirae_tamsine_curse5
+			has_character_flag = houseirae_tamsine_curse6
+			has_character_flag = houseirae_tamsine_curse8
+			has_character_flag = houseirae_tamsine_curse9
+			has_character_flag = houseirae_tamsine_curse10
+		}
+		NOR = { 
+			has_character_flag = houseirae_dark_whispers_stage1 
+			has_character_flag = houseirae_dark_whispers_stage2
+			has_character_flag = houseirae_dark_whispers_stage3 
+			has_character_flag = houseirae_dark_whispers_stage4
+			has_character_flag = houseirae_dark_whispers_stage5
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = kekvits_child
+			}
+			random_list = {
+				100 = { # Frail Child
+					narrative_event = { id = HouseIraeTamsine.20 days = 1 }
+				}
+				100 = { # Chaste Child
+					narrative_event = { id = HouseIraeTamsine.30 days = 1 }
+				}
+				100 = { # Murderous Child
+					narrative_event = { id = HouseIraeTamsine.40 days = 1 }
+				}
+				100 = { # Paranoid Child
+					narrative_event = { id = HouseIraeTamsine.50 days = 1 }
+				}
+				100 = { # Shapeshifted Child
+					narrative_event = { id = HouseIraeTamsine.60 days = 1 }
+				}
+				100 = { # Ambitious Child
+					narrative_event = { id = HouseIraeTamsine.70 days = 1 }
+				}
+				20 = { # Child is safe from the curse
+					modifier = {
+						factor = 2 # Artifact protection
+						OR = {
+							has_artifact = irae_genealogy
+							mother_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+							father_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+						}
+					}
+					narrative_event = { id = HouseIraeTamsine.80 days = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_character_flag = khaldunes_child
+					has_character_flag = freyas_child
+					mother_even_if_dead = {
+						has_character_flag = kekvits_child
+					}
+					true_father_even_if_dead = {
+						has_character_flag = kekvits_child
+					}
+				}
+			}
+			random_list = {
+				50 = { # Frail Child
+					narrative_event = { id = HouseIraeTamsine.20 days = 1 }
+				}
+				50 = { # Chaste Child
+					narrative_event = { id = HouseIraeTamsine.30 days = 1 }
+				}
+				50 = { # Murderous Child
+					narrative_event = { id = HouseIraeTamsine.40 days = 1 }
+				}
+				50 = { # Paranoid Child
+					narrative_event = { id = HouseIraeTamsine.50 days = 1 }
+				}
+				50 = { # Shapeshifted Child
+					narrative_event = { id = HouseIraeTamsine.60 days = 1 }
+				}
+				50 = { # Ambitious Child
+					narrative_event = { id = HouseIraeTamsine.70 days = 1 }
+				}
+				40 = { # Child is safe from the curse
+					modifier = {
+						factor = 2 # Artifact protection
+						OR = {
+							has_artifact = irae_genealogy
+							mother_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+							father_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+						}
+					}
+					narrative_event = { id = HouseIraeTamsine.80 days = 1 }
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					mother_even_if_dead = {
+						OR = {
+							has_character_flag = khaldunes_child
+							has_character_flag = freyas_child
+						}
+					}
+					true_father_even_if_dead = {
+						OR = {
+							has_character_flag = khaldunes_child
+							has_character_flag = freyas_child
+						}
+					}
+				}
+			}
+			random_list = {
+				25 = { # Frail Child
+					narrative_event = { id = HouseIraeTamsine.20 days = 1 }
+				}
+				25 = { # Chaste Child
+					narrative_event = { id = HouseIraeTamsine.30 days = 1 }
+				}
+				25 = { # Murderous Child
+					narrative_event = { id = HouseIraeTamsine.40 days = 1 }
+				}
+				25 = { # Paranoid Child
+					narrative_event = { id = HouseIraeTamsine.50 days = 1 }
+				}
+				25 = { # Shapeshifted Child
+					narrative_event = { id = HouseIraeTamsine.60 days = 1 }
+				}
+				25 = { # Ambitious Child
+					narrative_event = { id = HouseIraeTamsine.70 days = 1 }
+				}
+				80 = { # Child is safe from the curse
+					modifier = {
+						factor = 2 # Artifact protection
+						OR = {
+							has_artifact = irae_genealogy
+							mother_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+							father_even_if_dead = {
+								has_artifact = irae_genealogy
+							}
+						}
+					}
+					narrative_event = { id = HouseIraeTamsine.80 days = 1 }
+				}
+			}
+		}
+		
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.20
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine20
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = houseirae_curse_frail
+		remove_trait = strong
+		remove_trait = weak # Redundancy
+		remove_trait = robust
+		remove_trait = feeble
+		remove_trait = sturdy
+	}
+	
+	option = {
+		name = HouseIraeTamsine20TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.21 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.21 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.21
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine21
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.30
+	title = HouseIraeTamsineCurse
+	desc = {
+		trigger = {
+			is_female = yes
+		}
+		text = HouseIraeTamsine30F
+	}
+	desc = {
+		trigger = {
+			is_female = no
+		}
+		text = HouseIraeTamsine30M
+	}
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = houseirae_curse_chaste
+		add_trait = celibate
+		add_trait = kind
+		add_trait = shy
+	}
+	
+	option = {
+		name = HouseIraeTamsine30TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.31 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.31 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.31
+	title = HouseIraeTamsineCurse
+	desc = {
+		trigger = {
+			FROM = {
+				is_female = yes
+			}
+		}
+		text = HouseIraeTamsine31F
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				is_female = no
+			}
+		}
+		text = HouseIraeTamsine31M
+	}
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.40
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine40
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = houseirae_curse_murder
+		add_trait = cruel
+		add_trait = impaler
+		add_trait = aggressive_leader
+		random_host_courtier = {
+			limit = {
+				is_female = yes
+				is_close_relative = no
+			}
+			death = { death_reason = death_murder killer = ROOT }
+		}
+	}
+	
+	option = {
+		name = HouseIraeTamsine40TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.41 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.41 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.41
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine41
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.50
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine50
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = houseirae_curse_paranoid
+		add_trait = paranoid
+	}
+	
+	option = {
+		name = HouseIraeTamsine50TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.51 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.51 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.51
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine51
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.60
+	title = HouseIraeTamsineCurse
+	desc = {
+		trigger = {
+			trait = houseirae_drider
+		}
+		text = HouseIraeTamsine60D
+	}
+	desc = {
+		trigger = {
+			NOT = { trait = houseirae_drider }
+			is_female = yes
+		}
+		text = HouseIraeTamsine60SCF
+	}
+	desc = {
+		trigger = {
+			NOT = { trait = houseirae_drider }
+			is_female = no
+		}
+		text = HouseIraeTamsine60SCM
+	}
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			50 = {
+				add_trait = houseirae_drow
+				add_trait = houseirae_drider
+				add_trait = houseirae_curse_shapeshifted_drider
+				remove_random_drow_portrait = yes # Redundacy check
+				remove_random_halfelf_portrait = yes # Redundacy check
+				add_random_drow_portrait = yes
+			}
+			50 = {
+				set_gender = opposite
+				add_trait = houseirae_curse_shapeshifted_gender
+				if = {
+					limit = {
+						trait = houseirae_drow
+					}
+					remove_random_drow_portrait = yes
+					add_random_drow_portrait = yes
+				}
+				else_if = {
+					limit = {
+						trait = houseirae_halfelf
+					}
+					remove_random_halfelf_portrait = yes
+					add_random_halfelf_portrait = yes
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = HouseIraeTamsine60TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.61 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.61 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.61
+	window = "houseirae_custom_narrative"	
+	title = HouseIraeTamsineCurse
+	desc = {
+		trigger = {
+			FROM = {
+				trait = houseirae_curse_shapeshifted_gender
+				is_female = no
+			}
+		}
+		text = HouseIraeTamsine61SCM
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				trait = houseirae_curse_shapeshifted_gender
+				is_female = yes
+			}
+		}
+		text = HouseIraeTamsine61SCF
+	}
+	desc = {
+		trigger = {
+			FROM = {
+				trait = houseirae_curse_shapeshifted_drider
+			}
+		}
+		text = HouseIraeTamsine61D
+	}
+	picture = GFX_irae_court
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.70
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine70
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		add_trait = houseirae_curse_ambition
+		add_trait = ambitious
+	}
+	
+	option = {
+		name = HouseIraeTamsine70TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.71 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.71 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.71
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine71
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhNo
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.80
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine80
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsine80TT
+		hidden_tooltip = {
+			mother = {
+				narrative_event = { id = HouseIraeTamsine.81 }
+			}
+			father = {
+				narrative_event = { id = HouseIraeTamsine.81 }
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.81
+	title = HouseIraeTamsineCurse
+	desc = HouseIraeTamsine81
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	option = {
+		name = HouseIraeTamsineOhGood
+	}
+}
+
+#
+# Set curse flag on child
+#
+
+character_event = {
+	id = HouseIraeTamsine.90
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_game_rule = { name = houseirae_dark_whispers value = off } }
+		OR = {
+			has_character_flag = khaldunes_child
+			has_character_flag = kekvits_child
+			has_character_flag = freyas_child
+			has_character_modifier = child_of_kekvit
+			mother_even_if_dead = {
+				OR = {
+					has_character_flag = khaldunes_child
+					has_character_flag = kekvits_child
+					has_character_flag = freyas_child
+				}
+			}
+			true_father_even_if_dead = {
+				OR = {
+					has_character_flag = khaldunes_child
+					has_character_flag = kekvits_child
+					has_character_flag = freyas_child
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		random_list = { # 10% chance of triggering the Dark Whispers event chain.
+			10 = { set_character_flag = houseirae_tamsine_curse1 }
+			10 = { set_character_flag = houseirae_tamsine_curse2 }
+			10 = { set_character_flag = houseirae_tamsine_curse3 }
+			10 = { set_character_flag = houseirae_tamsine_curse4 }
+			10 = { set_character_flag = houseirae_tamsine_curse5 }
+			10 = { set_character_flag = houseirae_tamsine_curse6 }
+			10 = { set_character_flag = houseirae_tamsine_curse7 }
+			10 = { set_character_flag = houseirae_tamsine_curse8 }
+			10 = { set_character_flag = houseirae_tamsine_curse9 }
+			10 = { set_character_flag = houseirae_tamsine_curse10 }
+		}
+	}
+}
+
+#
+#
+# Shit got real, yo
+#
+#
+
+#
+# The human maid
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.100
+	ai = no
+	picture = irae_rose
+	title = HouseIraeTamsine100T
+	desc = HouseIraeTamsine100
+	window = "houseirae_custom_narrative"	
+	trigger = {
+		any_child = {
+			has_character_flag = houseirae_tamsine_curse7
+			age = 4
+			is_female = yes
+			trait = houseirae_drow
+		}
+		NOT = {
+			has_global_flag = houseirae_dark_whispers
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	
+	immediate = {
+		set_global_flag = houseirae_dark_whispers
+		random_child = {
+			limit = {
+				has_character_flag = houseirae_tamsine_curse7
+				age = 4
+				is_female = yes
+				trait = houseirae_drow
+			}
+			set_character_flag = houseirae_dark_whispers_stage1
+			set_character_flag = special_npc
+			set_character_flag = tentacle_immunity
+			add_trait = houseirae_curse_dark_whispers
+			diplomatic_immunity = yes
+			save_persistent_event_target = {
+				name = dark_whispers_child
+				scope = THIS
+			}
+			
+		}
+		create_character = {
+			age = 26
+			name = "Rose Hemlock"
+			attributes = {
+				martial = 10
+				stewardship = 4
+				diplomacy = 6
+				learning = 8
+				intrigue = 16
+			}
+			female = yes
+			health = 10
+			dynasty = none
+			culture = drow
+			religion = eilistraee_religion
+			fertility = 0
+			random_traits = no
+			historical = yes
+			trait = intricate_webweaver
+			trait = fair
+			trait = quick
+			trait = shrewd
+			trait = chaste
+			trait = patient
+			trait = content
+			trait = houseirae_no_marry
+			trait = houseirae_matron_mother
+			trait = houseirae_branded_irae
+			trait = houseirae_others7 # Rose's portrait
+			trait = houseirae_secret_lolth
+			flag = ai_flag_refuse_conversion
+			flag = special_npc
+			flag = society_join_block
+			flag = no_court_invites
+			flag = houseirae_npc_rose
+			flag = tentacle_immunity
+		}
+		new_character = {
+			save_persistent_event_target = {
+				name = rose_hemlock
+				scope = THIS
+			}
+			diplomatic_immunity = yes
+			add_character_modifier = {
+				name = mother_minor_rest
+				duration = -1
+				hidden = yes
+			}
+		}
+	}
+	
+	option = { # Welcome to our abode
+		name = HouseIraeTamsine100TT
+		hidden_tooltip = {
+			persistent_event_target:dark_whispers_child = {
+				add_friend = persistent_event_target:rose_hemlock
+				set_guardian = persistent_event_target:rose_hemlock
+			}
+			persistent_event_target:rose_hemlock = {
+				add_friend = persistent_event_target:dark_whispers_child
+			}
+		}
+	}
+}
+
+#
+# Child encouraged to kill
+#
+
+character_event = {
+	id = HouseIraeTamsine.101
+	hide_window = yes
+	only_women = yes
+	min_age = 6
+	ai = yes
+	has_character_flag = houseirae_dark_whispers_stage1
+	trigger = {
+		any_courtier = {
+			has_character_flag = houseirae_npc_rose
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	immediate = {
+		clr_character_flag = houseirae_dark_whispers_stage1
+		set_character_flag = houseirae_dark_whispers_stage2
+		if = {
+			limit = {
+				any_sibling = {
+					is_alive = yes
+					NOT = { trait = houseirae_matron_mother }
+				}
+			}
+			random_sibling = {
+				limit = {
+					is_alive = yes
+					NOT = { trait = houseirae_matron_mother }
+				}
+				preferred_limit = {
+					is_heir = yes
+				}
+				preferred_limit = {
+					NOR = {
+						trait = houseirae_drow
+						trait = houseirae_halfelf
+					}
+				}
+				preferred_limit = {
+					NOT = { trait = houseirae_drow }
+				}
+				save_event_target_as = houseirae_murdered
+				any_player = {
+					limit = {
+						is_parent_of = ROOT
+					}
+					set_character_flag = child_murdered
+					narrative_event = { id = HouseIraeTamsine.102 }
+				}
+			}
+		}
+		else = {
+			any_player = {
+				limit = {
+					is_parent_of = ROOT
+				}
+				set_character_flag = random_murdered
+				narrative_event = { id = HouseIraeTamsine.102 }
+			}
+		}
+	}
+}
+
+#
+# Player is notified of the murder
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.102
+	picture = irae_tamsine
+	title = HouseIraeTamsine102T
+	desc = {
+		trigger = {
+			has_character_flag = child_murdered
+		}
+		text = HouseIraeTamsine102Child
+	}
+	desc = {
+		trigger = {
+			has_character_flag = random_murdered
+		}
+		text = HouseIraeTamsine102Courtier
+	}
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	option = {
+		name = HouseIraeTamsine102TTA
+		if = {
+			limit = {
+				event_target:houseirae_murdered = {
+					is_child_of = ROOT
+				}
+			}
+			event_target:houseirae_murdered = {
+				death = { death_reason = death_murder }
+			}
+		}
+	}
+	after = {
+		clr_character_flag = random_murdered
+		clr_character_flag = child_murdered
+	}
+}
+
+#
+# Oh lawd, she struck again!
+#
+
+character_event = {
+	id = HouseIraeTamsine.103
+	hide_window = yes
+	only_women = yes
+	min_age = 8
+	ai = yes
+	has_character_flag = houseirae_dark_whispers_stage2
+	trigger = {
+		any_courtier = {
+			has_character_flag = houseirae_npc_rose
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	immediate = {
+		clr_character_flag = houseirae_dark_whispers_stage2
+		set_character_flag = houseirae_dark_whispers_stage3
+		if = {
+			limit = {
+				any_sibling = {
+					is_alive = yes
+					NOT = { trait = houseirae_matron_mother }
+				}
+			}
+			random_sibling = {
+				limit = {
+					is_alive = yes
+					NOT = { trait = houseirae_matron_mother }
+				}
+				preferred_limit = {
+					is_heir = yes
+				}
+				preferred_limit = {
+					NOR = {
+						trait = houseirae_drow
+						trait = houseirae_halfelf
+					}
+				}
+				preferred_limit = {
+					NOT = { trait = houseirae_drow }
+				}
+				save_event_target_as = houseirae_murdered
+				any_player = {
+					limit = {
+						is_parent_of = ROOT
+					}
+					set_character_flag = child_murdered
+					narrative_event = { id = HouseIraeTamsine.104 }
+				}
+			}
+		}
+		else = {
+			any_player = {
+				limit = {
+					is_parent_of = ROOT
+				}
+				set_character_flag = random_murdered
+				narrative_event = { id = HouseIraeTamsine.104 }
+			}
+		}
+	}
+}
+
+#
+# Player is notified of the murder... again
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.104
+	picture = irae_tamsine
+	title = HouseIraeTamsine104T
+	desc = {
+		trigger = {
+			has_character_flag = child_murdered
+		}
+		text = HouseIraeTamsine104Child
+	}
+	desc = {
+		trigger = {
+			has_character_flag = random_murdered
+		}
+		text = HouseIraeTamsine104Courtier
+	}
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	option = {
+		name = HouseIraeTamsine104TTA
+		if = {
+			limit = {
+				event_target:houseirae_murdered = {
+					is_child_of = ROOT
+				}
+			}
+			event_target:houseirae_murdered = {
+				limit = {
+					is_child_of = ROOT
+				}
+				death = { death_reason = death_murder }
+			}
+		}
+	}
+	after = {
+		clr_character_flag = random_murdered
+		clr_character_flag = child_murdered
+	}
+}
+
+#
+# You cant resist Mother's Love
+#
+
+character_event = {
+	id = HouseIraeTamsine.105
+	hide_window = yes
+	only_women = yes
+	min_age = 10
+	ai = yes
+	has_character_flag = houseirae_dark_whispers_stage3
+	trigger = {
+		any_courtier = {
+			has_character_flag = houseirae_npc_rose
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	immediate = {
+		clr_character_flag = houseirae_dark_whispers_stage3
+		set_character_flag = houseirae_dark_whispers_stage4
+		location = {
+			activate_disease = houseirae_motherly_love
+			spawn_disease = houseirae_motherly_love
+		}
+		any_player = {
+			limit = {
+				is_parent_of = ROOT
+			}
+			narrative_event = { id = HouseIraeTamsine.106 }
+		}
+	}
+}
+
+#
+# Player is notified of the outbreak
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.106
+	picture = irae_tamsine
+	title = HouseIraeTamsine106T
+	desc = HouseIraeTamsine106
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	option = {
+		name = HouseIraeTamsine106TTA
+	}
+	option = {
+		trigger = {
+			has_offmap_currency = { offmap = offmap_irae value = 2000 }
+		}
+		tooltip_info_custom = HouseIraeTamsine106TTBInfo
+		name = HouseIraeTamsine106TTB
+		custom_tooltip = {
+			text = HouseIraeTamsine106TTBTooltip
+			letter_event = { id = HouseIraeTamsine.1061 days = 7 random = 7 }
+		}
+	}
+}
+
+letter_event = {
+	id = HouseIraeTamsine.1061
+    border = GFX_event_letter_frame_diplomacy
+	desc = {
+		trigger = {
+			culture = drow
+		}
+		text = HouseIraeTamsine1061Drow
+	}
+	desc = {
+		trigger = {
+			NOT = { culture = drow }
+		}
+		text = HouseIraeTamsine1061Other
+	}
+	portrait = event_target:houseirae_kekvit_irae
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			culture = drow
+		}
+		custom_tooltip = {
+			text = HouseIraeTamsine1061TTATooltip
+		}
+		name = HouseIraeTamsine1061TTA
+	}
+	option = {
+		trigger = {
+			NOT = { culture = drow }
+		}
+		name = HouseIraeTamsine1061TTB
+		custom_tooltip = {
+			text = HouseIraeTamsine1061TTBTooltip
+		}
+	}
+}
+
+#
+# Outbreak effect
+#
+
+province_event = {
+	id = HouseIraeTamsine.107
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			any_courtier_or_vassal = {
+				limit = {
+					NOR = {
+						trait = houseirae_matron_mother # No special characters.
+						has_character_flag = special_npc # No special characters.
+						trait = houseirae_drow # Racial purging of non-drow.
+						trait = houseirae_others7 # She who encouraged it.
+						trait = houseirae_curse_dark_whispers # She who started it.
+						ai = no # The player will be forced to watch as their friends and loved ones wither away under Mother's Love.
+						has_character_flag = motherly_love_passed_over # Prior immunity.
+						higher_tier_than = BARON # Don't want to fuck up the borders... just yet.
+					}
+				}
+				random_list = {
+					75 = { # Embrace Mother's Love
+						modifier = {
+							factor = 0.3
+							is_female = yes
+						}
+						death = { death_reason = death_motherly_love }
+					}
+					25 = { # Nothing happens
+						set_character_flag = motherly_love_passed_over
+					}
+				}
+			}
+		}
+	}
+}
+				
+#
+# Daughter takes a lover... and a life
+#
+
+character_event = {
+	id = HouseIraeTamsine.108
+	hide_window = yes
+	only_women = yes
+	min_age = 14
+	ai = yes
+	has_character_flag = houseirae_dark_whispers_stage4
+	trigger = {
+		any_courtier = {
+			has_character_flag = houseirae_npc_rose
+		}
+	}
+	mean_time_to_happen = {
+		months = 4
+	}
+	immediate = {
+		clr_character_flag = houseirae_dark_whispers_stage4
+		set_character_flag = houseirae_dark_whispers_stage5
+		any_player = {
+			limit = {
+				is_parent_of = ROOT
+			}
+			narrative_event = { id = HouseIraeTamsine.109 }
+		}
+		persistent_event_target:rose_hemlock = {
+			death = { 
+				death_reason = death_murder_butchered 
+				killer = persistent_event_target:dark_whispers_child 
+			}
+		}
+	}
+}
+
+#
+# Player is notified of the tryst
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.109
+	picture = irae_tamsine
+	title = HouseIraeTamsine109T
+	desc = {
+		trigger = {
+			NOT = {
+				has_global_flag = houseirae_incest_yes
+			}
+		}
+		text = HouseIraeTamsine109NoIncest
+	}
+	desc = {
+		trigger = {
+			has_global_flag = houseirae_incest_yes
+			OR = {
+				AND = {
+					is_female = yes
+					trait = homosexual
+				}
+				AND = {
+					is_female = no
+					NOT = { trait = homosexual }
+				}
+			}
+		}
+		text = HouseIraeTamsine109Incest
+	}
+	desc = {
+		trigger = {
+			has_global_flag = houseirae_incest_yes
+			OR = {
+				AND = {
+					is_female = yes
+					NOT = { trait = homosexual }
+				}
+				AND = {
+					is_female = no
+					trait = homosexual
+				}
+			}
+		}
+		text = HouseIraeTamsine109NoIncest
+	}
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = laela_rising
+				}
+			}
+			character_event = {
+				id = Laela.101
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = HouseIraeTamsine109TTA
+	}
+}
+
+character_event = {
+	id = HouseIraeTamsine.110
+	hide_window = yes
+	min_age = 16
+	ai = yes
+	has_character_flag = houseirae_dark_whispers_stage5
+	mean_time_to_happen = {
+		months = 1
+	}
+	immediate = {
+		any_player = {
+			limit = {
+				is_parent_of = ROOT
+			}
+			narrative_event = { id = HouseIraeTamsine.111 }
+		}
+		houseirae_tamsine_transform = yes
+		clr_character_flag = houseirae_dark_whispers_stage5
+	}
+}
+
+narrative_event = {
+	id = HouseIraeTamsine.111
+	picture = irae_tamsine
+	title = HouseIraeTamsine111T
+	desc = {
+		trigger = {
+			culture = drow
+		}
+		text = HouseIraeTamsine111Drow
+	}
+	desc = {
+		trigger = {
+			NOT = { culture = drow }
+		}
+		text = HouseIraeTamsine111Other
+	}
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	option = {
+		name = HouseIraeTamsine111TTA
+	}
+}
+
+#
+# House Irae sends military aid
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.200
+	title = HouseIraeTamsine200T
+	picture = irae_kaenia
+	desc = HouseIraeTamsine200
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	immediate = {
+		create_character = {
+			name = "Kaenia"
+			dynasty = 9051300
+			female = yes
+			religion = eilistraee_religion
+			culture = drow
+			random_traits = no
+			health = 15
+			age = 16
+			fertility = 0
+			attributes = {
+				diplomacy = 8
+				martial = 16
+				learning = 5
+				intrigue = 3
+				stewardship = 5
+			}
+			historical = yes
+			trait = fair
+			trait = kind
+			trait = brilliant_strategist
+			trait = strong
+			trait = brave
+			trait = just
+			trait = zealous
+			trait = holy_warrior
+			trait = inspiring_leader
+			trait = twin
+			trait = houseirae_sword_dancer
+			trait = houseirae_drow
+			trait = houseirae_curse_generic
+			trait = houseirae_drow_special9 # Kaenia's custom portrait					
+			trait = houseirae_matron_mother
+			trait = houseirae_no_marry
+			trait = houseirae_no_inherit
+			immortal_age = 16
+			flag = ai_flag_refuse_conversion
+			flag = special_npc
+			flag = society_join_block
+			flag = no_court_invites
+			flag = tentacle_immunity
+			flag = special_marshal
+		}
+		new_character = {
+			save_global_event_target_as = kaenia_irae
+			export_to_variable = { which = kaenia_age value = year }
+			subtract_variable = { which = kaenia_age value = 716 } # Born in 700, minus 16 for her created age
+			add_age = kaenia_age
+			set_mother = event_target:tamsine_irae
+			set_father = 99889903
+			house_irae_true_bloodline = {
+				PREV = {
+					add_to_bloodline = PREV
+				}
+			}
+			ROOT = {
+				random_courtier_or_vassal = {
+					limit = {
+						has_minor_title = title_commander
+					}
+					remove_title = title_commander
+				}
+			}
+			give_minor_title = title_commander
+		}
+	}
+	option = {
+		name = HouseIraeTamsine200TTA
+		custom_tooltip = {
+			text = HouseIraeTamsineKaeniaTooltip
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						leader = event_target:kaenia_irae
+						troops = {
+							archers = { 750 750 }
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 750 750 }
+						}
+						attrition = 0
+						maintenance = no
+						earmark = kaenia_army
+						merge = yes
+						disband_on_peace = no
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 750 750 }
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 750 750 }
+						}
+						attrition = 0
+						maintenance = no
+						earmark = kaenia_army
+						merge = yes
+						disband_on_peace = no
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 750 750 }
+							light_infantry = { 1500 1500 }
+							heavy_infantry = { 750 750 }
+						}
+						attrition = 0
+						maintenance = no
+						earmark = kaenia_army
+						merge = yes
+						disband_on_peace = no
+					}
+				}
+			}
+		}
+	}
+}
+
+#
+# Matron Mother loses her last province
+#
+			
+character_event = {
+	id = HouseIraeTamsine.300
+	hide_window = yes
+	is_triggered_only = yes # on_war_defeat and on_yearly_pulse
+	trigger = {
+		event_target:tamsine_irae = {
+			character = ROOT
+		}
+		is_landed = no
+	}
+	immediate = {
+		set_global_flag = irae_tamsine_defeated
+		any_demesne_title = {
+			limit = {
+				NOT = { title = e_true_house_irae }
+			}
+			destroy_landed_title = THIS
+		}
+		e_true_house_irae = {
+			unsafe_destroy_landed_title = THIS
+		}
+		activate_title = { title = e_true_house_irae status = no }
+		death = {
+			death_reason = death_suicide
+		}
+		clr_global_flag = houseirae_crisis
+		any_player = {
+			narrative_event = { id = HouseIraeTamsine.302 }
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = houseirae_dark_whispers
+					value = on
+				}
+				event_target:laela_irae = {
+					is_alive = yes
+				}
+			}
+			any_demesne_title = {
+				limit = {
+					NOT = { title = k_house_laela }
+				}
+				destroy_landed_title = THIS
+			}
+			k_house_laela = {
+				unsafe_destroy_landed_title = THIS
+			}
+			activate_title = { title = k_house_laela status = no }
+			death = {
+				death_reason = death_suicide
+			}
+		}
+	}
+}
+
+#
+# Matron Mother dies any other way
+#
+			
+character_event = {
+	id = HouseIraeTamsine.301
+	hide_window = yes
+	is_triggered_only = yes # on_death
+	trigger = {
+		event_target:tamsine_irae = {
+			character = ROOT
+		}
+		NOT = { has_global_flag = irae_tamsine_defeated }
+	}
+	immediate = {
+		any_demesne_title = {
+			limit = {
+				NOT = { title = e_true_house_irae }
+			}
+			destroy_landed_title = THIS
+		}
+		e_true_house_irae = {
+			unsafe_destroy_landed_title = THIS
+		}
+		activate_title = { title = e_true_house_irae status = no }
+		any_player = {
+			narrative_event = { id = HouseIraeTamsine.302 }
+		}
+		clr_global_flag = houseirae_crisis
+		if = {
+			limit = {
+				has_game_rule = {
+					name = houseirae_dark_whispers
+					value = on
+				}
+				event_target:laela_irae = {
+					is_alive = yes
+				}
+			}
+			k_house_laela = {
+				unsafe_destroy_landed_title = THIS
+			}
+			activate_title = { title = k_house_laela status = no }
+			death = {
+				death_reason = death_suicide
+			}
+		}
+	}
+}
+
+#
+# Players are notified of the Matron Mother's demise
+#
+
+narrative_event = {
+	id = HouseIraeTamsine.302
+	title = HouseIraeTamsine302T
+	picture = GFX_laela_she_dies
+	desc = {
+		trigger = {
+			NOT = { has_global_flag = irae_tamsine_defeated }
+		}
+		text = HouseIraeTamsine302Death
+	}
+	desc = {
+		trigger = {
+			has_global_flag = irae_tamsine_defeated
+		}
+		text = HouseIraeTamsine302Suicide
+	}
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	option = { # Lolth/Vhaeraun specific
+		name = HouseIraeTamsine302TTA
+		trigger = {
+			OR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+			}
+		}
+		prestige = 100
+		if = {
+			limit = {
+				event_target:kaenia_irae = {
+					is_alive = yes
+					liege = {
+						character = ROOT
+					}
+				}
+			}
+			custom_tooltip = {
+				text = HouseIraeTamsine302KaeniaLeaves
+				event_target:houseirae_freya_irae = {
+					event_target:kaenia_irae = {
+						set_defacto_liege = PREV
+						force_host = PREV
+					}
+				}
+			}
+		}
+	}
+	option = { # Eilistraee specific
+		name = HouseIraeTamsine302TTB
+		trigger = {
+			religion = eilistraee_religion
+		}
+		piety = 100
+		if = {
+			limit = {
+				event_target:kaenia_irae = {
+					is_alive = yes
+					liege = {
+						character = ROOT
+					}
+				}
+			}
+			custom_tooltip = {
+				text = HouseIraeTamsine302KaeniaStays
+			}
+		}
+	}
+	option = { # Generic
+		name = HouseIraeTamsine302TTB
+		trigger = {
+			NOR = {
+				religion = lolth_religion
+				religion = vhaeraun_religion
+				religion = eilistraee_religion
+			}
+		}
+		if = {
+			limit = {
+				event_target:kaenia_irae = {
+					is_alive = yes
+					liege = {
+						character = ROOT
+					}
+				}
+			}
+			custom_tooltip = {
+				text = HouseIraeTamsine302KaeniaLeaves
+				event_target:houseirae_freya_irae = {
+					event_target:kaenia_irae = {
+						set_defacto_liege = PREV
+						force_host = PREV
+					}
+				}
+			}
+		}
+	}
+}
+	

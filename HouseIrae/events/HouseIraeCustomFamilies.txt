@@ -1,0 +1,819 @@
+namespace = HouseIraeFamilies
+
+# Ruler Designer custom families tombola
+
+character_event = {
+	id = HouseIraeFamilies.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_save_game = no
+	}
+	immediate = {
+		character_event = { id = HouseIraeFamilies.2 days = 1 }
+	}
+}
+character_event = {
+	id = HouseIraeFamilies.2
+	hide_window = yes
+	is_triggered_only = yes
+	ai = no
+	trigger = {
+		has_game_rule = { name = irae_custom_families value = irae_yes_families }
+	}
+	immediate = {
+		if = {
+			limit = {
+				any_close_relative = {
+					OR = {
+						is_alive = yes
+						NOT = { is_alive = yes }
+					}
+					count = 1
+				}
+			}
+			break = yes
+		}
+		else = {
+			set_character_flag = houseirae_custom_families
+		}
+	}
+}
+
+character_event = {
+	id = HouseIraeFamilies.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		ROOT = {
+			export_to_variable = { which = player_starting_age value = age }
+			set_variable = { which = sibling_age which = player_starting_age }
+			subtract_variable = { which = sibling_age value = 16 }
+			set_variable = { which = child_age which = player_starting_age }
+			subtract_variable = { which = child_age value = 20 }
+			set_variable = { which = mother_age which = player_starting_age }
+			change_variable = { which = mother_age value = 13 }
+			set_variable = { which = father_age which = player_starting_age }
+			change_variable = { which = father_age value = 150 }
+		}
+		if = {
+			limit = {
+				trait = houseirae_drow
+			}
+			character_event = { id = HouseIraeFamilies.4 }
+		}
+		else_if = {
+			limit = {
+				trait = houseirae_halfelf
+			}
+			character_event = { id = HouseIraeFamilies.5 }
+		}
+	}
+}
+
+#
+# Dark Elven custom family
+#
+
+character_event = {
+	id = HouseIraeFamilies.4
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_independent_ruler = {
+			limit = {
+				ai = yes
+			}
+			create_character = { # Mother
+				random_traits = no
+				dynasty = ROOT
+				name = Oloth
+				female = yes
+				culture = drow
+				religion = lolth_religion
+				age = 240
+				attributes = {
+					martial = 12
+					diplomacy = 10
+					stewardship = 8
+					intrigue = 16
+					learning = 10
+				}
+				health = 10
+				fertility = 0
+				trait = brilliant_strategist
+				trait = proud
+				trait = ambitious
+				trait = lustful
+				trait = houseirae_drow
+				trait = houseirae_others8 # Custom mother's portrait
+			}
+			new_character = {
+				give_nickname = irae_matriarch
+				save_event_target_as = irae_mother
+				ROOT = {
+					set_mother = event_target:irae_mother
+				}
+				death = {
+					death_reason = death_custom_parents
+				}
+			}
+			create_character = { # Father
+				random_traits = yes
+				dynasty = ROOT
+				female = no
+				culture = drow
+				religion = lolth_religion
+				age = 16
+				health = 10
+				fertility = 0
+				trait = brilliant_strategist
+				trait = proud
+				trait = ambitious
+				trait = lustful
+				trait = houseirae_drow
+			}
+			new_character = {
+				set_variable = { which = father_age which = ROOT }
+				add_age = father_age
+				save_event_target_as = irae_father
+				add_random_drow_portrait = yes
+				give_nickname = irae_consort
+				ROOT = {
+					set_father = event_target:irae_father
+				}
+				event_target:irae_mother = {
+					add_spouse_matrilineal = event_target:irae_father
+				}
+				death = {
+					death_reason = death_custom_parents
+				}
+			}
+		}
+		character_event = { id = HouseIraeFamilies.41 }
+	}
+}
+
+character_event = {
+	id = HouseIraeFamilies.41
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		create_character = { # Brother
+			random_traits = yes
+			dynasty = ROOT
+			female = no
+			culture = ROOT
+			religion = ROOT
+			age = 16
+			trait = houseirae_drow
+		}
+		new_character = {
+			set_variable = { which = sibling_age which = ROOT }
+			add_age = sibling_age
+			save_event_target_as = irae_brother
+			add_random_drow_portrait = yes
+			set_father = event_target:irae_father
+			set_mother = event_target:irae_mother
+		}
+		create_character = { # Sister
+			random_traits = yes
+			dynasty = ROOT
+			female = yes
+			culture = ROOT
+			religion = ROOT
+			age = 16
+			trait = houseirae_drow
+		}
+		new_character = {
+			set_variable = { which = sibling_age which = ROOT }
+			add_age = sibling_age
+			save_event_target_as = irae_sister
+			add_random_drow_portrait = yes
+			set_father = event_target:irae_father
+			set_mother = event_target:irae_mother
+		}
+		if = {
+			limit = {
+				age = 20
+				NOT = { age = 36 }
+			}
+			random_list = {
+				50 = {
+					create_character = { # Daughter
+						random_traits = yes
+						dynasty = ROOT
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						age = 0
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+				50 = {
+					create_character = { # Son
+						random_traits = yes
+						dynasty = ROOT
+						female = no
+						culture = ROOT
+						religion = ROOT
+						age = 0
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+			}		
+			new_character = {
+				save_event_target_as = irae_custom_child
+				set_variable = { which = child_age which = ROOT }
+				add_age = child_age
+				add_trait = houseirae_drow_child
+				trigger_switch = {
+					on_trigger = age
+					15 = {
+						change_martial = 5
+						change_learning = 5
+						change_intrigue = 5
+						change_diplomacy = 5
+						change_stewardship = 5
+					}
+					12 = {
+						change_martial = 4
+						change_learning = 4
+						change_intrigue = 4
+						change_diplomacy = 4
+						change_stewardship = 4
+					}
+					9 = {
+						change_martial = 3
+						change_learning = 3
+						change_intrigue = 3
+						change_diplomacy = 3
+						change_stewardship = 3
+					}
+					6 = {
+						change_martial = 2
+						change_learning = 2
+						change_intrigue = 2
+						change_diplomacy = 2
+						change_stewardship = 2
+					}
+					3 = {
+						change_martial = 1
+						change_learning = 1
+						change_intrigue = 1
+						change_diplomacy = 1
+						change_stewardship = 1
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_father = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_mother = event_target:irae_sister
+					}
+				}
+				else = {
+					set_mother = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_father = event_target:irae_brother
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				age = 36
+			}
+			random_list = {
+				50 = {
+					create_character = { # Daughter
+						random_traits = yes
+						dynasty = ROOT
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+				50 = {
+					create_character = { # Son
+						random_traits = yes
+						dynasty = ROOT
+						female = no
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+			}		
+			new_character = {
+				add_age = 4
+				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_father = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_mother = event_target:irae_sister
+					}
+				}
+				else = {
+					set_mother = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_father = event_target:irae_brother
+					}
+				}
+			}
+			random_list = {
+				50 = {
+					create_character = { # Daughter
+						random_traits = yes
+						dynasty = ROOT
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+				50 = {
+					create_character = { # Son
+						random_traits = yes
+						dynasty = ROOT
+						female = no
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_drow
+						trait = fair
+					}
+				}
+			}		
+			new_character = {
+				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_father = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_mother = event_target:irae_sister
+					}
+				}
+				else = {
+					set_mother = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_father = event_target:irae_brother
+					}
+				}
+			}
+			
+		}
+		clr_character_flag = houseirae_custom_families
+		if = {
+			limit = {
+				has_global_flag = houseirae_incest_yes
+				is_female = yes
+			}
+			event_target:irae_brother = {
+				add_lover = event_target:irae_sister
+			}
+			if = {
+				limit = {
+					trait = homosexual
+				}
+				add_lover = event_target:irae_sister
+				event_target:irae_sister = {
+					add_trait = homosexual
+				}
+			}
+			else = {
+				event_target:irae_brother = {
+					add_lover = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = houseirae_incest_yes
+				is_female = no
+			}
+			event_target:irae_sister = {
+				add_lover = event_target:irae_brother
+			}
+			if = {
+				limit = {
+					trait = homosexual
+				}
+				event_target:irae_brother = {
+					add_trait = homosexual
+				}
+				add_lover = event_target:irae_brother
+			}
+			else = {
+				event_target:irae_sister = {
+					add_lover = ROOT
+				}
+			}
+		}
+		character_event = { id = HouseIraeFamilies.10 }
+	}
+}
+
+
+
+
+#
+# Half-elven custom family
+#
+				
+character_event = {
+	id = HouseIraeFamilies.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_independent_ruler = {
+			limit = {
+				ai = yes
+			}
+			create_character = { # Mother
+				random_traits = no
+				dynasty = ROOT
+				female = yes
+				culture = ROOT
+				religion = ROOT
+				age = 16
+				attributes = {
+					martial = 5
+					diplomacy = 10
+					stewardship = 8
+					intrigue = 5
+					learning = 8
+				}
+				health = 10
+				fertility = 0
+				trait = naive_appeaser
+				trait = fair
+				trait = shy
+				trait = chaste
+				trait = scarred
+				trait = paranoid
+			}
+			new_character = {
+				set_variable = { which = mother_age which = ROOT }
+				add_age = mother_age
+				save_event_target_as = irae_mother
+				ROOT = {
+					set_mother = event_target:irae_mother
+				}
+			}
+			create_character = { # Father
+				random_traits = yes
+				dynasty = random
+				female = no
+				culture = drow
+				religion = vhaeraun_religion
+				age = 16
+				health = 10
+				fertility = 0
+				trait = brilliant_strategist
+				trait = deceitful
+				trait = impaler
+				trait = cruel
+				trait = lustful
+				trait = houseirae_drow
+			}
+			new_character = {
+				set_variable = { which = father_age which = ROOT }
+				add_age = father_age
+				save_event_target_as = irae_father
+				add_random_drow_portrait = yes
+				ROOT = {
+					set_father = event_target:irae_father
+				}
+			}
+		}
+		character_event = { id = HouseIraeFamilies.51 }
+	}
+}
+character_event = {
+	id = HouseIraeFamilies.51
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		create_character = { # Brother
+			random_traits = yes
+			dynasty = ROOT
+			female = no
+			culture = ROOT
+			religion = ROOT
+			age = 16
+			trait = houseirae_halfelf
+		}
+		new_character = {
+			set_variable = { which = sibling_age which = ROOT }
+			add_age = sibling_age
+			save_event_target_as = irae_brother
+			add_random_halfelf_portrait = yes
+			set_father = event_target:irae_father
+			set_mother = event_target:irae_mother
+		}
+		create_character = { # Sister
+			random_traits = yes
+			dynasty = ROOT
+			female = yes
+			culture = ROOT
+			religion = ROOT
+			age = 16
+			trait = houseirae_halfelf
+		}
+		new_character = {
+			set_variable = { which = sibling_age which = ROOT }
+			add_age = sibling_age
+			save_event_target_as = irae_sister
+			add_random_halfelf_portrait = yes
+			set_father = event_target:irae_father
+			set_mother = event_target:irae_mother
+		}
+		if = {
+			limit = {
+				age = 20
+				NOT = { age = 36 }
+			}
+			random_list = {
+				50 = {
+					create_character = { # Daughter
+						random_traits = yes
+						dynasty = ROOT
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						age = 0
+						trait = houseirae_halfelf
+						trait = fair
+					}
+				}
+				50 = {
+					create_character = { # Son
+						random_traits = yes
+						dynasty = ROOT
+						female = no
+						culture = ROOT
+						religion = ROOT
+						age = 0
+						trait = houseirae_halfelf
+						trait = fair
+					}
+				}
+			}		
+			new_character = {
+				save_event_target_as = irae_custom_child
+				set_variable = { which = child_age which = ROOT }
+				add_age = child_age
+				add_trait = houseirae_halfelf_child
+				trigger_switch = {
+					on_trigger = age
+					15 = {
+						change_martial = 5
+						change_learning = 5
+						change_intrigue = 5
+						change_diplomacy = 5
+						change_stewardship = 5
+					}
+					12 = {
+						change_martial = 4
+						change_learning = 4
+						change_intrigue = 4
+						change_diplomacy = 4
+						change_stewardship = 4
+					}
+					9 = {
+						change_martial = 3
+						change_learning = 3
+						change_intrigue = 3
+						change_diplomacy = 3
+						change_stewardship = 3
+					}
+					6 = {
+						change_martial = 2
+						change_learning = 2
+						change_intrigue = 2
+						change_diplomacy = 2
+						change_stewardship = 2
+					}
+					3 = {
+						change_martial = 1
+						change_learning = 1
+						change_intrigue = 1
+						change_diplomacy = 1
+						change_stewardship = 1
+					}
+				}
+
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_father = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_mother = event_target:irae_sister
+					}
+				}
+				else = {
+					set_mother = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_father = event_target:irae_brother
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				age = 36
+			}
+			random_list = {
+				50 = {
+					create_character = { # Daughter
+						random_traits = yes
+						dynasty = ROOT
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_halfelf
+						trait = fair
+					}
+				}
+				50 = {
+					create_character = { # Son
+						random_traits = yes
+						dynasty = ROOT
+						female = no
+						culture = ROOT
+						religion = ROOT
+						age = 16
+						trait = houseirae_halfelf
+						trait = fair
+					}
+				}
+			}		
+			new_character = {
+				set_variable = { which = child_age which = ROOT }
+				add_age = child_age
+				add_random_halfelf_portrait = yes
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_father = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_mother = event_target:irae_sister
+					}
+				}
+				else = {
+					set_mother = ROOT
+					if = {
+						limit = {
+							has_global_flag = houseirae_incest_yes
+						}
+						set_father = event_target:irae_brother
+					}
+				}
+			}
+		}
+		clr_character_flag = houseirae_custom_families
+		if = {
+			limit = {
+				has_global_flag = houseirae_incest_yes
+				is_female = yes
+			}
+			event_target:irae_brother = {
+				add_lover = event_target:irae_sister
+			}
+			if = {
+				limit = {
+					trait = homosexual
+				}
+				add_lover = event_target:irae_sister
+				event_target:irae_sister = {
+					add_trait = homosexual
+				}
+			}
+			else = {
+				event_target:irae_brother = {
+					add_lover = ROOT
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = houseirae_incest_yes
+				is_female = no
+			}
+			event_target:irae_sister = {
+				add_lover = event_target:irae_brother
+			}
+			if = {
+				limit = {
+					trait = homosexual
+				}
+				event_target:irae_brother = {
+					add_trait = homosexual
+				}
+				add_lover = event_target:irae_brother
+			}
+			else = {
+				event_target:irae_sister = {
+					add_lover = ROOT
+				}
+			}
+		}
+		character_event = { id = HouseIraeFamilies.10 }
+	}
+}
+
+#
+# Resets the variables back to zero, cleans up parents
+#
+
+character_event = {
+	id = HouseIraeFamilies.10
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = player_starting_age value = 0 }
+		set_variable = { which = sibling_age value = 0 }
+		set_variable = { which = child_age value = 0 }
+		set_variable = { which = mother_age value = 0 }
+		set_variable = { which = father_age value = 0 }
+		event_target:irae_brother = {
+			set_variable = { which = sibling_age value = 0 }
+		}
+		event_target:irae_sister = {
+			set_variable = { which = sibling_age value = 0 }
+		}
+		event_target:irae_custom_child = {
+			set_variable = { which = child_age value = 0 }
+		}
+		event_target:irae_mother = {
+			death = {
+				death_reason = death_custom_parents
+			}
+		}
+		event_target:irae_father = {
+			death = {
+				death_reason = death_custom_parents
+			}
+		}
+	}
+}
+			
+		
+

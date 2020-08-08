@@ -1,0 +1,109 @@
+houseirae_house_irae_spawn = {
+	name = "HOUSEIRAE_RULE_HOUSE_IRAE"
+	group = "RULE_GROUP_HOUSEIRAE"
+	option = {
+		name = houseirae_yes_irae
+		text = "HOUSEIRAE_RULE_YES_IRAE"
+		desc = "HOUSEIRAE_RULE_YES_IRAE_DESC"
+	}
+	option = {
+		name = houseirae_startasdrow
+		text = "DROW_RULE_YES_DROW"
+		desc = "DROW_RULE_YES_DROW_DESC"
+	}
+	option = {
+		name = houseirae_startashalfelf
+		text = "DROW_RULE_YES_HALFELF"
+		desc = "DROW_RULE_YES_HALFELF_DESC"
+	}
+	option = {
+		name = houseirae_child_of_irae
+		text = "DROW_RULE_CHILD_OF_IRAE"
+		desc = "DROW_RULE_CHILD_OF_IRAE_DESC"
+	}
+	option = {
+		name = houseirae_no_irae
+		text = "HOUSEIRAE_RULE_NO_IRAE"
+		desc = "HOUSEIRAE_RULE_NO_IRAE_DESC"
+	}
+}
+
+irae_invasion = {
+	name = "RULE_IRAE_INVASIONS"
+	group = "RULE_GROUP_HOUSEIRAE"
+	option = {
+		name = laela_normal
+		text = "HOUSEIRAE_LAELA_NORMAL"
+		desc = "HOUSEIRAE_LAELA_NORMAL_DESC"
+	}
+	option = {
+		name = laela_high
+		text = "HOUSEIRAE_LAELA_HIGH"
+		desc = "HOUSEIRAE_LAELA_HIGH_DESC"
+	}
+	option = {
+		name = laela_oh_lawd
+		text = "HOUSEIRAE_LAELA_JUST_WANTS_TO_SEE_THE_WORLD_BURN"
+		desc = "HOUSEIRAE_LAELA_JUST_WANTS_TO_SEE_THE_WORLD_BURN_DESC"
+	}
+}
+
+irae_custom_families = {
+	name = "RULE_IRAE_CUSTOM_FAMILIES"
+	group = "RULE_GROUP_HOUSEIRAE"
+	option = {
+		name = irae_no_families
+		text = "irae_no_families"
+		desc = "irae_no_families_desc"
+	}
+	option = {
+		name = irae_yes_families
+		text = "irae_yes_families"
+		desc = "irae_yes_families_desc"
+	}
+}
+
+houseirae_seeding = {
+	name = "RULE_IRAE_SEEDING"
+	group = "RULE_GROUP_HOUSEIRAE"
+	option = {
+		name = houseirae_seed_none
+		text = "houseirae_seed_none"
+		desc = "houseirae_seed_none_desc"
+	}
+	option = {
+		name = houseirae_seed_religion
+		text = "houseirae_seed_religion"
+		desc = "houseirae_seed_religion_desc"
+	}
+	option = {
+		name = houseirae_seed_culture
+		text = "houseirae_seed_culture"
+		desc = "houseirae_seed_culture_desc"
+	}
+	option = {
+		name = houseirae_seed_both
+		text = "houseirae_seed_both"
+		desc = "houseirae_seed_both_desc"
+	}
+}
+
+houseirae_dark_whispers = {
+	name = "RULE_IRAE_DARK_WHISPERS"
+	group = "RULE_GROUP_HOUSEIRAE"
+	option = {
+		name = on
+		text = "houseirae_dark_whispers_on"
+		desc = "houseirae_dark_whispers_on_desc"
+	}
+	option = {
+		name = easy
+		text = "houseirae_dark_whispers_easy"
+		desc = "houseirae_dark_whispers_easy_desc"
+	}
+	option = {
+		name = off
+		text = "houseirae_dark_whispers_off"
+		desc = "houseirae_dark_whispers_off_desc"
+	}
+}

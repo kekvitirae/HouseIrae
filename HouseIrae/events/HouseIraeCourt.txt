@@ -1,0 +1,804 @@
+namespace = HouseIraeCourt
+
+narrative_event = {	# Arrival at the court of House Irae
+	id = HouseIraeCourt.1
+	title = HouseIraeCourt1
+	picture = GFX_irae_court
+	is_triggered_only = yes
+	desc = HouseIraeCourt1Arrival
+	window = "houseirae_custom_narrative"	
+	
+	option = { # Seek an audience with the Matron. Sexytimes for stat increases.
+		name = HouseIraeCourtArrival1
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.2 }
+		}
+	}
+	option = { # Seek an audience with one of her children. Sexytimes for stat increases. Males.
+		name = HouseIraeCourtArrival2
+		trigger = {
+			is_female = no
+		}
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.3 }
+		}
+	}
+	option = { # Seek an audience with one of her children. Sexytimes for stat increases. Females.
+		name = HouseIraeCourtArrival2
+		trigger = {
+			is_female = yes
+		}
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.4 }
+		}
+	}
+}
+
+narrative_event = {	# Seek an audience with the Matron. Sexytimes for all stats increased or something... special.
+	id = HouseIraeCourt.2
+	title = HouseIraeCourt2
+	picture = a_placeholder
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			is_female = no # Male
+		}
+		text = HouseIraeCourt2M
+		picture = GFX_irae_kekvitm
+	}
+	desc = {
+		trigger = {
+			is_female = yes # Female
+		}
+		text = HouseIraeCourt2F
+		picture = GFX_irae_kekvitf
+	}
+	option = { # Stat increases
+		name = HouseIraeCourt1Sex
+		hidden_tooltip = {
+			set_character_flag = kekvit_sex
+			narrative_event = { id = HouseIraeCourt.8 }
+		}
+	}
+	option = { # Something special
+		name = HouseIraeCourt1Special
+		hidden_tooltip = {
+			set_character_flag = kekvit_special_gift
+			
+			narrative_event = { id = HouseIraeCourt.8 }
+		
+		}
+	}
+}
+
+narrative_event = {	# Seek an audience with Kekvit's children. Males.
+	id = HouseIraeCourt.3
+	title = HouseIraeChildrenSelection
+	is_triggered_only = yes
+	desc = HouseIraeCourt3M
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+
+	option = { # Freya
+		name = HouseIraeCourtSelectFreya
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.5 }
+		}
+	}
+	option = { # Deionarra
+		name = HouseIraeCourtSelectDeionarra
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.6 }
+		}
+	}
+}
+
+narrative_event = {	# Seek an audience with Kekvit's children. Females.
+	id = HouseIraeCourt.4
+	title = HouseIraeChildrenSelection
+	is_triggered_only = yes
+	desc = HouseIraeCourt4F
+	picture = GFX_irae_court
+	window = "houseirae_custom_narrative"	
+
+	option = { # Khaldune
+		name = HouseIraeCourtSelectKhaldune
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.7 }
+		}
+	}
+	option = { # Deionarra
+		name = HouseIraeCourtSelectDeionarra
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.6 }
+		}
+	}
+}
+
+narrative_event = {	# Seek an audience with Freya, Kekvit's eldest. Sexytimes (men only) and Martial increases.
+	id = HouseIraeCourt.5
+	title = HouseIraeCourtFreyaChosen
+	picture = GFX_irae_freya
+	desc = HouseIraeCourt5
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+
+	option = { # Stat increases
+		name = HouseIraeCourt5TT
+			hidden_tooltip = {
+				set_character_flag = freya_sex
+				narrative_event = { id = HouseIraeCourt.8 }
+				
+			}
+	}
+
+}
+
+narrative_event = {	# Seek an audience with Deionarra, the shy daughter. No sexytimes (Deio is a good girl), only mystical learning.
+	id = HouseIraeCourt.6
+	title = HouseIraeCourtDeionarraChosen
+	picture = GFX_irae_deionarra	
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			is_female = no # Male
+		}
+		text = HouseIraeCourt6M
+	}
+	desc = {
+		trigger = {
+			is_female = yes # Female
+		}
+		text = HouseIraeCourt6F
+	}
+
+	option = { # Spell of Healing
+		name = HouseIraeCourt6TTA
+		custom_tooltip = {
+			text = HouseIraeCourt6TTA1
+			add_character_modifier = {
+				name = spell_of_healing
+				duration = -1
+			}
+		}
+	}
+	option = { # Spell of Lust
+		name = HouseIraeCourt6TTB
+		custom_tooltip = {
+			text = HouseIraeCourt6TTB1
+			add_character_modifier = {
+				name = spell_of_lust
+				duration = -1
+			}
+		}
+	}
+	option = { # Spell of Chastity
+		name = HouseIraeCourt6TTC
+		custom_tooltip = {
+			text = HouseIraeCourt6TTC1
+			add_character_modifier = {
+				name = spell_of_chastity
+				duration = -1
+			}
+		}
+	}
+	after = {
+		narrative_event = { id = HouseIraeCourt.8 }
+	}
+}
+
+narrative_event = { # Seek an audience with Khaldune, Kekvit's first son. Sexytimes (women only, will get you pregnant with a Dark Elf child) and Intrigue increases. Character will be raped under certain conditions.
+	id = HouseIraeCourt.7
+	title = HouseIraeCourtKhalduneChosen
+	picture = GFX_irae_khaldune
+	is_triggered_only = yes
+	desc = HouseIraeCourt7Khaldune1
+	window = "houseirae_custom_narrative"	
+
+	option = { # Got raped
+		name = HouseIraeCourtKhalduneWillBeRaped
+
+# Leaving this option open for players who want to experience the non-con even though they meet the requirements.
+#		
+#		trigger= {
+#				NOT = {
+#					OR = {
+#						martial = 10
+#						trait = rapist
+#						trait = brave
+#						trait = wroth
+#					}
+#				}
+#			}
+		custom_tooltip = {
+			text = HouseIraeCourtKhalduneWillBeRaped2
+		}
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.71 }
+		}
+	}
+	
+	option = { # Rough sex
+		name = HouseIraeCourtKhalduneWillBeRough
+		tooltip_info = martial
+		trigger = {
+			OR = {
+				martial = 10
+				trait = wroth
+				trait = brave
+			}
+		}
+		custom_tooltip = { 
+			text = HouseIraeCourtKhalduneWillBeRough2
+		}
+		hidden_tooltip = {
+			narrative_event = { id = HouseIraeCourt.72 }
+		}
+	}
+}	
+	
+narrative_event = {	# Raped
+	id = HouseIraeCourt.71
+	title = HouseIraeCourt7KhalduneRaped
+	is_triggered_only = yes
+	desc = HouseIraeCourt7KhalduneRapedT
+	picture = GFX_irae_khaldunerape
+	window = "houseirae_custom_narrative"	
+	
+	option = { 
+		name = HouseIraeCourt7KhalduneRapedTT
+		hidden_tooltip = {
+				
+				set_character_flag = raped_by_khaldune
+				narrative_event = { id = HouseIraeCourt.8 }
+		}
+	}
+}
+
+narrative_event = {	# Rough sex
+	id = HouseIraeCourt.72
+	title = HouseIraeCourt7KhalduneRough
+	is_triggered_only = yes
+	desc = HouseIraeCourt7KhalduneRoughT
+	picture = GFX_irae_khaldunerough
+	window = "houseirae_custom_narrative"	
+	
+	option = { 
+		name = HouseIraeCourt7KhalduneRoughTT
+		random = {
+			chance = 25
+			add_trait = wounded
+		}
+		hidden_tooltip = {
+		
+		set_character_flag = impregnated_by_khaldune
+		narrative_event = { id = HouseIraeCourt.8 }
+		}
+	}
+}
+
+narrative_event = {	# Left House Irae for home
+	id = HouseIraeCourt.8
+	title = HouseIraeCourt8
+	picture = GFX_irae_portal	
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			has_character_flag = kekvit_sex
+		}
+		text = HouseIraeCourtLeftKekvitSex
+	}
+	desc = {
+		trigger = {
+			has_character_flag = kekvit_special_gift
+		}
+		text = HouseIraeCourtLeftKekvitSpecial
+	}
+	desc = {
+		trigger = {
+			OR = {
+				has_character_modifier = spell_of_healing
+				has_character_modifier = spell_of_lust
+				has_character_modifier = spell_of_chastity
+			}
+		}
+		text = HouseIraeCourtLeftDeionarra
+	}
+	desc = {
+		trigger = {
+			has_character_flag = freya_sex
+		}
+		text = HouseIraeCourtLeftFreya
+	}
+	desc = {
+		trigger = {
+			has_character_flag = raped_by_khaldune
+		}
+		text = HouseIraeCourtLeftKhaldune1
+	}	
+	desc = {
+		trigger = {
+			has_character_flag = impregnated_by_khaldune
+		}
+		text = HouseIraeCourtLeftKhaldune2
+	}	
+		
+	option = { # Stat increases
+		trigger = {
+				has_character_flag = kekvit_sex
+			}
+		name = HouseIraeCourtInvigorated
+		change_diplomacy = 3
+		change_intrigue = 3
+		change_martial = 3
+		change_learning = 3
+		change_stewardship = 3
+		health = 2
+		hidden_tooltip = {
+			set_character_flag = irae_court_visited
+			clr_character_flag = kekvit_sex
+			clr_character_flag = going_to_house_irae
+			set_character_flag = kekvit_child_father
+			character_event = { id = HouseIraeCourt.14 days = 280 }
+		}
+	}
+	option = {
+		trigger = {
+			has_character_flag = kekvit_special_gift
+		}
+		name = HouseIraeCourtInvigorated
+		add_trait = immortal
+		hidden_tooltip = {
+			set_character_flag = irae_court_visited
+			clr_character_flag = kekvit_special_gift
+		}
+	}
+	option = {
+		trigger = {
+			has_character_flag = freya_sex
+		}
+		name = HouseIraeCourtInvigorated
+		change_martial = 5
+		health = 0.50
+		fertility = 0.10
+		add_artifact = irae_amulet
+		hidden_tooltip = {
+			set_character_flag = irae_court_visited
+			clr_character_flag = freya_sex
+			clr_character_flag = going_to_house_irae
+			set_character_flag = freya_child_father
+			character_event = { id = HouseIraeCourt.14 days = 280 }
+		}
+	}
+	option = {
+		trigger = {
+			OR = {
+				has_character_modifier = spell_of_healing
+				has_character_modifier = spell_of_lust
+				has_character_modifier = spell_of_chastity
+			}
+		}
+		name = HouseIraeCourtLearned
+		add_trait = mystic
+		change_learning = 5
+		hidden_tooltip = {
+			set_character_flag = irae_court_visited
+			clr_character_flag = going_to_house_irae 
+		}
+
+	}
+	option = {
+		trigger = {
+			OR = {
+				has_character_flag = raped_by_khaldune
+				has_character_flag = impregnated_by_khaldune
+			}
+		}
+		name = HouseIraeCourtPregnant
+		change_intrigue = 5
+		fertility = 0.25
+		add_artifact = irae_dagger
+		hidden_tooltip = {
+			set_character_flag = irae_court_visited
+			clr_character_flag = going_to_house_irae
+			add_trait = irae_pregnant_hidden
+			character_event = { id = HouseIraeCourt.12 days = 25 random = 5}
+		}
+	}
+}
+
+# Freya's amulet protects the user
+
+character_event = {
+	id = HouseIraeCourt.9
+	title = HouseIraeCourtAmulet
+	picture = GFX_evt_recovery
+	desc = HouseIraeCourtAmuletT
+	is_triggered_only = yes
+		trigger = {
+			has_artifact = irae_amulet
+			OR = {
+				trait = wounded
+				trait = ill
+				trait = flu
+				trait = dysentery
+				trait = gout
+				trait = cough
+				trait = fever
+				trait = diarrhea
+				trait = vomiting
+				trait = chest_pain
+				trait = cramps
+				trait = rash
+				trait = headache
+				trait = abdominal_pain
+				trait = fatigue
+				trait = malaise
+				trait = infection
+				trait = lovers_pox
+			}
+		}
+		
+	option = {
+		name = HouseIraeCourtAmuletTT
+		hidden_tooltip = {
+			remove_trait = wounded
+			remove_trait = ill
+			remove_trait = flu
+			remove_trait = dysentery
+			remove_trait = gout
+			remove_trait = cough
+			remove_trait = fever
+			remove_trait = diarrhea
+			remove_trait = vomiting
+			remove_trait = chest_pain
+			remove_trait = cramps
+			remove_trait = rash
+			remove_trait = headache
+			remove_trait = abdominal_pain
+			remove_trait = fatigue
+			remove_trait = malaise
+			remove_trait = infection
+			clr_character_flag = developing_illness
+			clr_character_flag = got_flu
+			clr_character_flag = manifest_flu
+			remove_trait = lovers_pox
+			remove_character_modifier = minor_disease_herpes
+		}
+	}
+}
+
+character_event = { #Destroys the amulet to prevent successors getting potential doubles
+	id = HouseIraeCourt.10
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_artifact = irae_amulet
+	}
+	immediate = {
+		destroy_artifact = irae_amulet
+	}
+}
+
+character_event = { #Destroys the amulet to prevent successors getting potential doubles
+	id = HouseIraeCourt.11
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_artifact = irae_dagger
+	}
+	immediate = {
+		destroy_artifact = irae_dagger
+	}
+}
+
+character_event = { # Notification of pregnancy
+	id = HouseIraeCourt.12
+	is_triggered_only = yes
+	desc = HouseIraeCourt12
+	picture = GFX_evt_death_childbirth
+	option = {
+		name = HouseIraeCourt12TT
+		clr_character_flag = raped_by_khaldune
+		clr_character_flag = impregnated_by_khaldune
+		hidden_tooltip = {
+			remove_trait = irae_pregnant_hidden
+		}
+		add_trait = irae_pregnant
+		character_event = { id = HouseIraeCourt.13 days = 250 }
+	}
+}
+
+character_event = { # Birth of the child
+	id = HouseIraeCourt.13
+	is_triggered_only = yes  
+	desc = HouseIraeCourt13
+	sound = "child_born"
+	picture = GFX_evt_death_childbirth
+	immediate = {
+		remove_trait = irae_pregnant
+		create_character = {
+			random_traits = yes
+			female = random
+			dynasty = ROOT
+			culture = ROOT
+			religion = ROOT
+			age = 0
+			attributes = {
+				martial = 5
+				diplomacy = 5
+				stewardship = 5
+				intrigue = 5
+				learning = 5
+			}
+			trait = fair
+			trait = quick
+			trait = sturdy
+		}
+		new_character = {
+			set_character_flag = khaldunes_child
+			remove_trait = clubfooted
+			remove_trait = dwarf
+			remove_trait = harelip
+			remove_trait = hunchback
+			remove_trait = imbecile
+			remove_trait = inbred
+			remove_trait = lisp
+			remove_trait = slow
+			remove_trait = stutter
+			remove_trait = ugly
+			remove_trait = weak
+			remove_trait = giant
+			character_event = { id = HouseIraeCourt.131 }
+			set_mother = ROOT
+			set_immune_to_pruning = yes
+			if = {
+				limit = {
+					mother = {
+						trait = houseirae_drow
+					}
+				}
+				add_trait = houseirae_drow_child
+				add_trait = houseirae_drow
+			}
+			else = {
+				add_trait = houseirae_halfelf_child
+				add_trait = houseirae_halfelf
+			}
+			character_event = { id = HouseIraeTamsine.90 }
+			ROOT = {
+				any_owned_bloodline = {
+					limit = { bloodline_is_active_for = PREV }
+					add_bloodline_member = PREVPREV
+				}
+			}
+			save_event_target_as = irae_child
+		}
+	}
+	option = { # This child shall be mine to raise and love.
+		name = HouseIraeCourt13TTA
+		new_character = {
+			prompt_name = {
+				player = ROOT
+				type = RENAME_CHARACTER_MESSAGE
+				name_list = culture
+			}
+		}
+	}
+	option = { # Abandon this abomination before anyone sees it!
+		name = HouseIraeCourt13TTB
+		new_character = {
+			hidden_effect = {
+				set_mother = 0
+				set_father = 0
+			}
+			death = { death_reason = death_vanished }
+		}
+	}		
+}
+
+character_event = { # Ensures the child gets the Irae bloodline
+	id = HouseIraeCourt.131
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		c_99889902 = {
+			any_owned_bloodline = {
+				add_bloodline_member = PREVPREV
+			}
+		}
+	}
+}
+	
+
+character_event = { # Child of Kekvit/Freya
+	id = HouseIraeCourt.14
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = kekvit_child_father
+			}
+			create_character = {
+				random_traits = yes
+				female = random
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				age = 0
+				attributes = {
+					martial = 5
+					diplomacy = 5
+					stewardship = 5
+					intrigue = 5
+					learning = 5
+				}
+				trait = fair
+				trait = genius
+			}
+			new_character = {
+				set_character_flag = kekvits_child
+				remove_trait = clubfooted
+				remove_trait = dwarf
+				remove_trait = harelip
+				remove_trait = hunchback
+				remove_trait = imbecile
+				remove_trait = inbred
+				remove_trait = lisp
+				remove_trait = slow
+				remove_trait = stutter
+				remove_trait = ugly
+				remove_trait = weak
+				remove_trait = giant
+				set_mother = event_target:houseirae_kekvit_irae
+				set_father = ROOT
+				save_event_target_as = irae_child
+				set_immune_to_pruning = yes
+				if = {
+					limit = {
+						father = {
+							trait = houseirae_drow
+						}
+					}
+					add_trait = houseirae_drow_child
+					add_trait = houseirae_drow
+				}
+				else = {
+					add_trait = houseirae_halfelf_child
+					add_trait = houseirae_halfelf
+				}
+				character_event = { id = HouseIraeTamsine.90 }
+				ROOT = {
+					any_owned_bloodline = {
+						limit = { 
+							bloodline_is_active_for = PREV 
+						}
+						add_bloodline_member = PREVPREV
+					}
+				}
+			}
+			event_target:houseirae_kekvit_irae = {
+				character_event = { id = HouseIraeCourt.16 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_character_flag = freya_child_father
+			}
+			create_character = {
+				random_traits = yes
+				female = random
+				dynasty = ROOT
+				culture = ROOT
+				religion = ROOT
+				age = 0
+				attributes = {
+					martial = 5
+					diplomacy = 5
+					stewardship = 5
+					intrigue = 5
+					learning = 5
+				}
+				trait = fair
+				trait = strong
+
+			}
+			new_character = {
+				set_character_flag = freyas_child
+				remove_trait = clubfooted
+				remove_trait = dwarf
+				remove_trait = harelip
+				remove_trait = hunchback
+				remove_trait = imbecile
+				remove_trait = inbred
+				remove_trait = lisp
+				remove_trait = slow
+				remove_trait = stutter
+				remove_trait = ugly
+				remove_trait = weak
+				remove_trait = giant
+				set_mother = event_target:houseirae_freya_irae
+				set_father = ROOT
+				save_event_target_as = irae_child
+				set_immune_to_pruning = yes
+				if = {
+					limit = {
+						father = {
+							trait = houseirae_drow
+						}
+					}
+					add_trait = houseirae_drow_child
+					add_trait = houseirae_drow
+				}
+				else = {
+					add_trait = houseirae_halfelf_child
+					add_trait = houseirae_halfelf
+				}
+				character_event = { id = HouseIraeTamsine.90 }
+				ROOT = {
+					any_owned_bloodline = {
+						limit = { 
+							bloodline_is_active_for = PREV 
+						}
+						add_bloodline_member = PREVPREV
+					}
+				}
+				
+			}
+			event_target:houseirae_freya_irae = {
+				character_event = { id = HouseIraeCourt.16 }
+			}				
+		}
+	}
+}
+
+
+character_event = { # Ping event for the letter
+	id = HouseIraeCourt.16
+	is_triggered_only = yes  
+	hide_window = yes
+	offmap = allow
+	immediate = {
+		FROM = {
+			letter_event = { id = HouseIraeCourt.17 }
+		}
+	}
+}
+
+letter_event = { # Letter event for the child
+	id = HouseIraeCourt.17
+	border = GFX_event_letter_frame_diplomacy	
+	is_triggered_only = yes  
+	desc = {
+		trigger = {
+			has_character_flag = freya_child_father
+		}
+		text = HouseIraeCourt17Freya
+	}
+	desc = {
+		trigger = {
+			has_character_flag = kekvit_child_father
+			is_female = no
+		}
+		text = HouseIraeCourt17Kekvit
+	}	
+	desc = {
+		trigger = {
+			has_character_flag = kekvit_child_father
+			is_female = yes
+		}
+		text = HouseIraeCourt17KekvitFem
+	}	
+	option = {
+		name = HouseIraeCourt17TTA
+		custom_tooltip = {
+			text = HouseIraeCourt17TT
+		}
+		clr_character_flag = kekvit_child_father
+		clr_character_flag = freya_child_father
+	}
+}

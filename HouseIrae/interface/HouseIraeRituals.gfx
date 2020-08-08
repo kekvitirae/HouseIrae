@@ -1,0 +1,63 @@
+spriteTypes = {
+	spriteType = {
+		name = "irae_lolth_sacrifice"
+		texturefile = "gfx/event_pictures/irae_lolth_sacrifice.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_houseirae_lolth_sacrifice_ritual"
+		texturefile = "gfx/interface/decision_icon_ancestor_worship.dds"
+	}
+	spriteType = {
+		name = "irae_eilistraee_dance1"
+		texturefile = "gfx/event_pictures/irae_eilistraee_dance1.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_eilistraee_dance2"
+		texturefile = "gfx/event_pictures/irae_eilistraee_dance2.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_eilistraee_dance3"
+		texturefile = "gfx/event_pictures/irae_eilistraee_dance3.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "irae_eilistraee_dance4"
+		texturefile = "gfx/event_pictures/irae_eilistraee_dance4.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_houseirae_eilistraee_dance_ritual"
+		texturefile = "gfx/interface/decision_icon_ancestor_worship.dds"
+	}
+	spriteType = {
+		name = "irae_sword_dancer_training"
+		texturefile = "gfx/event_pictures/irae_sword_dancer_training.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_houseirae_vhaeraun_sacrifice_ritual"
+		texturefile = "gfx/interface/decision_icon_ancestor_worship.dds"
+	}
+	spriteType = {
+		name = "irae_vhaeraun_sacrifice"
+		texturefile = "gfx/event_pictures/irae_vhaeraun_sacrifice.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+}

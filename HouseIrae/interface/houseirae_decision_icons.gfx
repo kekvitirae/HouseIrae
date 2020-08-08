@@ -1,0 +1,64 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_secret_religions_openly_adopt_faith_dark_seldarine"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_secret_religions_personally_adopt_secret_religion_dark_seldarine"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_expand_spider_pit"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_irae_incest_choice"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_expand_spider_pit2"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_unleash_spiders"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_start_as_halfelf"
+		texturefile = "gfx\\traits\\houseirae_halfelf.tga"
+	}	
+	spriteType = {
+		name = "GFX_start_as_drow"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_lolth_sacrifice_ritual"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_eilistraee_dance_ritual"
+		texturefile = "gfx\\traits\\houseirae_halfelf.tga"
+	}	
+	spriteType = {
+		name = "GFX_houseirae_vhaeraun_sacrifice_ritual"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+	
+	spriteType = {
+		name = "GFX_hold_grand_hunt_femalesorseldarine"
+		texturefile = "gfx\\traits\\houseirae_halfelf.tga"
+	}
+	spriteType = {
+		name = "GFX_summer_fair_eilistraee"
+		texturefile = "gfx\\traits\\houseirae_halfelf.tga"
+	}
+	spriteType = {
+		name = "GFX_feast_eilistraee"
+		texturefile = "gfx\\traits\\houseirae_halfelf.tga"
+	}
+	spriteType = {
+		name = "GFX_houseirae_book_of_lore"
+		texturefile = "gfx\\traits\\houseirae_drow.tga"
+	}	
+}	

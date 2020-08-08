@@ -1,0 +1,126 @@
+namespace = HouseIraeDebug
+
+#
+# Portrait Removal
+#
+
+character_event = {
+	id = HouseIraeDebug.1
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_random_halfelf_portrait = yes
+		remove_random_drow_portrait = yes
+	}
+}
+
+#
+# Race Removal + Portrait Removal
+#
+
+character_event = {
+	id = HouseIraeDebug.2
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_trait = houseirae_drider
+		remove_trait = houseirae_drow
+		remove_trait = houseirae_halfelf
+		remove_random_halfelf_portrait = yes
+		remove_random_drow_portrait = yes
+	}
+}
+
+#
+# Race Removal
+#
+
+character_event = {
+	id = HouseIraeDebug.3
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_trait = houseirae_drider
+		remove_trait = houseirae_drow
+		remove_trait = houseirae_halfelf
+	}
+}
+
+#
+# Trait Removal (Nuclear Option)
+#
+
+character_event = {
+	id = HouseIraeDebug.4
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_trait = houseirae_drider
+		remove_trait = houseirae_drow
+		remove_trait = houseirae_halfelf
+		remove_trait = irae_pregnant_hidden
+		remove_trait = irae_pregnant
+		remove_trait = houseirae_no_marry
+		remove_trait = houseirae_matron_mother
+		remove_trait = houseirae_sword_dancer
+		remove_trait = houseirae_laelas_consort
+		remove_trait = houseirae_branded_irae
+		remove_trait = houseirae_secret_lolth
+		remove_trait = houseirae_secret_eilistraee
+		remove_trait = houseirae_secret_vhaeraun
+		remove_trait = houseirae_curse_frail
+		remove_trait = houseirae_curse_chaste
+		remove_trait = houseirae_curse_murder
+		remove_trait = houseirae_curse_paranoid
+		remove_trait = houseirae_curse_ambition
+		remove_trait = houseirae_curse_shapeshifted_drider
+		remove_trait = houseirae_curse_shapeshifted_gender
+		remove_trait = houseirae_curse_dark_whispers
+		remove_trait = houseirae_curse_generic
+		remove_trait = houseirae_no_inherit
+		remove_trait = houseirae_motherly_love_trait
+	}
+}
+
+#
+# Trait Removal (Tamsine-related)
+#
+
+character_event = {
+	id = HouseIraeDebug.5
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		remove_trait = houseirae_curse_frail
+		remove_trait = houseirae_curse_chaste
+		remove_trait = houseirae_curse_murder
+		remove_trait = houseirae_curse_paranoid
+		remove_trait = houseirae_curse_ambition
+		remove_trait = houseirae_curse_shapeshifted_drider
+		remove_trait = houseirae_curse_shapeshifted_gender
+		remove_trait = houseirae_curse_dark_whispers
+		remove_trait = houseirae_curse_generic
+	}
+}
+
+#
+# Curse Prevention
+#
+
+character_event = {
+	id = HouseIraeDebug.6
+	is_triggered_only = yes
+	hide_window = yes
+	immediate = {
+		clr_character_flag = houseirae_tamsine_curse1
+		clr_character_flag = houseirae_tamsine_curse2
+		clr_character_flag = houseirae_tamsine_curse3
+		clr_character_flag = houseirae_tamsine_curse4
+		clr_character_flag = houseirae_tamsine_curse5
+		clr_character_flag = houseirae_tamsine_curse6
+		clr_character_flag = houseirae_tamsine_curse7
+		clr_character_flag = houseirae_tamsine_curse8
+		clr_character_flag = houseirae_tamsine_curse9
+		clr_character_flag = houseirae_tamsine_curse10
+	}
+}

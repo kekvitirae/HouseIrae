@@ -1,0 +1,66 @@
+spriteTypes = {
+	spriteType = {
+		name = "irae_three_iraes"
+		texturefile = "gfx/event_pictures/irae_three_iraes.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_kekvit_lore"
+		texturefile = "gfx/event_pictures/irae_kekvit_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_kaenia_lore"
+		texturefile = "gfx/event_pictures/irae_kaenia_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_laela_lore"
+		texturefile = "gfx/event_pictures/irae_laela_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "irae_freya_lore"
+		texturefile = "gfx/event_pictures/irae_freya_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_belladonna_kekvit"
+		texturefile = "gfx/event_pictures/irae_belladonna_kekvit.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "irae_lolth_lore"
+		texturefile = "gfx/event_pictures/irae_lolth_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "irae_eilistraee_lore"
+		texturefile = "gfx/event_pictures/irae_eilistraee_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "irae_vhaeraun_lore"
+		texturefile = "gfx/event_pictures/irae_vhaeraun_lore.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+}

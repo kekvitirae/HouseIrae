@@ -1,0 +1,118 @@
+on_chronicle_start = {
+	events = {
+		HouseIraeFamilies.1 # Custom family
+		HouseIrae.39 # Dark/Half Elf Start
+		HouseIraeSeeding.1 # Religion/Culture Seeding
+		HouseIrae.41 # Sets House Irae flags
+	}
+}
+
+on_startup = {
+	events = {
+		HouseIrae.39 # Dark/Half Elf Start
+		HouseIrae.10 # Creates Kekvit Irae and makes her Matron Mother
+		HouseIrae.41 # Sets House Irae flags
+	}
+}
+
+on_birth = {
+	events = { 
+		HouseIraeArtifacts.3 # Genealogy Funtimes
+		Laela.9 # Irae child
+		HouseIraeHalfElf.2 # Half elf child
+		HouseIraeTamsine.90 # Curse assignment
+	}
+}
+
+on_adulthood = {
+	events = {
+		HouseIrae.14 # Adds random adult drow portrait
+		HouseIraeHalfElf.1 # Adds random adult half-elf portrait
+		HouseIraeTamsine.1 # Tamsine's curse
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		HouseIraeCourt.9 # Freya's amulet
+		HouseIraeArtifacts.5 # Statue bonus
+		HouseIraeTamsine.300 # Tamsine loses her last province
+		HouseIrae.45 # Keeps Kekvit out of societies
+		Laela.33 # Laela gives a stipend to her consort
+	}
+}
+
+on_death = {
+	events = {
+		HouseIraeCourt.10 # Removes the amulet
+		HouseIraeCourt.11 # Removes the dagger
+		HouseIraeArtifacts.4 # Removes the Kekvit statue
+		Laela.17 # Death of Laela
+		HouseIraeTamsine.301 # Death of Tamsine
+		HouseIrae.32 # Resets favor to 0
+		HouseIrae.42 # Law fix
+	}
+}
+
+on_combat_pulse = {
+	events = {
+		Laela.16 # Waterlily gets buff
+	}
+}
+
+on_create_title = {
+	events = {
+		HouseIrae.20 # Lolth/Eilistraee status of women fix
+	}
+}
+on_new_holder = {
+	events = {
+		HouseIrae.20 # Lolth/Eilistraee status of women fix
+	}
+}
+on_new_holder_inheritance = {
+	events = {
+		HouseIrae.20 # Lolth/Eilistraee status of women fix
+	}
+}
+on_new_holder_usurpation = {
+	events = {
+		HouseIrae.20 # Lolth/Eilistraee status of women fix
+	}	
+}
+
+on_divorce = {
+	events = {
+		Laela.31 # The Dark Divorce
+	}
+}
+
+on_siege_over_winner = {
+	events = {
+		HouseIrae.36 # Spider pits discovered
+	}
+}
+
+on_war_ended_defeat = {
+	events = {
+		HouseIraeTamsine.300 # Tamsine loses her last province
+	}
+}
+
+on_society_bi_yearly_pulse = {
+	events = {
+		HouseIraeSecretSociety.3000 # Secret religious society quest tombola
+	}
+	random_events = {
+		100 = HouseIraeSecretSociety.3920 # Secret Religious societies: Worried member
+		100 = HouseIraeSecretSociety.3930 # Secret Religious societies: Fellow society member goes for a round
+		100 = HouseIraeSecretSociety.3505 # Secret Religious societies: Get help from another member with problematic trait
+		100 = HouseIraeSecretSociety.3500 # Secret Religious societies: I am so stressed
+	}
+}
+
+on_alternate_start = {
+	events = {
+		HouseIraeAltStart.1
+	}
+}

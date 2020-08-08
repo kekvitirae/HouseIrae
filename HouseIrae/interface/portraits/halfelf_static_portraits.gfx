@@ -1,0 +1,251 @@
+spriteTypes = {
+
+# Females
+	spriteType = {
+		name = "GFX_portrait_houseirae_halfelf_female_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_halfelf_female.dds"
+		noOfFrames = 13
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	
+    portraitType = {
+        name = "PORTRAIT_houseirae_halfelf_female_static_1"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+				OR = {
+					portrait_has_trait = houseirae_halfelf_female_portrait1 
+					portrait_has_trait = houseirae_halfelf_female_portrait2
+					portrait_has_trait = houseirae_halfelf_female_portrait3
+					portrait_has_trait = houseirae_halfelf_female_portrait4
+					portrait_has_trait = houseirae_halfelf_female_portrait5
+					portrait_has_trait = houseirae_halfelf_female_portrait6
+					portrait_has_trait = houseirae_halfelf_female_portrait7
+					portrait_has_trait = houseirae_halfelf_female_portrait8
+					portrait_has_trait = houseirae_halfelf_female_portrait9
+					portrait_has_trait = houseirae_halfelf_female_portrait10
+					portrait_has_trait = houseirae_halfelf_female_portrait11
+					portrait_has_trait = houseirae_halfelf_female_portrait12
+					portrait_has_trait = houseirae_halfelf_female_portrait13
+				}
+	 		}
+       }
+
+        layer = {
+			"GFX_empty:p0"
+            "GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_halfelf_female_portraitswapping:c5"
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { portrait_has_trait = houseirae_halfelf_female_portrait13 }
+				1 = { portrait_has_trait = houseirae_halfelf_female_portrait1 }
+				2 = { portrait_has_trait = houseirae_halfelf_female_portrait2 }
+				3 = { portrait_has_trait = houseirae_halfelf_female_portrait3 }
+				4 = { portrait_has_trait = houseirae_halfelf_female_portrait4 }
+				5 = { portrait_has_trait = houseirae_halfelf_female_portrait5 }
+				6 = { portrait_has_trait = houseirae_halfelf_female_portrait6 }
+				7 = { portrait_has_trait = houseirae_halfelf_female_portrait7 }
+				8 = { portrait_has_trait = houseirae_halfelf_female_portrait8 }
+				9 = { portrait_has_trait = houseirae_halfelf_female_portrait9 }
+				10 = { portrait_has_trait = houseirae_halfelf_female_portrait10 }
+				11 = { portrait_has_trait = houseirae_halfelf_female_portrait11 }
+				12 = { portrait_has_trait = houseirae_halfelf_female_portrait12 }
+			}
+		}
+	}	
+	
+# Males
+	spriteType = {
+		name = "GFX_portrait_houseirae_halfelf_male_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_halfelf_male.dds"
+		noOfFrames = 13
+		norefcount = yes
+		can_be_lowres = yes
+	}
+	
+    portraitType = {
+        name = "PORTRAIT_houseirae_halfelf_fmale_static_1"
+		effectFile = "gfx/FX/portrait.lua"
+        weight = {
+            additive_modifier = {
+                value = 100000
+                portrait_clothing = yes
+				OR = {
+					portrait_has_trait = houseirae_halfelf_male_portrait1 
+					portrait_has_trait = houseirae_halfelf_male_portrait2
+					portrait_has_trait = houseirae_halfelf_male_portrait3
+					portrait_has_trait = houseirae_halfelf_male_portrait4
+					portrait_has_trait = houseirae_halfelf_male_portrait5
+					portrait_has_trait = houseirae_halfelf_male_portrait6
+					portrait_has_trait = houseirae_halfelf_male_portrait7
+					portrait_has_trait = houseirae_halfelf_male_portrait8
+					portrait_has_trait = houseirae_halfelf_male_portrait9
+					portrait_has_trait = houseirae_halfelf_male_portrait10
+					portrait_has_trait = houseirae_halfelf_male_portrait11
+					portrait_has_trait = houseirae_halfelf_male_portrait12
+					portrait_has_trait = houseirae_halfelf_male_portrait13
+				}
+	 		}
+       }
+
+        layer = {
+			"GFX_empty:p0"
+            "GFX_empty:c0"
+            "GFX_empty:c2"
+            "GFX_empty:c3"
+            "GFX_empty:c1"
+            "GFX_empty:c4"
+            "GFX_empty:p1:h:y"
+            "GFX_portrait_houseirae_halfelf_male_portraitswapping:c5"
+        }
+
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            5 = {
+				0 = { portrait_has_trait = houseirae_halfelf_male_portrait13 }
+				1 = { portrait_has_trait = houseirae_halfelf_male_portrait1 }
+				2 = { portrait_has_trait = houseirae_halfelf_male_portrait2 }
+				3 = { portrait_has_trait = houseirae_halfelf_male_portrait3 }
+				4 = { portrait_has_trait = houseirae_halfelf_male_portrait4 }
+				5 = { portrait_has_trait = houseirae_halfelf_male_portrait5 }
+				6 = { portrait_has_trait = houseirae_halfelf_male_portrait6 }
+				7 = { portrait_has_trait = houseirae_halfelf_male_portrait7 }
+				8 = { portrait_has_trait = houseirae_halfelf_male_portrait8 }
+				9 = { portrait_has_trait = houseirae_halfelf_male_portrait9 }
+				10 = { portrait_has_trait = houseirae_halfelf_male_portrait10 }
+				11 = { portrait_has_trait = houseirae_halfelf_male_portrait11 }
+				12 = { portrait_has_trait = houseirae_halfelf_male_portrait12 }
+			}
+		}
+	}
+
+# Child
+	spriteType = {
+		name = "GFX_portrait_houseirae_halfelf_child_portraitswapping"
+		texturefile = "gfx/static_portraits/houseirae_halfelf_child.dds"
+		noOfFrames = 2
+		norefcount = yes
+		can_be_lowres = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_houseirae_halfelf_child_overlay"
+		effectFile = "gfx/FX/portrait.lua"
+		
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_has_trait = houseirae_halfelf_child
+			}
+		}
+        allow_property_values = {
+			0 = {
+				0 = { always = yes }
+			}
+            1 = {
+				0  = { always = yes }
+            }
+			2 = {
+				0 = { always = yes }
+			}
+            19 = {
+				0  = { always = yes }
+            }
+			33 = {
+				0  = { always = yes }
+            }
+            34 = {
+				0  = { always = yes }
+            }
+            35 = {
+				0  = { always = yes }
+            }
+            36 = {
+				0  = { always = yes }
+            }
+            6 = {
+				0  = { always = yes }
+            }
+            0 = {
+				0 = { 
+					portrait_has_trait = houseirae_halfelf_child
+					portrait_is_female = yes
+				}
+				1 = { 
+					portrait_has_trait = houseirae_halfelf_child
+					portrait_is_female = no
+				}
+			}
+		}
+		
+		layer = { 
+			"GFX_portrait_houseirae_halfelf_child_portraitswapping:p0"
+		}
+	}
+
+
+
+}

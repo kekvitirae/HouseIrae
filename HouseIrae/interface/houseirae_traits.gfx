@@ -1,0 +1,121 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_trait_houseirae_halfelf"
+		textureFile = "gfx/traits/houseirae_halfelf.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_drow"
+		texturefile = "gfx/traits/houseirae_drow.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_branded_irae"
+		texturefile = "gfx/traits/houseirae_laelas_consort.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+
+	spriteType = {
+		name = "GFX_trait_houseirae_laelas_consort"
+		texturefile = "gfx/traits/houseirae_laelas_consort.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_trait_houseirae_drider"
+		texturefile = "gfx/traits/houseirae_drider.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}	
+	spriteType = {
+		name = "GFX_trait_houseirae_sword_dancer"
+		texturefile = "gfx/traits/houseirae_sword_dancer.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_frail"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_paranoid"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_chaste"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_murder"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_ambition"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_shapeshifted_drider"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_shapeshifted_gender"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_curse_generic"
+		texturefile = "gfx/traits/houseirae_curse.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_secret_lolth"
+		texturefile = "gfx/traits/houseirae_secret.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_secret_eilistraee"
+		texturefile = "gfx/traits/houseirae_secret.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_houseirae_secret_vhaeraun"
+		texturefile = "gfx/traits/houseirae_secret.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+}

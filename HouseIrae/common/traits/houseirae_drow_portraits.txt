@@ -1,0 +1,341 @@
+#
+# Drow Portraits
+#
+houseirae_drow_portrait1 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait2 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait3 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait4 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait5 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait6 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait7 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait8 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait9 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait10 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait11 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait12 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait13 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait14 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait15 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait16 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait17 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait18 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait19 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait20 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait21 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait22 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait23 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait24 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait25 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait26 = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+houseirae_drow_portrait27a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait28a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait29a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait30a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait31a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait32a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait33a = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait34 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait35 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait36 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait37 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait38 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait39 = { # Female
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait40 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait41 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait42 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait43 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait44 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait45 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait46 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait47 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait48 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait49 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait50 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait51 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}
+houseirae_drow_portrait52 = { # Male
+	hidden = yes
+	random = no
+	customizer = no
+}

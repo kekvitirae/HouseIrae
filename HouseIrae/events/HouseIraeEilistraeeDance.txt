@@ -1,0 +1,831 @@
+namespace = HouseIraeEilistraeeDance
+
+#
+# Eilistraee Moonlight Dance
+# Based off of the Lilith Blood Moon Sacrifice of Dark World Reborn by dewguru
+#
+
+narrative_event = {
+	id = HouseIraeEilistraeeDance.1
+	desc = HouseIraeEilistraeeDance1
+	picture = irae_eilistraee_dance1
+	title = HouseIraeEilistraeeDanceTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes
+	
+	option = { # Let us begin
+		name = HouseIraeEilistraeeDance1TT
+		any_courtier = { # Our courtiers who will be in attendance
+			limit = {
+				prisoner = no
+				war = no
+				is_female = yes
+				NOT = { trait = incapable }
+				is_adult = yes
+				NOR = {
+					AND = {
+						trait = shy
+						NOT = { has_character_flag = npc_vala_sael }
+					}
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeEilistraeeDance.2 } # Handles folks coming out of hiding and clearing and former ritual flags
+		}		
+		any_courtier = { # Our available courtiers who will NOT be in attendance and need to pay tribute
+			limit = {
+				prisoner = no
+				war = no
+				is_female = yes
+				NOT = { trait = incapable }
+				is_adult = yes
+				OR = {
+					NOT = { 
+						religion = eilistraee_religion
+					}
+					AND = {
+						trait = shy
+						NOT = { has_character_flag = npc_vala_sael }
+					}
+					trait = cynical
+					trait = houseirae_secret_lolth
+					trait = houseirae_secret_vhaeraun
+				}
+			}
+			character_event = { id = HouseIraeEilistraeeDance.3 } # Handles the check to see if they've the money to pay, and subsequent events
+		}		
+		any_vassal = { # Vassals who are attending
+			limit = {
+				is_adult = yes
+				prisoner = no
+				war = no
+				is_female = yes
+				NOT = { trait = incapable }
+				NOR = {
+					AND = {
+						trait = shy
+						NOT = { has_character_flag = npc_vala_sael }
+					}
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeEilistraeeDance.2 } # Handles folks coming out of hiding and setting the end of ritual flag clearing
+		}
+		any_vassal = { # Vassals who are NOT attending and need to pay tribute
+			limit = {
+				is_adult = yes
+				prisoner = no
+				war = no
+				is_female = yes
+				NOT = { trait = incapable }
+				OR = {
+					NOT = { 
+						religion = eilistraee_religion
+					}
+					AND = {
+						trait = shy
+						NOT = { has_character_flag = npc_vala_sael }
+					}
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeEilistraeeDance.3 } # Handles the check to see if they've the money to pay, and subsequent events
+		}
+		hidden_tooltip = {
+			set_character_flag = dancing_in_the_moonlight
+			narrative_event = { id = HouseIraeEilistraeeDance.6 days = 3 } # Starts the Moonlight Dance Ritual
+		}
+	}
+}
+# Vassals and Courtiers Summoned and attending Moonlight Dance event (handles people coming out of hiding and character flags)
+character_event = {
+	id = HouseIraeEilistraeeDance.2
+	desc = HouseIraeEilistraeeDance2
+	picture = GFX_evt_china_diplomatic_incident
+
+	is_triggered_only = yes
+
+	option = { # I'm looking forward to the event
+		name = HouseIraeEilistraeeDance2TT
+		set_character_flag = irae_attending_dance
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+		}
+		hidden_tooltip = { character_event = { id = HouseIraeEilistraeeDance.12 days = 45 } } # Clears Moonlight Dance flags at the end of the event
+	}
+}
+# Vassals and Courtiers who aren't attending determine if they pay tribute to be excluded from Moonlight Dance Ritual
+character_event = {
+	id = HouseIraeEilistraeeDance.3
+	desc = HouseIraeEilistraeeDance3
+	picture = GFX_evt_china_diplomatic_incident
+	
+	is_triggered_only = yes
+	
+	option = { # Pay if they can
+		name = HouseIraeEilistraeeDance3TTPay
+		trigger = {
+			wealth = 5
+		}
+		FROM = {
+			narrative_event = {	id = HouseIraeEilistraeeDance.4 } # Tribute payment event for the liege
+		}
+		wealth = -5 # Personal wealth, the reason why the payment is higher is due to a gathering of coin from others (taxes for vassals, businesses or family for courtiers)
+		prestige = -10 # A hit on prestige for not attending and also due to the person collecting money from others to cover tribute
+		ai_chance = { # If the ai has this option, this is the one we want them to choose automatically, unless they're greedy or zealous
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					ai_greed = -25
+					ai_zeal = 30
+				}
+			}
+		}
+	}
+	option = { # Don't pay
+		name = HouseIraeEilistraeeDance3TTNoPay
+		FROM = {
+			narrative_event = { id = HouseIraeEilistraeeDance.5 } # Tribute payment isn't coming
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = irae_opinion_refused_sacrifice
+					who = ROOT
+				}
+				any_vassal = {
+					limit = { has_character_flag = irae_attending_dance }
+					opinion = {
+						modifier = irae_opinion_refused_sacrifice
+						who = ROOT
+					}
+				}
+				any_courtier = {
+					limit = { has_character_flag = irae_attending_dance }
+					opinion = {
+						modifier = irae_opinion_refused_sacrifice
+						who = ROOT
+					}
+				}
+			}
+		}
+		opinion = {
+			modifier = irae_opinion_sacrifice_heretic_liege
+			who = FROM			
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# Liege holding the Moonlight Dance ritual receives the tribute payment for the absence
+narrative_event = {
+	id = HouseIraeEilistraeeDance.4
+	desc = HouseIraeEilistraeeDance4
+	picture = irae_eilistraee_dance1
+	title = HouseIraeEilistraeeDanceTitle_tribute_payment
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Tribute accepted
+		name = HouseIraeEilistraeeDance4TT
+		wealth = 10
+	}
+}
+# Liege holding the Moonlight Dance ritual receives word that someone is not attending and they're also not paying tribute
+narrative_event = {
+	id = HouseIraeEilistraeeDance.5
+	desc = HouseIraeEilistraeeDance5
+	picture = irae_eilistraee_dance1
+	title = HouseIraeEilistraeeDanceTitle_tribute_no_payment
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Tribute accepted
+		name = HouseIraeEilistraeeDance5TT
+		custom_tooltip = {
+			text = irae_no_show_fallout
+		}
+	}
+}
+
+# Let's start the ritual
+narrative_event = {
+	id = HouseIraeEilistraeeDance.6
+	title = HouseIraeEilistraeeDanceTitle
+	picture = irae_eilistraee_dance1
+	window = "houseirae_custom_narrative"	
+	desc = {
+		trigger = {
+			trait = homosexual
+		}
+		text = HouseIraeEilistraeeDance6Lesbian
+	}
+	desc = {
+		trigger = {
+			NOT = { trait = homosexual }
+		}
+		text = HouseIraeEilistraeeDance6Straight
+	}	
+		
+	is_triggered_only = yes
+	immediate = {
+		random_list = {
+			25 = { # The clothed dancer
+				modifier = {
+					factor = 0
+					OR = {
+						has_global_flag = vala_sael_met
+						ai = yes
+					}
+				}
+				narrative_event = { id = HouseIraeEilistraeeDance.7 days = 7}
+			}
+			25 = { # A mysterious woman
+				modifier = {
+					factor = 0
+					OR = {
+						ai = yes
+						has_character_flag = mysterious_woman_met
+					}
+				}
+				narrative_event = { id = HouseIraeEilistraeeDance.8 days = 7}
+			}
+#			25 = { # The inquisitive male
+#				modifier = {
+#					factor = 0
+#					ai = yes
+#				}
+#				narrative_event = { id = HouseIraeEilistraeeDance.9 days = 7}
+#			}
+#			25 = { # Sleeping in the dorms
+#				modifier = {
+#					factor = 0
+#					ai = yes
+#				}
+#				narrative_event = { id = HouseIraeEilistraeeDance.10 days = 7}
+#			}
+		}
+		narrative_event = { id = HouseIraeEilistraeeDance.11 days = 14} 
+	}
+	option = {
+		name = HouseIraeEilistraeeDance6TT
+	}
+}
+
+narrative_event = { # The clothed dancer
+	id = HouseIraeEilistraeeDance.7
+	desc = HouseIraeEilistraeeDance7
+	picture = irae_eilistraee_dance2
+	title = HouseIraeEilistraeeDance7T
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+
+	option = { # Help her
+		ai_chance = { # We don't want the AI to spam multiple copies of Vala
+			factor = 0
+		}
+		name = HouseIraeEilistraeeDance7TTA
+		narrative_event = { id = HouseIraeEilistraeeDance.71 }
+	}
+	option = { # Leave her to her dance
+		name = HouseIraeEilistraeeDance7TTB
+	}
+}
+
+narrative_event = { # The kind route
+	id = HouseIraeEilistraeeDance.71
+	desc = HouseIraeEilistraeeDance71
+	picture = irae_eilistraee_dance3
+	title = HouseIraeEilistraeeDance7T
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+	
+	immediate = {
+		create_character = {
+			random_traits = no
+			dynasty = none
+			name = "Vala Sael"
+			female = yes
+			culture = drow
+			religion = ROOT
+			age = 18
+			attributes = {
+				martial = 5
+				diplomacy = 12
+				stewardship = 8
+				intrigue = 4
+				learning = 14
+			}
+			trait = charismatic_negotiator
+			trait = fair
+			trait = shy
+			trait = trusting
+			trait = mystic
+			trait = kind
+			trait = humble
+			trait = honest
+			trait = homosexual
+			trait = houseirae_drow
+			trait = houseirae_matron_mother # We want her around for a long time
+			trait = houseirae_others6 # Vala's portrait
+			flag = ai_flag_refuse_conversion
+			flag = special_npc
+			flag = society_join_block
+			flag = no_court_invites
+		}
+		new_character = {
+			save_event_target_as = vala_sael
+			set_character_flag = npc_vala_sael
+		}
+	}
+			
+	option = { # The dancing friend
+		name = HouseIraeEilistraeeDance71TTA
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance71TTFriends
+		}
+		set_global_flag = vala_sael_met
+		event_target:vala_sael = {
+			add_friend = ROOT
+		}
+	}
+	option = { # The dancing lover
+		trigger = {
+			trait = homosexual
+		}
+		tooltip_info = homosexual
+		name = HouseIraeEilistraeeDance71TTB
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance71TTLovers
+		}
+		set_global_flag = vala_sael_met
+		event_target:vala_sael = {
+			add_lover = ROOT		
+		}		
+
+	}
+	option = { # Bid her farewell
+		name = HouseIraeEilistraeeDance71TTC
+		hidden_tooltip = {
+			event_target:vala_sael = {
+				banish = yes
+				death = { death_reason = death_natural }
+			}
+		}
+		set_global_flag = vala_sael_met
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance71TTMoveOn
+		}
+	}
+}
+
+narrative_event = { # The mysterious woman
+	id = HouseIraeEilistraeeDance.8
+	desc = {
+		trigger = {
+			trait = homosexual
+		}
+		text = HouseIraeEilistraeeDance8Lesbian
+	}
+	desc = {
+		trigger = {
+			NOT = { trait = homosexual }
+		}
+		text = HouseIraeEilistraeeDance8Straight
+	}
+	picture = irae_eilistraee_dance4
+	title = HouseIraeEilistraeeDance8T
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+
+	option = { # Stay awhile and listen
+		name = HouseIraeEilistraeeDance8TTA
+		narrative_event = { id = HouseIraeEilistraeeDance.81 }
+		set_character_flag = mysterious_woman_met
+	}
+	option = { # Get back to the festival
+		name = HouseIraeEilistraeeDance8TTB
+		set_character_flag = mysterious_woman_met
+	}
+}
+
+narrative_event = { # Stayed for the story
+	id = HouseIraeEilistraeeDance.81
+	desc = HouseIraeEilistraeeDance81
+	picture = irae_eilistraee_dance4
+	title = HouseIraeEilistraeeDance8T
+	window = "houseirae_custom_narrative"	
+	is_triggered_only = yes
+
+	option = { # Stay awhile and listen
+		name = HouseIraeEilistraeeDance81TT
+		add_trait = houseirae_sword_dancer
+	}
+}
+
+
+
+
+
+
+# Moonlight Dance conclusion
+narrative_event = {
+	id = HouseIraeEilistraeeDance.11
+	desc = HouseIraeEilistraeeDance11
+	picture = irae_eilistraee_dance1
+	title = HouseIraeEilistraeeDanceTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	
+	option = { 
+		name = HouseIraeEilistraeeDance11TT
+		piety = 200
+		prestige = 100
+		if = {
+			limit = {
+				ai = no
+				trait = houseirae_sword_dancer
+			}
+			religion_authority = {
+				modifier = moonlight_dance_sword_dancer
+				years = 10
+			}						
+		}
+		else_if = {
+			limit = {
+				ai = no
+			}
+			religion_authority = {
+				modifier = moonlight_dance
+				years = 10
+			}
+		}		
+		if = {
+			limit = {
+				trait = houseirae_drider
+				NOT = { trait = houseirae_curse_shapeshifted_drider }
+			}
+			custom_tooltip = {
+				text = HouseIraeVhaeraunSacrificeRemoveDrider
+			}
+			remove_trait = houseirae_drider			
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				name = irae_held_moonlight_dance
+				months = 175
+				hidden = yes
+			}
+		}
+		character_event = { id = HouseIraeEilistraeeDance.12 }
+
+	}
+}
+### Moonlight Dance Flag management
+# Clears character flags related to the Moonlight Dance (hidden)
+character_event = {
+	id = HouseIraeEilistraeeDance.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		irae_clear_moonlight_flags = yes
+	}
+}
+
+
+
+
+#
+# Teaching another the art of Sword Dancing
+#
+character_event = { # Target decides if they want to take up the position of Sword Dancer
+	id = HouseIraeEilistraeeDance.13
+	desc = HouseIraeEilistraeeDance13
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	immediate = {
+		FROMFROM = {
+			save_event_target_as = sword_dancing_tutor
+			set_character_flag = sword_dancer_tutor
+		}
+		save_event_target_as = sword_dancing_pupil
+	}
+		
+	option = { # Accept the training
+		name = HouseIraeEilistraeeDance13TTA
+		set_character_flag = irae_sword_dancer_training
+		event_target:sword_dancing_tutor = {
+			character_event = { id = HouseIraeEilistraeeDance.14 }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				OR = {
+					trait = diligent
+					trait = zealous
+				}
+			}
+		}
+	}
+	option = { # Decline the training
+		name = HouseIraeEilistraeeDance13TTB
+		set_character_flag = irae_refused_sword_dancer_training
+		event_target:sword_dancing_tutor = {
+			character_event = { id = HouseIraeEilistraeeDance.15 }
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				OR = {
+					trait = slothful
+					trait = cynical
+				}
+			}
+		}
+	}
+}
+
+character_event = { # Tutor is notified of the character's approval
+	id = HouseIraeEilistraeeDance.14
+	desc = HouseIraeEilistraeeDance14
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Good!
+		name = HouseIraeEilistraeeDance14TT
+		event_target:sword_dancing_pupil = {
+		}
+	}
+}
+
+character_event = { # Tutor is notified of the character's disapproval
+	id = HouseIraeEilistraeeDance.15
+	desc = HouseIraeEilistraeeDance15
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Disappointing
+		name = HouseIraeEilistraeeDance15TT
+		clr_character_flag = sword_dancer_tutor
+	}
+}
+
+character_event = { # Sword Dancing training is complete
+	id = HouseIraeEilistraeeDance.16
+	desc = HouseIraeEilistraeeDance16
+	picture = irae_sword_dancer_training
+	trigger = {
+		has_character_flag = irae_sword_dancer_training
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+		modifier = {
+			factor = 0.5
+			OR = {
+				trait = diligent
+				trait = patient
+				trait = zealous
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				trait = slothful
+				trait = shy
+			}
+		}
+	}
+	
+	option = { # My training is complete!
+		name = HouseIraeEilistraeeDance16TT
+		clr_character_flag = irae_sword_dancer_training
+		add_trait = houseirae_sword_dancer
+		event_target:sword_dancing_tutor = {
+			character_event = { id = HouseIraeEilistraeeDance.17 }
+		}
+		ai_chance = { 
+			factor = 10
+		}
+	}
+	option = { # My training is complete! Lesbian option
+		name = HouseIraeEilistraeeDance16TTLesbian
+		trigger = {
+			trait = homosexual
+		}
+		tooltip_info = homosexual
+		clr_character_flag = irae_sword_dancer_training
+		add_trait = houseirae_sword_dancer
+		event_target:sword_dancing_tutor = {
+			character_event = { id = HouseIraeEilistraeeDance.18 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance16TTLesbianTT
+		}
+		ai_chance = { 
+			factor = 60
+		}	
+	}
+	option = { # My training is complete! Friend option
+		name = HouseIraeEilistraeeDance16TTFriends
+		trigger = {
+			event_target:sword_dancing_tutor = {
+				NOT = {
+					is_friend = event_target:sword_dancing_pupil
+				}
+			}
+		}
+		clr_character_flag = irae_sword_dancer_training
+		add_trait = houseirae_sword_dancer
+		event_target:sword_dancing_tutor = {
+			character_event = { id = HouseIraeEilistraeeDance.19 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance16TTFriendsTT
+		}
+		ai_chance = { 
+			factor = 60
+		}		
+	}	
+}	
+character_event = { # Tutor is notified of the training completion
+	id = HouseIraeEilistraeeDance.17
+	desc = HouseIraeEilistraeeDance17
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Yayifications!
+		name = HouseIraeEilistraeeDance17TT
+		clr_character_flag = sword_dancer_tutor
+	}
+}
+
+character_event = { # Tutor is notified of the training completion, asked to be a lover
+	id = HouseIraeEilistraeeDance.18
+	desc = HouseIraeEilistraeeDance18
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Yes!
+		name = HouseIraeEilistraeeDance18TTA
+		if = {
+			limit = {
+				NOT = {
+					is_lover = event_target:sword_dancing_pupil
+				}
+			}
+			add_lover = event_target:sword_dancing_pupil
+		}
+		clr_character_flag = sword_dancer_tutor
+		event_target:sword_dancing_pupil = {
+			character_event = { id = HouseIraeEilistraeeDance.181 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance18TTLesbianTT
+		}
+		ai_chance = { 
+			factor = 10
+			modifier = { 
+				factor = 0
+				NOR = {
+					trait = lustful
+					trait = homosexual
+					trait = hedonist
+					trait = seductress
+				}
+			}
+		}		
+	}
+	option = { # No.
+		name = HouseIraeEilistraeeDance18TTB
+		clr_character_flag = sword_dancer_tutor
+		event_target:sword_dancing_pupil = {
+			character_event = { id = HouseIraeEilistraeeDance.182 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance18TTBigNoTT
+		}
+		ai_chance = { 
+			factor = 10
+			modifier = { 
+				factor = 0
+				OR = {
+					trait = lustful
+					trait = homosexual
+					trait = hedonist
+					trait = seductress
+				}
+			}			
+		}		
+	}	
+}
+
+character_event = { # Trainee is notified of the lover decision - Yes
+	id = HouseIraeEilistraeeDance.181
+	desc = HouseIraeEilistraeeDance181
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Rawr!
+		name = HouseIraeEilistraeeDance181TT
+	}
+}
+
+character_event = { # Trainee is notified of the lover decision - No
+	id = HouseIraeEilistraeeDance.182
+	desc = HouseIraeEilistraeeDance182
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Oh.
+		name = HouseIraeEilistraeeDance182TT
+	}
+}
+
+character_event = { # Tutor is notified of the training completion, asked to be a close friend
+	id = HouseIraeEilistraeeDance.19
+	desc = HouseIraeEilistraeeDance19
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Yes!
+		name = HouseIraeEilistraeeDance19TTA
+		add_friend = event_target:sword_dancing_pupil
+		clr_character_flag = sword_dancer_tutor
+		event_target:sword_dancing_pupil = {
+			character_event = { id = HouseIraeEilistraeeDance.191 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance19TTFriendsTT
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 10
+				OR = {
+					trait = gregarious
+					trait = drunkard
+				}
+			}
+		}
+	}
+	option = { # No.
+		name = HouseIraeEilistraeeDance19TTB
+		clr_character_flag = sword_dancer_tutor
+		event_target:sword_dancing_pupil = {
+			character_event = { id = HouseIraeEilistraeeDance.192 }
+		}
+		custom_tooltip = {
+			text = HouseIraeEilistraeeDance19TTBigNoTT
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				OR = {
+					trait = gregarious
+					trait = drunkard
+				}
+			}
+		}		
+	}	
+}
+
+character_event = { # Trainee is notified of the friend decision - Yes
+	id = HouseIraeEilistraeeDance.191
+	desc = HouseIraeEilistraeeDance191
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Yayifications!
+		name = HouseIraeEilistraeeDance191TT
+	}
+}
+
+character_event = { # Trainee is notified of the friend decision - No
+	id = HouseIraeEilistraeeDance.192
+	desc = HouseIraeEilistraeeDance192
+	picture = irae_sword_dancer_training
+	is_triggered_only = yes
+	
+	option = { # Oh.
+		name = HouseIraeEilistraeeDance192TT
+	}
+}		

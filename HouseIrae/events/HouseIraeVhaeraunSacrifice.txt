@@ -1,0 +1,475 @@
+namespace = HouseIraeVhaeraunSacrifice
+
+#
+# Vhaeraun Sacrifice
+# Based off of the Lilith Blood Moon Sacrifice of Dark World Reborn by dewguru
+#
+
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.1
+	desc = HouseIraeVhaeraunSacrifice1
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle
+	window = "houseirae_custom_narrative"	
+
+	is_triggered_only = yes
+	
+	option = { # Let us begin
+		name = HouseIraeVhaeraunSacrifice1TT
+		any_courtier = { # Our courtiers who will be in attendance
+			limit = {
+				prisoner = no
+				war = no
+				NOT = { trait = incapable }
+				is_adult = yes
+				NOR = {
+					trait = greedy
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeVhaeraunSacrifice.2 } # Handles folks coming out of hiding and clearing and former ritual flags
+		}		
+		any_courtier = { # Our available courtiers who will NOT be in attendance and need to pay tribute
+			limit = {
+				prisoner = no
+				war = no
+				NOT = { trait = incapable }
+				is_adult = yes
+				OR = {
+					NOT = { 
+						religion = vhaeraun_religion
+					}
+					trait = greedy
+					trait = cynical
+					trait = houseirae_secret_eilistraee
+					trait = houseirae_secret_lolth
+				}
+			}
+			character_event = { id = HouseIraeVhaeraunSacrifice.3 } # Handles the check to see if they've the money to pay, and subsequent events
+		}		
+		any_vassal = { # Vassals who are attending
+			limit = {
+				is_adult = yes
+				prisoner = no
+				war = no
+				NOT = { trait = incapable }
+				NOR = {
+					trait = greedy
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeVhaeraunSacrifice.2 } # Handles folks coming out of hiding and setting the end of ritual flag clearing
+		}
+		any_vassal = { # Vassals who are NOT attending and need to pay tribute
+			limit = {
+				is_adult = yes
+				prisoner = no
+				war = no
+				is_female = yes
+				NOT = { trait = incapable }
+				OR = {
+					NOT = { 
+						religion = vhaeraun_religion
+					}
+					trait = greedy
+					trait = cynical
+				}
+			}
+			character_event = { id = HouseIraeVhaeraunSacrifice.3 } # Handles the check to see if they've the money to pay, and subsequent events
+		}
+		hidden_tooltip = {
+			character_event = { id = HouseIraeVhaeraunSacrifice.6 } # Starts the Sacrifice Ritual
+		}
+	}
+}
+# Vassals and Courtiers Summoned and attending Sacrifice event (handles people coming out of hiding and character flags)
+character_event = {
+	id = HouseIraeVhaeraunSacrifice.2
+	desc = HouseIraeVhaeraunSacrifice2
+	picture = GFX_evt_china_diplomatic_incident
+
+	is_triggered_only = yes
+
+	option = { # I'm looking forward to the event
+		name = HouseIraeVhaeraunSacrifice2TT
+		set_character_flag = irae_attending_sacrifice
+		if = {
+			limit = { trait = in_hiding	}
+			remove_trait = in_hiding
+			add_character_modifier = {
+				name = went_out_of_hiding_timer
+				duration = 180
+				hidden = yes
+			}
+			hidden_tooltip = { character_event = { id = CM.6400 } } # Notify plotters and family
+		}
+		hidden_tooltip = { character_event = { id = HouseIraeVhaeraunSacrifice.12 days = 45 } } # Clears Sacrifice flags at the end of the event
+	}
+}
+# Vassals and Courtiers who aren't attending determine if they pay tribute to be excluded from Sacrifice Ritual
+character_event = {
+	id = HouseIraeVhaeraunSacrifice.3
+	desc = HouseIraeVhaeraunSacrifice3
+	picture = GFX_evt_china_diplomatic_incident
+	
+	is_triggered_only = yes
+	
+	option = { # Pay if they can
+		name = HouseIraeVhaeraunSacrifice3TTPay
+		trigger = {
+			wealth = 5
+		}
+		FROM = {
+			narrative_event = {	id = HouseIraeVhaeraunSacrifice.4 } # Tribute payment event for the liege
+		}
+		wealth = -5 # Personal wealth, the reason why the payment is higher is due to a gathering of coin from others (taxes for vassals, businesses or family for courtiers)
+		prestige = -10 # A hit on prestige for not attending and also due to the person collecting money from others to cover tribute
+		ai_chance = { # If the ai has this option, this is the one we want them to choose automatically, unless they're greedy or zealous
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					ai_greed = -25
+					ai_zeal = 30
+				}
+			}
+		}
+	}
+	option = { # Don't pay
+		name = HouseIraeVhaeraunSacrifice3TTNoPay
+		FROM = {
+			narrative_event = { id = HouseIraeVhaeraunSacrifice.5 } # Tribute payment isn't coming
+		}
+		tooltip = {
+			FROM = {
+				opinion = {
+					modifier = irae_opinion_refused_sacrifice
+					who = ROOT
+				}
+				any_vassal = {
+					limit = { has_character_flag = irae_attending_sacrifice }
+					opinion = {
+						modifier = irae_opinion_refused_sacrifice
+						who = ROOT
+					}
+				}
+				any_courtier = {
+					limit = { has_character_flag = irae_attending_sacrifice }
+					opinion = {
+						modifier = irae_opinion_refused_sacrifice
+						who = ROOT
+					}
+				}
+			}
+		}
+		opinion = {
+			modifier = irae_opinion_sacrifice_heretic_liege
+			who = FROM			
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# Liege holding the Sacrifice ritual receives the tribute payment for the absence
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.4
+	desc = HouseIraeVhaeraunSacrifice4
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle_tribute_payment
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Tribute accepted
+		name = HouseIraeVhaeraunSacrifice4TT
+		wealth = 10
+	}
+}
+# Liege holding the Sacrifice ritual receives word that someone is not attending and they're also not paying tribute
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.5
+	desc = HouseIraeVhaeraunSacrifice5
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle_tribute_no_payment
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Tribute accepted
+		name = HouseIraeVhaeraunSacrifice5TT
+		custom_tooltip = {
+			text = irae_no_show_fallout
+		}
+	}
+}
+
+# Let's start the ritual (hidden for female / male routing options)
+character_event = {
+	id = HouseIraeVhaeraunSacrifice.6
+	hide_window = yes # Nothing to see here
+	is_triggered_only = yes
+	immediate = {
+		#  5 days out
+			narrative_event = { id = HouseIraeVhaeraunSacrifice.7 days = 5} 
+		#  10 days out
+			narrative_event = { id = HouseIraeVhaeraunSacrifice.7 days = 10} 
+		#  15 days out
+			narrative_event = { id = HouseIraeVhaeraunSacrifice.7 days = 15} 
+		#  20 days out
+			narrative_event = { id = HouseIraeVhaeraunSacrifice.7 days = 20} 
+		# Sacrifice completed 25 days out
+		narrative_event = { id = HouseIraeVhaeraunSacrifice.11 days = 25} 
+	}
+}
+
+# Sacrifice Ritual begins
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.7
+	desc = HouseIraeVhaeraunSacrifice7
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle	
+	is_triggered_only = yes
+	window = "houseirae_custom_narrative"	
+
+	immediate = {
+		if = {
+			limit = {
+				irae_check_for_valid_artifact_sacrifice = yes # A scripted_trigger to check for a valid sacrifice target
+			}
+			irae_select_artifact_for_sacrifice = yes # A scripted_effect to set the event target
+		}
+	}
+	option = { # Let's sacrifice some gold
+		trigger = {
+			wealth = 50
+		}
+		name = HouseIraeVhaeraunSacrificeGold
+		wealth = -50
+		narrative_event = { id = HouseIraeVhaeraunSacrifice.9 } # Sacrifice Event
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+		}
+	}
+	option = { # Let's sacrifice a minor artifact
+		trigger = {
+			irae_check_for_valid_artifact_sacrifice = yes
+		}
+		name = HouseIraeVhaeraunSacrificeArtifact
+		narrative_event = { id = HouseIraeVhaeraunSacrifice.91 } # Sacrifice Event
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+		}
+	}
+	option = { # Let's sacrifice some fool's gold
+		name = HouseIraeVhaeraunSacrificeFoolsGold
+		narrative_event = { id = HouseIraeVhaeraunSacrifice.10 }
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0.5
+				trait = charitable
+			}
+		}
+	}
+}
+
+# Gold Sacrifice decision event
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.9
+	desc = HouseIraeVhaeraunSacrifice9
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Sacrifice them
+		name = HouseIraeVhaeraunSacrifice9TTA
+		piety = 50
+	}
+}
+# Artifact Sacrifice decision event
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.91
+	desc = HouseIraeVhaeraunSacrifice91
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = { # Sacrifice them
+		name = HouseIraeVhaeraunSacrifice91TTA
+		piety = 50
+		event_target:irae_artifact_sacrifice = {
+			destroy_artifact = yes
+		}
+		if = { # Vhaeraun enjoys the destruction of House Irae artifacts
+			limit = {
+				event_target:irae_artifact_sacrifice = {
+					has_artifact_flag = irae
+				}
+			}
+			subtract_variable = { which = vhaeraun_displeased value = 1 }
+			custom_tooltip = {
+				text = HouseIraeVhaeraunSacrifice9TTMortalEnemy
+			}
+		}
+	}
+}
+# Sacrificing some fool's gold
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.10
+	desc = HouseIraeVhaeraunSacrifice10
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = HouseIraeVhaeraunSacrifice10TT
+		piety = 25
+		hidden_tooltip = {
+			change_variable = { which = vhaeraun_displeased value = 1 }
+		}
+	}
+}
+
+# Sacrifice conclusion
+narrative_event = {
+	id = HouseIraeVhaeraunSacrifice.11
+	desc = HouseIraeVhaeraunSacrifice11
+	picture = irae_vhaeraun_sacrifice
+	title = HouseIraeVhaeraunSacrificeTitle
+	window = "houseirae_custom_narrative"	
+	
+	is_triggered_only = yes 
+	
+	
+	option = { # Vhaeraun is excited for all the delicious sacrifices made
+		name = HouseIraeVhaeraunSacrificeExcited
+		trigger = {
+			check_variable = { which = vhaeraun_displeased value <= 0 }
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			religion_authority = {
+				modifier = vhaeraun_sacrifice
+				years = 10
+			}
+		}
+		piety = 200
+		prestige = 100
+		if = {
+			limit = {
+				trait = houseirae_drider
+				NOT = { trait = houseirae_curse_shapeshifted_drider }
+			}
+			custom_tooltip = {
+				text = HouseIraeVhaeraunSacrificeRemoveDrider
+			}
+			remove_trait = houseirae_drider			
+		}
+		hidden_tooltip = {
+			set_variable = { which = vhaeraun_displeased value = 0 }
+			add_character_modifier = {
+				name = irae_held_wealthsacrifice
+				months = 175
+				hidden = yes
+			}
+		}
+		character_event = { id = HouseIraeVhaeraunSacrifice.12 }
+	}
+	option = { # Vharaun is pleased at the sacrifices made
+		name = HouseIraeVhaeraunSacrificePleased
+		trigger = {
+			check_variable = { which = vhaeraun_displeased value == 1 }
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			religion_authority = {
+				modifier = vhaeraun_sacrifice
+				years = 10
+			}
+		}
+		piety = 100
+		prestige = 50
+		hidden_tooltip = {
+			set_variable = { which = vhaeraun_displeased value = 0 }
+			add_character_modifier = {
+				name = irae_held_wealthsacrifice
+				months = 175
+				hidden = yes
+			}
+		}
+		character_event = { id = HouseIraeVhaeraunSacrifice.12 }
+	}
+	option = { # Vhaeraun is displeased at the sacrifices made
+		name = HouseIraeVhaeraunSacrificeDispleased
+		trigger = {
+			check_variable = { which = vhaeraun_displeased value == 2 }
+		}
+		piety = -100
+		prestige = -50
+		hidden_tooltip = {
+			set_variable = { which = vhaeraun_displeased value = 0 }
+			add_character_modifier = {
+				name = irae_held_wealthsacrifice
+				months = 175
+				hidden = yes
+			}
+		}
+		character_event = { id = HouseIraeVhaeraunSacrifice.12 }
+	}
+	option = { # Vhaeraun is angered at the sacrifices made
+		name = HouseIraeVhaeraunSacrificeAngered
+		trigger = {
+			check_variable = { which = vhaeraun_displeased value = 3 }
+		}
+		piety = -200
+		prestige = -100
+		if = {
+			limit = {
+				NOT = { trait = houseirae_drider }
+			}
+			custom_tooltip = {
+				text = HouseIraeVhaeraunSacrificeCursed
+			}	
+			add_trait = houseirae_drider
+		}
+		hidden_tooltip = {
+			set_variable = { which = vhaeraun_displeased value = 0 }
+			add_character_modifier = {
+				name = irae_held_wealthsacrifice
+				months = 175
+				hidden = yes
+			}
+		}
+		character_event = { id = HouseIraeVhaeraunSacrifice.12 }
+	}
+}
+### Sacrifice Flag management
+# Clears character flags related to the Sacrifice Ritual (hidden)
+character_event = {
+	id = HouseIraeVhaeraunSacrifice.12
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		irae_clear_sacrifice_flags = yes
+	}
+}

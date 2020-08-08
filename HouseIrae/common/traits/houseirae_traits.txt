@@ -1,0 +1,240 @@
+irae_pregnant_hidden = {
+	hidden = yes
+	random = no
+	customizer = no
+	fertility = -500
+}
+
+irae_pregnant = {
+	hidden = no
+	random = no
+	customizer = no
+	fertility = -500
+}
+
+houseirae_no_marry = {
+	hidden = yes
+	random = no
+	customizer = no
+	cannot_marry = yes
+}
+houseirae_halfelf = {
+	customizer = no
+	random = no
+	opposites = {
+		houseirae_drow
+	}
+	sex_appeal_opinion = 5 # Not as beautiful as regular drow, not as mundane as humans
+	diplomacy = 1
+	intrigue = 1 
+}	
+
+houseirae_drow_child = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_halfelf_child
+	}	
+}
+
+houseirae_halfelf_child = {
+	hidden = yes
+	random = no
+	customizer = no
+	opposites = {
+		houseirae_drow_child
+	}
+}
+
+houseirae_matron_mother = {
+	customizer = no
+	random = no
+	immortal = yes
+	hidden = yes
+	dynasty_opinion = 200
+	defensive_plot_power_modifier = 20
+}
+
+houseirae_sword_dancer = {
+	customizer = no
+	random = no
+	leader = yes
+	martial = 3
+	diplomacy = 1
+	same_opinion = 20
+	combat_rating = 20
+	light_infantry_offensive = 0.2
+	heavy_infantry_offensive = 0.2
+}
+
+houseirae_drider = {
+	customizer = no
+	random = no
+	general_opinion = -20 # The world views driders as pariahs
+	fertility = -0.5
+	intrigue = 5
+	martial = 5
+	diplomacy = -5
+	stewardship = -5
+	combat_rating = 25
+	same_opinion = 20 # Driders tend to view each other more fairly
+	eilistraee_religion_opinion = -50
+	opinion_of_eilistraee_religion = -50
+	lolth_religion_opinion = -25
+	opinion_of_lolth_religion = -25
+	vhaeraun_religion_opinion = -10
+	opinion_of_vhaeraun_religion = -10
+	ai_rationality = -100
+	ai_honor = -100
+	ai_greed = 25
+	ai_ambition = 100
+}
+
+houseirae_drow = {
+	customizer = no
+	random = no
+	opposites = {
+		houseirae_halfelf
+	}
+	sex_appeal_opinion = 10 
+	intrigue = 2
+	martial = 1 
+}
+
+houseirae_laelas_consort = {
+	random = no
+	customizer = no
+	diplomacy = -2 # Everyone sees your tattoo and knows to avoid you
+	vassal_opinion = -10 # 'Enslaved' by a witch
+}
+
+houseirae_branded_irae = {
+	random = no
+	customizer = no
+}
+
+houseirae_secret_lolth = {
+	random = no
+	customizer = no
+	is_visible = {
+		OR = {
+			character = FROM
+			religion = lolth_religion
+		}
+	}
+	lolth_religion_opinion = 5
+}
+
+houseirae_secret_eilistraee = {
+	random = no
+	customizer = no
+	is_visible = {
+		OR = {
+			character = FROM
+			religion = eilistraee_religion
+		}
+	}
+	eilistraee_religion_opinion = 5
+}
+
+houseirae_secret_vhaeraun = {
+	random = no
+	customizer = no
+	is_visible = {
+		OR = {
+			character = FROM
+			religion = vhaeraun_religion
+		}
+	}
+	vhaeraun_religion_opinion = 5
+}
+
+houseirae_curse_frail = { # Tamsine's curse manifests itself as extreme fraility.
+	random = no
+	customizer = no
+	health = 8 # Overwhelming desire to stay alive (and to prevent this character from dying too quickly)
+	martial = -5
+	fertility = -1 # Kinda hard to bed someone who is falling apart
+	combat_rating = -10
+	learning = 5 # Being in bed all day means more time for books
+	incapacitating = yes
+}	
+
+houseirae_curse_chaste = { # Tamsine's curse manifests itself as asexuality.
+	random = no
+	customizer = no
+	health = 2 # A healthy, sexless lifestyle
+	fertility = -10
+	cannot_marry = yes
+	ai_honor = 100
+}	
+
+houseirae_curse_murder = { # Tamsine's curse manifests itself as murderous intention.
+	random = no
+	customizer = no
+	assassinate_chance_modifier = 0.25
+	ai_ambition = 100
+	ai_rationality = -100
+	ai_honor = -100
+	dynasty_opinion = -20
+}
+
+houseirae_curse_paranoid = { # Tamsine's curse manifests itself as extreme paranoia.
+	random = no
+	customizer = no
+	defensive_plot_power_modifier = 0.25
+	ai_rationality = -100
+	ai_honor = -100
+	ai_ambition = -100
+}
+
+houseirae_curse_ambition = { # Tamsine's curse manifests itself as extreme ambition and ability.
+	random = no
+	customizer = no
+	martial = 10
+	diplomacy = 10
+	stewardship = 10
+	learning = 10
+	intrigue = 10
+	ai_ambition = 100
+	dynasty_opinion = -200
+}
+
+houseirae_curse_shapeshifted_drider = { # Tamsine's curse manifests itself as the child turns into a drider.
+	random = no
+	customizer = no
+}
+
+houseirae_curse_shapeshifted_gender = { # Tamsine's curse manifests itself as the child turns into the opposite gender.
+	random = no
+	customizer = no
+	sex_appeal_opinion = -20 # Everyone knows you were once another sex
+	fertility = 0.1 # Experimentation of your new body's "abilities"
+}
+
+houseirae_curse_dark_whispers = { # Uh oh...
+	random = no
+	customizer = no
+	hidden = yes
+	defensive_plot_power_modifier = 100
+}
+
+houseirae_curse_generic = {
+	random = no
+	customizer = no
+}
+
+houseirae_no_inherit = {
+	random = no
+	customizer = no
+	hidden = yes
+	cannot_inherit = yes
+}
+
+houseirae_motherly_love_trait = {
+	random = no
+	customizer = no
+	hidden = yes
+	is_epidemic = yes
+}

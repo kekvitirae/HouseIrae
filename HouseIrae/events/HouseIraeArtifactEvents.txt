@@ -1,0 +1,334 @@
+namespace = HouseIraeArtifacts
+
+character_event = {
+    id = HouseIraeArtifacts.1
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+		random_list = {
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_cloak
+							}
+						}
+					}
+					add_artifact = irae_cloak
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_hand_crossbow
+							}
+						}
+					}
+					add_artifact = irae_hand_crossbow
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_sterility_charm
+							}
+						}
+					}
+					add_artifact = irae_sterility_charm
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_loincloth
+							}
+						}
+					}
+					add_artifact = irae_loincloth
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_leather_armor
+							}
+						}
+					}
+					add_artifact = irae_leather_armor
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_sexy_dress
+							}
+						}
+					}
+					add_artifact = irae_sexy_dress
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_sexy_thong
+							}
+						}
+					}
+					add_artifact = irae_sexy_thong
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_kekvit
+							}
+						}
+					}
+					add_artifact = irae_statue_of_kekvit
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_belladonna
+							}
+						}
+					}
+					add_artifact = irae_statue_of_belladonna
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_freya
+							}
+						}
+					}
+					add_artifact = irae_statue_of_freya
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_deionarra
+							}
+						}
+					}
+					add_artifact = irae_statue_of_deionarra
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_khaldune
+							}
+						}
+					}
+					add_artifact = irae_statue_of_khaldune
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_tamsine
+							}
+						}
+					}
+					add_artifact = irae_statue_of_tamsine
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_statue_of_meeshka
+							}
+						}
+					}
+					add_artifact = irae_statue_of_meeshka
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+						save_event_target_as = irae_artifact
+					}
+				}
+				10 = {
+					trigger = {
+						FROMFROM = {
+							NOT = {
+								has_artifact = irae_genealogy
+							}
+						}
+					}
+					add_artifact = irae_genealogy
+					new_artifact = {
+						transfer_artifact = {
+							from = ROOT
+							to = FROMFROM
+						}
+					}
+				}
+			}
+		FROMFROM = { letter_event = { id = HouseIraeArtifacts.2 } } 
+	}
+}
+
+letter_event = {
+    id = HouseIraeArtifacts.2
+    desc = HouseIraeArtifacts2
+    border = GFX_event_letter_frame_diplomacy
+
+    is_triggered_only = yes
+
+    option = { 
+        name = HouseIraeArtifacts2T
+    }
+}
+
+character_event = {
+	id = HouseIraeArtifacts.3
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		OR = {
+			mother_even_if_dead = {
+				has_artifact = irae_genealogy
+			}
+			true_father_even_if_dead = {
+				has_artifact = irae_genealogy
+			}
+		}
+	}
+	
+	immediate = {
+		random = {
+			chance = 20
+			add_trait = houseirae_drow
+			add_trait = houseirae_drow_child
+			remove_trait = inbred
+		}
+	}
+}
+
+character_event = { # Destroys the Kekvit Statue to prevent heirs from getting the sweet sweet favor
+	id = HouseIraeArtifacts.4
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_artifact = irae_statue_of_kekvit
+	}
+	immediate = {
+		destroy_artifact = irae_statue_of_kekvit
+	}
+}
+
+character_event = { 
+	id = HouseIraeArtifacts.5
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		has_artifact = irae_statue_of_kekvit
+		NOT = {
+			trait = houseirae_laelas_consort
+		}
+	}
+	immediate = {
+		add_offmap_currency = {
+			offmap = offmap_irae
+			value = 120
+		}
+	}
+}
+

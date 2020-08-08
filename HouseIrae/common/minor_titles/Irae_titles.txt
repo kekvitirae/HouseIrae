@@ -1,0 +1,183 @@
+title_irae_matron = {
+	is_offmap_holder = yes
+	offmap_power = offmap_irae
+	show_as_title = yes
+	dignity = 1000 
+}
+
+#
+# Drow
+#
+
+title_houseirae_honored_daughter = { # Your favorite daughter
+	is_high_prio = no
+	realm_in_name = yes
+	dignity = 0.9
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+	counts_as_purple_born = yes
+
+	monthly_salary = 0.3
+	monthly_prestige = 1
+
+	allowed_to_hold = {
+		prisoner = no
+		is_female = yes
+		NOT = { trait = incapable }
+		is_child_of = FROM
+		dynasty = FROM
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		NOT = {
+			trait = bastard
+		}		
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		NOT = {
+			religion = vhaeraun_religion
+		}
+	}
+	revoke_trigger = {
+		
+	}
+
+	gain_effect = {
+		add_character_modifier = {
+			name = modifier_houseirae_honored_daughter
+			duration = -1
+		}
+	}
+
+	lose_effect = {
+		remove_character_modifier = modifier_houseirae_honored_daughter
+	}
+	retire_effect = {
+		remove_character_modifier = modifier_houseirae_honored_daughter
+	}	
+	message = yes
+}	
+
+title_houseirae_honored_son = { # Your favorite son
+	is_high_prio = no
+	realm_in_name = yes
+	dignity = 0.9
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+	counts_as_purple_born = yes
+
+	monthly_salary = 0.3
+	monthly_prestige = 1
+
+	allowed_to_hold = {
+		prisoner = no
+		is_female = no
+		NOT = { trait = incapable }
+		is_child_of = FROM
+		dynasty = FROM
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		NOT = {
+			trait = bastard
+		}		
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		NOT = {
+			religion = lolth_religion
+		}
+	}
+	revoke_trigger = {
+		
+	}
+
+	gain_effect = {
+		add_character_modifier = {
+			name = modifier_houseirae_honored_son
+			duration = -1
+		}
+	}
+
+	lose_effect = {
+		remove_character_modifier = modifier_houseirae_honored_son
+	}
+	retire_effect = {
+		remove_character_modifier = modifier_houseirae_honored_son
+	}	
+	message = yes
+}
+
+title_houseirae_yathtallar = { # Temple High Priestess
+	is_high_prio = no
+	realm_in_name = yes
+	dignity = 0.9
+	grant_limit = 1
+	opinion_effect = 10
+	revoke_allowed = yes
+
+
+	monthly_salary = 0.3
+	monthly_prestige = 1
+
+	allowed_to_hold = {
+		prisoner = no
+		is_female = yes
+		NOT = { trait = incapable }
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		OR = {
+			religion = lolth_religion
+			religion = eilistraee_religion
+		}
+		OR = {
+			is_theocracy = yes
+			has_job_title = job_spiritual
+		}
+		liege = { character = FROM }
+	}
+	
+	allowed_to_grant = {
+		OR = {
+			culture = drow
+			trait = houseirae_drow
+		}
+		OR = {
+			religion = lolth_religion
+			religion = eilistraee_religion
+		}
+	}
+	revoke_trigger = {
+		
+	}
+
+	gain_effect = {
+		add_character_modifier = {
+			name = modifier_houseirae_yathtallar
+			duration = -1
+		}	
+	}
+
+	lose_effect = {
+		remove_character_modifier = modifier_houseirae_yathtallar
+	}
+	retire_effect = {
+		remove_character_modifier = modifier_houseirae_yathtallar
+	}	
+	message = yes
+}

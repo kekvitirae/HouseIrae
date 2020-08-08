@@ -1,0 +1,7 @@
+irae_matriarch = {
+	is_prefix = yes
+}
+
+irae_consort = {
+	is_prefix = yes
+}

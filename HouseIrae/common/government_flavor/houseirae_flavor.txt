@@ -1,0 +1,9 @@
+government_flavor = {
+	name = gov_seldarine_theocracy
+	graphics = GFX_seldarine_republic
+	priority = 4
+	trigger = {
+		is_theocracy = yes
+		government = theocracy_seldarine_government
+	}
+}

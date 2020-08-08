@@ -1,0 +1,166 @@
+upgrade_dark_torture_chamber = {
+	picture = GFX_upgrade_icon_skulls
+
+	potential = { 
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	allow = {
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	active = {
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+
+	flags = {
+		scary
+		secluded
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 550
+	gold_cost_ticking = 1
+	local_modifier = {
+		
+	}
+	owner_modifier = {
+		fertility = 0.1
+		custom_modifier_text = execution_possible_modifier_tt
+		custom_modifier_text = intimidation_possible_modifier_tt
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 2
+			has_evil_trait_trigger = yes
+		}
+	}
+}
+
+upgrade_dark_spikes = {
+	picture = GFX_upgrade_icon_skulls
+
+	potential = { 
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	allow = {
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	active = {
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+
+	flags = {
+		scary
+		is_plural
+	}
+	build_time = 24
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	local_modifier = {
+		siege_defence = 0.05
+	}
+	owner_modifier = {
+		custom_modifier_text = execution_possible_modifier_tt
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 3
+			trait = impaler
+		}
+		modifier = { #can the pope PLS stop building spikes?!
+			factor = 0
+			k_papal_state = {
+    			holder_scope = {
+    				character = THIS
+    			}
+    		}
+		}
+	}
+}
+
+upgrade_dark_dungeon = { # Dungeon 
+	picture = GFX_upgrade_icon_skulls
+	potential = { 
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	allow = { 
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+	active = {
+		OR = {
+			religion = vhaeraun_religion
+			religion = lolth_religion
+		}
+	}
+
+	flags = {
+		room
+		is_singular
+		scary
+	}
+	build_time = 24
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	owner_modifier = {
+		arrest_chance_modifier = 0.1
+	}
+}
+
+upgrade_spider_throne = { # a throne made of skulls
+	# ... A throne made of skulls and other bones
+	picture = GFX_upgrade_icon_skulls
+	potential = {	
+		religion = lolth_religion
+	}
+	allow = { 
+		religion = lolth_religion
+		is_female = yes
+	}
+	active = {
+		religion = lolth_religion
+		is_female = yes
+	}
+
+	flags = {
+		is_singular
+		scary
+	}
+	build_time = 10
+	gold_cost_flat = 450
+	gold_cost_ticking = 1
+	owner_modifier = {
+		cruel_opinion = 20
+	}
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 2
+			has_evil_trait_trigger = yes
+		}
+	}
+}

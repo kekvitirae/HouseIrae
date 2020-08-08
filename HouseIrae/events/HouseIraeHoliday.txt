@@ -1,0 +1,140 @@
+namespace = HouseIraeHoliday
+
+character_event = {
+	id = HouseIraeHoliday.1
+	ai = no
+	desc = {
+		trigger = {
+			religion_group = christian
+			# real_month_of_year = 11
+			month = 11
+		}
+		text = HouseIraeHoliday1Christmas
+	}
+	desc = {
+		trigger = {
+			religion_group = jewish_group
+			# real_month_of_year = 11
+			month = 11
+		}
+		text = HouseIraeHoliday1Hanukkah
+	}
+	desc = {
+		trigger = {
+			# real_month_of_year = 7
+			# NOT = { real_month_of_year = 8 }
+			month = 7
+			NOT = { month = 8 }
+		}
+		text = HouseIraeHoliday1Birthday
+	}
+	picture = GFX_drow_startf
+	title = HouseIraeHoliday1T
+	window = "houseirae_custom_narrative"	
+	trigger = {
+		OR = {
+			AND = {
+				real_month_of_year = 11
+				# month = 11
+				OR = {
+					religion_group = christian
+					religion_group = jewish_group
+				}
+			}
+			AND = {
+				real_month_of_year = 7
+				NOT = { real_month_of_year = 8 }
+				# month = 7
+				# NOT = { month = 8 }
+			}
+		}
+		has_offmap_currency = { offmap = offmap_irae value = 5000 }
+		NOT = { has_global_flag = houseirae_special_present }
+		is_adult = yes
+	}
+	mean_time_to_happen = {
+		days = 9000
+		modifier = {
+			factor = 0.5
+			real_month_of_year = 7
+			NOT = { real_month_of_year = 8 }
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			create_character = {
+				name="Clone of Kekvit"
+				random_traits = no
+				dynasty = 9051300
+				female = yes
+				age = 32
+				attributes = {
+					martial = 10
+					intrigue = 10
+					stewardship = 10
+					learning = 10
+					diplomacy = 10
+				}
+				fertility = 0.1
+				religion = ROOT
+				culture = drow
+				health = 15
+				trait = mastermind_theologian
+				trait = fair
+				trait = genius
+				trait = mystic
+				trait = lustful
+				trait = houseirae_drow
+				trait = houseirae_curse_generic
+				trait = homosexual # Technically bisexual, but leans toward women
+				trait = houseirae_drow_special1 # Kekvit's custom portrait					
+				trait = houseirae_matron_mother
+				trait = twin
+				flag = special_npc
+				flag = society_join_block
+				flag = no_court_invites
+				flag = lf_never_change_race
+				flag = kekvit_clone
+			}
+			new_character = {
+				c_99889902 = {
+					any_owned_bloodline = {
+						add_bloodline_member = PREVPREV
+					}
+				}
+				save_event_target_as = kekvit_clone
+				set_immune_to_pruning = yes
+			}
+		}
+	}
+	option = {
+		name = {
+			trigger = {
+				real_month_of_year = 11
+				month = 11
+				religion_group = christian
+			}
+			text = HouseIrae1ChristianTT
+		}
+		name = {
+			trigger = {
+				real_month_of_year = 11
+				month = 11
+				religion_group = jewish_group
+			}
+			text = HouseIrae1HanukkahTT
+		}
+		name = {
+			trigger = {
+				real_month_of_year = 7
+				NOT = { real_month_of_year = 8 }
+				# month = 7
+				# NOT = { month = 8 }
+			}
+			text = HouseIrae1BirthdayTT
+		}
+		event_target:kekvit_clone = { set_global_flag = houseirae_special_present }
+	}
+		
+	
+}

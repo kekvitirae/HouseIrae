@@ -1,0 +1,57 @@
+houseirae_racial_seeding = {
+	type = selection
+	random_default = none
+    sort_priority = 0
+	priority = 0
+    
+	trigger = {
+		has_alternate_start_parameter = { key = culture_names value = historical }
+		has_alternate_start_parameter = { key = religion_names value = historical }
+	}
+	none = {
+	}
+	partial = {
+	}
+	full = {
+	}
+}
+
+houseirae_seed_drow = {
+	type = checkbox
+	random_default = checked
+	apply_before_generation = yes
+	sort_priority = 0
+    
+	trigger = {
+		has_alternate_start_parameter = { key = culture_names value = historical }
+		has_alternate_start_parameter = { key = religion_names value = historical }
+		NOT = {
+			has_alternate_start_parameter = { key = houseirae_racial_seeding value = none }
+		}
+	}
+	checked = {
+	}
+	unchecked = {
+	}
+}
+
+houseirae_seed_halfelf = {
+	type = checkbox
+	random_default = checked
+	apply_before_generation = yes
+	separator = yes
+	sort_priority = 0
+    
+	trigger = {
+		has_alternate_start_parameter = { key = culture_names value = historical }
+		has_alternate_start_parameter = { key = religion_names value = historical }
+		NOT = {
+			has_alternate_start_parameter = { key = houseirae_racial_seeding value = none }
+		}
+	}
+	checked = {
+	}
+	unchecked = {
+	}
+}
+

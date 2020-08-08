@@ -1,0 +1,19 @@
+RETTYPE_DROW = 
+{
+	first_type = 0
+	first_amount = 50
+	second_type = 5
+	second_amount = 200
+	
+	potential = {
+		is_nomadic = no
+		culture = drow
+	}
+	
+	modifier = {
+		light_infantry_offensive = 0.2
+		light_infantry_morale = 0.2
+		archers_offensive = 0.2
+		archers_morale = 0.2
+	}
+}

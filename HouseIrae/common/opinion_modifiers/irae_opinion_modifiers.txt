@@ -1,0 +1,41 @@
+irae_opinion_refused_sacrifice = { # Those who don't attend are viewed negatively by those who do.
+	opinion = -10
+	months = 11
+}
+irae_opinion_sacrifice_heretic_liege = { # A courtier or vassal who refuses to pay tribute, rationalizes that it's due to the liege being a heretic
+	opinion = -10
+	months = 11
+}
+irae_spared_life = { # For when a prisoner is spared from sacrifice
+	opinion = 15
+	months = 11
+}
+irae_held_sacrifice_celebration = { # People like to be invited to things and tend to appreciate the host including them
+	opinion = 5
+	months = 3
+}
+
+houseirae_unholy_mother = {
+	opinion = 500
+	years = 999
+	obedient = yes
+	non_aggression_pact = yes
+}
+
+houseirae_unholy_daughter = {
+	opinion = 500
+	years = 999
+	non_aggression_pact = yes
+}
+
+houseirae_usurper_mother = {
+	opinion = -500
+	years = 999
+	disable_non_aggression_pacts = yes
+}
+
+houseirae_ungrateful_daughter = {
+	opinion = -500
+	years = 999
+	disable_non_aggression_pacts = yes
+}
