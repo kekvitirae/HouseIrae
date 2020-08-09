@@ -6,25 +6,21 @@ character_event = {
 	desc = {
 		trigger = {
 			religion_group = christian
-			# real_month_of_year = 11
-			month = 11
+			real_month_of_year = 11
 		}
 		text = HouseIraeHoliday1Christmas
 	}
 	desc = {
 		trigger = {
 			religion_group = jewish_group
-			# real_month_of_year = 11
-			month = 11
+			real_month_of_year = 11
 		}
 		text = HouseIraeHoliday1Hanukkah
 	}
 	desc = {
 		trigger = {
-			# real_month_of_year = 7
-			# NOT = { real_month_of_year = 8 }
-			month = 7
-			NOT = { month = 8 }
+			real_month_of_year = 7
+			NOT = { real_month_of_year = 8 }
 		}
 		text = HouseIraeHoliday1Birthday
 	}
@@ -111,7 +107,6 @@ character_event = {
 		name = {
 			trigger = {
 				real_month_of_year = 11
-				month = 11
 				religion_group = christian
 			}
 			text = HouseIrae1ChristianTT
@@ -119,7 +114,6 @@ character_event = {
 		name = {
 			trigger = {
 				real_month_of_year = 11
-				month = 11
 				religion_group = jewish_group
 			}
 			text = HouseIrae1HanukkahTT
@@ -128,8 +122,6 @@ character_event = {
 			trigger = {
 				real_month_of_year = 7
 				NOT = { real_month_of_year = 8 }
-				# month = 7
-				# NOT = { month = 8 }
 			}
 			text = HouseIrae1BirthdayTT
 		}
