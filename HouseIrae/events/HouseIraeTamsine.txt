@@ -404,18 +404,18 @@ narrative_event = {
 				add_trait = houseirae_curse_shapeshifted_drider
 				remove_random_drow_portrait = yes # Redundacy check
 				remove_random_halfelf_portrait = yes # Redundacy check
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 			}
 			50 = {
 				set_gender = opposite
 				add_trait = houseirae_curse_shapeshifted_gender
-				if = {
-					limit = {
-						trait = houseirae_drow
-					}
-					remove_random_drow_portrait = yes
-					add_random_drow_portrait = yes
-				}
 				else_if = {
 					limit = {
 						trait = houseirae_halfelf

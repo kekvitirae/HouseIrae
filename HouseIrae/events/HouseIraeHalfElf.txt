@@ -305,7 +305,14 @@ narrative_event = {
 								limit = {
 									is_adult = yes
 								}
-								add_random_drow_portrait = yes
+								if = {
+									limit = {
+										NOT = {
+											graphical_culture = drowgfx
+										}
+									}
+									set_graphical_culture = drow
+								}
 							}
 							else = {
 								add_trait = houseirae_drow_child

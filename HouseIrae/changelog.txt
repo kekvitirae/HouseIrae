@@ -1,3 +1,16 @@
+2.7
+25DEC20
+Merry Matronmas!
+
+New Additions:
+
+Random static portraits have been replaced with dynamic portraits. The static portraits are still in place if you want to keep them, but will require the use of console commands.
+
+Enhancements:
+
+The Holy War CB for dark elves is now restricted to Lolth and Vhaeraun religions only, but can be used against anyone except their own religion.
+Converting to the Dark Seldarine religion via decision now requires 500 prestige.
+
 2.6
 06AUG20
 

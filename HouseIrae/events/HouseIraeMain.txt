@@ -55,7 +55,14 @@ character_event = {
 				}
 					new_character = {
 						save_event_target_as = irae_spymaster
-						add_random_drow_portrait = yes
+						if = {
+							limit = {
+								NOT = {
+									graphical_culture = drowgfx
+								}
+							}
+							set_graphical_culture = drow
+						}
 						random = {
 							chance = 10
 							add_trait = homosexual
@@ -122,7 +129,14 @@ character_event = {
 			new_character = {
 				save_event_target_as = irae_lolthpriestess
                 set_character_flag = no_court_invites
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
                 random = {
                     chance = 10
                     add_trait = homosexual
@@ -209,7 +223,14 @@ character_event = {
                 save_event_target_as = irae_eilistraeepriestess
                 set_character_flag = no_court_invites
 				add_trait = houseirae_drow
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
                 random = {
                     chance = 10
                     add_trait = homosexual
@@ -279,7 +300,14 @@ character_event = {
                 #Education & other basic stuff
                 save_event_target_as = irae_vhaeraunpriest
                 set_character_flag = no_court_invites
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
                 random = {
                     chance = 10
                     add_trait = homosexual
@@ -701,10 +729,25 @@ narrative_event = {
 			religion = lolth_religion
 		}
 		hidden_tooltip = {
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			any_realm_character = {
 				add_trait = houseirae_drow
 				culture = drow
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				any_demesne_province = {
 					culture = drow
 					religion = lolth_religion
@@ -714,12 +757,6 @@ narrative_event = {
 						is_adult = no
 					}
 					add_trait = houseirae_drow_child
-				}
-				else_if = {
-					limit = {
-						is_adult = yes
-					}
-					add_random_drow_portrait = yes
 				}
 				if = {
 					limit = {
@@ -776,10 +813,25 @@ narrative_event = {
 			religion = eilistraee_religion
 		}		
 		hidden_tooltip = {
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			any_realm_character = {
 				add_trait = houseirae_drow
 				culture = drow
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				any_demesne_province = {
 					culture = drow
 					religion = eilistraee_religion
@@ -789,12 +841,6 @@ narrative_event = {
 						is_adult = no
 					}
 					add_trait = houseirae_drow_child
-				}
-				else_if = {
-					limit = {
-						is_adult = yes
-					}
-					add_random_drow_portrait = yes
 				}
 				if = {
 					limit = {
@@ -828,6 +874,14 @@ narrative_event = {
 		add_trait = houseirae_drow
 		religion = vhaeraun_religion
 		culture = drow
+		if = {
+			limit = {
+				NOT = {
+					graphical_culture = drowgfx
+				}
+			}
+			set_graphical_culture = drow
+		}
 		primary_title = {
 			add_law = { law = vhaeraun_succession cooldown = no opinion_effect = no }
 			add_law = { law = drow_turkish_succession cooldown = no opinion_effect = no }
@@ -854,10 +908,25 @@ narrative_event = {
 			religion = vhaeraun_religion
 		}		
 		hidden_tooltip = {
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			any_realm_character = {
 				add_trait = houseirae_drow
 				culture = drow
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				any_demesne_province = {
 					culture = drow
 					religion = vhaeraun_religion
@@ -867,12 +936,6 @@ narrative_event = {
 						is_adult = no
 					}
 					add_trait = houseirae_drow_child
-				}
-				else_if = {
-					limit = {
-						is_adult = yes
-					}
-					add_random_drow_portrait = yes
 				}
 				if = {
 					limit = {
@@ -902,6 +965,14 @@ narrative_event = {
 		culture = drow
 		if = {
 			limit = {
+				NOT = {
+					graphical_culture = drowgfx
+				}
+			}
+			set_graphical_culture = drow
+		}
+		if = {
+			limit = {
 				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
 			}
 			set_mother = event_target:houseirae_kekvit_irae
@@ -920,21 +991,30 @@ narrative_event = {
 			culture = drow
 		}
 		hidden_tooltip = {
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			any_realm_character = {
 				add_trait = houseirae_drow
 				culture = drow
 				if = {
 					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
+				if = {
+					limit = {
 						is_adult = no
 					}
 					add_trait = houseirae_drow_child
-				}
-				else_if = {
-					limit = {
-						is_adult = yes
-					}
-					add_random_drow_portrait = yes
 				}
 				any_demesne_province = {
 					culture = drow
@@ -962,7 +1042,14 @@ character_event = {
 	}
     immediate = { 
 		remove_trait = houseirae_drow_child
-		add_random_drow_portrait = yes
+		if = {
+			limit = {
+				NOT = {
+					graphical_culture = drowgfx
+				}
+			}
+			set_graphical_culture = drow
+		}
     }
 }
 
@@ -1120,7 +1207,14 @@ character_event = { # Ensures temple/city holders are drow
 				}
 			}
 			add_trait = houseirae_drow
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 		}
 		else = {
 			add_trait = houseirae_halfelf
@@ -1246,7 +1340,14 @@ character_event = {
 			}
 			new_character = {
 				save_event_target_as = irae_male
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				remove_trait = fair
 				remove_trait = genius
 				remove_trait = strong
@@ -1879,7 +1980,14 @@ character_event = {
 						}
 					}
 					add_trait = houseirae_drow
-					add_random_drow_portrait = yes
+					if = {
+						limit = {
+							NOT = {
+								graphical_culture = drowgfx
+							}
+						}
+						set_graphical_culture = drow
+					}
 				}
 				else_if = {
 					limit = {
@@ -1922,7 +2030,14 @@ character_event = {
 						}
 					}
 					add_trait = houseirae_drow
-					add_random_drow_portrait = yes
+					if = {
+						limit = {
+							NOT = {
+								graphical_culture = drowgfx
+							}
+						}
+						set_graphical_culture = drow
+					}
 				}
 				else_if = {
 					limit = {

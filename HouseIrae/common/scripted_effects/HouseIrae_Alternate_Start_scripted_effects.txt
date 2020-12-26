@@ -140,6 +140,14 @@ houseirae_alternate_seed_drow = {
 			any_demesne_province = {
 				culture = drow
 			}
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 		}
 		if = {
 			limit = {
@@ -164,6 +172,14 @@ houseirae_alternate_seed_drow = {
 				}
 			}
 			culture = drow
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 		}
 		if = {
 			limit = {
@@ -174,7 +190,6 @@ houseirae_alternate_seed_drow = {
 			}
 			houseirae_set_drow_religion = yes
 		}
-		add_random_drow_portrait = yes
 	}
 	else_if = {
 		limit = {
@@ -190,6 +205,14 @@ houseirae_alternate_seed_drow = {
 				}
 			}
 			culture = drow
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 		}
 		if = {
 			limit = {

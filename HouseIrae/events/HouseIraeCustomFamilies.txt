@@ -137,7 +137,14 @@ character_event = {
 				set_variable = { which = father_age which = ROOT }
 				add_age = father_age
 				save_event_target_as = irae_father
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				give_nickname = irae_consort
 				ROOT = {
 					set_father = event_target:irae_father
@@ -172,7 +179,14 @@ character_event = {
 			set_variable = { which = sibling_age which = ROOT }
 			add_age = sibling_age
 			save_event_target_as = irae_brother
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			set_father = event_target:irae_father
 			set_mother = event_target:irae_mother
 		}
@@ -189,7 +203,14 @@ character_event = {
 			set_variable = { which = sibling_age which = ROOT }
 			add_age = sibling_age
 			save_event_target_as = irae_sister
-			add_random_drow_portrait = yes
+			if = {
+				limit = {
+					NOT = {
+						graphical_culture = drowgfx
+					}
+				}
+				set_graphical_culture = drow
+			}
 			set_father = event_target:irae_father
 			set_mother = event_target:irae_mother
 		}
@@ -324,7 +345,14 @@ character_event = {
 			}		
 			new_character = {
 				add_age = 4
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				if = {
 					limit = {
 						ROOT = {
@@ -376,7 +404,14 @@ character_event = {
 				}
 			}		
 			new_character = {
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				if = {
 					limit = {
 						ROOT = {
@@ -521,7 +556,14 @@ character_event = {
 				set_variable = { which = father_age which = ROOT }
 				add_age = father_age
 				save_event_target_as = irae_father
-				add_random_drow_portrait = yes
+				if = {
+					limit = {
+						NOT = {
+							graphical_culture = drowgfx
+						}
+					}
+					set_graphical_culture = drow
+				}
 				ROOT = {
 					set_father = event_target:irae_father
 				}

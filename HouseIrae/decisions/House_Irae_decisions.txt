@@ -260,74 +260,6 @@ targetted_decisions = {
 		}		
 	}
 
-	houseirae_change_drow_portrait = {
-		filter = self
-		potential = {
-			ai = no
-			character = FROM
-			OR = {
-				trait = houseirae_drow
-				trait = houseirae_halfelf
-			}
-			is_adult = yes
-			NOT = {
-				has_character_flag = portrait_is_fine
-			}
-		}
-		allow= {
-			always = yes
-		}
-		effect = {
-			hidden_tooltip = {
-				if = {
-					limit = {
-						trait = houseirae_drow
-					}
-					remove_random_drow_portrait = yes
-					add_random_drow_portrait = yes
-					break = yes
-				}
-				if = {
-					limit = {
-						trait = houseirae_halfelf
-					}
-					remove_random_halfelf_portrait = yes
-					add_random_halfelf_portrait = yes
-					break = yes
-				}
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	houseirae_portrait_is_fine_drow = {
-		filter = self
-		potential = {
-			ai = no
-			character = FROM
-			OR = {
-				trait = houseirae_drow
-				trait = houseirae_halfelf
-			}
-			is_adult = yes
-			NOT = {
-				has_character_flag = portrait_is_fine
-			}
-		}
-		allow= {
-			always = yes
-		}
-		effect = {
-			hidden_tooltip = {
-				set_character_flag = portrait_is_fine				
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
-	
 	convert_to_seldarine_religion = {
 		only_playable = yes
 		filter = home_court
@@ -341,15 +273,9 @@ targetted_decisions = {
 		
 		potential = {
 			OR = {
-				spouse = {
-					character = FROM
-				}
-				consort = {
-					character = FROM
-				}
-				lover = {
-					character = FROM
-				}
+				is_married = FROM
+				is_consort = FROM
+				is_lover = FROM
 				has_character_flag = houseirae_special_convert
 			}
 			OR = {
@@ -364,7 +290,10 @@ targetted_decisions = {
 		}
 		
 		allow = {
-			FROM = { NOT = { trait = zealous } }
+			FROM = { 
+				NOT = { trait = zealous } 
+				prestige = 500
+			}
 		}
 		
 		effect = {

@@ -14,38 +14,27 @@ drow_holy_war = {
 	can_use = {
 		is_proper_alternate_start = yes
 		ROOT = {
-			NOT = { has_character_flag = npc_laela_irae }
-			is_nomadic = no
-			NOT = { same_realm = FROM }
 			OR = {
-				AND = {
-					religion = eilistraee_religion
-					FROM = { 
-						OR = {
-							religion = lolth_religion
-							religion = vhaeraun_religion
-						}
-					}
-				}
 				AND = {
 					religion = lolth_religion
 					FROM = { 
-						OR = {
-							religion = eilistraee_religion
-							religion = vhaeraun_religion
+						NOT = {
+							religion = lolth_religion
 						}
 					}
 				}
 				AND = {
 					religion = vhaeraun_religion
 					FROM = { 
-						OR = {
-							religion = eilistraee_religion
-							religion = lolth_religion
+						NOT = {
+							religion = vhaeraun_religion
 						}
 					}
 				}
 			}
+			NOT = { has_character_flag = npc_laela_irae }
+			is_nomadic = no
+			NOT = { same_realm = FROM }
 			mercenary = no
 		}
 	}
@@ -111,29 +100,18 @@ drow_holy_war = {
 			NOT = { same_realm = FROM }
 			OR = {
 				AND = {
-					religion = eilistraee_religion
-					FROM = { 
-						OR = {
-							religion = lolth_religion
-							religion = vhaeraun_religion
-						}
-					}
-				}
-				AND = {
 					religion = lolth_religion
 					FROM = { 
-						OR = {
-							religion = eilistraee_religion
-							religion = vhaeraun_religion
+						NOT = {
+							religion = lolth_religion
 						}
 					}
 				}
 				AND = {
 					religion = vhaeraun_religion
 					FROM = { 
-						OR = {
-							religion = eilistraee_religion
-							religion = lolth_religion
+						NOT = {
+							religion = vhaeraun_religion
 						}
 					}
 				}

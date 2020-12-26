@@ -1,10 +1,10 @@
 houseirae_drow_group = {
-	graphical_cultures = { westerngfx }
+	graphical_cultures = { drowgfx }
 	alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
 		
 	drow = {
 		alternate_start = { NOT = { has_alternate_start_parameter = { key = special_culture value = animal_world } } }
-		graphical_cultures = { celticgfx frankishgfx westerngfx }
+		graphical_cultures = { drowgfx }
 		color = { 0.6 0.2 1 }
 		founder_named_dynasties = no
 
