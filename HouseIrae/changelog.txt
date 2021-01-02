@@ -1,3 +1,12 @@
+2.7.1
+02JAN21
+
+Enhancements:
+
+The Racial Seeding option in the game rules no longer does anything if you're in an Alternate Start with House Irae seeding enabled from there.
+Minor text fixes.
+The Dark Seldarine can now be chosen from the Ruler Designer.
+
 2.7
 25DEC20
 Merry Matronmas!

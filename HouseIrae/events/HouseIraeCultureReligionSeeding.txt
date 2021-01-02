@@ -10,6 +10,7 @@ character_event = {
 			has_game_rule = { name = houseirae_seeding value = houseirae_seed_culture }
 			has_game_rule = { name = houseirae_seeding value = houseirae_seed_both }
 		}
+		NOT = { is_alternate_start = yes }
 	}
 	immediate = {
 		character_event = { id = HouseIraeSeeding.2 days = 3 }
