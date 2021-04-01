@@ -19,7 +19,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			OR = {
 				NOT = { has_global_flag = houseirae_crisis }
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -433,7 +433,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			OR = {
 				NOT = { has_global_flag = houseirae_crisis }
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -701,7 +701,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			OR = {
 				NOT = { has_global_flag = houseirae_crisis }
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -757,7 +757,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			OR = {
 				NOT = { has_global_flag = houseirae_crisis }
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -1028,7 +1028,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			has_global_flag = houseirae_crisis
 			NOR = {
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -1628,7 +1628,7 @@ offmap_decisions = {
 							has_artifact = irae_sterility_charm
 							has_artifact = irae_cloak
 							has_artifact = irae_statue_of_kekvit
-							has_artifact = irae_statue_of_belladonna
+							has_artifact = irae_statue_of_nightshade
 							has_artifact = irae_statue_of_freya
 							has_artifact = irae_statue_of_khaldune
 							has_artifact = irae_statue_of_deionarra
@@ -1956,7 +1956,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			has_global_flag = houseirae_crisis
 			NOR = {
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -1993,7 +1993,7 @@ offmap_decisions = {
 			NOT = { irae_hates_you_for_banishing_meeshka = yes }
 			has_global_flag = houseirae_crisis
 			OR = {
-				has_artifact = irae_statue_of_belladonna
+				has_artifact = irae_statue_of_nightshade
 				has_artifact = irae_statue_of_deionarra
 				has_artifact = irae_statue_of_meeshka
 			}
@@ -2015,7 +2015,7 @@ offmap_decisions = {
 				text = HouseIraeMilitaryAidTooltipA
 				FROM = {
 					OR = {
-						has_artifact = irae_statue_of_belladonna
+						has_artifact = irae_statue_of_nightshade
 						has_artifact = irae_statue_of_deionarra
 						has_artifact = irae_statue_of_meeshka
 					}

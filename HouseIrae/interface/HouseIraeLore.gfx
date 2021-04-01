@@ -35,8 +35,8 @@ spriteTypes = {
 		effectFile = "gfx/FX/buttonstate.lua"
 	}
 	spriteType = {
-		name = "irae_belladonna_kekvit"
-		texturefile = "gfx/event_pictures/irae_belladonna_kekvit.dds"
+		name = "irae_nightshade_kekvit"
+		texturefile = "gfx/event_pictures/irae_nightshade_kekvit.dds"
 		noOfFrames = 1
 		norefcount = yes
 		effectFile = "gfx/FX/buttonstate.lua"

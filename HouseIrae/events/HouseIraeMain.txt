@@ -432,8 +432,8 @@ character_event = {
 						hidden = yes
 						duration = -1
 					}
-					create_character = { # Belladonna
-						name="Belladonna"
+					create_character = { # Nightshade
+						name="Nightshade"
 						random_traits = no
 						dynasty = 9051300
 						female = yes
@@ -450,7 +450,7 @@ character_event = {
 						trait = stubborn
 						trait = aggressive_leader
 						trait = chaste
-						trait = houseirae_drow_special11 # Belladonna's custom portrait					
+						trait = houseirae_drow_special11 # Nightshade's custom portrait					
 						trait = houseirae_matron_mother
 						flag = ai_flag_refuse_conversion
 						flag = special_npc
@@ -459,12 +459,12 @@ character_event = {
 						flag = tentacle_immunity
 					}
 					new_character = {
-						set_character_flag = houseirae_belladonna_irae
-						save_global_event_target_as = houseirae_belladonna_irae
+						set_character_flag = houseirae_nightshade_irae
+						save_global_event_target_as = houseirae_nightshade_irae
 						diplomatic_immunity = yes
 						set_mother = 0
 						set_father = 0
-						set_character_flag = do_not_disturb # Prevents Belladonna from doing anything of note
+						set_character_flag = do_not_disturb # Prevents Nightshade from doing anything of note
 						add_trait = houseirae_no_marry
 						add_trait = houseirae_no_inherit
 						add_character_modifier = {
@@ -505,7 +505,7 @@ character_event = {
 						save_global_event_target_as = houseirae_freya_irae
 						diplomatic_immunity = yes
 						set_mother = event_target:houseirae_kekvit_irae
-						set_father = event_target:houseirae_belladonna_irae
+						set_father = event_target:houseirae_nightshade_irae
 						set_character_flag = do_not_disturb # Prevents Freya from doing anything of note
 						e_irae_west_governor = {
 							grant_title = PREV
@@ -517,7 +517,7 @@ character_event = {
 							hidden = yes
 							duration = -1
 						}
-						event_target:houseirae_belladonna_irae = {
+						event_target:houseirae_nightshade_irae = {
 							force_host = PREV
 						}
 					}
@@ -540,8 +540,8 @@ character_event = {
 				set_character_flag = houseirae_kekvit_irae
 				save_global_event_target_as = houseirae_kekvit_irae
 				set_global_flag = houseirae_npc_kekvit_irae_created
-				create_character = { # Belladonna
-					name="Belladonna"
+				create_character = { # Nightshade
+					name="Nightshade"
 					random_traits = no
 					dynasty = 9051300
 					female = yes
@@ -558,7 +558,7 @@ character_event = {
 					trait = stubborn
 					trait = aggressive_leader
 					trait = chaste
-					trait = houseirae_drow_special11 # Belladonna's custom portrait					
+					trait = houseirae_drow_special11 # Nightshade's custom portrait					
 					trait = houseirae_matron_mother
 					flag = ai_flag_refuse_conversion
 					flag = special_npc
@@ -567,12 +567,12 @@ character_event = {
 					flag = tentacle_immunity
 				}
 				new_character = {
-					set_character_flag = houseirae_belladonna_irae
-					save_global_event_target_as = houseirae_belladonna_irae
+					set_character_flag = houseirae_nightshade_irae
+					save_global_event_target_as = houseirae_nightshade_irae
 					diplomatic_immunity = yes
 					set_mother = 0
 					set_father = 0
-					set_character_flag = do_not_disturb # Prevents Belladonna from doing anything of note
+					set_character_flag = do_not_disturb # Prevents Nightshade from doing anything of note
 					add_trait = houseirae_no_marry
 					add_trait = houseirae_no_inherit
 					add_character_modifier = {
@@ -599,7 +599,7 @@ character_event = {
 				set_character_flag = tentacle_immunity
 				set_character_flag = houseirae_freya_irae
 				diplomatic_immunity = yes
-				set_father = event_target:houseirae_belladonna_irae
+				set_father = event_target:houseirae_nightshade_irae
 				save_global_event_target_as = houseirae_freya_irae
 				set_character_flag = do_not_disturb # Prevents Freya from doing anything of note
 				e_irae_west_governor = {
@@ -612,7 +612,7 @@ character_event = {
 					hidden = yes
 					duration = -1
 				}
-				event_target:houseirae_belladonna_irae = {
+				event_target:houseirae_nightshade_irae = {
 					force_host = PREV
 				}
 			}
@@ -712,7 +712,7 @@ narrative_event = {
 				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
 			}
 			set_mother = event_target:houseirae_kekvit_irae
-			set_father = event_target:houseirae_belladonna_irae
+			set_father = event_target:houseirae_nightshade_irae
 			set_character_flag = kekvits_child
 			add_trait = bastard
 			add_trait = houseirae_curse_generic
@@ -796,7 +796,7 @@ narrative_event = {
 				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
 			}
 			set_mother = event_target:houseirae_kekvit_irae
-			set_father = event_target:houseirae_belladonna_irae
+			set_father = event_target:houseirae_nightshade_irae
 			set_character_flag = kekvits_child
 			add_trait = bastard
 			add_trait = houseirae_curse_generic
@@ -891,7 +891,7 @@ narrative_event = {
 				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
 			}
 			set_mother = event_target:houseirae_kekvit_irae
-			set_father = event_target:houseirae_belladonna_irae
+			set_father = event_target:houseirae_nightshade_irae
 			set_character_flag = kekvits_child
 			add_trait = bastard
 			add_trait = houseirae_curse_generic
@@ -976,7 +976,7 @@ narrative_event = {
 				has_game_rule = { name = houseirae_house_irae_spawn value = houseirae_child_of_irae }
 			}
 			set_mother = event_target:houseirae_kekvit_irae
-			set_father = event_target:houseirae_belladonna_irae
+			set_father = event_target:houseirae_nightshade_irae
 			set_character_flag = kekvits_child
 			add_trait = bastard
 			add_trait = houseirae_curse_generic

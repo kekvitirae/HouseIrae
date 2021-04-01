@@ -1,3 +1,12 @@
+2.7.2
+01APR21
+
+Bug Fixes:
+
+Removed all references to Belladonna that cheating whore HOW COULD YOU please come back to me I love you
+Belladonna is now replaced with Nightshade, totally not the same person but with a different name.
+All references to Lilium Irae have been replaced with Calla Irae.
+
 2.7.1
 02JAN21
 
@@ -31,7 +40,7 @@ Enhancements:
 
 Rise of House Irae is now default in the game rules.
 Rewrite the Child of Irae gamerule localisation.
-Kekvit, Freya, and Belladonna will now leave societies on a yearly pulse.
+Kekvit, Freya, and Nightshade will now leave societies on a yearly pulse.
 Historical characters have now given appropriate flags.
 It's August again, so the mean time to happen for Kekvit's Birthday Surprise has been cut down to half.
 Kekvit's Birthday/Christmas/Hannukah Surprise has once again been tied to real life months instead of in-game months.
@@ -72,7 +81,7 @@ Gamerule-based culture/religion seeding will now only occur if you're starting a
 
 Bug Fixes:
 
-Added mother_minor_rest to Belladonna and Freya.
+Added mother_minor_rest to Nightshade and Freya.
 
 2.4.7
 03JUL20
@@ -153,7 +162,7 @@ You can now secretly worship the Dark Seldarine religions.
 New Additions:
 
 Added a new option to the game rule "House Irae: Dark Elves": Child of House Irae. You will start as the exiled son or daughter of Kekvit Irae, obtaining Tamsine's bloodline immediately but also the... complications, the least of which being that your character can no longer go back home.
-Added Belladonna Irae, as "father" to Freya and to the Child of Irae.
+Added Nightshade Irae, as "father" to Freya and to the Child of Irae.
 
 Enhancements:
 

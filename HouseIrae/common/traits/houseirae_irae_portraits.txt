@@ -79,7 +79,7 @@ houseirae_drow_special10 = { # Demon father
 		houseirae_drow_child
 	}	
 }
-houseirae_drow_special11 = { # Belladonna Irae
+houseirae_drow_special11 = { # Nightshade Irae
 	hidden = yes
 	random = no
 	customizer = no

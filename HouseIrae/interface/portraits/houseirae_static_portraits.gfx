@@ -180,7 +180,7 @@ spriteTypes = {
 					portrait_has_trait = houseirae_drow_special8 # New Tamsine Irae
 					portrait_has_trait = houseirae_drow_special9 # Kaenia Irae
 					portrait_has_trait = houseirae_drow_special10 # Demon father
-					portrait_has_trait = houseirae_drow_special11 # Belladonna Irae
+					portrait_has_trait = houseirae_drow_special11 # Nightshade Irae
 				}
 	 		}
         }
@@ -235,7 +235,7 @@ spriteTypes = {
 				7 = { portrait_has_trait = houseirae_drow_special8 } # New Tamsine Irae
 				8 = { portrait_has_trait = houseirae_drow_special9 } # Kaenia Irae
 				9 = { portrait_has_trait = houseirae_drow_special10 } # Demon father
-				10 = { portrait_has_trait = houseirae_drow_special11 } # Belladonna Irae
+				10 = { portrait_has_trait = houseirae_drow_special11 } # Nightshade Irae
 			}
 		}
 	}

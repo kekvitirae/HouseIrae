@@ -217,7 +217,7 @@ narrative_event = { # The Irae Consort(s)
 	id = HouseIraeLore.43
 	desc = HouseIraeLore43
 	title = HouseIraeLore43T
-	picture = irae_belladonna_kekvit
+	picture = irae_nightshade_kekvit
 	is_triggered_only = yes
 	window = "houseirae_custom_narrative"	
 	

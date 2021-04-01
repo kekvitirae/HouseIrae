@@ -146,11 +146,11 @@ character_event = {
 					trigger = {
 						FROMFROM = {
 							NOT = {
-								has_artifact = irae_statue_of_belladonna
+								has_artifact = irae_statue_of_nightshade
 							}
 						}
 					}
-					add_artifact = irae_statue_of_belladonna
+					add_artifact = irae_statue_of_nightshade
 					new_artifact = {
 						transfer_artifact = {
 							from = ROOT

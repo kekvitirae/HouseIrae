@@ -110,7 +110,7 @@ irae_statue_of_kekvit = {
 	picture = "GFX_irae_statue"
 }
 
-irae_statue_of_belladonna = {
+irae_statue_of_nightshade = {
 	health = 0.50		
 	quality = 2
 	flags = { irae statue curse }
