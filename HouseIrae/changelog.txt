@@ -1,3 +1,14 @@
+2.7.3
+13/JUN21
+
+Bug Fixes:
+
+Lolth kicked out all the men from her priesthood. (Credit to Füchsingeist)
+
+Enhancements:
+
+Culture seeding now seeds the dark elf race too.
+
 2.7.2
 01APR21
 

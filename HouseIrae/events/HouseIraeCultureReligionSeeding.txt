@@ -126,6 +126,7 @@ character_event = { # Lolth
 						}
 					}
 					culture = drow
+					set_graphical_culture = drow
 				}
 				if = {
 					limit = {
@@ -186,6 +187,7 @@ character_event = { # Lolth
 					}
 				}
 				culture = drow
+				set_graphical_culture = drow
 			}
 		}
 		else_if = {
@@ -219,6 +221,7 @@ character_event = { # Lolth
 					}
 				}
 				culture = drow
+				set_graphical_culture = drow
 			}
 		}
 	}
@@ -270,6 +273,7 @@ character_event = { # Eilistraee
 						}
 					}
 					culture = drow
+					set_graphical_culture = drow
 				}
 				if = {
 					limit = {
@@ -330,6 +334,7 @@ character_event = { # Eilistraee
 					}
 				}
 				culture = drow
+				set_graphical_culture = drow
 			}
 		}
 		else_if = {
@@ -414,6 +419,7 @@ character_event = { # Vhaeraun
 						}
 					}
 					culture = drow
+					set_graphical_culture = drow
 				}
 				if = {
 					limit = {
@@ -474,6 +480,7 @@ character_event = { # Vhaeraun
 					}
 				}
 				culture = drow
+				set_graphical_culture = drow
 			}
 		}
 		else_if = {
@@ -507,6 +514,7 @@ character_event = { # Vhaeraun
 					}
 				}
 				culture = drow
+				set_graphical_culture = drow
 			}
 		}
 	}

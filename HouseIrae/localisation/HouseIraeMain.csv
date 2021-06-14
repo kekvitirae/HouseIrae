@@ -231,10 +231,10 @@ houseirae_seed_none;None;;;;;;;;;;;;;x
 houseirae_seed_none_desc;The world will remain as it was.;;;;;;;;;;;;;x
 houseirae_seed_religion;Religions;;;;;;;;;;;;;x
 houseirae_seed_religion_desc;House Irae religions will be seeded on the fourth day.\nWill not work in Alternate Starts.;;;;;;;;;;;;;x
-houseirae_seed_culture;Culture;;;;;;;;;;;;;x
-houseirae_seed_culture_desc;House Irae culture will be seeded on the fourth day.\nWill not work in Alternate Starts.;;;;;;;;;;;;;x
+houseirae_seed_culture;Culture/Race;;;;;;;;;;;;;x
+houseirae_seed_culture_desc;House Irae dark elves will be seeded on the fourth day.\nWill not work in Alternate Starts.;;;;;;;;;;;;;x
 houseirae_seed_both;Both;;;;;;;;;;;;;x
-houseirae_seed_both_desc;House Irae religions and culture will be seeded on the fourth day.\nWill not work in Alternate Starts.;;;;;;;;;;;;;x
+houseirae_seed_both_desc;House Irae religions and dark elves will be seeded on the fourth day.\nWill not work in Alternate Starts.;;;;;;;;;;;;;x
 RULE_IRAE_DARK_WHISPERS;§KHouse Irae§!: Dark Whispers;;;;;;;;;;;;;x
 houseirae_dark_whispers_on;On;;;;;;;;;;;;;x
 houseirae_dark_whispers_on_desc;A dark and deadly soul may whisper into the ear of a child of Irae, leading to a crisis within House Irae.;;;;;;;;;;;;;x

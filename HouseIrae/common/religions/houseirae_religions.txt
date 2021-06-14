@@ -27,6 +27,7 @@ pagan_group = {
 		priests_can_marry = no
 		priests_can_inherit = no
 		allow_looting = yes
+		male_temple_holders = no
 		feminist = yes
 		female_temple_holders = yes
 		religious_clothing_head = 5
