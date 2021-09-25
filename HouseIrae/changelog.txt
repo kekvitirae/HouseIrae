@@ -1,5 +1,12 @@
+2.7.3.1
+24SEP21
+
+Bug Fixes:
+
+Fixed a localisation error in the artifact code.
+
 2.7.3
-13/JUN21
+13JUN21
 
 Bug Fixes:
 
